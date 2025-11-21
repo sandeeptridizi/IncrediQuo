@@ -97,7 +97,7 @@
 /* ---------- Tablet (<= 1024px) ---------- */
 @media (max-width: 1024px) {
   .post-details {
-    margin: 110px 32px 70px;
+    margin: 120px 32px 70px;   /* a bit more top */
     padding: 24px 24px 32px;
   }
 
@@ -113,7 +113,7 @@
 /* ---------- Mobile (<= 768px) ---------- */
 @media (max-width: 768px) {
   .post-details {
-    margin: 100px 16px 60px;
+    margin: 140px 16px 60px;   /* more top space to clear navbar */
     padding: 20px 18px 28px;
   }
 
@@ -139,7 +139,7 @@
 /* ---------- Very small phones (<= 480px) ---------- */
 @media (max-width: 480px) {
   .post-details {
-    margin: 90px 12px 50px;
+    margin: 150px 12px 50px;   /* even more on tiny screens */
     padding: 18px 14px 24px;
     border-radius: 14px;
   }

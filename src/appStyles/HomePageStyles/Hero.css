@@ -186,20 +186,62 @@
 }
 
 /* very small phones */
-@media (max-width: 400px) {
+/* small tablets / big phones */
+@media (max-width: 900px) {
   .hero {
-    padding: 70px 14px 50px;
+    /* more top space so it clears the fixed navbar */
+    padding: 120px 24px 70px;
   }
 
-  .hero__title {
-    font-size: 24px;
+  .hero__inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 36px;
   }
 
-  .hero__button {
-    max-width: 100%;
+  .hero__image {
+    justify-content: center;
   }
 
   .hero__image img {
-    max-width: 320px;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .hero__title {
+    font-size: 34px;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
+
+/* phones */
+@media (max-width: 600px) {
+  .hero {
+    /* even a bit more on very small phones */
+    padding: 130px 18px 60px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+  }
+
+  .hero__button {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero__image img {
+    max-width: 360px;
+  }
+}
+

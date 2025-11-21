@@ -1,12 +1,9 @@
+// src/components/HomePage/Hero.jsx
 import React from "react";
 import "../../appStyles/HomePageStyles/Hero.css";
 import heroIllustration from "../../assets/hero/hero-illustration.png";
 
-const Hero = () => {
-  const scrollToServices = () => {
-    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
-  };
-
+const Hero = ({ onOpenContact }) => {
   return (
     <section id="home" className="hero">
       <div className="hero__inner">
@@ -16,7 +13,7 @@ const Hero = () => {
             Provide a network for all your needs with ease and fun using NetONE
             discover interesting features from us.
           </p>
-          <button className="hero__button" onClick={scrollToServices}>
+          <button className="hero__button" onClick={onOpenContact}>
             Get Started
           </button>
         </div>

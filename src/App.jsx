@@ -20,10 +20,13 @@ import "./appStyles/AppLayout.css";
 function App() {
   const [showContact, setShowContact] = useState(false);
 
+  const openContact = () => setShowContact(true);
+  const closeContact = () => setShowContact(false);
+
   return (
     <BrowserRouter>
       {/* Navbar is common for all pages */}
-      <Navbar onOpenContact={() => setShowContact(true)} />
+      <Navbar onOpenContact={openContact} />
 
       <div className="app">
         <Routes>
@@ -32,7 +35,8 @@ function App() {
             path="/"
             element={
               <>
-                <Hero />
+                {/* Pass same handler to Hero */}
+                <Hero onOpenContact={openContact} />
                 <TaglineScroller />
                 <BannerStats />
                 <Services />
@@ -51,9 +55,7 @@ function App() {
       </div>
 
       {/* Contact popup modal (available on all routes) */}
-      {showContact && (
-        <ContactSection onClose={() => setShowContact(false)} />
-      )}
+      {showContact && <ContactSection onClose={closeContact} />}
     </BrowserRouter>
   );
 }
