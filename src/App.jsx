@@ -28,6 +28,11 @@ import AdditionalSupportServicePage from "./components/AdditionalSupportService/
 import Careers from "./components/Career/Careers";
 import "./appStyles/AppLayout.css";
 import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
+import { Manageblogs } from "./components/ManageBlogs/Manageblogs";
+import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
+import CareerCreation from "./components/careerCreation/careerCreation";
+import SmallCard from "./components/managingCareers/managingCareers";
+import CareerUpdate from "./components/careerCreation/updationCareerpage";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -135,9 +140,16 @@ function App() {
               </>
             }
           />
+                  <Route path="/createBlog" element={<CreateBlog/>}/>
+                  <Route path="/manageblogs" element={<Manageblogs/>}/>
+                  <Route path="/blog-updation" element={<UpdateBlog/>}/>
+                  <Route path="/createCareer" element={<CareerCreation/>}/>
+                  <Route path="/managecareers" element={<SmallCard/>}/>
+                  <Route path="/career-update" element={<CareerUpdate/>}/>
+
+
         </Routes>
 
-        <Route path="/createBlog" element={<CreateBlog/>}/>
       </div>
 
       <Footer />

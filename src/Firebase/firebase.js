@@ -43,27 +43,28 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-// const firebaseConfig = {
-//   apiKey: "AIzaSyAE7QYfIQPtSyT5AYxd0Ih0Nz_EnyxsNPA",
-//   authDomain: "hrms-website.firebaseapp.com",
-//   databaseURL: "https://hrms-website-default-rtdb.firebaseio.com",
-//   projectId: "hrms-website",
-//   storageBucket:  "hrms-website.appspot.com",
-//   messagingSenderId: "80513858592",
-//   appId: "1:80513858592:web:a8bc3e6ce3ddf5611bd045",
-//   measurementId: "G-HBY8R3ZF7Y",
-// };
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAar6ayUtgJ3VuM3ygNim5JKeDopoEC240",
+//   authDomain: "sapience-minds.firebaseapp.com",
+//   databaseURL: "https://sapience-minds-default-rtdb.firebaseio.com",
+//   projectId: "sapience-minds",
+//   storageBucket: "sapience-minds.firebasestorage.app",
+//   messagingSenderId: "187885069095",
+//   appId: "1:187885069095:web:0b44f9fb86622713ccff02",
+//   measurementId: "G-PF4ZD2637F"
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyAar6ayUtgJ3VuM3ygNim5JKeDopoEC240",
-  authDomain: "sapience-minds.firebaseapp.com",
-  databaseURL: "https://sapience-minds-default-rtdb.firebaseio.com",
-  projectId: "sapience-minds",
-  storageBucket: "sapience-minds.firebasestorage.app",
-  messagingSenderId: "187885069095",
-  appId: "1:187885069095:web:0b44f9fb86622713ccff02",
-  measurementId: "G-PF4ZD2637F"
+  apiKey: "AIzaSyB0Jl0OUoxsCz4wogihJ2WofJDTYDotp88",
+  authDomain: "incrediquowebsite-dc242.firebaseapp.com",
+  databaseURL: "https://incrediquowebsite-dc242-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "incrediquowebsite-dc242",
+  storageBucket: "incrediquowebsite-dc242.firebasestorage.app",
+  messagingSenderId: "612480357526",
+  appId: "1:612480357526:web:da33921a756251942cdeb7",
+  measurementId: "G-XF9SX9JTZE"
 };
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
