@@ -1,66 +1,82 @@
-.hiw {
-  margin-top: 90px;
-  padding: 55px 24px;
-  background: #ffe9f1;           /* light pink strip */
-  border-radius: 18px;
-  text-align: center;
+body {
+  background: #ffffff;
+  margin: 0;
 }
 
+/* ================= HOW IT WORKS SECTION ================= */
+
+/* TITLE */
 .hiw__title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 32px;
-  color: #1a1a1a;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 48px 0 16px;   /* perfect spacing from hero */
+  color: #333333;
 }
 
+/* PINK STRIP CONTAINER */
+.hiw {
+  background: #ffe9f1;
+  border-radius: 18px;
+  padding: 24px 0;
+  margin-top: 0;        /* no extra gap */
+}
+
+/* ROW */
 .hiw__row {
+  max-width: 1004px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  gap: 90px;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* each item */
+/* CARD */
 .hiw__card {
   display: flex;
-  gap: 14px;
-  max-width: 260px;
-  text-align: left;
-  align-items: flex-start;
+  align-items: center;
+  gap: 16px;
+  width: 298px;
 }
 
-/* dark blue square */
+/* ICON BOX */
 .hiw__icon {
   width: 56px;
   height: 56px;
-  border-radius: 14px;
   background: #03244d;
+  border-radius: 14px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-/* inline SVG icon – white strokes */
+/* SVG */
 .hiw__svg-icon {
   width: 26px;
   height: 26px;
   stroke: #ffffff;
   fill: none;
   stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
-.hiw__card h4 {
-  font-size: 15px;
+/* TEXT AREA */
+.hiw__text {
+  text-align: left;
+}
+
+/* CARD TITLE */
+.hiw__text h4 {
+  font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
-  color: #1c1c1c;
+  margin: 0 0 4px 0;
+  color: #000000;
 }
 
-.hiw__card p {
-  font-size: 13px;
-  color: #595959;
+/* CARD DESCRIPTION */
+.hiw__text p {
+  font-size: 14px;
   line-height: 1.4;
+  margin: 0;
+  color: #595959;
 }
