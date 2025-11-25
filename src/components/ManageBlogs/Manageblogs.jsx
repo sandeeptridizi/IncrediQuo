@@ -1,0 +1,125 @@
+import React, { useEffect, useState } from "react";
+import "./ManageBlogs.css";
+import { database, ref, get, remove } from "../../Firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import { HiDotsVertical } from "react-icons/hi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+export const Manageblogs = () => {
+  const [Blogs, setBlogs] = useState([]);
+  const [openPopupId, setOpenPopupId] = useState(null); // For tracking which popup is open
+  const navigate = useNavigate();
+
+  const formatDate = (isoDateString) => {
+    if (!isoDateString) return "";
+    const date = new Date(isoDateString);
+    return date.toLocaleDateString("en-GB");
+  };
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const blogRef = ref(database, "blogs");
+
+      try {
+        const snapshot = await get(blogRef);
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          const blogList = Object.keys(data).map((key) => ({
+            id: key,
+            ...data[key],
+            imageUrl: data[key].image_url || "",
+          }));
+          setBlogs(blogList);
+        }
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
+  const handleSingleBlog = (ev, id) => {
+    const cleanPath = id.replaceAll(" ", "-");
+    navigate(`/blog/${cleanPath}`, { state: ev });
+  };
+
+  const handleEdit = (data) => {
+    navigate("/blog-updation", { state: data }); // pass data to edit page
+  };
+
+  const handleDelete = async (id) => {
+    try {
+      await remove(ref(database, `blogs/${id}`));
+      setBlogs((prev) => prev.filter((blog) => blog.id !== id));
+      // alert("Blog deleted successfully.");
+      toast.success("Blog deleted successfully!.", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    } catch (error) {
+      console.error("Error deleting blog:", error);
+      // alert("Failed to delete blog.");
+      toast.error("Failed to delete blog", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
+    }
+  };
+
+  return (
+    <div className="blog_page_layer1">
+      <p className="CreateBlogPage" onClick={() => navigate("/blog-creation")}>
+        Create Blog
+      </p>
+      <div className="blog_card_outer">
+        {Blogs.map((data) => (
+          <div className="blog_card" key={data.id}>
+            <div
+              className="ThreeDots_Icon"
+              onClick={() =>
+                setOpenPopupId(openPopupId === data.id ? null : data.id)
+              }
+            >
+              <HiDotsVertical />
+              {openPopupId === data.id && (
+                <div className="popup_menu">
+                  <p onClick={() => handleEdit(data)}>Edit</p>
+                  <p onClick={() => handleDelete(data.id)}>Delete</p>
+                </div>
+              )}
+            </div>
+            <div className="blog_card_img_content">
+              <p className="blog_card_img_text">{data?.content}</p>
+            </div>
+            <img src={data.imageUrl} alt="" className="blog_img" />
+            <div className="blog_content">
+              <div className="blog_left_content">
+                <p className="blog_content_heading">{data?.title}</p>
+                <p className="blog_content_date">
+                  {formatDate(data?.created_at)}
+                </p>
+              </div>
+              <div
+                className="blog_content_right"
+                onClick={() => handleSingleBlog(data, data?.content)}
+              >
+                <p className="blog_content_right_text">know more</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <ToastContainer />
+    </div>
+  );
+};

@@ -19,6 +19,8 @@
   color: #f9fafb;
   position: relative;
   animation: contact-pop-in 0.2s ease-out;
+  left: 35%;
+
 }
 
 /* close button (X) */

@@ -1,0 +1,99 @@
+.ThreeDots_Icon {
+    position: absolute;
+    right: .5vw;
+    top: .5vw;
+    cursor: pointer;
+    font-size: 1.5vw;
+    color: rgb(95, 95, 95);
+}
+
+/* the Remaining Css From Blogs Page */
+
+.popup_menu {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    padding: 5px 10px;
+    border-radius: 4px;
+    z-index: 100;
+    right: 20px;
+    top: 0;
+}
+
+.popup_menu p {
+    font-size: 1.2vw;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.popup_menu p:hover {
+    color: #007bff;
+    border-bottom: 1px solid #007bff;
+}
+
+.CreateBlogPage {
+    border: 1px solid;
+    position: absolute;
+    right: 5vw;
+    top: -2vw;
+    font-size: 1.1vw;
+    font-weight: 600;
+    border-radius: 0.6vw;
+    background-color: #7C5CFC;
+    color: #ffff;
+    cursor: pointer;
+    padding: .5vw 1vw;
+}
+@media screen and (min-width: 320px) and (max-width: 720px) {
+    .blog_page_layer1{
+        margin-top: 10vw;
+        margin-bottom: 3vw;
+    }
+    .CreateBlogPage{
+        border: 1px solid;
+        position: absolute;
+        right: 8vw;
+        width: 30vw;
+        height: 9vw;
+        top: -6vw;
+        font-size: 4vw;
+        font-weight: 600;
+        padding: 1vw;
+        padding-left: 2.5vw;
+        border-radius: 1vw;
+        background-color: #7C5CFC;
+        color: #ffff;
+        cursor: pointer;
+    }
+    .popup_menu {
+        position: absolute;
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        padding: 5px 10px;
+        border-radius: 4px;
+        z-index: 100;
+        right: 20px;
+        top: 0;
+    }
+    
+    .popup_menu p {
+        font-size: 3.5vw;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+    }
+    
+    .popup_menu p:hover {
+        color: #007bff;
+        border-bottom: 1px solid #007bff;
+    }
+    .ThreeDots_Icon {
+        position: absolute;
+        right: .9vw;
+        top: .9vw;
+        cursor: pointer;
+        font-size: 6vw;
+        color: rgb(95, 95, 95);
+    }
+}
