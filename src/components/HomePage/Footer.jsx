@@ -1,3 +1,4 @@
+// src/components/Homepage/Footer.jsx
 import React from "react";
 import "../../appStyles/HomePageStyles/Footer.css";
 import logo from "../../assets/logo.png"; // lightning / brand icon
@@ -7,7 +8,7 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="footer-inner">
         <div className="footer-top">
-          {/* Left brand block */}
+          {/* -------- LEFT BRAND BLOCK -------- */}
           <div className="footer-brand">
             <div className="footer-logo">
               <div className="footer-logo-mark">
@@ -27,10 +28,11 @@ const Footer = () => {
             <p className="footer-copy-left">©2022 IncrediQuo Solutions</p>
           </div>
 
-          {/* Right link columns */}
+          {/* -------- RIGHT LINK COLUMNS -------- */}
           <div className="footer-links">
-            <div className="footer-column">
-              <h4>Services</h4>
+            {/* Services group – ~230px wide in Figma */}
+            <div className="footer-column footer-column--services">
+              <h4 className="footer-heading">Services</h4>
               <ul>
                 <li>Transcription</li>
                 <li>Closed Captioning &amp; Subtitling</li>
@@ -39,24 +41,21 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h4>Quikers</h4>
+            {/* Quikers group + Privacy / Terms – ~380px wide in Figma */}
+            <div className="footer-column footer-column--quikers">
+              <h4 className="footer-heading">Quikers</h4>
               <ul>
                 <li>Home Page</li>
                 <li>About Us</li>
                 <li>Careers</li>
                 <li>Blogs</li>
               </ul>
-            </div>
-          </div>
-        </div>
 
-        {/* bottom row */}
-        <div className="footer-bottom">
-          <div /> {/* empty to align right items */}
-          <div className="footer-bottom-links">
-            <span>Privacy Policy</span>
-            <span>Terms of Service</span>
+              <div className="footer-bottom-links">
+                <span>Privacy Policy</span>
+                <span>Terms of Service</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

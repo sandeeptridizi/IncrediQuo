@@ -1,0 +1,36 @@
+/* ===== PAGE WRAPPER ===== */
+.ts-page {
+  background: #ffffff;
+  min-height: 100vh;
+  /* account for fixed navbar height */
+  padding-top: 60px;
+}
+
+/* ===== MIDDLE PINK BLOB AREA ===== */
+.ts-blob {
+  margin-top: 40px;
+  margin-bottom: 80px;
+  height: 420px;
+  background: radial-gradient(circle at 20% 10%, #ffeef5 0, transparent 55%),
+    radial-gradient(circle at 80% 30%, #ffeef5 0, transparent 60%),
+    radial-gradient(circle at 40% 100%, #ffeef5 0, transparent 65%);
+  opacity: 0.9;
+}
+
+/* ===== RESPONSIVE (layout parts only) ===== */
+@media (max-width: 768px) {
+  .ts-page {
+    padding-top: 100px;
+  }
+
+  .ts-blob {
+    height: 280px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ts-blob {
+    height: 360px;
+    margin-top: 20px;
+  }
+}

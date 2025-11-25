@@ -1,17 +1,20 @@
 /* src/appStyles/HomePageStyles/Hero.css */
 
+/* ================= HERO WRAPPER ================= */
+
 .hero {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 120px 60px 100px;   /* desktop spacing */
   background-color: #ffffff;
+  padding: 120px 0 100px;            /* top & bottom like design */
 }
 
-/* fade/slide-in for hero section */
 .hero__inner {
-  max-width: 1320px;
   width: 100%;
+  max-width: 1320px;                 /* same layout width as rest of page */
+  padding: 0 60px;                   /* side padding – matches navbar */
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,36 +25,53 @@
   animation: heroFadeUp 0.8s ease-out 0.15s forwards;
 }
 
-/* LEFT SIDE */
+/* ================= LEFT SIDE ================= */
+
 .hero__content {
-  flex: 1;
+  flex: 0 0 555px;                   /* Figma width for text block */
+  max-width: 555px;
+  font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
 .hero__title {
-  font-size: 48px;
-  line-height: 1.25;
+  width: 100%;
+  max-width: 555px;                  /* 555 × 140 in Figma */
+  font-size: 50px;
+  line-height: 70px;                 /* as in Figma */
   font-weight: 700;
-  color: #08153a;
-  margin-bottom: 22px;
+  color: #0b132a;
+  margin: 0 0 24px;
 }
 
 .hero__subtitle {
+  width: 100%;
+  max-width: 555px;                  /* 555 × 60 in Figma */
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 30px;
+  font-weight: 400;
   color: #4b5563;
-  max-width: 460px;
-  margin-bottom: 32px;
+  margin: 0 0 32px;
 }
 
+/* button: 250 × 60, radius 10px */
 .hero__button {
-  padding: 14px 38px;
-  border-radius: 999px;
+  width: 250px;
+  height: 60px;
+  border-radius: 10px;
   border: none;
   background-color: #08153a;
   color: #ffffff;
-  font-size: 15px;
+  font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   transition:
     background-color 0.25s ease,
     transform 0.25s ease,
@@ -69,29 +89,31 @@
   box-shadow: none;
 }
 
-/* RIGHT SIDE */
+/* ================= RIGHT SIDE ================= */
+
 .hero__image {
-  flex: 1;
+  flex: 0 0 611px;                   /* Figma width for illustration */
+  max-width: 611px;
   display: flex;
-  justify-content: flex-end;   /* right on desktop */
-  align-items: center;         /* vertical centering all viewports */
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .hero__image img {
   width: 100%;
-  max-width: 580px;
+  max-width: 611px;                  /* 611 × 451 */
   height: auto;
-  display: block;              /* removes inline gaps */
+  display: block;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* light hover interaction on hero illustration */
 .hero__image img:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.22);
 }
 
-/* hero intro animation */
+/* ================= ANIMATION ================= */
+
 @keyframes heroFadeUp {
   from {
     opacity: 0;
@@ -105,102 +127,55 @@
 
 /* ============== RESPONSIVE ============== */
 
-/* medium screens / tablets */
+/* tablets */
 @media (max-width: 1024px) {
   .hero {
-    padding: 100px 40px 80px;
+    padding: 100px 0 80px;
   }
 
   .hero__inner {
+    padding: 0 40px;
     gap: 40px;
   }
 
   .hero__title {
     font-size: 40px;
+    line-height: 56px;
   }
 
-  .hero__subtitle {
+  .hero__image {
+    flex-basis: 520px;
     max-width: 520px;
   }
 
   .hero__image img {
-    max-width: 500px;          /* slightly smaller on tablet */
+    max-width: 520px;
   }
 }
 
 /* small tablets / big phones */
 @media (max-width: 900px) {
   .hero {
-    padding: 90px 24px 70px;
+    padding: 120px 0 70px;          /* more top to clear navbar */
   }
 
   .hero__inner {
+    padding: 0 24px;
     flex-direction: column-reverse;
     text-align: center;
     gap: 36px;
   }
 
-  .hero__image {
-    justify-content: center;   /* center image horizontally */
-  }
-
-  .hero__image img {
-    max-width: 440px;
-    margin: 0 auto;            /* ensure perfect centering */
-  }
-
-  .hero__title {
-    font-size: 34px;
-  }
-
+  .hero__content,
+  .hero__title,
   .hero__subtitle {
-    font-size: 15px;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* phones */
-@media (max-width: 600px) {
-  .hero {
-    padding: 80px 18px 60px;
-  }
-
-  .hero__title {
-    font-size: 28px;
-  }
-
-  .hero__subtitle {
-    font-size: 14px;
-  }
-
-  .hero__button {
-    width: 100%;
-    max-width: 260px;
-  }
-
-  .hero__image img {
-    max-width: 360px;          /* tighter for small phones */
-  }
-}
-
-/* very small phones */
-/* small tablets / big phones */
-@media (max-width: 900px) {
-  .hero {
-    /* more top space so it clears the fixed navbar */
-    padding: 120px 24px 70px;
-  }
-
-  .hero__inner {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 36px;
   }
 
   .hero__image {
     justify-content: center;
+    flex-basis: auto;
+    max-width: 440px;
   }
 
   .hero__image img {
@@ -210,29 +185,32 @@
 
   .hero__title {
     font-size: 34px;
+    line-height: 46px;
   }
 
   .hero__subtitle {
     font-size: 15px;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
 /* phones */
 @media (max-width: 600px) {
   .hero {
-    /* even a bit more on very small phones */
-    padding: 130px 18px 60px;
+    padding: 130px 0 60px;
+  }
+
+  .hero__inner {
+    padding: 0 18px;
   }
 
   .hero__title {
     font-size: 28px;
+    line-height: 38px;
   }
 
   .hero__subtitle {
     font-size: 14px;
+    line-height: 26px;
   }
 
   .hero__button {
@@ -244,4 +222,3 @@
     max-width: 360px;
   }
 }
-

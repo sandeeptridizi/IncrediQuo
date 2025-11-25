@@ -1,0 +1,66 @@
+.hiw {
+  margin-top: 90px;
+  padding: 55px 24px;
+  background: #ffe9f1;           /* light pink strip */
+  border-radius: 18px;
+  text-align: center;
+}
+
+.hiw__title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+}
+
+.hiw__row {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+/* each item */
+.hiw__card {
+  display: flex;
+  gap: 14px;
+  max-width: 260px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* dark blue square */
+.hiw__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #03244d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* inline SVG icon – white strokes */
+.hiw__svg-icon {
+  width: 26px;
+  height: 26px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hiw__card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1c1c1c;
+}
+
+.hiw__card p {
+  font-size: 13px;
+  color: #595959;
+  line-height: 1.4;
+}

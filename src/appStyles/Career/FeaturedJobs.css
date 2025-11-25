@@ -1,0 +1,114 @@
+.featured {
+  margin-top: 80px;
+}
+
+.featured__title {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* list container */
+.featured__list {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* each row card */
+.jobcard {
+  background: #ffe9f1;              /* light pink row */
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* LEFT: title + location inline */
+.jobcard__left {
+  display: flex;
+  align-items: center;
+  gap: 32px;                         /* space between title and location */
+  flex: 1;
+  white-space: nowrap;               /* keep them on one line */
+}
+
+.jobcard__title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;                         /* no bottom margin */
+  color: #191919;
+}
+
+/* location group */
+.jobcard__meta-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #222222;
+}
+
+/* location icon styling */
+.jobcard__loc-icon {
+  width: 14px;
+  height: 14px;
+  stroke: #000000;
+  fill: none;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* RIGHT: buttons */
+.jobcard__right {
+  display: flex;
+  gap: 12px;
+}
+
+.job-btn {
+  padding: 9px 22px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+/* dark blue filled button */
+.job-btn--primary {
+  background: #03244d;
+  color: #ffffff;
+  border-color: #03244d;
+}
+
+/* outline button */
+.job-btn--outline {
+  background: transparent;
+  color: #3c3c3c;
+  border-color: #d3c0c4;
+}
+
+/* responsive: stack buttons below text on mobile */
+@media (max-width: 768px) {
+  .jobcard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .jobcard__left {
+    width: 100%;
+    white-space: normal; /* allow wrapping on small screens */
+  }
+
+  .jobcard__right {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+}

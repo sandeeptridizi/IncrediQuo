@@ -1,203 +1,153 @@
+/* SECTION */
 .section.industries {
-  padding: 40px 60px 60px;
-  background-color: #fdf9fb;
+  padding: 60px 60px 70px;
+  background-color: #ffffff;
 }
 
+/* TITLE  —— 270 × 40 / 40px Bold centered */
 .industries-title {
-  text-align: center;
-  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
   font-weight: 700;
-  color: #08153a;
-  margin-bottom: 24px;
+  line-height: 40px;
+  width: 270px;
+  height: 40px;
+  text-align: center;
+  color: #0b1535;
+  margin: 0 auto 80px;
 }
 
+
+/* GRID —— 4 cards */
 .industries-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  align-items: stretch;
+  display: flex;
+  justify-content: space-between;
+  gap: 22px;
 }
 
-/* CARD – soft torn-paper edges like reference */
-
+/* CARD —— 263 × 334px */
 .industry-card {
-  position: relative;
-  background-color: #ffe8f0;   /* light pink card like design */
-  min-height: 310px;
-  padding: 32px 22px 28px;
+  width: 263px;
+  height: 334px;
+  background-color: #ffe8f0;
   border-radius: 24px;
-  box-shadow: 0 20px 36px rgba(15, 23, 42, 0.16);
-
-  /* subtle, small irregular edges */
-  clip-path: polygon(
-    /* top edge – tiny bumps */
-    0% 7%, 3% 3%, 6% 6%, 9% 3%, 12% 6%, 15% 3%, 18% 6%, 21% 3%,
-    24% 6%, 27% 3%, 30% 6%, 33% 3%, 36% 6%, 39% 3%, 42% 6%, 45% 3%,
-    48% 6%, 51% 3%, 54% 6%, 57% 3%, 60% 6%, 63% 3%, 66% 6%, 69% 3%,
-    72% 6%, 75% 3%, 78% 6%, 81% 3%, 84% 6%, 87% 3%, 90% 6%, 93% 3%,
-    96% 6%, 100% 7%,
-
-    /* right edge – slight wobble */
-    100% 20%, 97% 23%, 100% 26%, 97% 29%, 100% 32%, 97% 35%,
-    100% 38%, 97% 41%, 100% 44%, 97% 47%, 100% 50%, 97% 53%,
-    100% 56%, 97% 59%, 100% 62%, 97% 65%, 100% 68%, 97% 71%,
-    100% 74%, 97% 77%, 100% 80%, 97% 83%, 100% 86%, 97% 89%,
-
-    /* bottom edge – tiny bumps */
-    100% 93%, 97% 97%, 94% 94%, 91% 97%, 88% 94%, 85% 97%, 82% 94%, 79% 97%,
-    76% 94%, 73% 97%, 70% 94%, 67% 97%, 64% 94%, 61% 97%, 58% 94%, 55% 97%,
-    52% 94%, 49% 97%, 46% 94%, 43% 97%, 40% 94%, 37% 97%, 34% 94%, 31% 97%,
-    28% 94%, 25% 97%, 22% 94%, 19% 97%, 16% 94%, 13% 97%, 10% 94%, 7% 97%,
-    4% 94%, 0% 97%,
-
-    /* left edge – slight wobble */
-    0% 89%, 3% 86%, 0% 83%, 3% 80%, 0% 77%, 3% 74%,
-    0% 71%, 3% 68%, 0% 65%, 3% 62%, 0% 59%, 3% 56%,
-    0% 53%, 3% 50%, 0% 47%, 3% 44%, 0% 41%, 3% 38%,
-    0% 35%, 3% 32%, 0% 29%, 3% 26%, 0% 23%, 3% 20%, 0% 17%
-  );
-
-  /* 🔹 motion + hover */
+  padding: 34px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
-  opacity: 0;
-  transform: translateY(16px);
-  animation: industryCardFadeUp 0.7s ease-out forwards;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
 }
 
-/* staggered animation for each card */
-.industry-card:nth-child(1) {
-  animation-delay: 0.05s;
-}
-.industry-card:nth-child(2) {
-  animation-delay: 0.12s;
-}
-.industry-card:nth-child(3) {
-  animation-delay: 0.19s;
-}
-.industry-card:nth-child(4) {
-  animation-delay: 0.26s;
-}
-
-/* hover: gentle lift + stronger shadow */
+/* hover */
 .industry-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 40px rgba(15, 23, 42, 0.26);
+  box-shadow: 0 24px 42px rgba(15, 23, 42, 0.26);
 }
 
-/* top content */
-.industry-card__top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-/* icon container */
+/* ICON —— 60 × 60px */
 .industry-card__icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 12px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-/* icon hover (slight pop) */
-.industry-card:hover .industry-card__icon {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.26);
-}
-
 .industry-card__icon img {
-  width: 32px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
   object-fit: contain;
 }
 
+/* hover icon pop */
+.industry-card:hover .industry-card__icon {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.23);
+}
+
+/* NUMBER (01 / 02 / 03 / 04) */
 .industry-card__number {
-  font-size: 26px;
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-size: 28px;
   font-weight: 700;
   color: #f5cad8;
 }
 
+/* TITLE —— 159 × 52px (Raleway 800 / 20px) */
 .industry-card__title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #08153a;
-  margin: 0 0 8px;
+  width: 159px;
+  height: 52px;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  color: #0b1535;
+  margin-bottom: 10px;
 }
 
+/* UNDERLINE */
 .industry-card__underline {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .industry-card__underline .line-main {
   width: 48px;
   height: 4px;
-  border-radius: 999px;
   background-color: #ff3b5c;
-  transition: width 0.25s ease, background-color 0.25s ease;
+  border-radius: 999px;
+  display: inline-block;
+  transition: width 0.25s ease;
 }
 
 .industry-card__underline .line-sub {
   width: 16px;
   height: 4px;
-  border-radius: 999px;
   background-color: #ff9fb2;
-  transition: width 0.25s ease, background-color 0.25s ease;
+  border-radius: 999px;
+  display: inline-block;
+  margin-left: 4px;
+  transition: width 0.25s ease;
 }
 
-/* underline animates slightly on hover */
-.industry-card:hover .industry-card__underline .line-main {
+/* hover underline grows */
+.industry-card:hover .line-main {
   width: 56px;
 }
-
-.industry-card:hover .industry-card__underline .line-sub {
+.industry-card:hover .line-sub {
   width: 22px;
 }
 
+/* DESCRIPTION —— 203 × 102px */
 .industry-card__desc {
-  font-size: 13px;
-  line-height: 1.6;
+  width: 203px;
+  height: 102px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
   color: #374151;
-  margin: 0;
+  margin-top: auto; /* Push text down naturally */
 }
 
-/* fade-up animation keyframes */
-@keyframes industryCardFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Responsive */
-
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .industries-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 26px;
   }
 }
 
 @media (max-width: 640px) {
   .section.industries {
-    padding: 30px 20px 40px;
-  }
-
-  .industries-grid {
-    grid-template-columns: 1fr;
+    padding: 40px 20px 50px;
   }
 }

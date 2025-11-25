@@ -1,0 +1,97 @@
+/* ===========================
+   HOW SECTION (IncrediQuo)
+   =========================== */
+
+.how {
+  background: #ffe9ec;          /* Figma: #FFE9EC */
+  padding: 80px 0 100px;        /* height spacing similar to 643px block */
+}
+
+/* whole content inside the pink rectangle */
+.how__inner {
+  max-width: 1441px;            /* Figma rectangle width */
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ---------- Heading ---------- */
+.how__inner h2 {
+  width: 868px;                 /* Figma: 868 x 62 */
+  margin: 0 auto 60px;          /* centered, gap above items */
+  font-size: 52px;              /* Heading2, size 52 */
+  line-height: 62px;            /* line height 62 */
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ---------- Items row container ---------- */
+.how__grid {
+  width: 1260px;                /* Figma items group: 1260 x 235 */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* each item box (icon + title + text) */
+.how__item {
+  width: 400px;                 /* Figma info width: 400 */
+  text-align: center;
+}
+
+/* black rounded square number: 60 x 62, radius 7 */
+.how__number {
+  width: 60px;                  /* Figma: 60 x 62 */
+  height: 62px;
+  border-radius: 7px;
+  background: #111827;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0 auto 12px;
+}
+
+/* "Lorem Ipsum" title */
+.how__item h3 {
+  font-size: 24px;              /* Body-Text/24-SemiBold */
+  line-height: 34px;            /* line height 34 */
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+/* description paragraph */
+.how__item p {
+  width: 400px;                 /* Figma text frame width */
+  margin: 0 auto;
+  font-size: 18px;              /* Body-Text/18-Regular */
+  line-height: 26px;            /* line height 26 */
+  font-weight: 400;
+  color: #4b5563;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .how__inner h2 {
+    width: 100%;
+    font-size: 32px;
+    line-height: 40px;
+    padding: 0 24px;
+  }
+
+  .how__grid {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .how__item,
+  .how__item p {
+    width: 100%;
+  }
+}

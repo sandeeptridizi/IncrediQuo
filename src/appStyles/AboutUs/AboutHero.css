@@ -1,0 +1,67 @@
+.about-hero {
+  background: #ffffff;
+ padding: 120px 0 100px;  /* Matches top spacing from Figma */
+}
+
+.about-hero__inner {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 0 0; /* No side padding — aligns to Figma */
+}
+
+/* LEFT TEXT */
+.about-hero__text {
+  width: 548px;  /* Title container width */
+  margin-left: 123px; /* Left alignment same as Figma */
+}
+
+.about-hero__text h1 {
+  font-size: 62px;
+  line-height: 72px;
+  font-weight: 700;
+  color: #001a42;
+  margin-bottom: 32px;
+}
+
+.about-hero__text p {
+  width: 615px; /* Matches Figma */
+  height: 60px;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 45px;
+}
+
+/* BUTTON */
+.about-hero__button {
+  width: 360px;
+  height: 46px;
+  border: none;
+  border-radius: 30px;
+  background: #001f5b;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.about-hero__button:hover {
+  background: #00318c;
+  transform: translateY(-1px);
+}
+
+/* RIGHT IMAGE */
+.about-hero__image img {
+  width: 648px;
+  height: 536px;
+  object-fit: cover;
+  margin-right: 123px; /* Align symmetrical */
+}

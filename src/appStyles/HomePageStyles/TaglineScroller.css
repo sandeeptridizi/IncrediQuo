@@ -1,163 +1,95 @@
-/* src/appStyles/HomePageStyles/TaglineScroller.css */
-
+/* =============== TAGLINE SECTION =============== */
 .tagline-section {
   width: 100%;
   background: #ffffff;
-  padding: 32px 0;
+  padding: 42px 0;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Figma center alignment */
+  gap: 18px; /* exact gap between lines */
 }
 
-/* each line container */
+/* each scrolling row */
 .tagline-row {
+  width: 1560px;        /* Figma width */
+  height: 61px;        /* Figma height */
   position: relative;
   overflow: hidden;
-  padding: 6px 0;
 }
 
-/* vertical gap between the 3 lines */
-.tagline-row + .tagline-row {
-  margin-top: 10px;
-}
-
-/* the element that actually scrolls */
+/* SCROLL TRACK */
 .tagline-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: marquee-left 18s linear infinite;
+  animation: marquee-left 22s linear infinite;
 }
 
-/* top line a bit lighter and italic like in design */
+/* universal font style */
 .tagline-text {
-  font-size: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
   font-weight: 500;
   font-style: italic;
+  line-height: 100%;
   letter-spacing: 0.04em;
-  margin-right: 60px;
-  display: inline-flex;
-  align-items: center;
+  margin-right: 70px; /* spacing between duplicates */
 }
 
-/* grey text rows (top & bottom) */
+/* Top + Bottom muted lines */
 .tagline-text--muted {
   color: rgba(0, 0, 0, 0.35);
+  opacity: 0.40; /* same as Figma */
 }
 
-/* middle gradient text */
+/* Middle gradient line */
 .tagline-text--highlight {
   background: linear-gradient(90deg, #f4c27d, #ff9ea1, #7ca7ff);
   -webkit-background-clip: text;
   color: transparent;
 }
 
-/* little sound-wave dots at right end like screenshot */
+/* decorative right end wave */
 .tagline-row::after {
   content: "▮▯▮▯▮";
   position: absolute;
-  right: 40px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 10px;
+  font-size: 11px;
   color: #0d274d;
-  opacity: 0.5;
+  opacity: 0.40;
 }
 
-/* you can also add a faint one on the left if you like:
-.tagline-row::before {
-  content: "▮▯▮▯▮";
-  position: absolute;
-  left: 40px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 10px;
-  color: #fcdedc;
-  opacity: 0.4;
-}
-*/
-
-/* ----- animations ----- */
-
-/* row 1: left side */
+/* ANIMATION SPEED PER ROW */
 .tagline-row--top .tagline-track {
-  animation: marquee-left 24s linear infinite;
+  animation-duration: 26s;
 }
-
-/* row 2: slightly faster, same direction */
 .tagline-row--middle .tagline-track {
-  animation: marquee-left 20s linear infinite;
+  animation-duration: 22s;
 }
-
-/* row 3: reverse direction for a nice effect */
 .tagline-row--bottom .tagline-track {
-  animation: marquee-right 26s linear infinite;
+  animation: marquee-right 28s linear infinite;
 }
 
+/* KEYFRAMES */
 @keyframes marquee-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
-
 @keyframes marquee-right {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
-/* ----- responsive tweaks ----- */
+/* ---------------- MOBILE ---------------- */
 @media (max-width: 900px) {
+  .tagline-row {
+    width: 900px;
+    height: 35px;
+  }
   .tagline-text {
-    font-size: 18px;
+    font-size: 22px;
     margin-right: 40px;
   }
-
-  .tagline-row::after {
-    right: 16px;
-  }
 }
-
-.tagline-section {
-  width: 100%;
-  background: #ffffff;
-  padding: 32px 0;
-  overflow: hidden;
-
-  /* fade up intro */
-  opacity: 0;
-  transform: translateY(16px);
-  animation: taglineFadeIn 0.75s ease-out forwards;
-}
-
-@keyframes taglineFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(26px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.tagline-text {
-  font-size: 40px;
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  margin-right: 60px;
-  display: inline-flex;
-  align-items: center;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-/* hover effect — slight scale */
-.tagline-text:hover {
-  transform: scale(1.035);
-  opacity: 0.9;
-}
-
