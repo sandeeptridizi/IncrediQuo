@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 const ContactSection = ({ onClose }) => {
   const [formData, setFormData] = useState({
     name: "",
-    emal: "",
+    email: "",
     phonenumber: "",
     message: "",
     sourcepage: "Contact Us",
@@ -23,7 +23,8 @@ const ContactSection = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  const scriptURL ="https://script.google.com/macros/s/AKfycbzszz_X76R31H3OvSukIj23f4bIOIe3yxLIXyKyyXd_Tqr2J16q3A3jUbyZkEqcr0VCwQ/exec";
+  const scriptURL ="https://script.google.com/macros/s/AKfycbwb3HXs2yU9EWlCXRTag8giIxwh8WIh6XN86UDMjRBM9-oDZM6vbbeEvTIaal-G8Eu4nA/exec";
+  // "https://script.google.com/macros/s/AKfycbzszz_X76R31H3OvSukIj23f4bIOIe3yxLIXyKyyXd_Tqr2J16q3A3jUbyZkEqcr0VCwQ/exec";
 
   try {
       const formPayload = new FormData();
@@ -34,6 +35,7 @@ const ContactSection = ({ onClose }) => {
         method: "POST",
         body: formPayload, // No 'Content-Type' header for FormData
       });
+      console.log(response, "responsedata")
       if (response.ok) {
         // alert("Form submitted successfully!");
         toast.success("Form submitted successfully!", {
@@ -46,7 +48,7 @@ const ContactSection = ({ onClose }) => {
         });
                 setFormData({
           name: "",
-          emal: "",
+          email: "",
           phonenumber: "",
           message: "",
         });
@@ -100,12 +102,12 @@ const ContactSection = ({ onClose }) => {
           />
 
           <input
-            type="emal"
-            name="emal"
-            id="emal"
-            placeholder="emal"
+            type="email"
+            name="email"
+            id="email"
+            placeholder="email"
             className="contact-input"
-            value={formData.emal}
+            value={formData.email}
             onChange={handleChange}
             required
           />
