@@ -1,7 +1,6 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
-import featureIllustration from "../../assets/features/Team-amico.svg";
-
+import featureIllustration from "../../assets/features/Group 1304.png";
 const FeatureSection = () => {
   return (
     <section className="feature-section">

@@ -26,11 +26,19 @@ const BannerStats = () => {
           </button>
         </div>
 
-        <div className="banner__stats">
-          <span>24 Hours</span>
-          <span>Real-time</span>
-          <span>Custom / As per Client Requirements</span>
-        </div>
+       <div className="banner__ticker">
+  <div className="banner__ticker-track">
+    <span>24 Hours</span>
+    <span>Real-time</span>
+    <span>Custom / As per Client Requirement</span>
+
+    {/* duplicate items so the loop looks continuous */}
+    <span>24 Hours</span>
+    <span>Real-time</span>
+    <span>Custom / As per Client Requirement</span>
+  </div>
+</div>
+
       </div>
     </section>
   );

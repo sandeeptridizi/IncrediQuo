@@ -1,0 +1,133 @@
+.ts-usercentric {
+  padding: 80px 0 60px;
+  background: radial-gradient(circle at 60% 0%, #fff3f7 0, transparent 55%);
+}
+
+.ts-usercentric__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ts-usercentric__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.ts-usercentric__subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* === GRID === */
+.ts-usercentric__grid {
+  display: grid;
+  gap: 40px;
+}
+
+.ts-usercentric__grid--top {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.ts-usercentric__grid--bottom {
+  margin-top: 32px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* vertical separators on top row */
+.ts-usercentric__grid--top .ts-usercentric__item:not(:last-child) {
+  border-right: 1px solid rgba(148, 163, 184, 0.4);
+  padding-right: 32px;
+}
+.ts-usercentric__grid--top .ts-usercentric__item:not(:first-child) {
+  padding-left: 32px;
+}
+
+/* cards */
+.ts-usercentric__item {
+  text-align: left;
+}
+
+/* ICON WRAPPER */
+.ts-usercentric__icon {
+  margin-bottom: 14px;
+}
+
+.ts-usercentric__icon-svg {
+  width: 32px;
+  height: 32px;
+  stroke: #111827;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* bottom icons slightly smaller / lighter */
+.ts-usercentric__icon--small .ts-usercentric__icon-svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* TEXT */
+.ts-usercentric__item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.ts-usercentric__item p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* horizontal divider between rows */
+.ts-usercentric__divider {
+  margin: 40px auto 0;
+  max-width: 780px;
+  border: none;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .ts-usercentric__grid--top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ts-usercentric__grid--top .ts-usercentric__item {
+    border-right: none;
+    padding: 0;
+  }
+
+  .ts-usercentric__divider {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-usercentric {
+    padding: 48px 16px;
+  }
+
+  .ts-usercentric__grid--top,
+  .ts-usercentric__grid--bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-usercentric__grid--top .ts-usercentric__item {
+    text-align: center;
+  }
+
+  .ts-usercentric__grid--bottom .ts-usercentric__item {
+    text-align: center;
+  }
+}

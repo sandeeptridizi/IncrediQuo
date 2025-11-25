@@ -1,6 +1,6 @@
 // src/App.jsx
-import React, { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState, useRef } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/HomePage/Navbar";
 import Hero from "./components/HomePage/Hero";
@@ -15,27 +15,50 @@ import Footer from "./components/HomePage/Footer";
 import ContactSection from "./components/HomePage/ContactSection";
 import PostDetails from "./components/HomePage/PostDetails";
 
+import AboutPage from "./components/AboutUs/AboutPage";
+import ContactPage from "./components/ContactUs/ContactPage";
+
+// service pages
+import TranscriptionServicePage from "./components/TranscriptionService/TranscriptionServicePage";
+import ClosedCaptionServicePage from "./components/ClosedCaptionService/ClosedCaptionServicePage";
+import SummarizationServicePage from "./components/SummarizationService/SummarizationServicePage";
+import AdditionalSupportServicePage from "./components/AdditionalSupportService/AdditionalSupportServicePage";
+
+// careers page
+import Careers from "./components/Career/Careers";
+
 import "./appStyles/AppLayout.css";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
+  const servicesRef = useRef(null);
 
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
 
+  // called when "Our Services" clicked in Navbar (kept for home scrolling)
+  const handleOpenServices = () => {
+    if (servicesRef.current?.openFirstService) {
+      servicesRef.current.openFirstService();
+    }
+
+    const section = document.getElementById("services");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <BrowserRouter>
-      {/* Navbar is common for all pages */}
-      <Navbar onOpenContact={openContact} />
+    <>
+      <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} />
 
       <div className="app">
         <Routes>
-          {/* Home page */}
+          {/* HOME PAGE */}
           <Route
             path="/"
             element={
               <>
-                {/* Pass same handler to Hero */}
                 <Hero onOpenContact={openContact} />
                 <TaglineScroller />
                 <BannerStats />
@@ -44,19 +67,81 @@ function App() {
                 <Industries />
                 <LatestPosts />
                 <CTA />
-                <Footer />
               </>
             }
           />
 
-          {/* Post details page */}
+          {/* ABOUT PAGE */}
+          <Route path="/about" element={<AboutPage />} />
+
+          {/* CONTACT PAGE */}
+          <Route path="/contact" element={<ContactPage />} />
+
+          {/* CAREERS PAGE */}
+          <Route
+            path="/careers"
+            element={
+              <>
+                <Careers />
+                {/* optional CTA under careers page, remove if you don't want */}
+                
+              </>
+            }
+          />
+
+          {/* POST DETAILS PAGE */}
           <Route path="/post/:id" element={<PostDetails />} />
+
+          {/* TRANSCRIPTION SERVICE PAGE */}
+          <Route
+            path="/services/transcription"
+            element={
+              <>
+                <TranscriptionServicePage />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* CLOSED CAPTIONING & SUBTITLING PAGE */}
+          <Route
+            path="/services/closed-captioning"
+            element={
+              <>
+                <ClosedCaptionServicePage />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* SUMMARIZATION SERVICE PAGE */}
+          <Route
+            path="/services/summarization"
+            element={
+              <>
+                <SummarizationServicePage />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* ADDITIONAL SUPPORT SERVICE PAGE */}
+          <Route
+            path="/services/additional-support"
+            element={
+              <>
+                <AdditionalSupportServicePage />
+                <CTA />
+              </>
+            }
+          />
         </Routes>
       </div>
 
-      {/* Contact popup modal (available on all routes) */}
+      <Footer />
+
       {showContact && <ContactSection onClose={closeContact} />}
-    </BrowserRouter>
+    </>
   );
 }
 

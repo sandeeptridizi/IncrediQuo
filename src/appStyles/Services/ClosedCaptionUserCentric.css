@@ -1,0 +1,94 @@
+.cc-usercentric {
+  padding: 80px 0 70px;
+  /* big soft pink arc behind the cards */
+  background: radial-gradient(circle at 50% 140%, #fff3f7 0, transparent 60%);
+}
+
+.cc-usercentric__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cc-usercentric__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.cc-usercentric__subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* 3-column grid */
+.cc-usercentric__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* items */
+.cc-usercentric__item {
+  text-align: center;
+  padding: 0 32px;
+  position: relative;
+}
+
+/* vertical separators between items (only on desktop) */
+.cc-usercentric__item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 0;
+  width: 1px;
+  height: 150px;
+  background: rgba(148, 163, 184, 0.4);
+}
+
+/* ICONS */
+.cc-usercentric__icon {
+  margin-bottom: 18px;
+}
+
+.cc-usercentric__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #111827;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* TEXT */
+.cc-usercentric__item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.cc-usercentric__item p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .cc-usercentric__grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .cc-usercentric__item {
+    padding: 0;
+  }
+
+  .cc-usercentric__item::after {
+    display: none;
+  }
+}

@@ -11,8 +11,6 @@
   padding: 20px 70px;
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle shadow */
-
-  /* subtle fade-down on load */
   animation: navbarFadeDown 0.6s ease-out;
 }
 
@@ -36,7 +34,6 @@
   font-size: 18px;
   font-weight: 700;
   color: #022447;
-
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -66,7 +63,7 @@
 
 .navbar__links a {
   position: relative;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 500;
   color: #022447;
   text-decoration: none;
@@ -100,7 +97,7 @@
   border-radius: 999px;
   background: #022447;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   border: none;
   cursor: pointer;
@@ -191,4 +188,84 @@
     column-gap: 18px;
     row-gap: 6px;
   }
+}
+
+/* ===== DROPDOWN (Our Services) ===== */
+
+/* ===== DROPDOWN (Our Services) ===== */
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown__title {
+  position: relative; /* for underline pseudo-element */
+  font-size: 15px;
+  font-weight: 500;
+  color: #022447;
+  transition: color 0.25s ease;
+}
+
+/* underline effect same as normal links */
+.dropdown__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background: #ff6a7a;
+  transition: width 0.25s ease;
+}
+
+.dropdown:hover .dropdown__title {
+  color: #ff6a7a;
+}
+
+.dropdown:hover .dropdown__title::after {
+  width: 100%;
+}
+
+/* dropdown menu panel */
+.dropdown__menu {
+  position: absolute;
+  top: calc(100% + 10px);   /* directly under the title – no gap */
+  left: 50%;
+  transform: translate(-50%, 8px);  /* small initial offset for animation */
+  background: #00244b;
+  padding: 32px;
+  border-radius: 26px;
+  width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* show menu on hover – stays open while mouse is inside */
+.dropdown:hover .dropdown__menu,
+.dropdown__menu:hover {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+/* menu options (base style) */
+.dropdown__menu a {
+  font-size: 20px;
+  font-weight: 450;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 14px 18px;      /* keep space same for all */
+  border-radius: 14px;     /* so hover has smooth pill */
+}
+
+/* hovered option turns pink */
+.dropdown__menu a:hover {
+  background: #ffe8f2;
+  color: #00244b;
 }

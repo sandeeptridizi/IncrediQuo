@@ -1,0 +1,113 @@
+.contact-newsletter {
+  position: relative;
+  padding: 90px 0 120px;
+  background: #ffffff;
+}
+
+/* dotted triangle top-left */
+.contact-newsletter__dots {
+  position: absolute;
+  top: 75px;        /* ↓ moved closer to text */
+  left: 150px;      /* → moved slightly toward center */
+  width: 115px;
+  height: 115px;
+  background-image: radial-gradient(#111827 1.3px, transparent 1.3px);
+  background-size: 10px 10px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  opacity: 0.9;
+}
+
+
+.contact-newsletter__inner {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+/* OVERLINE (bigger & stronger) */
+.contact-newsletter__overline {
+  font-size: 15px;
+  letter-spacing: 0.26em;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+}
+
+/* description text — larger */
+.contact-newsletter__title {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #4b5563;
+  margin-bottom: 34px;
+}
+
+/* FORM — larger and wider */
+.contact-newsletter__form {
+  display: flex;
+  justify-content: center;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* dark navy input */
+.contact-newsletter__input {
+  flex: 1;
+  padding: 14px 22px;
+  border-radius: 999px 0 0 999px;
+  border: none;
+  background: #001f5b;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.contact-newsletter__input::placeholder {
+  color: #e5e7eb;
+  font-size: 15px;
+}
+
+/* pink button */
+.contact-newsletter__button {
+  padding: 14px 26px;
+  border-radius: 0 999px 999px 0;
+  border: none;
+  background: #ffe4ec;
+  color: #001f5b;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.contact-newsletter__button:hover {
+  background: #ffcfe0;
+  transform: translateY(-1px);
+}
+
+/* responsive */
+@media (max-width: 768px) {
+  .contact-newsletter {
+    padding: 70px 0 90px;
+  }
+
+  .contact-newsletter__dots {
+    top: 30px;
+    left: 20px;
+    width: 75px;
+    height: 75px;
+  }
+
+  .contact-newsletter__form {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  .contact-newsletter__input,
+  .contact-newsletter__button {
+    border-radius: 999px;
+    padding: 14px 18px;
+  }
+}

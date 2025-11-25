@@ -1,30 +1,46 @@
 // src/components/HomePage/Navbar.jsx
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
-import Logo from "../../assets/logo.png"; // correct logo
+import Logo from "../../assets/logo.png";
 
-const Navbar = ({ onOpenContact }) => {
+const Navbar = () => {
   return (
     <header className="navbar">
       {/* LEFT: logo + text */}
-      <div className="navbar__logo">
+      <Link to="/" className="navbar__logo">
         <img src={Logo} alt="Logo" />
         <span>LogoIpsum</span>
-      </div>
+      </Link>
 
       {/* CENTER: links */}
       <nav className="navbar__links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Our Services</a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+
+        {/* Our Services dropdown */}
+        <div className="dropdown">
+          <span className="dropdown__title">Our Services</span>
+          <div className="dropdown__menu">
+            <Link to="/services/transcription">Transcription Services</Link>
+            <Link to="/services/closed-captioning">
+              Closed Captioning &amp; Subtitling
+            </Link>
+            <Link to="/services/summarization">Summarization</Link>
+            <Link to="/services/additional-support">Additional Support</Link>
+          </div>
+        </div>
+
         <a href="#blogs">Blogs</a>
-        <a href="#careers">Careers</a>
+
+        {/* 🔥 Careers link updated */}
+        <Link to="/careers">Careers</Link>
       </nav>
 
-      {/* RIGHT: Contact Us -> opens modal */}
-      <button className="navbar__button" onClick={onOpenContact}>
+      {/* RIGHT: Contact Us goes to /contact */}
+      <Link to="/contact" className="navbar__button">
         Contact Us
-      </button>
+      </Link>
     </header>
   );
 };

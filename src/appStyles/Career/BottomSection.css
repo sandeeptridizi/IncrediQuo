@@ -1,0 +1,18 @@
+.career-bottom {
+  margin-top: 40px;
+  padding: 40px 30px 10px;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.bottom-btn {
+  margin-top: 26px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: #03224c;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}

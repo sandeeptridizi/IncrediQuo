@@ -1,0 +1,148 @@
+/* ===================== CONTACT MAIN WRAPPER ===================== */
+
+.contact-main {
+  padding: 60px 0 80px;
+  background: #ffffff;
+}
+
+/* Outer pink rectangle: 1278 x 530 */
+.contact-main__card {
+  max-width: 1278px;
+  margin: 0 auto;
+  padding: 40px 48px;
+  background: #ffe9ec;
+  border-radius: 4px;
+  box-shadow: 0 4px 21px rgba(0, 0, 0, 0.25);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+/* ===================== LEFT – FORM ===================== */
+
+.contact-main__form {
+  max-width: 642px;
+  padding: 32px 32px 36px;
+  background: transparent;            /* 🔥 removed white box */
+  border: 1px solid rgba(0, 0, 0, 0.38);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Inputs & textarea — pink background */
+.contact-main__field input,
+.contact-main__field textarea {
+  width: 100%;
+  height: 64px;
+  padding: 0 16px;
+  background: #ffe9ec;                /* 🔥 no white — now pink */
+  border: 1px solid #000000;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #334155;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* textarea height */
+.contact-main__field textarea {
+  min-height: 141px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  resize: vertical;
+}
+
+.contact-main__field input::placeholder,
+.contact-main__field textarea::placeholder {
+  color: #9ca3af;
+}
+
+.contact-main__field input:focus,
+.contact-main__field textarea:focus {
+  border-color: #001f5b;
+  box-shadow: 0 0 0 2px rgba(0, 31, 91, 0.18);
+}
+
+/* Submit button */
+.contact-main__submit {
+  margin-top: 18px;
+  width: 164px;
+  height: 45px;
+  border-radius: 6px;
+  border: none;
+  background: #001f5b;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.contact-main__submit:hover {
+  background: #062c85;
+  transform: translateY(-1px);
+}
+
+/* Bottom divider line inside the form like Figma */
+.contact-main__form::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  margin-top: 20px;
+}
+
+/* ===================== RIGHT – TEXT BLOCK ===================== */
+
+.contact-main__copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-main__copy h2 {
+  font-family: "Inter", system-ui;
+  font-weight: 900;
+  font-size: 84px;
+  line-height: 71px;
+  letter-spacing: -0.04em;
+  color: #001f5b;
+  margin: 0 0 16px 0;
+}
+
+.contact-main__copy p {
+  font-family: "Inter", system-ui;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #373f51;
+  max-width: 420px;
+  margin: 0;
+}
+
+/* ===================== RESPONSIVE ===================== */
+
+@media (max-width: 1024px) {
+  .contact-main__card {
+    padding: 32px 24px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .contact-main__copy h2 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-main__copy h2 {
+    font-size: 36px;
+  }
+}

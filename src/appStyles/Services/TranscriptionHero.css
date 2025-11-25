@@ -1,0 +1,155 @@
+/* ===== HERO WRAPPER ===== */
+.ts-hero {
+  /* this padding controls space above/below hero content */
+  padding: 70px 0 60px;
+  background: #ffffff; /* 🔥 WHITE background now */
+
+  /* smooth in-view feel */
+  animation: ts-hero-fade 0.5s ease-out;
+}
+
+@keyframes ts-hero-fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== INNER GRID ===== */
+.ts-hero__inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  column-gap: 60px;
+  align-items: center;
+}
+
+/* LEFT – illustration */
+.ts-hero__left {
+  display: flex;
+  justify-content: center;
+}
+
+.ts-hero__image {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+  display: block;
+}
+
+/* RIGHT – text column */
+.ts-hero__right {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* eyebrow label */
+.ts-hero__eyebrow {
+  font-size: 15px;
+  font-weight: 600;
+  color: #022447;
+}
+
+/* main title */
+.ts-hero__title {
+  font-size: 36px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: #022447;
+}
+
+/* description */
+.ts-hero__description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5670;
+  max-width: 520px;
+}
+
+/* ===== CARDS ROW (using full images) ===== */
+.ts-hero__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.ts-hero__card-full {
+  width: 100%;
+  max-width: 210px;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+}
+
+/* ===== CTA BUTTON ===== */
+.ts-hero__cta {
+  margin-top: 18px;
+  padding: 12px 32px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  background: #022447;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  transition:
+    background 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.ts-hero__cta:hover {
+  background: #001c38;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.ts-hero__cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .ts-hero__inner {
+    grid-template-columns: 1fr;
+    row-gap: 40px;
+    text-align: left;
+  }
+
+  .ts-hero__left {
+    order: 1;
+  }
+
+  .ts-hero__right {
+    order: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-hero {
+    padding: 60px 0 50px;
+  }
+
+  .ts-hero__inner {
+    padding: 0 16px;
+  }
+
+  .ts-hero__title {
+    font-size: 30px;
+  }
+
+  .ts-hero__cards {
+    justify-content: flex-start;
+  }
+}

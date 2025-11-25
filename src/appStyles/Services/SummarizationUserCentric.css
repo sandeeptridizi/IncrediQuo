@@ -1,0 +1,114 @@
+.cc-usercentric {
+  padding: 80px 0 70px;
+  background: radial-gradient(circle at 50% 140%, #fff3f7 0, transparent 60%);
+}
+
+.cc-usercentric__inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cc-usercentric__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.cc-usercentric__subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 40px;
+}
+
+/* === GRID: 2 columns, centered === */
+.cc-usercentric__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← 2 cols */
+  column-gap: 90px;
+  row-gap: 32px;
+}
+
+/* TOP ROW: hosts the vertical line */
+.cc-usercentric__grid--top {
+  position: relative;
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+}
+
+/* center vertical separator */
+.cc-usercentric__grid--top::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(148, 163, 184, 0.4);
+  transform: translateX(-0.5px);
+}
+
+/* BOTTOM ROW: horizontal line on top */
+.cc-usercentric__grid--bottom {
+  padding-top: 32px;
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+}
+
+/* cards */
+.cc-usercentric__item {
+  text-align: center;
+  padding: 0 32px;
+}
+
+/* ICONS */
+.cc-usercentric__icon {
+  margin-bottom: 18px;
+}
+
+.cc-usercentric__icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: #111827;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* TEXT */
+.cc-usercentric__item h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.cc-usercentric__item p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .cc-usercentric__grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .cc-usercentric__grid--top,
+  .cc-usercentric__grid--bottom {
+    padding: 0;
+    margin: 0;
+    border-top: none;
+  }
+
+  .cc-usercentric__grid--top::after {
+    display: none; /* hide vertical line on mobile */
+  }
+
+  .cc-usercentric__item {
+    padding: 0 12px;
+  }
+}

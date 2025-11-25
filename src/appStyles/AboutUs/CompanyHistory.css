@@ -1,0 +1,77 @@
+/* ===========================
+   COMPANY HISTORY
+   =========================== */
+
+.history {
+  background: #ffffff;
+  padding: 100px 0 100px;
+}
+
+.history__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* LEFT: text block (694px wide) */
+.history__content {
+  width: 694px; 
+  padding-left: 100px;             /* Figma width */
+}
+
+/* "Company history" heading – 694 x 62, Heading2 52/62 */
+.history__content h2 {
+  width: 694px;
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  color: #002147;
+  margin: 0 0 16px;
+}
+
+/* Paragraph container – 694 x 427, 18/26 body text */
+.history__para {
+  width: 694px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 500;
+  color: #4b5563;
+  margin: 0 0 12px;
+}
+
+/* RIGHT: image – 507 x 470, radius 30px */
+.history__image img {
+  width: 507px;
+  height: 470px;
+  object-fit: cover;
+  border-radius: 30px;        /* Figma radius */
+  display: block;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 1024px) {
+  .history__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .history__content,
+  .history__content h2,
+  .history__para {
+    width: 100%;
+  }
+
+  .history__content {
+    text-align: left;
+    padding: 0 24px;
+  }
+
+  .history__image img {
+    width: 100%;
+    max-width: 507px;
+    height: auto;
+  }
+}
