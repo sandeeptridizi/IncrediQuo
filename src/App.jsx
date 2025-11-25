@@ -26,8 +26,8 @@ import AdditionalSupportServicePage from "./components/AdditionalSupportService/
 
 // careers page
 import Careers from "./components/Career/Careers";
-
 import "./appStyles/AppLayout.css";
+import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -136,6 +136,8 @@ function App() {
             }
           />
         </Routes>
+
+        <Route path="/createBlog" element={<CreateBlog/>}/>
       </div>
 
       <Footer />
