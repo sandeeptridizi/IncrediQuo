@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const Manageblogs = () => {
   const [Blogs, setBlogs] = useState([]);
+  console.log(Blogs, "blogsss")
   const [openPopupId, setOpenPopupId] = useState(null); // For tracking which popup is open
   const navigate = useNavigate();
 
@@ -78,47 +79,56 @@ export const Manageblogs = () => {
 
   return (
     <div className="blog_page_layer1">
-      <p className="CreateBlogPage" onClick={() => navigate("/blog-creation")}>
-        Create Blog
-      </p>
-      <div className="blog_card_outer">
-        {Blogs.map((data) => (
-          <div className="blog_card" key={data.id}>
-            <div
-              className="ThreeDots_Icon"
-              onClick={() =>
-                setOpenPopupId(openPopupId === data.id ? null : data.id)
-              }
-            >
-              <HiDotsVertical />
-              {openPopupId === data.id && (
-                <div className="popup_menu">
-                  <p onClick={() => handleEdit(data)}>Edit</p>
-                  <p onClick={() => handleDelete(data.id)}>Delete</p>
-                </div>
-              )}
-            </div>
-            <div className="blog_card_img_content">
-              <p className="blog_card_img_text">{data?.content}</p>
-            </div>
-            <img src={data.imageUrl} alt="" className="blog_img" />
-            <div className="blog_content">
-              <div className="blog_left_content">
-                <p className="blog_content_heading">{data?.title}</p>
-                <p className="blog_content_date">
-                  {formatDate(data?.created_at)}
-                </p>
-              </div>
-              <div
-                className="blog_content_right"
-                onClick={() => handleSingleBlog(data, data?.content)}
-              >
-                <p className="blog_content_right_text">know more</p>
-              </div>
-            </div>
+<h1 
+  className="CreateBlogPage" 
+  onClick={() => navigate("/blog-creation")}
+>
+  Create Blog
+</h1>
+
+<div className="blog_card_outer">
+  {Blogs.map((data) => (
+    <div className="blog_card" key={data.id}>
+
+      {/* Three Dots Menu */}
+      <div
+        className="ThreeDots_Icon"
+        onClick={() =>
+          setOpenPopupId(openPopupId === data.id ? null : data.id)
+        }
+      >
+        <HiDotsVertical />
+
+        {openPopupId === data.id && (
+          <div className="popup_menu">
+            <p onClick={() => handleEdit(data)}>Edit</p>
+            <p onClick={() => handleDelete(data.id)}>Delete</p>
           </div>
-        ))}
+        )}
       </div>
+
+      {/* Card Image */}
+      <img src={data.imageUrl} alt="" className="blog_img" />
+
+      {/* Card Text */}
+      <div className="blog_content">
+        <div>
+          <p className="blog_content_heading">{data?.title}</p>
+          <p className="blog_content_date">{formatDate(data?.created_at)}</p>
+          <p>{data.blog_content}</p>
+        </div>
+
+        {/* <p
+          className="blog_content_right_text"
+          onClick={() => handleSingleBlog(data, data?.content)}
+        >
+          Know More
+        </p> */}
+      </div>
+    </div>
+  ))}
+</div>
+
       <ToastContainer />
     </div>
   );
