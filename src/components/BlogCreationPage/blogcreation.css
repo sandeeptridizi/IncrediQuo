@@ -13,7 +13,7 @@
 .blog_creation_page {
   display: flex;
   justify-content: center;
-  height: auto;
+  height: 47.5vw;
   /* padding: 2vw; */
   border: 1px solid;
   background-color: #050038;

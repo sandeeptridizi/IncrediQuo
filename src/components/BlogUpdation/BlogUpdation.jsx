@@ -37,7 +37,7 @@ export const UpdateBlog = () => {
   useEffect(() => {
     if (blogData) {
       setTitle(blogData.title || "");
-      setContent(blogData.content || "");
+      // setContent(blogData.content || "");
       setAuthorName(blogData.author_name || "");
       setDepartmentOfblog(blogData.DepartmentOfblog || "");
       setBlogContent(blogData.blog_content || "");
@@ -92,7 +92,7 @@ export const UpdateBlog = () => {
 
       const updatedBlogData = {
         title,
-        content,
+        // content,
         DepartmentOfblog,
         image_url: imageUrl,
         blog_content: blogContent,
@@ -169,7 +169,7 @@ export const UpdateBlog = () => {
                 />
               </div>
 
-              <div className="blog-form-group-input">
+              {/* <div className="blog-form-group-input">
                 <label htmlFor="content">Description</label>
                 <textarea
                   id="content"
@@ -178,7 +178,7 @@ export const UpdateBlog = () => {
                   rows="6"
                   required
                 />
-              </div>
+              </div> */}
             </div>
 
             <div>

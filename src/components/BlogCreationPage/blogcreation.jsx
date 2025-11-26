@@ -75,7 +75,7 @@ export const CreateBlog = () => {
       const newBlogRef = push(ref(database, "blogs"));
       await set(newBlogRef, {
         title,
-        content,
+        // content,
         DepartmentOfblog,
         // image_url: imageUrl,
         blog_content: blogContent,
@@ -92,7 +92,7 @@ export const CreateBlog = () => {
         draggable: true,
       });
       setTitle("");
-      setContent("");
+      // setContent("");
       setImage(null);
       setPreview(null);
       setAuthorName("");
@@ -159,8 +159,7 @@ export const CreateBlog = () => {
                   placeholder="Enter Blog Category"
                 />
               </div>
-
-              <div className="blog-form-group-input">
+              {/* <div className="blog-form-group-input">
                 <label htmlFor="content">Description</label>
                 <textarea
                   id="content"
@@ -170,7 +169,7 @@ export const CreateBlog = () => {
                   required
                   placeholder="Enter Blog Description up to 50 words"
                 />
-              </div>
+              </div> */}
             </div>
 
             <div>

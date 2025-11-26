@@ -6,6 +6,8 @@ import { GrView } from "react-icons/gr";
 import { BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
+import { getDatabase, ref, get, set } from "firebase/database";
+
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -13,21 +15,42 @@ const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        console.log("Login successful", userCredential.user);
-        userCredential.user.getIdToken().then((token) => {
-          sessionStorage.setItem("authToken", token);
+    try {
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      const token = await user.getIdToken();
+      sessionStorage.setItem("authToken", token);
+
+      const db = getDatabase();
+      const roleRef = ref(db, `roles/${user.uid}/role`);
+      const snapshot = await get(roleRef);
+
+      console.log("UID:", user.uid);
+      console.log("Role from DB:", snapshot.val());
+
+      if (snapshot.exists()) {
+        const role = snapshot.val();
+        console.log("User role:", role);
+
+        if (role === "admin") {
           navigate("/dashboard");
-        });
-      })
-      .catch((err) => {
-        console.error("Login failed", err);
-        setError("Invalid email or password");
-      });
+        } else {
+          alert("Access denied: You are not an admin.");
+        }
+      } else {
+        alert("Role not found for this user in database.");
+      }
+    } catch (err) {
+      console.error("Login failed", err.code, err.message);
+      setError(err.message);
+    }
   };
 
   const togglePasswordVisibility = () => {
@@ -75,7 +98,7 @@ const LoginPage = () => {
 
           {error && <p className="error-message">{error}</p>}
 
-          <button type="submit" className="btn-login" onClick={()=>navigate("/dashboard")}>
+             <button type="submit" className="btn-login">
             Login
           </button>
         </form>
