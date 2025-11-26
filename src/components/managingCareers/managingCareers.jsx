@@ -75,7 +75,7 @@ const SmallCard = () => {
       <div className="sub-container-small">
         <button
           onClick={() => {
-            navigate("/career-creation");
+            navigate("/createCareer");
           }}
         >
           Create Career
