@@ -4,77 +4,30 @@
   color: #f9fafb;
   padding: 95px 60px 26px;
   overflow: hidden;
-  background-color: #022447; /* solid navy */
   margin-top: -2px;
   width: 100%;
-  height: 381px; /* overlap the line from previous section */
+  height: 381px;
+
+  /* ⭐ only background image — no navy fill */
+  background-image: url("../../assets/footer/Rectangle 13.png");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
 }
 
-/* WHITE CURVE – narrow droplet like reference */
-.footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -4px; /* start slightly above to hide seam */
-  width: 150%; /* a bit wider so edges never show */
-  height: 270px; /* slightly taller to compensate for top shift */
-  background-color: #ffffff;
-  transform: translateX(-10%);
-  z-index: 0;
 
-  clip-path: polygon(
-    0% 0%,
-    100% 0%,
-    100% 8%,
-    96% 8.5%,
-    92% 9%,
-    88% 9.5%,
-    84% 10%,
-    80% 10.5%,
-    76% 11%,
-    72% 11.5%,
-    68% 12%,
-    64% 12.5%,
-    60% 13%,
-    56% 14%,
-    54% 16%,
-    52% 19%,
-    50% 23%,
-    48% 27%,
-    46% 31%,
-    44% 35%,
-    42% 39%,
-    40% 42%,
-    38% 44%,
-    36% 43%,
-    34% 41%,
-    32% 38%,
-    30% 35%,
-    28% 32%,
-    26% 29%,
-    24% 27%,
-    22% 25%,
-    20% 23.5%,
-    18% 22.5%,
-    16% 21.5%,
-    14% 21%,
-    12% 20.5%,
-    10% 20%,
-    8% 19.5%,
-    4% 18.8%,
-    0% 18%
-  );
-}
+/* 🚫 REMOVE the old ::before curve COMPLETELY
+.footer::before { ... }
+*/
 
 /* content container (aligned under curve) */
 .footer-inner {
   max-width: 1160px;
   margin: 0 auto;
   position: relative;
-  z-index: 1; /* above white shape */
-  padding-top: 65px; /* moves content away from the curve */
+  z-index: 1; /* above background image */
+  padding-top: 65px;
 
-  /* fade-up footer content, not the wave */
   opacity: 0;
   transform: translateY(24px);
   animation: footerFadeUp 0.85s ease-out forwards;
@@ -95,7 +48,7 @@
 .footer-top {
   display: flex;
   justify-content: space-between;
-  align-items: stretch; /* stretch columns to same height */
+  align-items: stretch;
   gap: 96px;
 }
 
@@ -123,7 +76,7 @@
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background-color: #ffe8f0; /* soft pink circle */
+  background-color: #ffe8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -189,15 +142,13 @@
   gap: 80px;
 }
 
-/* make Quikers column a positioning container */
+/* Quikers column */
 .footer-column--quikers {
-  position: relative;        /* add */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 160px;         /* enough space for bottom links */
+  min-height: 160px;
 }
-
 
 /* headings */
 .footer-column h4 {
@@ -249,74 +200,29 @@
   text-decoration: underline;
 }
 
-/* hover on footer links */
-.footer-column li:hover {
-  color: #ffffff;
-  transform: translateX(2px);
-}
-
-/* === BOTTOM ROW STYLES (not separate HTML row now) === */
-.footer-bottom {
-  margin-top: auto;
-  padding-top: 26px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* Privacy Policy + Terms of Service row */
+/* bottom row (Privacy + Terms) */
 .footer-bottom-links {
-  position: absolute;      /* move to bottom of column */
-  bottom: 0;
-  left: 0;
+  margin-top: auto;
+  margin-bottom: 10px;
   display: flex;
-  gap: 26px;
-  font-size: 12px;
-  color: #ffffff;          /* make white */
+  gap: 40px;
+  padding-top: 10px;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
-
-/* make both items white and underlined on hover */
-.footer-bottom-links span,
+.footer-bottom-link,
 .footer-bottom-links a,
-.footer-bottom-link {
+.footer-bottom-links span {
   color: #ffffff;
+  text-decoration: none;
   cursor: pointer;
   position: relative;
-  text-decoration: none;
-  transition: color 0.25s ease;
 }
 
-.footer-bottom-links span::after,
-.footer-bottom-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 1px;
-  background-color: #ffffff;
-  transition: width 0.25s ease;
-}
-
-.footer-bottom-links span:hover,
-.footer-bottom-links a:hover {
-  color: #ffffff;
-}
-
-.footer-bottom-links span:hover::after,
-.footer-bottom-links a:hover::after {
-  width: 100%;
-}
-
-/* hide Privacy Policy from any list version */
-.footer-column li.privacy-policy {
-  display: none;
-}
-
-/* show Privacy Policy where we actually use it */
-.footer-bottom-links .privacy-policy {
-  display: inline-block;
+.footer-bottom-links a:hover,
+.footer-bottom-links span:hover {
+  text-decoration: underline;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -335,7 +241,7 @@
   }
 
   .footer-column--quikers {
-    min-height: 120px; /* enough space for bottom links */
+    min-height: 240px;
   }
 }
 
@@ -347,12 +253,6 @@
   .footer-links {
     flex-direction: column;
     gap: 18px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
 
   .footer-column--quikers {

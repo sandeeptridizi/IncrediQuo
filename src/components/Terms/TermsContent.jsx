@@ -1,3 +1,4 @@
+// src/components/Terms/TermsContent.jsx
 import React from "react";
 import "../../appStyles/TermsPageStyles/TermsContent.css";
 
@@ -45,7 +46,8 @@ const TermsContent = () => {
             rights.
           </li>
           <li>
-            Misuse the website or attempt unauthorised access to systems.
+            Misuse the website or attempt unauthorised/unauthorized access to
+            systems.
           </li>
         </ul>
         <p>Users are responsible for the accuracy of the data they provide.</p>
@@ -54,8 +56,11 @@ const TermsContent = () => {
         <p>
           All files shared with us are treated as strictly confidential. We do
           not claim ownership of your content and use it solely for providing
-          requested services. Your data is stored securely and accessed only by
-          authorised personnel.
+          requested services.
+        </p>
+        <p>
+          Your data is stored securely and accessed only by authorised/authorized
+          personnel.
         </p>
 
         <h2>Turnaround Times</h2>
@@ -65,39 +70,79 @@ const TermsContent = () => {
         </p>
         <ul>
           <li>Poor audio / video quality</li>
-          <li>Unclear speech or heavy accents</li>
+          <li>Unclear speech</li>
           <li>Large file volumes</li>
-          <li>Additional editing or formatting requests</li>
+          <li>Additional editing requests</li>
         </ul>
-        <p>We will communicate any expected delays in advance where possible.</p>
+        <p>We will communicate any expected delays in advance.</p>
 
-        <h2>Payments &amp; Billing</h2>
+        <h2>Pricing &amp; Payment Terms</h2>
         <p>
-          Fees are based on the pricing agreed at the time of order
-          confirmation. Payments are due as per the invoice terms. We reserve
-          the right to suspend services for overdue accounts.
+          Pricing is shared transparently based on service type, file length,
+          and complexity. Payments must be completed before or after service
+          delivery as per the agreed terms.
+        </p>
+        <p>
+          Refunds are offered only in cases where service delivery fails due to
+          our error.
         </p>
 
-        <h2>Limitations of Liability</h2>
+        <h2>Accuracy &amp; Quality Disclaimer</h2>
         <p>
-          While we strive for high accuracy and reliability, we do not guarantee
-          error-free output. Our liability is limited to the value of the
-          service purchased and we are not responsible for indirect or
-          consequential damages.
+          While we ensure high accuracy through expert processing and robust
+          quality checks, some factors may affect the final output, such as:
+        </p>
+        <ul>
+          <li>Background noise</li>
+          <li>Overlapping speech</li>
+          <li>Accents and dialect variations</li>
+        </ul>
+        <p>
+          We provide revisions within reasonable limits for genuine issues.
         </p>
 
-        <h2>Changes to These Terms</h2>
+        <h2>Intellectual Property Rights</h2>
         <p>
-          We may update these Terms &amp; Conditions from time to time. Any
-          changes will be posted on this page with an updated revision date.
-          Continued use of our website or services after changes are published
-          means you accept the revised terms.
+          All service deliverables remain your property. However, the methods,
+          templates, processes, and tools used by IncrediQuo Solutions remain
+          the intellectual property of the Company.
         </p>
 
-        <h2>Contact Us</h2>
+        <h2>Limitation of Liability</h2>
+        <p>IncrediQuo Solutions is not liable for:</p>
+        <ul>
+          <li>
+            Losses arising from incorrect, misleading, or incomplete information
+            provided by users.
+          </li>
+          <li>Third-party data breaches beyond our control.</li>
+          <li>Indirect, incidental, or consequential damages.</li>
+        </ul>
         <p>
-          If you have any questions about these Terms &amp; Conditions, please
-          contact us via the details provided on our Contact page.
+          Our total liability shall not exceed the amount paid for the specific
+          service.
+        </p>
+
+        <h2>Service Termination</h2>
+        <p>We may suspend or terminate service if:</p>
+        <ul>
+          <li>A user violates our policies.</li>
+          <li>Payment terms are not met.</li>
+          <li>Uploaded content includes illegal or harmful material.</li>
+        </ul>
+
+        <h2>Governing Law</h2>
+        <p>
+          These Terms &amp; Conditions are governed by the laws of India. Any
+          disputes shall be resolved through arbitration or legal proceedings
+          within the jurisdiction of Hyderabad, Telangana.
+        </p>
+
+        <h2>Updates to Terms</h2>
+        <p>
+          IncrediQuo Solutions reserves the right to revise these terms at any
+          time. Continued use of our services indicates acceptance of the
+          updated terms.
         </p>
       </div>
     </section>

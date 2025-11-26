@@ -31,6 +31,9 @@ import Careers from "./components/Career/Careers";
 // terms page
 import TermsPage from "./components/Terms/TermsPage";
 
+// privacy page
+import PrivacyPage from "./components/Privacy/PrivacyPage";
+
 import "./appStyles/AppLayout.css";
 import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
 import { Manageblogs } from "./components/ManageBlogs/Manageblogs";
@@ -63,7 +66,6 @@ function App() {
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
 
-  // called when "Our Services" clicked in Navbar (kept for home scrolling)
   const handleOpenServices = () => {
     if (servicesRef.current?.openFirstService) {
       servicesRef.current.openFirstService();
