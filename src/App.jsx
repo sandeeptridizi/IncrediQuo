@@ -31,6 +31,14 @@ import Careers from "./components/Career/Careers";
 import TermsPage from "./components/Terms/TermsPage";
 
 import "./appStyles/AppLayout.css";
+import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
+import { Manageblogs } from "./components/ManageBlogs/Manageblogs";
+import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
+import CareerCreation from "./components/careerCreation/careerCreation";
+import SmallCard from "./components/managingCareers/managingCareers";
+import CareerUpdate from "./components/careerCreation/updationCareerpage";
+import SingleBlogPage from "./components/SingleBlogPage/SingleBlogPage";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -86,7 +94,7 @@ function App() {
             element={
               <>
                 <Careers />
-                {/* add <CTA /> here if you want CTA under Careers */}
+                {/* optional CTA under careers page, remove if you don't want */}
               </>
             }
           />
@@ -137,17 +145,14 @@ function App() {
               </>
             }
           />
-
-          {/* TERMS & CONDITIONS PAGE */}
-          <Route
-            path="/terms-of-service"
-            element={
-              <>
-                <TermsPage />
-                <CTA />
-              </>
-            }
-          />
+          <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/createBlog" element={<CreateBlog />} />
+          <Route path="/manageblogs" element={<Manageblogs />} />
+          <Route path="/blog/:blogId" element={<SingleBlogPage />} />
+          <Route path="/blog-updation" element={<UpdateBlog />} />
+          <Route path="/createCareer" element={<CareerCreation />} />
+          <Route path="/managecareers" element={<SmallCard />} />
+          <Route path="/career-update" element={<CareerUpdate />} />
         </Routes>
       </div>
 

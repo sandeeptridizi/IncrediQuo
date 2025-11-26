@@ -11,11 +11,8 @@
 
 /************ MODAL CARD - CENTER FIXED ************/
 .contact-modal {
-  position: fixed;                /* force center */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); /* perfect centering */
-
+  position: fixed;     
+  transform: translate(140%, 10%) !important;
   width: min(520px, 92%);
   background-color: #02083f;
   border-radius: 18px;
@@ -24,7 +21,7 @@
   color: #f9fafb;
   position: relative;
   animation: contact-pop-in 0.2s ease-out;
-  left: 35%;
+  /* left: 35%; */
 
 }
 
