@@ -5,11 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 const ContactSection = ({ onClose }) => {
   const [formData, setFormData] = useState({
-    Name: "",
-    Email: "",
-    PhoneNumber: "",
-    Message: "",
-    Sourcepage: "Contact Us",
+    name: "",
+    email: "",
+    phonenumber: "",
+    message: "",
+    sourcepage: "Contact Us",
   });
 
   const handleChange = (e) => {
@@ -23,8 +23,10 @@ const ContactSection = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-  const scriptURL ="https://script.google.com/macros/s/AKfycbwYw5HVpsddKf7Xenag4FAVwFzYZt4t7-WI0XrSuBP0HjowIWhQoD6Nxkj0K-w6pgA/exec";
-    try {
+  const scriptURL ="https://script.google.com/macros/s/AKfycbwb3HXs2yU9EWlCXRTag8giIxwh8WIh6XN86UDMjRBM9-oDZM6vbbeEvTIaal-G8Eu4nA/exec";
+  // "https://script.google.com/macros/s/AKfycbzszz_X76R31H3OvSukIj23f4bIOIe3yxLIXyKyyXd_Tqr2J16q3A3jUbyZkEqcr0VCwQ/exec";
+
+  try {
       const formPayload = new FormData();
       for (let key in formData) {
         formPayload.append(key, formData[key]);
@@ -33,6 +35,7 @@ const ContactSection = ({ onClose }) => {
         method: "POST",
         body: formPayload, // No 'Content-Type' header for FormData
       });
+      console.log(response, "responsedata")
       if (response.ok) {
         // alert("Form submitted successfully!");
         toast.success("Form submitted successfully!", {
@@ -44,10 +47,10 @@ const ContactSection = ({ onClose }) => {
           draggable: true,
         });
                 setFormData({
-          Name: "",
-          Email: "",
-          PhoneNumber: "",
-          Message: "",
+          name: "",
+          email: "",
+          phonenumber: "",
+          message: "",
         });
       } else {
         // alert("Something went wrong. Please try again.");
@@ -89,43 +92,43 @@ const ContactSection = ({ onClose }) => {
         <form className="contact-form" onSubmit={handleSubmit}>
           <input
             type="text"
-            name="Name"
-            id="Name"
-            placeholder="Your Name"
+            name="name"
+            id="name"
+            placeholder="Your name"
             className="contact-input"
-            value={formData.Name}
+            value={formData.name}
             onChange={handleChange}
             required
           />
 
           <input
             type="email"
-            name="Email"
-            id="Email"
-            placeholder="Email"
+            name="email"
+            id="email"
+            placeholder="email"
             className="contact-input"
-            value={formData.Email}
+            value={formData.email}
             onChange={handleChange}
             required
           />
 
           <input
             type="tel"
-            name="PhoneNumber"
-            id="PhoneNumber"
+            name="phonenumber"
+            id="phonenumber"
             placeholder="Phone Number"
             className="contact-input"
-            value={formData.PhoneNumber}
+            value={formData.phonenumber}
             onChange={handleChange}
           />
 
           <textarea
             rows="4"
-            name="Message"
-            id="Message"
-            placeholder="Your Message"
+            name="message"
+            id="message"
+            placeholder="Your message"
             className="contact-textarea"
-            value={formData.Message}
+            value={formData.message}
             onChange={handleChange}
             required
           />

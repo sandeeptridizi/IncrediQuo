@@ -22,7 +22,10 @@
   padding: 26px 28px 30px;
   box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5);
   color: #f9fafb;
-  animation: contact-pop-in 0.25s ease-out;
+  position: relative;
+  animation: contact-pop-in 0.2s ease-out;
+  left: 35%;
+
 }
 
 /************ CLOSE BUTTON ************/
