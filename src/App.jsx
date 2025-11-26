@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Navbar from "./components/HomePage/Navbar";
 import Hero from "./components/HomePage/Hero";
@@ -39,10 +40,25 @@ import SmallCard from "./components/managingCareers/managingCareers";
 import CareerUpdate from "./components/careerCreation/updationCareerpage";
 import SingleBlogPage from "./components/SingleBlogPage/SingleBlogPage";
 import Dashboard from "./components/Dashboard/Dashboard";
+import Blogs from "./components/Blogs/blogs";
+import LoginPage from "./components/LogInPage/LogIn";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
   const servicesRef = useRef(null);
+
+  const location = useLocation();
+  const hiddenLayoutRoutes = [
+    "/login",
+    "/dashboard",
+    "/createBlog",
+    "/manageblogs",
+    "/blog-updation",
+    "/createCareer",
+    "/managecareers",
+    "/career-update",
+  ];
+  const shouldHideLayout = hiddenLayoutRoutes.includes(location.pathname);
 
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
@@ -61,8 +77,14 @@ function App() {
 
   return (
     <>
-      <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} />
-
+      {/* <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} /> */}
+      {/* Show Navbar only if NOT in hidden routes */}
+      {!shouldHideLayout && (
+        <Navbar
+          onOpenContact={openContact}
+          onOpenServices={handleOpenServices}
+        />
+      )}
       <div className="app">
         <Routes>
           {/* HOME PAGE */}
@@ -98,7 +120,7 @@ function App() {
               </>
             }
           />
-
+          <Route path="/blogs" element={<Blogs />} />
           {/* POST DETAILS PAGE */}
           <Route path="/post/:id" element={<PostDetails />} />
 
@@ -145,7 +167,8 @@ function App() {
               </>
             }
           />
-          <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/createBlog" element={<CreateBlog />} />
           <Route path="/manageblogs" element={<Manageblogs />} />
           <Route path="/blog/:blogId" element={<SingleBlogPage />} />
@@ -156,8 +179,8 @@ function App() {
         </Routes>
       </div>
 
-      <Footer />
-
+      {/* <Footer /> */}
+      {!shouldHideLayout && <Footer />}
       {showContact && <ContactSection onClose={closeContact} />}
     </>
   );

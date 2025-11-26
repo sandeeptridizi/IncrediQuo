@@ -81,7 +81,7 @@ export const Manageblogs = () => {
     <div className="blog_page_layer1">
 <h1 
   className="CreateBlogPage" 
-  onClick={() => navigate("/blog-creation")}
+  onClick={() => navigate("/createBlog")}
 >
   Create Blog
 </h1>

@@ -31,7 +31,8 @@ const Navbar = () => {
           </div>
         </div>
 
-        <a href="#blogs">Blogs</a>
+        {/* <a href="#blogs">Blogs</a> */}
+        <Link to="/blogs">Blogs</Link>
 
         {/* 🔥 Careers link updated */}
         <Link to="/careers">Careers</Link>
