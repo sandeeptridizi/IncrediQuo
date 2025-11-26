@@ -30,6 +30,9 @@ import Careers from "./components/Career/Careers";
 // terms page
 import TermsPage from "./components/Terms/TermsPage";
 
+// privacy page
+import PrivacyPage from "./components/Privacy/PrivacyPage";
+
 import "./appStyles/AppLayout.css";
 
 function App() {
@@ -39,7 +42,6 @@ function App() {
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
 
-  // called when "Our Services" clicked in Navbar (kept for home scrolling)
   const handleOpenServices = () => {
     if (servicesRef.current?.openFirstService) {
       servicesRef.current.openFirstService();
@@ -144,6 +146,17 @@ function App() {
             element={
               <>
                 <TermsPage />
+                <CTA />
+              </>
+            }
+          />
+
+          {/* PRIVACY POLICY PAGE */}
+          <Route
+            path="/privacy-policy"
+            element={
+              <>
+                <PrivacyPage />
                 <CTA />
               </>
             }
