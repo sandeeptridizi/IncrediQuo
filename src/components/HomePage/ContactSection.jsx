@@ -1,146 +1,202 @@
-import React, { useState } from "react";
+// src/components/HomePage/ContactSection.jsx
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/ContactSection.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactSection = ({ onClose }) => {
+  const location = useLocation();
+
+  const getSourcePage = () => {
+    const path = location.pathname;
+    const map = {
+      "/": "Home Page - Hero",
+      "/about": "About Us",
+      "/contact": "Contact Page",
+      "/careers": "Careers",
+      "/services/transcription": "Transcription Services",
+      "/services/closed-captioning": "Closed Captioning & Subtitling",
+      "/services/summarization": "Summarization Service",
+      "/services/additional-support": "Additional Support",
+    };
+    return map[path] || `Page: ${path.slice(1).replace(/-/g, " ") || "Home"}`;
+  };
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phonenumber: "",
-    message: "",
-    sourcepage: "Contact Us",
+    Name: "",
+    Email: "",
+    PhoneNumber: "",
+    Message: "",
+    Sourcepage: getSourcePage(),
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+
+  useEffect(() => {
+    setFormData((prev) => ({ ...prev, Sourcepage: getSourcePage() }));
+  }, [location]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    const toastId = toast.loading("Submitting your message...");
 
-  const scriptURL ="https://script.google.com/macros/s/AKfycbwb3HXs2yU9EWlCXRTag8giIxwh8WIh6XN86UDMjRBM9-oDZM6vbbeEvTIaal-G8Eu4nA/exec";
-  // "https://script.google.com/macros/s/AKfycbzszz_X76R31H3OvSukIj23f4bIOIe3yxLIXyKyyXd_Tqr2J16q3A3jUbyZkEqcr0VCwQ/exec";
+    try {
+      const payload = new URLSearchParams();
+      payload.append("Name", formData.Name);
+      payload.append("Email", formData.Email);
+      payload.append("PhoneNumber", formData.PhoneNumber);
+      payload.append("Message", formData.Message);
+      payload.append("Sourcepage", formData.Sourcepage);
 
-  try {
-      const formPayload = new FormData();
-      for (let key in formData) {
-        formPayload.append(key, formData[key]);
-      }
-      const response = await fetch(scriptURL, {
-        method: "POST",
-        body: formPayload, // No 'Content-Type' header for FormData
-      });
-      console.log(response, "responsedata")
-      if (response.ok) {
-        // alert("Form submitted successfully!");
-        toast.success("Form submitted successfully!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxHdCiCLSC5Vta17Okxf3fFmBhO9K4YjCNy0pzBn_IvKULGUYEq5inO6Tia317gWaWbBw/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: payload,
+        }
+      );
+
+      const result = await response.json();
+      toast.dismiss(toastId);
+
+      if (result.status === "success") {
+        setShowSuccessModal(true);
+        setFormData({
+          ...formData,
+          Name: "",
+          Email: "",
+          PhoneNumber: "",
+          Message: "",
         });
-                setFormData({
-          name: "",
-          email: "",
-          phonenumber: "",
-          message: "",
-        });
+        setTimeout(() => onClose?.(), 2000);
       } else {
-        // alert("Something went wrong. Please try again.");
-        toast.warning("Something went wrong. Please try again.", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
+        throw new Error("Submission failed");
       }
-    } catch (error) {
-      console.error("Error:", error);
-      // alert("Error submitting the form. Please check your connection.");
-      toast.error("Error submitting the form. Please check your connection.", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+    } catch (err) {
+      toast.dismiss(toastId);
+      setShowErrorModal(true);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="contact-modal-backdrop" onClick={onClose}>
-      <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
-        <button className="contact-close" onClick={onClose}>
-          ×
-        </button>
-
-        <h2 className="contact-title">Get in touch with us</h2>
-        <p className="contact-subtitle">
-          We strive to respond to all inquiries within 48 hours.
-        </p>
-
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            placeholder="Your name"
-            className="contact-input"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="email"
-            className="contact-input"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            type="tel"
-            name="phonenumber"
-            id="phonenumber"
-            placeholder="Phone Number"
-            className="contact-input"
-            value={formData.phonenumber}
-            onChange={handleChange}
-          />
-
-          <textarea
-            rows="4"
-            name="message"
-            id="message"
-            placeholder="Your message"
-            className="contact-textarea"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
-
-          <button type="submit" className="contact-submit-btn">
-            Submit
+    <>
+      {/* MAIN CONTACT MODAL */}
+      <div className="contact-modal-backdrop" onClick={onClose}>
+        <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
+          <button className="contact-close" onClick={onClose}>
+            ×
           </button>
-        </form>
+
+          <h2 className="contact-title">Get in touch with us</h2>
+          <p className="contact-subtitle">
+            We strive to respond to all inquiries within 48 hours.
+          </p>
+
+          <form className="contact-form" onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="Name"
+              placeholder="Your name"
+              className="contact-input"
+              value={formData.Name}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Email"
+              className="contact-input"
+              value={formData.Email}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+            <input
+              type="tel"
+              name="PhoneNumber"
+              placeholder="Phone Number"
+              className="contact-input"
+              value={formData.PhoneNumber}
+              onChange={handleChange}
+              disabled={isSubmitting}
+            />
+            <textarea
+              rows="4"
+              name="Message"
+              placeholder="Your message"
+              className="contact-textarea"
+              value={formData.Message}
+              onChange={handleChange}
+              required
+              disabled={isSubmitting}
+            />
+
+            <button
+              type="submit"
+              className="contact-submit-btn"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Submitting..." : "Submit"}
+            </button>
+          </form>
+        </div>
       </div>
 
-      <ToastContainer />
-    </div>
+      {/* SUCCESS MODAL */}
+      {showSuccessModal && (
+        <div className="success-modal-backdrop">
+          <div className="success-modal">
+            <div className="success-icon">✔</div>
+            <h3>Thank You!</h3>
+            <p>Your message has been sent successfully.</p>
+            <button
+              className="success-close-btn"
+              onClick={() => {
+                setShowSuccessModal(false);
+                onClose?.();
+              }}
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* ERROR MODAL */}
+      {showErrorModal && (
+        <div className="error-modal-backdrop">
+          <div className="error-modal">
+            <div className="error-icon">✖</div>
+            <h3>Oops! Something went wrong</h3>
+            <p>
+              We couldn't send your message right now.
+              <br />
+              Please try again later or contact us directly.
+            </p>
+            <button
+              className="error-close-btn"
+              onClick={() => setShowErrorModal(false)}
+            >
+              Try Again
+            </button>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

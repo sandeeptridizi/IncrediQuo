@@ -1,4 +1,3 @@
-
 import "./blogcreation.css";
 import { Editor } from "react-draft-wysiwyg";
 import { EditorState, convertToRaw } from "draft-js";
@@ -69,7 +68,7 @@ export const CreateBlog = () => {
     // }
 
     try {
-      // const imageRef = storageRef(storage, `blogs/${Date.now()}-${image.name}`);
+      // const imageRef = storageRef(storage, blogs/${Date.now()}-${image.name});
       // const uploadTask = await uploadBytes(imageRef, image);
       // const imageUrl = await getDownloadURL(uploadTask.ref);
 
