@@ -1,47 +1,38 @@
 // src/components/HomePage/Navbar.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/logo.png";
 
 const Navbar = () => {
   return (
     <header className="navbar">
-      {/* LEFT: logo + text */}
-      <Link to="/" className="navbar__logo">
+      <NavLink to="/" className="navbar__logo">
         <img src={Logo} alt="Logo" />
         <span>LogoIpsum</span>
-      </Link>
+      </NavLink>
 
-      {/* CENTER: links */}
       <nav className="navbar__links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/about">About</NavLink>
 
-        {/* Our Services dropdown */}
         <div className="dropdown">
           <span className="dropdown__title">Our Services</span>
           <div className="dropdown__menu">
-            <Link to="/services/transcription">Transcription Services</Link>
-            <Link to="/services/closed-captioning">
-              Closed Captioning &amp; Subtitling
-            </Link>
-            <Link to="/services/summarization">Summarization</Link>
-            <Link to="/services/additional-support">Additional Support</Link>
+            <NavLink to="/services/transcription">Transcription Services</NavLink>
+            <NavLink to="/services/closed-captioning">Closed Captioning & Subtitling</NavLink>
+            <NavLink to="/services/summarization">Summarization</NavLink>
+            <NavLink to="/services/additional-support">Additional Support</NavLink>
           </div>
         </div>
 
-        {/* <a href="#blogs">Blogs</a> */}
-        <Link to="/blogs">Blogs</Link>
-
-        {/* 🔥 Careers link updated */}
-        <Link to="/careers">Careers</Link>
+        <NavLink to="/blogs">Blogs</NavLink>
+        <NavLink to="/careers">Careers</NavLink>
       </nav>
 
-      {/* RIGHT: Contact Us goes to /contact */}
-      <Link to="/contact" className="navbar__button">
+      <NavLink to="/contact" className="navbar__button">
         Contact Us
-      </Link>
+      </NavLink>
     </header>
   );
 };

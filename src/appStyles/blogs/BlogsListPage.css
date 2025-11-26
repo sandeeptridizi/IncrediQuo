@@ -1,0 +1,289 @@
+/* ========= PAGE LAYOUT ========= */
+
+.blogs-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 120px 60px 120px;
+  background: #ffffff;
+}
+
+/* ========= HERO CARD ========= */
+
+.blogs-hero {
+  margin-bottom: 72px;
+}
+
+.blogs-hero__card {
+  background: #001f5b; /* deep navy */
+  border-radius: 80px;
+  height: 260px;
+  max-width: 1138px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blogs-hero__title {
+  font-family: "DM Serif Display", "Times New Roman", serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #ffc7d3; /* soft pink title inside */
+  margin: 0;
+}
+
+/* ========= LIST HEADER (line + Latest) ========= */
+
+.blogs-list {
+  max-width: 966px;          /* rectangle width */
+  margin: 40px auto 0;       /* a little lower under hero */
+}
+
+.blogs-list__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.blogs-list__line {
+  flex: 0 0 20px;
+  height: 2px;
+  background: #001f5b;
+}
+
+.blogs-list__label {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #111827;
+}
+
+/* ========= BLOG ITEMS ========= */
+
+.blogs-list__items {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Make the whole row clickable */
+.blog-item__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* One blog row – 73px left, 876px right (inside 966px) */
+.blog-item {
+  display: grid;
+  grid-template-columns: 73px minmax(0, 1fr);
+  gap: 24px;
+  align-items: flex-start;
+}
+
+/* LEFT: date + vertical author */
+
+.blog-item__left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-item__date {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.blog-item__day {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: #001f5b;
+}
+
+.blog-item__month {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: #001f5b;
+}
+
+/* 113 × 20 – rotated vertical username */
+
+.blog-item__author-vert {
+  margin-top: 20px;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 10px;
+  color: #6b7280;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+/* RIGHT: bordered content block 876 × 217 inside 966 × 259 */
+
+.blog-item__right {
+  padding: 16px 24px 18px;
+  box-sizing: border-box;
+}
+
+/* Title: 400 × 44, DM Serif 32px */
+
+.blog-item__title {
+  font-family: "DM Serif Display", "Times New Roman", serif;
+  font-size: 32px;
+  line-height: 1.375; /* ~44px */
+  font-weight: 400;
+  color: #002147;
+  margin: 0 0 8px;
+}
+
+/* Body text */
+
+.blog-item__excerpt {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #111827;
+  margin: 0 0 10px;
+}
+
+.blog-item__readmore {
+  border: none;
+  background: none;
+  padding: 0;
+  margin-left: 4px;
+  font: inherit;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* Tags: 128 × 30, radius 100px, 1px border */
+
+.blog-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.blog-item__tag {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 11px;
+  color: #001f5b;
+  border-radius: 100px;
+  padding: 4px 12px;
+  border: 1px solid #002147;
+}
+
+/* ========= BOTTOM PINK “ABOUT US” STRIP (exact Figma values) ========= */
+
+/* Outer group: 1438 × 391 */
+.blogs-approach {
+  background: #ffe9ec;
+  padding: 80px 0 20px;
+  margin: 80px 0 0;
+}
+
+.blogs-approach__inner {
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+/* Text: 1061 × 200, 20px Poppins, 32px LH */
+.blogs-approach__text {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #111827;
+  max-width: 1061px;
+  margin: 0 auto 32px;
+}
+
+/* Button: 153 × 55, radius 10px, font 18px, 7% letter-spacing */
+.blogs-approach__button {
+  width: 153px;
+  height: 55px;
+  border-radius: 10px;
+  border: none;
+  background: #002147;
+  color: #ffffff;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 20px;
+  margin: 0 auto;
+}
+
+/* ========= RESPONSIVE ========= */
+
+@media (max-width: 1024px) {
+  .blogs-page {
+    padding: 60px 24px 96px;
+  }
+
+  .blogs-hero__card {
+    border-radius: 48px;
+    height: 220px;
+    max-width: 100%;
+  }
+
+  .blogs-hero__title {
+    font-size: 32px;
+  }
+
+  .blogs-list {
+    max-width: 100%;
+  }
+
+  .blogs-approach {
+    margin: 64px -24px 0;
+    padding: 56px 0 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-item {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-item__left {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .blog-item__author-vert {
+    writing-mode: horizontal-tb;
+    transform: none;
+    margin-top: 0;
+  }
+
+  .blog-item__right {
+    padding-bottom: 24px;
+  }
+
+  .blogs-approach__text {
+    padding: 0 16px;
+  }
+}

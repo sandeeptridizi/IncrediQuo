@@ -1,7 +1,6 @@
 // src/App.jsx
 import React, { useState, useRef } from "react";
-import { Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/HomePage/Navbar";
 import Hero from "./components/HomePage/Hero";
@@ -19,19 +18,13 @@ import PostDetails from "./components/HomePage/PostDetails";
 import AboutPage from "./components/AboutUs/AboutPage";
 import ContactPage from "./components/ContactUs/ContactPage";
 
-// service pages
 import TranscriptionServicePage from "./components/TranscriptionService/TranscriptionServicePage";
 import ClosedCaptionServicePage from "./components/ClosedCaptionService/ClosedCaptionServicePage";
 import SummarizationServicePage from "./components/SummarizationService/SummarizationServicePage";
 import AdditionalSupportServicePage from "./components/AdditionalSupportService/AdditionalSupportServicePage";
 
-// careers page
 import Careers from "./components/Career/Careers";
-
-// terms page
 import TermsPage from "./components/Terms/TermsPage";
-
-// privacy page
 import PrivacyPage from "./components/Privacy/PrivacyPage";
 
 import "./appStyles/AppLayout.css";
@@ -41,10 +34,12 @@ import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
 import CareerCreation from "./components/careerCreation/careerCreation";
 import SmallCard from "./components/managingCareers/managingCareers";
 import CareerUpdate from "./components/careerCreation/updationCareerpage";
-import SingleBlogPage from "./components/SingleBlogPage/SingleBlogPage";
+
 import Dashboard from "./components/Dashboard/Dashboard";
-import Blogs from "./components/Blogs/blogs";
 import LoginPage from "./components/LogInPage/LogIn";
+
+import BlogsListPage from "./components/Blogs/BlogsListPage";   // list page
+import BlogPage from "./components/Blogs/blogs";             // DETAIL PAGE
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -52,13 +47,9 @@ function App() {
 
   const location = useLocation();
   const hiddenLayoutRoutes = [
-    "/login",
-    "/dashboard",
-    "/createBlog",
-    "/manageblogs",
-    "/blog-updation",
-    "/createCareer",
-    "/managecareers",
+    "/login", "/dashboard", "/createBlog",
+    "/manageblogs", "/blog-updation",
+    "/createCareer", "/managecareers",
     "/career-update",
   ];
   const shouldHideLayout = hiddenLayoutRoutes.includes(location.pathname);
@@ -66,35 +57,16 @@ function App() {
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
 
-  const handleOpenServices = () => {
-    if (servicesRef.current?.openFirstService) {
-      servicesRef.current.openFirstService();
-    }
-
-    const section = document.getElementById("services");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <>
-      {/* <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} /> */}
-      {/* Show Navbar only if NOT in hidden routes */}
-      {!shouldHideLayout && (
-        <Navbar
-          onOpenContact={openContact}
-          onOpenServices={handleOpenServices}
-        />
-      )}
+      {!shouldHideLayout && <Navbar />}
       <div className="app">
         <Routes>
-          {/* HOME PAGE */}
           <Route
             path="/"
             element={
               <>
-                <Hero onOpenContact={openContact} />
+                <Hero />
                 <TaglineScroller />
                 <BannerStats />
                 <Services />
@@ -106,74 +78,32 @@ function App() {
             }
           />
 
-          {/* ABOUT PAGE */}
           <Route path="/about" element={<AboutPage />} />
-
-          {/* CONTACT PAGE */}
           <Route path="/contact" element={<ContactPage />} />
 
-          {/* CAREERS PAGE */}
-          <Route
-            path="/careers"
-            element={
-              <>
-                <Careers />
-                {/* optional CTA under careers page, remove if you don't want */}
-              </>
-            }
-          />
-          <Route path="/blogs" element={<Blogs />} />
-          {/* POST DETAILS PAGE */}
+          {/* Careers */}
+          <Route path="/careers" element={<Careers />} />
+
+          {/* BLOG LIST PAGE */}
+          <Route path="/blogs" element={<BlogsListPage />} />
+
+          {/* HOME → Post detail */}
           <Route path="/post/:id" element={<PostDetails />} />
 
-          {/* TRANSCRIPTION SERVICE PAGE */}
-          <Route
-            path="/services/transcription"
-            element={
-              <>
-                <TranscriptionServicePage />
-                <CTA />
-              </>
-            }
-          />
+          {/* BLOG DETAIL PAGE */}
+          <Route path="/blogs/:blogId" element={<BlogPage />} />
 
-          {/* CLOSED CAPTIONING & SUBTITLING PAGE */}
-          <Route
-            path="/services/closed-captioning"
-            element={
-              <>
-                <ClosedCaptionServicePage />
-                <CTA />
-              </>
-            }
-          />
+          {/* Service Pages */}
+          <Route path="/services/transcription" element={<TranscriptionServicePage />} />
+          <Route path="/services/closed-captioning" element={<ClosedCaptionServicePage />} />
+          <Route path="/services/summarization" element={<SummarizationServicePage />} />
+          <Route path="/services/additional-support" element={<AdditionalSupportServicePage />} />
 
-          {/* SUMMARIZATION SERVICE PAGE */}
-          <Route
-            path="/services/summarization"
-            element={
-              <>
-                <SummarizationServicePage />
-                <CTA />
-              </>
-            }
-          />
-
-          {/* ADDITIONAL SUPPORT SERVICE PAGE */}
-          <Route
-            path="/services/additional-support"
-            element={
-              <>
-                <AdditionalSupportServicePage />
-                <CTA />
-              </>
-            }
-          />
+          {/* Dashboard / CMS */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/createBlog" element={<CreateBlog />} />
           <Route path="/manageblogs" element={<Manageblogs />} />
-          <Route path="/blog/:blogId" element={<SingleBlogPage />} />
           <Route path="/blog-updation" element={<UpdateBlog />} />
           <Route path="/createCareer" element={<CareerCreation />} />
           <Route path="/managecareers" element={<SmallCard />} />
@@ -181,7 +111,6 @@ function App() {
         </Routes>
       </div>
 
-      {/* <Footer /> */}
       {!shouldHideLayout && <Footer />}
       {showContact && <ContactSection onClose={closeContact} />}
     </>

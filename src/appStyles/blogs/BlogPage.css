@@ -1,0 +1,303 @@
+/* ========= PAGE WRAPPER ========= */
+
+.blog-page {
+  max-width: 1440px;              /* desktop frame width */
+  margin: 0 auto;
+  padding: 120px 60px 120px;
+  background: #ffffff;
+}
+
+/* ========= HERO ========= */
+
+.blog-hero {
+  margin-bottom: 56px;
+}
+
+.blog-hero__image {
+  display: block;
+  max-width: 1138px;              /* 1138 × 397 from Figma */
+  width: 100%;
+  height: auto;
+  border-radius: 70px;             /* radius 70px */
+  object-fit: cover;
+  margin: 0 auto;                  /* centered inside page */
+}
+
+/* ========= ARTICLE ========= */
+
+/* wrapper (Feed-Desktop: 1018px wide) */
+.blog-article {
+  max-width: 1018px;
+  margin: 0 auto 80px;             /* centers block under image */
+}
+
+.blog-article__title {
+  font-family: "DM Serif Display", "Times New Roman", serif;
+  font-size: 40px;                 /* size 40px */
+  line-height: 1;                  /* 100% line-height */
+  font-weight: 400;                /* Regular */
+  color: #002147;                  /* dark blue from Figma */
+  margin: 0 0 16px;
+  max-width: 983px;                /* title frame width */
+}
+
+/* meta group: 274 × 50 */
+.blog-article__meta {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 32px;
+}
+
+.blog-article__meta span {
+  color: #000000;
+  font-weight: 500;
+}
+
+.blog-article__meta p {
+  margin: 0;
+}
+
+/* main text: Lexend style block 1018 × 794 */
+.blog-article__content {
+  font-family: "Lexend Deca", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #111827;
+  margin-bottom: 80px;
+}
+
+.blog-article__content p {
+  margin: 0 0 24px;
+}
+
+/* ========= CONTACT BLOCK (DESKTOP – FIGMA MEASUREMENTS) ========= */
+
+/* Outer pink rectangle: 1278 × 530, color #FFE9EC */
+.blog-contact {
+  background: #ffe9ec;
+  border-radius: 0;
+  padding: 40px 0 80px;
+  margin: 0 0 80px;
+}
+
+.blog-contact__inner {
+  max-width: 1278px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 34px; /* space between form card and text */
+}
+
+/* LEFT CARD: 642 × 457 */
+.blog-contact__card {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+  border: 1px solid #f7d0dd;
+  width: 642px;
+  height: 457px;
+  padding: 40px 29px 32px; /* 642 - 2*29 = 584 input width */
+}
+
+.blog-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.blog-contact__field span {
+  display: block;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+/* Inputs: 584 × 64, radius 10px */
+.blog-contact__field input,
+.blog-contact__field textarea {
+  width: 584px;
+  max-width: 100%;
+  height: 64px;
+  border: none;
+  border-radius: 10px;
+  background: #001f5b;
+  color: #ffffff;
+  padding: 14px 18px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Message: 584 × 141 */
+.blog-contact__field textarea {
+  height: auto;
+  min-height: 141px;
+  resize: vertical;
+}
+
+.blog-contact__field input::placeholder,
+.blog-contact__field textarea::placeholder {
+  color: #d1d5db;
+}
+
+/* Submit button: 163.77 × 45, radius 6.39px */
+.blog-contact__submit {
+  margin-top: 20px;
+  width: 163.77px;
+  height: 45px;
+  border-radius: 6.39px;
+  border: none;
+  background: #001f5b;
+  color: #ffffff;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+
+  /* NEW — centers button inside card */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading: Inter Black 84px, line-height 71px, letter-spacing -4% */
+.blog-contact__text {
+  width: 506px;
+}
+
+.blog-contact__text h2 {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 900;          /* Black */
+  font-size: 84px;
+  line-height: 71px;         /* exact Figma line-height */
+  letter-spacing: -0.04em;   /* -4% */
+  color: #002147;
+  margin: 0 0 12px;
+}
+
+/* Body text: Inter, 16px, Semi Bold, 493 × 38 */
+.blog-contact__text p {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 600;  /* Semi Bold */
+  line-height: 1;    /* 100% */
+  color: #111827;
+  max-width: 493px;
+  margin: 0;
+}
+
+/* ========= BOTTOM PINK “ABOUT US” STRIP ========= */
+
+/* Outer group: ~1438 × 391, centered, full-width safe */
+.blog-approach {
+  background: #ffe9ec;
+  padding: 80px 0px 20px;           /* gives total height close to 391px with text + button */
+  margin: 0;                 /* no negative margin – avoids horizontal scroll */
+}
+
+.blog-approach__inner {
+  max-width: 1438px;         /* group width from Figma */
+  margin: 0 auto;
+  padding: 0 24px;           /* small side padding for smaller screens */
+  text-align: center;
+}
+
+/* Text block: 1061 × 200, Poppins 20px, line-height 32px */
+.blog-approach__text {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;           /* Figma size */
+  line-height: 32px;         /* Figma line-height */
+  font-weight: 400;          /* Regular */
+  color: #111827;
+  max-width: 1061px;         /* text frame width */
+  margin: 0 auto 32px;       /* centered, 32px gap above button */
+}
+
+/* Button frame: 153 × 55, radius 10px, text 18px, 7% tracking */
+.blog-approach__button {
+  width: 153px;
+  height: 55px;
+  border-radius: 10px;
+  border: none;
+  background: #002147;       /* same dark navy as design */
+  color: #ffffff;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;           /* button text size */
+  font-weight: 500;          /* Medium */
+  letter-spacing: 0.07em;    /* ≈ 7% */
+  text-transform: uppercase;
+  cursor: pointer;
+
+  display: inline-flex;      /* centers label inside */
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 20px;         /* top/bottom 6, left/right 20 like Figma frame */
+  margin: 0 auto;            /* centers the whole button block */
+}
+
+
+/* ========= RESPONSIVE ========= */
+
+@media (max-width: 1024px) {
+  .blog-page {
+    padding: 60px 24px 96px;
+  }
+
+  .blog-contact,
+  .blog-approach {
+    margin: 0 -24px 64px;
+  }
+
+  .blog-contact__inner {
+    padding: 56px 24px;
+    grid-template-columns: 1fr;
+  }
+
+  .blog-contact__card {
+    max-width: 100%;
+  }
+
+  .blog-contact__text {
+    margin-top: 24px;
+  }
+
+  .blog-contact__text h2 {
+    font-size: 32px;
+  }
+
+  .blog-approach__text {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-article {
+    margin: 0 auto 64px;
+  }
+
+  .blog-article__title {
+    font-size: 28px;
+  }
+
+  .blog-contact__card {
+    padding: 28px 24px;
+  }
+
+  .blog-contact__text h2 {
+    font-size: 28px;
+  }
+}
