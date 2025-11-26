@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useState, useRef } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import Navbar from "./components/HomePage/Navbar";
 import Hero from "./components/HomePage/Hero";
@@ -34,10 +35,33 @@ import TermsPage from "./components/Terms/TermsPage";
 import PrivacyPage from "./components/Privacy/PrivacyPage";
 
 import "./appStyles/AppLayout.css";
+import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
+import { Manageblogs } from "./components/ManageBlogs/Manageblogs";
+import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
+import CareerCreation from "./components/careerCreation/careerCreation";
+import SmallCard from "./components/managingCareers/managingCareers";
+import CareerUpdate from "./components/careerCreation/updationCareerpage";
+import SingleBlogPage from "./components/SingleBlogPage/SingleBlogPage";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Blogs from "./components/Blogs/blogs";
+import LoginPage from "./components/LogInPage/LogIn";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
   const servicesRef = useRef(null);
+
+  const location = useLocation();
+  const hiddenLayoutRoutes = [
+    "/login",
+    "/dashboard",
+    "/createBlog",
+    "/manageblogs",
+    "/blog-updation",
+    "/createCareer",
+    "/managecareers",
+    "/career-update",
+  ];
+  const shouldHideLayout = hiddenLayoutRoutes.includes(location.pathname);
 
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
@@ -55,8 +79,14 @@ function App() {
 
   return (
     <>
-      <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} />
-
+      {/* <Navbar onOpenContact={openContact} onOpenServices={handleOpenServices} /> */}
+      {/* Show Navbar only if NOT in hidden routes */}
+      {!shouldHideLayout && (
+        <Navbar
+          onOpenContact={openContact}
+          onOpenServices={handleOpenServices}
+        />
+      )}
       <div className="app">
         <Routes>
           {/* HOME PAGE */}
@@ -88,11 +118,11 @@ function App() {
             element={
               <>
                 <Careers />
-                {/* add <CTA /> here if you want CTA under Careers */}
+                {/* optional CTA under careers page, remove if you don't want */}
               </>
             }
           />
-
+          <Route path="/blogs" element={<Blogs />} />
           {/* POST DETAILS PAGE */}
           <Route path="/post/:id" element={<PostDetails />} />
 
@@ -139,33 +169,20 @@ function App() {
               </>
             }
           />
-
-          {/* TERMS & CONDITIONS PAGE */}
-          <Route
-            path="/terms-of-service"
-            element={
-              <>
-                <TermsPage />
-                <CTA />
-              </>
-            }
-          />
-
-          {/* PRIVACY POLICY PAGE */}
-          <Route
-            path="/privacy-policy"
-            element={
-              <>
-                <PrivacyPage />
-                <CTA />
-              </>
-            }
-          />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/createBlog" element={<CreateBlog />} />
+          <Route path="/manageblogs" element={<Manageblogs />} />
+          <Route path="/blog/:blogId" element={<SingleBlogPage />} />
+          <Route path="/blog-updation" element={<UpdateBlog />} />
+          <Route path="/createCareer" element={<CareerCreation />} />
+          <Route path="/managecareers" element={<SmallCard />} />
+          <Route path="/career-update" element={<CareerUpdate />} />
         </Routes>
       </div>
 
-      <Footer />
-
+      {/* <Footer /> */}
+      {!shouldHideLayout && <Footer />}
       {showContact && <ContactSection onClose={closeContact} />}
     </>
   );
