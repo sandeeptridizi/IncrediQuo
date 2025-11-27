@@ -148,3 +148,41 @@
     line-height: 38px;
   }
 }
+
+/* Tablet – keep layout clean and push image slightly down */
+@media (max-width: 1024px) {
+  .ts-hero__left {
+    justify-content: center;
+  }
+
+  .ts-hero__image {
+    margin-top: 25px; /* image little bit down */
+    max-width: 520px;
+  }
+
+  .ts-hero__cards {
+    width: 100%;
+    align-items: stretch;
+  }
+}
+
+/* Mobile – spacing + down movement for image */
+@media (max-width: 600px) {
+  .ts-hero__left {
+    margin-top: 35px; /* More space for small mobiles */
+  }
+
+  .ts-hero__image {
+    margin-top: 45px; /* image more down on mobile */
+    width: 100%;
+    max-width: 380px;
+  }
+
+  .ts-hero__cards {
+    gap: 14px;
+  }
+
+  .ts-hero__cta {
+    margin-top: 40px; /* prevents button pushing too low */
+  }
+}

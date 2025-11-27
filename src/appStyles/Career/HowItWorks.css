@@ -80,3 +80,54 @@ body {
   margin: 0;
   color: #595959;
 }
+
+
+/* ================= TABLET (≤ 1024px) ================= */
+@media (max-width: 1024px) {
+  .hiw__row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
+  .hiw__card {
+    width: 45%; /* 2 cards per row */
+    justify-content: flex-start;
+  }
+}
+
+/* ================= MOBILE (≤ 600px) ================= */
+@media (max-width: 600px) {
+  .hiw__title {
+    font-size: 26px;
+    margin: 32px 0 12px;
+  }
+
+  .hiw {
+    padding: 18px 0;
+  }
+
+  .hiw__row {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .hiw__card {
+    width: 100%; /* 1 card per row */
+  }
+
+  .hiw__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .hiw__text h4 {
+    font-size: 15px;
+  }
+
+  .hiw__text p {
+    font-size: 13px;
+  }
+}

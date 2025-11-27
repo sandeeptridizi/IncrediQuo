@@ -4,7 +4,13 @@ import "../../appStyles/Services/TranscriptionHero.css";
 import visionCard from "../../assets/icons/Group 5.png";
 import goalCard from "../../assets/icons/Group 9.png";
 
-const SummarizationHero = () => {
+const SummarizationHero = ({ onOpenContact }) => {
+  const handleGetStarted = () => {
+    if (typeof onOpenContact === "function") {
+      onOpenContact();
+    }
+  };
+
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
@@ -26,7 +32,11 @@ const SummarizationHero = () => {
           </h1>
 
           <p className="ts-hero__description">
-            Our Summarisation Service transforms lengthy, complex content into clear, concise, and insightful summaries, without losing meaning, context, or critical details. We help you extract the essential information you need for faster decision-making, smoother workflows, and smarter content consumption across every industry.
+            Our Summarisation Service transforms lengthy, complex content into
+            clear, concise, and insightful summaries, without losing meaning,
+            context, or critical details. We help you extract the essential
+            information you need for faster decision-making, smoother workflows,
+            and smarter content consumption across every industry.
           </p>
 
           <div className="ts-hero__cards">
@@ -42,7 +52,9 @@ const SummarizationHero = () => {
             />
           </div>
 
-          <button className="ts-hero__cta">Get Started</button>
+          <button className="ts-hero__cta" onClick={handleGetStarted}>
+            Get Started
+          </button>
         </div>
       </div>
     </section>

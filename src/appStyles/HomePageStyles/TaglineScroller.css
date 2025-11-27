@@ -2,18 +2,18 @@
 .tagline-section {
   width: 100%;
   background: #ffffff;
-  padding: 42px 0;
+  padding: 32px 0;              /* ↓ was 42px – smaller gap from top */
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Figma center alignment */
-  gap: 18px; /* exact gap between lines */
+  align-items: center;
+  gap: 18px;
 }
 
 /* each scrolling row */
 .tagline-row {
-  width: 1560px;        /* Figma width */
-  height: 61px;        /* Figma height */
+  width: 1560px;                /* desktop Figma width */
+  height: 61px;
   position: relative;
   overflow: hidden;
 }
@@ -33,13 +33,13 @@
   font-style: italic;
   line-height: 100%;
   letter-spacing: 0.04em;
-  margin-right: 70px; /* spacing between duplicates */
+  margin-right: 70px;
 }
 
 /* Top + Bottom muted lines */
 .tagline-text--muted {
   color: rgba(0, 0, 0, 0.35);
-  opacity: 0.40; /* same as Figma */
+  opacity: 0.4;
 }
 
 /* Middle gradient line */
@@ -58,7 +58,7 @@
   transform: translateY(-50%);
   font-size: 11px;
   color: #0d274d;
-  opacity: 0.40;
+  opacity: 0.4;
 }
 
 /* ANIMATION SPEED PER ROW */
@@ -75,21 +75,70 @@
 /* KEYFRAMES */
 @keyframes marquee-left {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to   { transform: translateX(-50%); }
 }
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  to   { transform: translateX(0); }
 }
 
-/* ---------------- MOBILE ---------------- */
-@media (max-width: 900px) {
+/* ---------- TABLET (≤ 1024px) ---------- */
+@media (max-width: 1024px) {
+  .tagline-section {
+    padding: 26px 0;           
+    gap: 14px;
+  }
+
+  .tagline-row {
+    width: 1200px;
+    height: 46px;
+  }
+
+  .tagline-text {
+    font-size: 34px;
+    margin-right: 50px;
+  }
+}
+
+/* ---------- MOBILE (≤ 768px) ---------- */
+@media (max-width: 768px) {
+  .tagline-section {
+    padding: 10px 200px;           /* smaller gap above section */
+    gap: 12px;
+    margin-top: -18px; 
+  }
+
   .tagline-row {
     width: 900px;
-    height: 35px;
+    height: 36px;
   }
+
   .tagline-text {
-    font-size: 22px;
-    margin-right: 40px;
+    font-size: 24px;
+    margin-right: 36px;
+  }
+}
+
+/* ---------- SMALL MOBILE (≤ 480px) ---------- */
+@media (max-width: 480px) {
+  .tagline-section {
+    padding: 12px 0;      
+    gap: 10px;
+    margin-top: -8px; 
+  }
+
+  .tagline-row {
+    width: 720px;
+    height: 32px;
+  }
+
+  .tagline-text {
+    font-size: 20px;
+    margin-right: 28px;
+  }
+
+  /* hide tiny wave on very small screens */
+  .tagline-row::after {
+    display: none;
   }
 }

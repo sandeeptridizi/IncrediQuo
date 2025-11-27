@@ -5,6 +5,11 @@ import "../../appStyles/HomePageStyles/Footer.css";
 import logo from "../../assets/logo.png";
 
 const Footer = () => {
+  // helper so even if user is already on same route, it scrolls to top
+  const handleNavClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <footer className="footer" id="footer">
       <div className="footer-inner">
@@ -15,13 +20,13 @@ const Footer = () => {
               <div className="footer-logo-mark">
                 <img src={logo} alt="Logoipsum logo" />
               </div>
-              <span className="footer-logo-text">Logoipsum</span>
+              <span className="footer-logo-text">IncrediQuo-Solutions</span>
             </div>
 
             <p className="footer-description">
-              Lorem Ipsum Content is the Dummy text
+              Your trusted partner for precision
               <br />
-              which is for the web content
+              transcription and media support services.
             </p>
 
             <button className="footer-social">in</button>
@@ -35,10 +40,42 @@ const Footer = () => {
             <div className="footer-column footer-column--services">
               <h4 className="footer-heading">Services</h4>
               <ul>
-                <li>Transcription</li>
-                <li>Closed Captioning &amp; Subtitling</li>
-                <li>Summarization</li>
-                <li>Additional Support</li>
+                <li>
+                  <Link
+                    to="/services/transcription"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
+                    Transcription
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/closed-captioning"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
+                    Closed Captioning &amp; Subtitling
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/summarization"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
+                    Summarization
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/services/additional-support"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
+                    Additional Support
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -47,22 +84,40 @@ const Footer = () => {
               <h4 className="footer-heading">Quikers</h4>
               <ul>
                 <li>
-                  <Link to="/" className="footer-link">
+                  <Link
+                    to="/"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
                     Home Page
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" className="footer-link">
+                  <Link
+                    to="/about"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/careers" className="footer-link">
+                  <Link
+                    to="/careers"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
                     Careers
                   </Link>
                 </li>
                 <li>
-                  <span className="footer-link">Blogs</span>
+                  <Link
+                    to="/blogs"
+                    className="footer-link"
+                    onClick={handleNavClick}
+                  >
+                    Blogs
+                  </Link>
                 </li>
               </ul>
 
@@ -70,10 +125,15 @@ const Footer = () => {
                 <Link
                   to="/privacy-policy"
                   className="footer-bottom-link privacy-policy"
+                  onClick={handleNavClick}
                 >
                   Privacy Policy
                 </Link>
-                <Link to="/terms-of-service" className="footer-bottom-link">
+                <Link
+                  to="/terms-of-service"
+                  className="footer-bottom-link"
+                  onClick={handleNavClick}
+                >
                   Terms of Service
                 </Link>
               </div>

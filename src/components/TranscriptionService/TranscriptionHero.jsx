@@ -6,7 +6,13 @@ import "../../appStyles/Services/TranscriptionHero.css";
 import visionCard from "../../assets/icons/Group 5.png";
 import goalCard from "../../assets/icons/Group 9.png";
 
-const TranscriptionHero = () => {
+const TranscriptionHero = ({ onOpenContact }) => {
+  const handleGetStarted = () => {
+    if (typeof onOpenContact === "function") {
+      onOpenContact();  // open popup modal
+    }
+  };
+
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
@@ -25,13 +31,13 @@ const TranscriptionHero = () => {
           <p className="ts-hero__eyebrow">Transcription Services</p>
 
           <h1 className="ts-hero__title">
-           Precision-Driven Language 
+            Precision-Driven Language 
             <br />
             Services You Can Trust
           </h1>
 
           <p className="ts-hero__description">
-           IncrediQuo Solutions delivers high-accuracy transcription, captioning, summarisation, and language support designed for modern business needs. Fast, reliable, and powered by expert professionals.
+            IncrediQuo Solutions delivers high-accuracy transcription, captioning, summarisation, and language support designed for modern business needs. Fast, reliable, and powered by expert professionals.
           </p>
 
           {/* CARDS — only images */}
@@ -50,7 +56,9 @@ const TranscriptionHero = () => {
           </div>
 
           {/* CTA BUTTON */}
-          <button className="ts-hero__cta">Get Started</button>
+          <button className="ts-hero__cta" onClick={handleGetStarted}>
+            Get Started
+          </button>
         </div>
       </div>
     </section>

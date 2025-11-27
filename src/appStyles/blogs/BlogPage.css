@@ -246,58 +246,122 @@
   justify-content: center;
 
   padding: 6px 20px;         /* top/bottom 6, left/right 20 like Figma frame */
-  margin: 0 auto;            /* centers the whole button block */
+  margin: 0 auto;    
+  text-decoration: none;        /* centers the whole button block */
 }
 
 
-/* ========= RESPONSIVE ========= */
-
+/* ================= TABLET (≤ 1024px) — RESPONSIVE FIX ================= */
 @media (max-width: 1024px) {
+
+  /* Prevent hero image from going under navbar */
   .blog-page {
-    padding: 60px 24px 96px;
+    padding-top: 150px; /* keeps hero image below navbar */
   }
 
-  .blog-contact,
-  .blog-approach {
-    margin: 0 -24px 64px;
+  /* Hero image centered + cleaner spacing */
+  .blog-hero__image {
+    border-radius: 40px;
+    margin-top: 10px;
   }
 
+  /* Article spacing */
+  .blog-article {
+    margin: 0 auto 60px;
+    padding: 0 10px;
+  }
+
+  /* Contact section stack vertically */
   .blog-contact__inner {
-    padding: 56px 24px;
-    grid-template-columns: 1fr;
-  }
-
-  .blog-contact__card {
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
   .blog-contact__text {
-    margin-top: 24px;
+    text-align: center;
+    width: 100%;
   }
 
-  .blog-contact__text h2 {
-    font-size: 32px;
+  /* Pink strip responsiveness */
+  .blog-approach {
+    padding: 60px 24px 50px;
+    border-radius: 30px;
+    margin-top: 60px;
   }
 
   .blog-approach__text {
-    padding: 0 24px;
+    font-size: 18px;
+    max-width: 100%;
+    line-height: 30px;
   }
 }
 
-@media (max-width: 640px) {
-  .blog-article {
-    margin: 0 auto 64px;
+/* ================= MOBILE (≤ 600px) — RESPONSIVE FIX ================= */
+@media (max-width: 600px) {
+
+  /* Extra safe space so image never hides under navbar */
+  .blog-page {
+    padding-top: 170px;
   }
 
+  /* Hero image */
+  .blog-hero__image {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 26px;
+  }
+
+  /* Article title */
   .blog-article__title {
-    font-size: 28px;
+    font-size: 24px;
+    line-height: 32px;
   }
 
+  .blog-article__meta {
+    font-size: 13px;
+  }
+
+  .blog-article__content {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  /* Contact card full width */
   .blog-contact__card {
-    padding: 28px 24px;
+    width: 100%;
+    height: auto;
+    padding: 26px 20px;
   }
 
+  /* Contact heading */
   .blog-contact__text h2 {
-    font-size: 28px;
+    font-size: 26px;
+    line-height: 32px;
+  }
+
+  .blog-contact__text p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Pink strip mobile */
+  .blog-approach {
+    padding: 40px 18px 48px;
+    border-radius: 22px;
+    margin-top: 48px;
+  }
+
+  .blog-approach__text {
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
+
+  .blog-approach__button {
+    width: 100%;
+    max-width: 260px;
+    height: 50px;
+    font-size: 16px;
   }
 }

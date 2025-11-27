@@ -1,23 +1,24 @@
 import React from "react";
 import "../../appStyles/AboutUs/AboutHero.css";
-import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg"; // 👈 import image
+import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg"; // your image
 
 const AboutHero = () => {
   return (
-    <section className="about-hero" id="about">
+    <section className="about-hero">
       <div className="about-hero__inner">
         {/* LEFT TEXT */}
         <div className="about-hero__text">
           <h1>
-            Building
-            <br />
-            Connections,
-            <br />
-            Creating Impact
+            Your Trusted Partner for Professional{" "}
+            <span className="about-hero__highlight">
+              Transcription and Language Solutions
+            </span>
           </h1>
+
           <p>
-            We&apos;re a consumer-led digital health company that helps people
-            live healthier, happier lives.
+            At IncrediQuo Solutions, we combine human expertise with intelligent
+            workflows to provide precise, secure, and scalable language
+            solutions trusted by global enterprises.
           </p>
 
           <button className="about-hero__button">Learn More</button>
@@ -25,8 +26,9 @@ const AboutHero = () => {
 
         {/* RIGHT IMAGE */}
         <div className="about-hero__image">
-          <img src={AboutHeroImg} alt="About illustration" />
-        </div>
+  <img src={AboutHeroImg} alt="Team collaborating at a laptop" />
+</div>
+
       </div>
     </section>
   );

@@ -5,21 +5,21 @@ const HowItWorks = () => {
   const items = [
     {
       number: "1",
-      title: "Lorem Ipsum",
+      title: "Smart Intake & Requirement Mapping",
       text:
-        "Figma ipsum component variant main layer. Team text auto pixel thumbnail. Arrow pen selection duplicate prototype bullet variant.",
+        "We analyze your project needs, industry context, and format requirements to ensure every file is processed with the right expertise and workflow.",
     },
     {
       number: "2",
-      title: "Lorem Ipsum",
+      title: "Expert Execution with Quality Controls",
       text:
-        "Crypto ipsum bitcoin ethereum dogecoin litecoin. IOTA algorand ave kusama BitTorrent. EOS ox TRON bancor polkadot kava crypto.",
+        "Our trained linguistic specialists and transcription professionals work with advanced tools to deliver accurate, consistent, and compliant outputs across all services.",
     },
     {
       number: "3",
-      title: "Lorem Ipsum",
+      title: "Final Review & Secure Delivery",
       text:
-        "Pirate ipsum argh bounty warp jack. Tales lugsail plate man jones fathom. Aft topsail topgallant sheet warp warp gangway.",
+        "Each project undergoes multi-layered checks before being delivered through a secure, timely, and client-preferred channel for a seamless experience.",
     },
   ];
 
@@ -27,7 +27,6 @@ const HowItWorks = () => {
     <section className="how">
       <div className="how__inner">
         <h2>How does IncrediQuo Solutions work</h2>
-
         <div className="how__grid">
           {items.map((item) => (
             <article key={item.number} className="how__item">

@@ -9,7 +9,7 @@ const Navbar = () => {
     <header className="navbar">
       <NavLink to="/" className="navbar__logo">
         <img src={Logo} alt="Logo" />
-        <span>LogoIpsum</span>
+        <span>IncrediQuo-Solutions</span>
       </NavLink>
 
       <nav className="navbar__links">

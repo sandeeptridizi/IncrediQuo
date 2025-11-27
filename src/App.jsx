@@ -39,7 +39,10 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LogInPage/LogIn";
 
 import BlogsListPage from "./components/Blogs/BlogsListPage";   // list page
-import BlogPage from "./components/Blogs/blogs";             // DETAIL PAGE
+import BlogPage from "./components/Blogs/blogs";               // DETAIL PAGE
+
+// 🔹 Scroll to top on every route change
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -60,15 +63,19 @@ function App() {
   return (
     <>
       {!shouldHideLayout && <Navbar />}
+
+      {/* 🔥 whenever the route (pathname) changes, scroll to top */}
+      <ScrollToTop />
+
       <div className="app">
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <Hero />
+                <Hero onOpenContact={openContact} />
                 <TaglineScroller />
-                <BannerStats />
+                <BannerStats onOpenContact={openContact} />
                 <Services />
                 <FeatureSection />
                 <Industries />
@@ -80,24 +87,32 @@ function App() {
 
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-
-          {/* Careers */}
           <Route path="/careers" element={<Careers />} />
-
-          {/* BLOG LIST PAGE */}
           <Route path="/blogs" element={<BlogsListPage />} />
-
-          {/* HOME → Post detail */}
           <Route path="/post/:id" element={<PostDetails />} />
-
-          {/* BLOG DETAIL PAGE */}
           <Route path="/blogs/:blogId" element={<BlogPage />} />
 
           {/* Service Pages */}
-          <Route path="/services/transcription" element={<TranscriptionServicePage />} />
-          <Route path="/services/closed-captioning" element={<ClosedCaptionServicePage />} />
-          <Route path="/services/summarization" element={<SummarizationServicePage />} />
-          <Route path="/services/additional-support" element={<AdditionalSupportServicePage />} />
+          <Route
+            path="/services/transcription"
+            element={<TranscriptionServicePage onOpenContact={openContact} />}
+          />
+          <Route
+            path="/services/closed-captioning"
+            element={<ClosedCaptionServicePage onOpenContact={openContact} />}
+          />
+          <Route
+            path="/services/summarization"
+            element={<SummarizationServicePage onOpenContact={openContact} />}
+          />
+          <Route
+            path="/services/additional-support"
+            element={<AdditionalSupportServicePage onOpenContact={openContact} />}
+          />
+
+          {/* Legal Pages */}
+          <Route path="/privacy-policy" element={<PrivacyPage />} />
+          <Route path="/terms-of-service" element={<TermsPage />} />
 
           {/* Dashboard / CMS */}
           <Route path="/login" element={<LoginPage />} />

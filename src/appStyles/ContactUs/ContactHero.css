@@ -32,19 +32,47 @@
   margin: 0;
 }
 
-/* responsive */
-
-@media (max-width: 768px) {
+/* ============== TABLET (≤ 1024px) ============== */
+@media (max-width: 1024px) {
   .contact-hero {
-    padding: 130px 0 24px;
+    padding: 170px 0 28px;    /* ensures safe space under navbar */
+  }
+
+  .contact-hero__inner {
+    max-width: 800px;
+    padding: 0 32px;
   }
 
   .contact-hero__inner h1 {
-    font-size: 26px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+
+  .contact-hero__inner p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+/* ============== MOBILE (≤ 600px) ============== */
+@media (max-width: 600px) {
+  .contact-hero {
+    padding: 150px 0 22px;    /* prevents hero text from going under navbar */
+  }
+
+  .contact-hero__inner {
+    padding: 0 16px;
+  }
+
+  .contact-hero__inner h1 {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 14px;
   }
 
   .contact-hero__inner p {
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 26px;
   }
 }
+

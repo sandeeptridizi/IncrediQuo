@@ -1,3 +1,4 @@
+// src/components/Career/Careers.jsx
 import React from "react";
 import "../../appStyles/Career/Careers.css";
 
@@ -8,7 +9,7 @@ import BottomSection from "./BottomSection";
 
 const Careers = () => {
   return (
-    <div className="careers-page" id="careers">
+    <div className="careers-page page-animate" id="careers">
       <CareerHero />
       <HowItWorks />
       <FeaturedJobs />

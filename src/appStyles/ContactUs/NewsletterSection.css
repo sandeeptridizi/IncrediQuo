@@ -9,7 +9,6 @@
 /* dotted triangle top-left */
 .contact-newsletter__dots {
   position: absolute;
-  /* approx: inside 1285px group, near top-left */
   top: 40px;
   left: 120px;
   width: 183.86px;
@@ -23,8 +22,8 @@
 .contact-newsletter__inner {
   position: relative;
   width: 100%;
-  max-width: 1285px;      /* group width from Figma */
-  min-height: 318px;      /* group height ~317.91 */
+  max-width: 1285px;
+  min-height: 318px;
   margin: 0 24px;
   padding: 0;
   text-align: center;
@@ -34,48 +33,55 @@
   justify-content: center;
 }
 
-/* OVERLINE (Poppins 26px, 120% line height, 20% tracking) */
+/* OVERLINE */
 .contact-newsletter__overline {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 26px;
   line-height: 1.2;
-  letter-spacing: 0.2em; /* 20% */
-  font-weight: 700;       /* Bold */
+  letter-spacing: 0.2em;
+  font-weight: 700;
   color: #000000;
   text-transform: uppercase;
   margin: 0 0 32px;
-  max-width: 556px;       /* heading frame width */
+  max-width: 556px;
 }
 
-/* description text — Inter 22px, 120% line height */
+/* description text */
 .contact-newsletter__title {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 22px;
   line-height: 1.2;
-  font-weight: 600;       /* Semi Bold */
+  font-weight: 600;
   color: #111827;
   margin: 0 0 40px;
-  max-width: 1001px;      /* text box width from Figma */
+  max-width: 1001px;
 }
 
-/* FORM — 496 × 55 group */
+/* FORM */
 .contact-newsletter__form {
   display: flex;
   justify-content: center;
   align-items: stretch;
   max-width: 496px;
   width: 100%;
-  height: 55px;
   margin: 0 auto;
+  /* let children control height */
 }
 
-/* dark navy input — fills remaining width */
+/* shared input/button base */
+.contact-newsletter__input,
+.contact-newsletter__button {
+  height: 55px;
+  box-sizing: border-box;
+}
+
+/* input */
 .contact-newsletter__input {
   flex: 1;
   padding: 0 22px;
-  border-radius: 8px 0 0 8px; /* 8px radius on left corners */
+  border-radius: 8px 0 0 8px;
   border: none;
   background: #001f5b;
   color: #ffffff;
@@ -83,7 +89,6 @@
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   outline: none;
-  height: 55px;
 }
 
 .contact-newsletter__input::placeholder {
@@ -91,10 +96,9 @@
   font-size: 15px;
 }
 
-/* pink button — 149 × 55, 8px on right corners */
+/* button */
 .contact-newsletter__button {
   min-width: 149px;
-  height: 55px;
   padding: 0 26px;
   border-radius: 0 8px 8px 0;
   border: none;
@@ -113,49 +117,103 @@
   transform: translateY(-1px);
 }
 
-/* responsive */
-@media (max-width: 768px) {
+/* ========== TABLET (≤ 1024px) ========== */
+@media (max-width: 1024px) {
   .contact-newsletter {
-    padding: 70px 0 90px;
+    padding: 90px 0 105px;
   }
 
   .contact-newsletter__inner {
-    max-width: 100%;
-    padding: 0 16px;
+    max-width: 760px;
+    padding: 0 24px;
+  }
+
+  .contact-newsletter__overline {
+    font-size: 22px;
+    letter-spacing: 0.18em;
+  }
+
+  .contact-newsletter__title {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .contact-newsletter__form {
+    max-width: 520px;
   }
 
   .contact-newsletter__dots {
-    top: 30px;
-    left: 20px;
-    width: 75px;
-    height: 75px;
+    top: 32px;
+    left: 32px;
+    width: 120px;
+    height: 110px;
+  }
+}
+
+/* ========== MOBILE (≤ 600px) ========== */
+@media (max-width: 600px) {
+  .contact-newsletter {
+    padding: 76px 0 82px;
+  }
+
+  .contact-newsletter__inner {
+    padding: 0 18px;
   }
 
   .contact-newsletter__overline {
     font-size: 18px;
-    letter-spacing: 0.18em;
-    margin-bottom: 20px;
-    max-width: 100%;
+    margin-bottom: 14px;
+    letter-spacing: 0.15em;
   }
 
   .contact-newsletter__title {
-    font-size: 16px;
-    max-width: 100%;
-    margin-bottom: 28px;
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 24px;
   }
 
   .contact-newsletter__form {
     flex-direction: column;
     gap: 12px;
+    width: 100%;
     max-width: 100%;
-    height: auto;
   }
 
   .contact-newsletter__input,
   .contact-newsletter__button {
+    width: 100%;
+    height: 50px;
     border-radius: 999px;
-    height: 48px;
     padding: 0 18px;
     min-width: 0;
+  }
+
+  .contact-newsletter__button {
+    margin-top: 4px;
+  }
+
+  .contact-newsletter__dots {
+    top: 12px;
+    left: 12px;
+    width: 55px;
+    height: 55px;
+    opacity: 0.6;
+    background-size: 9px 9px;
+  }
+  .contact-newsletter__button {
+    height: 65px;          /* increased height */
+    font-size: 17px;       /* larger text inside */
+    padding: 0 22px;       /* comfortable spacing */
+    border-radius: 999px;  /* smooth pill shape */
+  }
+
+  .contact-newsletter__input::placeholder {
+    font-size: 17px;
+  }
+
+  .contact-newsletter__input {
+    height: 105px;      
+    font-size: 17px;  
+    padding: 0 22px;
   }
 }

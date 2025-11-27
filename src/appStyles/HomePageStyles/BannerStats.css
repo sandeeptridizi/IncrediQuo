@@ -53,6 +53,7 @@
   width: 180px;
   height: 280px;
   background:
+  linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 0 / 80px 4px no-repeat,
     /* long */
     linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 0 / 140px 4px no-repeat,
     /* short */
@@ -76,17 +77,14 @@
 .banner::after {
   content: "";
   position: absolute;
-  right: 190px;     /* nudge closer to centre like design */
-  bottom: 105px;    /* sits nicely above ticker row */
-  width: 103px;     /* 103 x 94 like Figma */
-  height: 94px;
-  background:
-    linear-gradient(#ffe9ec 0 0) 8px 8px / 10px 10px no-repeat,
-    linear-gradient(#ffe9ec 0 0) 52px 0 / 8px 8px no-repeat,
-    linear-gradient(#ffe9ec 0 0) 82px 32px / 8px 8px no-repeat,
-    linear-gradient(#ffe9ec 0 0) 40px 62px / 8px 8px no-repeat;
-  transform: rotate(-18deg);
-  opacity: 0.9;
+  right: 190px;     /* SAME POSITION as previous */
+  bottom: 105px;    /* SAME POSITION as previous */
+  width: 103px;     /* adjust to PNG width */
+  height: 94px;     /* adjust to PNG height */
+  background-image: url("../../assets/Banner/Groupstar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 1;       /* full visibility */
 }
 
 /* =========================

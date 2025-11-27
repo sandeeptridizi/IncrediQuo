@@ -1,11 +1,16 @@
-// src/components/ClosedCaptionService/ClosedCaptionHero.jsx
 import React from "react";
 import heroIllustration from "../../assets/services/ClosedCaptionServicePage.png";  // ⬅ correct image
 import "../../appStyles/Services/TranscriptionHero.css";
 import visionCard from "../../assets/icons/Group 5.png";
 import goalCard from "../../assets/icons/Group 9.png";
 
-const ClosedCaptionHero = () => {
+const ClosedCaptionHero = ({ onOpenContact }) => {
+  const handleGetStarted = () => {
+    if (typeof onOpenContact === "function") {
+      onOpenContact();
+    }
+  };
+
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
@@ -26,7 +31,10 @@ const ClosedCaptionHero = () => {
             Precision Captioning & Subtitles for a Truly Inclusive Audience
           </h1>
           <p className="ts-hero__description">
-           Make your videos accessible, accurate, and globally ready with our expertly crafted captions and multilingual subtitles. We ensure clarity, timing precision, and compliance. so every viewer understands your story.
+            Make your videos accessible, accurate, and globally ready with our
+            expertly crafted captions and multilingual subtitles. We ensure
+            clarity, timing precision, and compliance. so every viewer
+            understands your story.
           </p>
 
           {/* Vision and Goal card images */}
@@ -43,7 +51,9 @@ const ClosedCaptionHero = () => {
             />
           </div>
 
-          <button className="ts-hero__cta">Get Started</button>
+          <button className="ts-hero__cta" onClick={handleGetStarted}>
+            Get Started
+          </button>
         </div>
       </div>
     </section>

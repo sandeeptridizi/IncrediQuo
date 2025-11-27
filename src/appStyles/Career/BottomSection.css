@@ -1,22 +1,22 @@
 .career-bottom {
-  width: 1438px;        /* group width */
-  height: 391px;        /* group height */
+  width: 100%;
+  max-width: 1438px;        /* keeps it nice on big screens */
   margin: 0 auto;
   position: relative;
   background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;  /* text near top, white space below */
-  padding-top: 180px;  
-            /* distance from top to paragraph */
+  justify-content: flex-start;
+  padding: 120px 5% 80px;   /* responsive side padding */
+  box-sizing: border-box;
 }
 
 /* DOT TRIANGLE */
 .dot-pattern {
   position: absolute;
-  top: 45px;
-  left: 60px;
+  top: 40px;
+  left: 40px;
   width: 183.86px;
   height: 132.6px;
   background-image: radial-gradient(#000000 2px, transparent 2px);
@@ -26,27 +26,26 @@
 
 /* TEXT BLOCK */
 .career-bottom p {
-  width: 1061px;
+  max-width: 1061px;
+  width: 100%;
   font-size: 20px;
   line-height: 32px;
   font-weight: 400;
   color: #000000;
   text-align: center;
   margin: 0 auto;
-  margin-left: 135px;   /* moved right */
 }
 
 /* BUTTON */
 .bottom-btn {
-  margin-top: 44px;
-  width: 153px;
-  height: 55px;
+  margin-top: 32px;
+  padding: 10px 32px;
   border-radius: 10px;
   border: none;
   background: #000000;
   color: #ffffff;
   font-size: 18px;
-  line-height: 36px;
+  line-height: 1.4;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -54,5 +53,51 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-left: -100px;  /* moved right */
+  text-decoration: none;
+}
+
+/* ========= TABLET ========= */
+@media (max-width: 1024px) {
+  .career-bottom {
+    padding: 100px 32px 60px;
+  }
+
+  .career-bottom p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .dot-pattern {
+    top: 24px;
+    left: 24px;
+    transform: scale(0.85);
+    transform-origin: top left;
+  }
+}
+
+/* ========= MOBILE ========= */
+@media (max-width: 600px) {
+   .career-bottom {
+    padding: 140px 16px 56px;   /* INCREASED top padding */
+  }
+
+  .career-bottom p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .bottom-btn {
+    width: 100%;
+    max-width: 260px;
+    height: 48px;
+    font-size: 16px;
+    margin-top: 24px;
+  }
+
+  .dot-pattern {
+    top: 16px;
+    left: 16px;
+    transform: scale(0.65);
+    transform-origin: top left;
+  }
 }

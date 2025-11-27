@@ -1,42 +1,43 @@
 import React from "react";
 import "../../appStyles/AboutUs/CompanyHistory.css";
-import CompanyImg from "../../assets/Abouthero/Company.jpg"; // 👈 import image
 
 const CompanyHistory = () => {
   return (
     <section className="history">
       <div className="history__inner">
         <div className="history__content">
-          <h2>Company history</h2>
+          <h2>About IncrediQuo Solutions</h2>
 
           <p className="history__para">
-            Hipster ipsum tattooed brunch I&apos;m baby. Raw iceland keytar
-            master pinterest try-hard sustainable mustache. Loko fashion
-            keffiyeh jean put vexillologist wolf. Plaid chambray health shaman
-            diy silicon.
+            IncrediQuo Solutions is built on the belief that every word carries
+            weight, meaning, and impact. As a trusted partner in transcription,
+            captioning, summarisation, and language support, we combine human
+            intelligence with modern technology to deliver precision-driven
+            results for clients across industries. Our name IncrediQuo, reflects
+            our core philosophy: Incredible Quality, backed by credibility,
+            clarity, and consistency.
           </p>
 
           <p className="history__para">
-            Hipster ipsum tattooed brunch I&apos;m baby. Wolf vegan drinking
-            flannel bun tacos cliche flexitarian. Authentic coloring scenester
-            kogi bodega cold-pressed carry etsy lo-fi. Vegan hexagon artisan
-            unicorn freegan book kinfolk keffiyeh bottle listicle.
+            We understand that every client comes with unique needs, timelines,
+            and expectations. That’s why our approach is deeply collaborative
+            and quality-centric. From real-time transcription to
+            industry-specific documentation, every project is handled by trained
+            professionals who ensure accuracy, confidentiality, and compliance
+            at every step. Whether you're a legal firm needing airtight
+            transcripts, a media house requiring broadcast-ready captions, or a
+            business seeking fast and reliable summarisation, we provide
+            solutions that elevate your workflow and empower better
+            decision-making.
           </p>
 
           <p className="history__para">
-            + raclette sativa yoga vegan. Tumblr copper meggings retro trust
-            cliche tacos coloring next. Brunch franzen thundercats echo mishka
-            cleanse woke direct.
+            At IncrediQuo Solutions, we don’t just deliver files, we deliver
+            confidence, reliability, and measurable value. Our flexible working
+            modes, transparent process system, and commitment to excellence make
+            us the preferred choice for clients who demand nothing short of
+            exceptional linguistic clarity.
           </p>
-
-          <p className="history__para">
-            Bun stumptown diy seitan they mixtape. Goth twee polaroid.
-          </p>
-        </div>
-
-        {/* IMAGE instead of placeholder */}
-        <div className="history__image">
-          <img src={CompanyImg} alt="Company team" />
         </div>
       </div>
     </section>

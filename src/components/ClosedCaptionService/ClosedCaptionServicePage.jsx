@@ -5,10 +5,10 @@ import ClosedCaptionUserCentric from "./ClosedCaptionUserCentric";
 import TranscriptionFlexSection from "../TranscriptionService/TranscriptionFlexSection";
 import ClosedCaptionRelatedServices from "./ClosedCaptionRelatedServices";
 
-const ClosedCaptionServicePage = () => {
+const ClosedCaptionServicePage = ({ onOpenContact }) => {
   return (
-    <main className="ts-page">
-      <ClosedCaptionHero />
+    <main className="ts-page page-animate">
+      <ClosedCaptionHero onOpenContact={onOpenContact} />
       <ClosedCaptionUserCentric />
       <TranscriptionFlexSection />
       <ClosedCaptionRelatedServices />

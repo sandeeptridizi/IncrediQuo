@@ -1,11 +1,11 @@
 /* ===========================
-   CORE TEAM MEMBERS
+   OUR FOUNDERS
    =========================== */
 
 .core-team {
   padding: 90px 0 80px;
   background: #ffffff;
-  overflow-x: hidden; /* stop horizontal scrollbar */
+  overflow-x: hidden;
 }
 
 .core-team__inner {
@@ -16,7 +16,7 @@
 
 /* Heading — 755 × 62, 52 / 62, SemiBold */
 .core-team__inner h2 {
-  max-width: 755px;     /* prevent overflow */
+  max-width: 755px;
   width: 100%;
   margin: 0 auto 40px;
   text-align: center;
@@ -24,26 +24,26 @@
   font-size: 52px;
   line-height: 62px;
   font-weight: 600;
+  letter-spacing: -2px;
   color: #111827;
 }
 
-/* layout — 3 cards centered, 316px width each */
+/* 2 cards, 430 × 568 */
 .core-team__grid {
   display: grid;
-  grid-template-columns: repeat(3, 316px);
+  grid-template-columns: repeat(2, 430px);
   column-gap: 50px;
   justify-content: center;
-  padding: 0 16px;     /* prevent overflow */
-  overflow-x: hidden;
+  align-items: flex-start;
 }
 
-/* wrapper */
 .core-team__card {
-  width: 316px;
+  position: relative;      /* needed for overlay */
+  width: 430px;
   height: 568px;
 }
 
-/* image IS the card */
+/* image */
 .core-team__image-wrap {
   width: 100%;
   height: 100%;
@@ -54,32 +54,89 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 26px;
-  box-shadow: none;
+  border-radius: 20px;
+}
+
+/* ===== TEXT OVERLAY (on image bottom) ===== */
+.core-team__overlay {
+  position: absolute;
+  left: 20px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0px;                         /* almost no space between name & role */       /* soft blur effect */
+  padding: 10px 14px;
+  border-radius: 10px;              /* smooth corners like figma */
+}
+
+
+/* name – Bold/18px, line-height 24px */
+.core-team__name {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;         /* SemiBold */
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: -2px;
+}
+
+/* role – Regular/14px, line-height 22px */
+.core-team__role {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #ffffff;
 }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .core-team__inner h2 {
-    width: 100%;
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 40px;
+    line-height: 48px;
+    max-width: 100%;
   }
 
   .core-team__grid {
     grid-template-columns: 1fr;
     row-gap: 24px;
-    padding: 0;
+    justify-items: center;
   }
 
   .core-team__card {
     width: 100%;
-    max-width: 316px;
+    max-width: 430px;
     height: auto;
-    margin: 0 auto;
   }
 
   .core-team__image-wrap img {
-    height: 420px;
+    height: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .core-team {
+    padding: 70px 0 60px;
+  }
+
+  .core-team__inner {
+    padding: 0 16px;
+  }
+
+  .core-team__inner h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 28px;
+  }
+
+  .core-team__card {
+    max-width: 360px;
+  }
+
+  .core-team__overlay {
+    left: 16px;
+    bottom: 16px;
   }
 }

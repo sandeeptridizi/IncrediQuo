@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Services.css";
 
 import transcriptionIcon from "../../assets/services/transcription.png";
@@ -11,25 +12,31 @@ const services = [
     title: "Transcription",
     icon: transcriptionIcon,
     desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    path: "/services/transcription",
   },
   {
     title: "Closed Captioning & Subtitling",
     icon: subtitlingIcon,
     desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    path: "/services/closed-captioning",
   },
   {
     title: "Summarization",
     icon: summarizationIcon,
     desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    path: "/services/summarization",
   },
   {
     title: "Additional Support",
     icon: supportIcon,
     desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    path: "/services/additional-support",
   },
 ];
 
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="services" className="section services">
       <div className="services-container">
@@ -37,7 +44,11 @@ const Services = () => {
 
         <div className="services-grid">
           {services.map((service) => (
-            <article key={service.title} className="service-card">
+            <article
+              key={service.title}
+              className="service-card"
+              onClick={() => navigate(service.path)}
+            >
               <div className="service-card__icon">
                 <img src={service.icon} alt={service.title} />
               </div>

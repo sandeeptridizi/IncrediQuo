@@ -156,9 +156,9 @@
 /* small tablets / big phones */
 @media (max-width: 900px) {
   .hero {
-    padding: 120px 0 70px;          /* more top to clear navbar */
+    padding: 120px 0 70px;  
+    margin-bottom: -18px;       
   }
-
   .hero__inner {
     padding: 0 24px;
     flex-direction: column-reverse;
@@ -196,7 +196,8 @@
 /* phones */
 @media (max-width: 600px) {
   .hero {
-    padding: 130px 0 60px;
+    padding: 120px 0 6px;
+    margin-bottom: -16px;
   }
 
   .hero__inner {

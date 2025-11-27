@@ -1,10 +1,12 @@
-// BannerStats.jsx (unchanged)
+// BannerStats.jsx
 import React from "react";
 import "../../appStyles/HomePageStyles/BannerStats.css";
 
-const BannerStats = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+const BannerStats = ({ onOpenContact }) => {
+  const handleClick = () => {
+    if (typeof onOpenContact === "function") {
+      onOpenContact();  // open popup like Hero
+    }
   };
 
   return (
@@ -19,23 +21,23 @@ const BannerStats = () => {
           <p>
             At IncrediQuo Solutions, we adapt to your pace not the other way around. Whether you need fast, real-time accuracy or structured delivery, our flexible service modes ensure your transcription and language solutions arrive exactly when you need them.
           </p>
-          <button className="banner__button" onClick={scrollToContact}>
+          <button className="banner__button" onClick={handleClick}>
             Get Started
           </button>
         </div>
 
-       <div className="banner__ticker">
-  <div className="banner__ticker-track">
-    <span>24 Hours</span>
-    <span>Real-time</span>
-    <span>Custom / As per Client Requirement</span>
+        <div className="banner__ticker">
+          <div className="banner__ticker-track">
+            <span>24 Hours</span>
+            <span>Real-time</span>
+            <span>Custom / As per Client Requirement</span>
 
-    {/* duplicate items so the loop looks continuous */}
-    <span>24 Hours</span>
-    <span>Real-time</span>
-    <span>Custom / As per Client Requirement</span>
-  </div>
-</div>
+            {/* duplicate items for infinite loop */}
+            <span>24 Hours</span>
+            <span>Real-time</span>
+            <span>Custom / As per Client Requirement</span>
+          </div>
+        </div>
 
       </div>
     </section>

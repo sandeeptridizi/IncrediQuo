@@ -92,3 +92,66 @@
   line-height: 26px;
   color: #4B5670;
 }
+
+/* lift + shadow on hover for related service cards */
+.page-animate .ts-related__card {
+  transform: translateY(0);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+
+.page-animate .ts-related__card:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.14);
+}
+
+
+/* ===== TABLET (1024px and below) ===== */
+@media (max-width: 1024px) {
+  .ts-related__grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  .ts-related__card {
+    width: 300px;
+    height: auto;
+  }
+
+  .ts-related__heading {
+    font-size: 34px;
+    margin-bottom: 40px;
+  }
+}
+
+/* ===== MOBILE (600px and below) ===== */
+@media (max-width: 600px) {
+  .ts-related {
+    padding: 50px 0 70px;
+  }
+
+  .ts-related__heading {
+    font-size: 28px;
+    line-height: 34px;
+    margin-bottom: 32px;
+    padding: 0 16px;
+  }
+
+  .ts-related__grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .ts-related__card {
+    width: 100%;
+    max-width: 330px;
+    height: auto;
+  }
+
+  .ts-related__card p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+}

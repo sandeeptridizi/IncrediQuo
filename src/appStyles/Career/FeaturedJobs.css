@@ -127,3 +127,87 @@ body {
   color: #3c3c3c;
   border: 1px solid #d3c0c4;
 }
+
+
+@media (max-width: 1024px) {
+  .featured__title,
+  .featured__list {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .jobcard {
+    width: 100%;
+    height: auto;
+    padding: 26px 24px;
+  }
+
+  .jobcard__left {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* remove absolute location, place inline */
+  .jobcard__meta-inline {
+    position: static;
+    transform: none;
+    gap: 6px;
+    order: 2;
+  }
+
+  .jobcard__title {
+    order: 1;
+  }
+
+  .jobcard__right {
+    order: 3;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .featured {
+    margin-top: 50px;
+  }
+
+  .featured__title {
+    font-size: 26px;
+    height: auto;
+  }
+
+  .jobcard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px 18px;
+  }
+
+  .jobcard__left {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .jobcard__title {
+    font-size: 18px;
+  }
+
+  .jobcard__meta-inline {
+    width: 100%;
+  }
+
+  .jobcard__right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .job-btn {
+    width: 48%;
+    height: 42px;
+    padding: 0;
+    font-size: 11px;
+    border-radius: 999px;
+  }
+}

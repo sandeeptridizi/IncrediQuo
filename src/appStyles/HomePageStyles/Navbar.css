@@ -12,6 +12,12 @@
   background: #ffffff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle shadow */
   animation: navbarFadeDown 0.6s ease-out;
+  box-sizing: border-box;
+}
+
+/* sections that you scroll to with anchors */
+.page-section {
+  scroll-margin-top: 90px;   /* keeps content visible below fixed navbar */
 }
 
 /* small fade-down on first paint */
@@ -36,6 +42,7 @@
   color: #022447;
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
+  text-decoration: none;
 }
 
 .navbar__logo img {
@@ -105,6 +112,7 @@
     background 0.25s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
+  text-decoration: none;
 }
 
 .navbar__button:hover {
@@ -116,78 +124,6 @@
 .navbar__button:active {
   transform: translateY(0);
   box-shadow: none;
-}
-
-/* ===== RESPONSIVE ===== */
-
-/* Tablets / small laptops */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 16px 32px;
-  }
-
-  .navbar__links {
-    gap: 28px;
-  }
-}
-
-/* Small tablets & big phones */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 12px 18px;
-    flex-wrap: wrap;            /* allow 2 rows */
-    row-gap: 10px;
-  }
-
-  /* first row: logo left, button right */
-  .navbar__logo {
-    font-size: 16px;
-  }
-
-  .navbar__button {
-    padding: 8px 20px;
-    margin-left: auto;          /* push button to the right on first row */
-  }
-
-  /* second row: nav links, full width */
-  .navbar__links {
-    width: 100%;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  .navbar__links a {
-    font-size: 14px;
-  }
-}
-
-/* Very small phones – stack nicely */
-@media (max-width: 520px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 14px;
-    gap: 10px;
-  }
-
-  .navbar__logo {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .navbar__button {
-    width: 100%;
-    text-align: center;
-    margin-left: 0;
-  }
-
-  .navbar__links {
-    width: 100%;
-    justify-content: flex-start;
-    column-gap: 18px;
-    row-gap: 6px;
-  }
 }
 
 /* ===== DROPDOWN (Our Services) ===== */
@@ -226,22 +162,25 @@
   width: 100%;
 }
 
-/* ✅ FIXED DROPDOWN PANEL */
+/* ===== DROPDOWN PANEL (DESKTOP BASE) ===== */
 .dropdown__menu {
   position: absolute;
   top: 100%;                 /* directly below title */
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 6px;           /* safe spacing without hover break */
+  margin-top: 6px;
 
   background: #00244b;
   padding: 32px;
   border-radius: 26px;
-  width: 430px;
+
+  width: 340px;
+  max-width: 90vw;
+  box-sizing: border-box;
 
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 20px;
 
   opacity: 0;
   visibility: hidden;
@@ -249,9 +188,10 @@
 
   transition: opacity 0.2s ease, visibility 0.2s ease;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 1200;
 }
 
-/* ✅ stays open while hovering title OR menu */
+/* stays open while hovering title OR menu */
 .dropdown:hover .dropdown__menu,
 .dropdown__menu:hover {
   opacity: 1;
@@ -261,17 +201,141 @@
 
 /* menu options */
 .dropdown__menu a {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 450;
   text-decoration: none;
   color: #ffffff;
-  padding: 14px 18px;
+  padding: 10px 14px;
   border-radius: 14px;
   transition: background 0.2s ease, color 0.2s ease;
+  text-align: left;
+  line-height: 1.4;
 }
 
 /* hover highlight */
 .dropdown__menu a:hover {
   background: #ffe8f2;
   color: #00244b;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 16px 32px;
+  }
+
+  .navbar__links {
+    gap: 28px;
+  }
+
+  .page-section {
+    scroll-margin-top: 82px;
+  }
+
+  .dropdown__menu {
+    padding: 26px;
+    /* still a floating panel here */
+  }
+}
+
+/* Small tablets & big phones */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 18px;
+    flex-wrap: wrap;            /* allow 2 rows */
+    row-gap: 10px;
+  }
+
+  /* first row: logo left, button right */
+  .navbar__logo {
+    font-size: 16px;
+  }
+
+  .navbar__button {
+    padding: 8px 20px;
+    margin-left: auto;          /* push button to the right on first row */
+  }
+
+  /* second row: nav links, full width */
+  .navbar__links {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .navbar__links a {
+    font-size: 14px;
+  }
+
+  .page-section {
+    scroll-margin-top: 82px;
+  }
+
+  /* ✅ MOBILE / SMALL TABLET DROPDOWN
+     make it a full-width panel under navbar */
+  .dropdown__menu {
+    position: fixed;
+    top: 64px;                           /* just under navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vw - 32px);           /* full width minus side gap */
+    max-width: 480px;
+    padding: 22px 18px;
+    border-radius: 20px;
+    gap: 16px;
+    max-height: calc(100vh - 96px);      /* scroll inside if too tall */
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .dropdown__menu a {
+    font-size: 16px;
+  }
+}
+
+/* Very small phones – same fixed panel, slightly tighter padding */
+@media (max-width: 520px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .navbar__logo {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .navbar__button {
+    width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .navbar__links {
+    width: 100%;
+    justify-content: flex-start;
+    column-gap: 18px;
+    row-gap: 6px;
+  }
+
+  .page-section {
+    scroll-margin-top: 82px;
+  }
+
+  .dropdown__menu {
+    top: 70px;                            /* tiny bit lower on very small phones */
+    width: calc(100vw - 28px);
+    max-width: none;
+    padding: 18px 16px;
+  }
+
+  .dropdown__menu a {
+    font-size: 16px;
+    padding: 12px 14px;
+  }
 }

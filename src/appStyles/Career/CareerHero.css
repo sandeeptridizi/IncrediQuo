@@ -162,52 +162,117 @@
   cursor: pointer;
 }
 
-/* ===================== RESPONSIVE ===================== */
-
+/* ================= TABLET FIX (≤ 1024px) ================= */
 @media (max-width: 1024px) {
+
+  /* Stop image from overlapping navbar */
   .career-hero {
-    padding: 120px 0;
+    padding-top: 160px;
+    padding-bottom: 120px;
   }
 
+  /* Blue panel stacks cleanly */
   .career-hero__panel {
     flex-direction: column;
-    padding: 40px 32px 80px;
+    text-align: center;
+    padding: 56px 32px 120px;
   }
 
-  .career-hero__image-wrapper {
-    position: static;
-    margin: 32px auto 0;
-  }
-
-  .career-hero__search {
-    position: static;
-    transform: none;
-    margin-top: 32px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 640px) {
-  .career-hero__text h1 {
-    font-size: 32px;
-    line-height: 1.2;
-  }
-
-  .career-hero__subtitle {
-    font-size: 16px;
+  /* Heading + subtitle centered */
+  .career-hero__text {
+    text-align: center;
     max-width: 100%;
   }
 
+  /* Image centered and below text */
+  .career-hero__image-wrapper {
+    position: static;
+    margin: 40px auto 0;
+  }
+
+  .career-hero__image {
+    width: 340px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* Search bar full width under card */
+  .career-hero__search {
+    position: static;
+    transform: none;
+    margin: 48px auto 0;
+    width: 100%;
+    max-width: 700px;
+  }
+}
+
+/* ================= MOBILE FIX (≤ 640px) ================= */
+@media (max-width: 640px) {
+
+  /* Provide space for navbar + hero image */
+  .career-hero {
+    padding-top: 180px;
+    padding-bottom: 80px;
+  }
+
+  /* Blue panel spacing */
+  .career-hero__panel {
+    padding: 40px 20px 100px;
+  }
+
+  .career-hero__text h1 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 16px;
+  }
+
+  .career-hero__subtitle {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  /* Buttons stacked */
+  .career-hero__buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .ch-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Image smaller on mobile */
+  .career-hero__image-wrapper {
+    margin-top: 28px;
+  }
+
+  .career-hero__image {
+    width: 280px;
+    height: auto;
+    max-width: 100%;
+    border-radius: 36px;
+  }
+
+  /* Search bar vertical layout */
   .career-hero__search {
     flex-direction: column;
+    gap: 18px;
     height: auto;
-    gap: 16px;
-    padding: 16px 20px;
+    padding: 20px 20px;
+    border-radius: 18px;
+    margin-top: 38px;
+  }
+
+  .search-field {
+    width: 100%;
+    padding-right: 0;
   }
 
   .search-field:first-child {
-    border-right: none;
-    margin-right: 0;
+    border: none;
+    margin: 0;
   }
 
   .ch-btn--search {
