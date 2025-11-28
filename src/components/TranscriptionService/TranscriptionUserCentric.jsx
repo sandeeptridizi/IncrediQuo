@@ -1,7 +1,7 @@
 import React from "react";
 import "../../appStyles/Services/TranscriptionUserCentric.css";
 import headphones from "../../assets/services/headphones.png";
-import Board from "../../assets/services/board.png";
+import Board from "../../assets/services/Iconimage.png";
 import Group from "../../assets/services/Group.png";
 import favorite from "../../assets/services/favorite.png";
 import archive from "../../assets/services/archive.png";
