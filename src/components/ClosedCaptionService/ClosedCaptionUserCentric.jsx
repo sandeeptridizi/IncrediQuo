@@ -1,6 +1,10 @@
 import React from "react";
 import "../../appStyles/Services/ClosedCaptionUserCentric.css";
-
+import headphones from "../../assets/services/headphones.png";
+import Board from "../../assets/services/Board.png";
+import Group from "../../assets/services/Group.png";
+import favorite from "../../assets/services/favorite.png";
+import archive from "../../assets/services/archive.png";
 /* === ICONS UPDATED TO MATCH DESIGN === */
 
 const BroadcastIcon = () => (
@@ -44,7 +48,7 @@ const ClosedCaptionUserCentric = () => {
         <div className="cc-usercentric__grid">
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <BroadcastIcon />
+              <img src={headphones} alt="legal"/>
             </div>
             <h3>Broadcast</h3>
             <p>
@@ -54,7 +58,7 @@ const ClosedCaptionUserCentric = () => {
 
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <StreamingIcon />
+              <img src={Group} alt="legal"/>
             </div>
             <h3>Streaming</h3>
             <p>
@@ -64,7 +68,7 @@ const ClosedCaptionUserCentric = () => {
 
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <DigitalMediaIcon />
+              <img src={Board} alt="legal"/>
             </div>
             <h3>Digital Media</h3>
             <p>

@@ -1,6 +1,10 @@
 import React from "react";
 import "../../appStyles/Services/AdditionalSupportUserCentric.css";
-
+import headphones from "../../assets/services/headphones.png";
+import Board from "../../assets/services/Board.png";
+import Group from "../../assets/services/Group.png";
+import favorite from "../../assets/services/favorite.png";
+import archive from "../../assets/services/archive.png";
 /* Icons */
 const TimecodingIcon = () => (
   <svg viewBox="0 0 24 24">
@@ -40,7 +44,7 @@ const AdditionalSupportUserCentric = () => {
         <div className="as-usercentric__grid">
           <article className="as-usercentric__item">
             <div className="as-usercentric__icon">
-              <TimecodingIcon />
+              <img src={headphones} alt="legal"/>
             </div>
             <h3>Timecoding &amp; Speaker Labels</h3>
             <p>
@@ -50,7 +54,7 @@ const AdditionalSupportUserCentric = () => {
 
           <article className="as-usercentric__item">
             <div className="as-usercentric__icon">
-              <ExhibitIcon />
+              <img src={Group} alt="legal"/>
             </div>
             <h3>Exhibit Marking &amp; Indexing</h3>
             <p>
@@ -60,7 +64,7 @@ const AdditionalSupportUserCentric = () => {
 
           <article className="as-usercentric__item">
             <div className="as-usercentric__icon">
-              <QualityIcon />
+              <img src={Board} alt="legal"/>
             </div>
             <h3>Quality Review &amp; Proofing</h3>
             <p>

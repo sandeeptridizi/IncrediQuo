@@ -186,3 +186,83 @@
     margin-top: 40px; /* prevents button pushing too low */
   }
 }
+
+.vg-container {
+  display: flex;
+  gap: 0vw;
+  padding: 20px 0;
+  flex-wrap: wrap; /* responsive */
+}
+
+.vg-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1vw;
+  padding: 20px;
+  border-radius: 12px;
+  width: 320px;         /* adjust based on design */
+}
+
+.innerIMg_bulb{
+  width: 7vw;
+  height: 4.5vw;
+   background: #f1f5fc;
+   border-radius: 0.5vw;
+}
+.vg-icon {
+  width: 40px;
+  height: 40px;
+margin: 1vw;
+}
+
+.vg-text h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #001f3f;
+}
+
+.vg-text p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #1a2d45;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+
+  .vg-container {
+    flex-direction: column;      /* stack vertically */
+    gap: 4vw;                    /* spacing between cards */
+    padding: 4vw 0;
+  }
+
+  .vg-card {
+    width: 100%;                 /* full width */
+    padding: 4vw;                /* reduce padding */
+    gap: 3vw;
+    align-items: center;         /* icon & text centered vertically */
+  }
+
+  .innerIMg_bulb {
+    width: 18vw;                 /* increase space for icon box */
+    height: 16vw;
+    border-radius: 1vw;
+  }
+
+  .vg-icon {
+    width: 8vw;
+    height: 8vw;
+    margin: 3.5vw;
+  }
+
+  .vg-text h4 {
+    font-size: 4vw;              /* responsive font */
+  }
+
+  .vg-text p {
+    font-size: 3.4vw;
+    margin-top: 1vw;
+  }
+}
+

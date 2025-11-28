@@ -114,16 +114,19 @@
   }
 
   .cc-usercentric__item {
-    padding: 0;
+    width: 340px;
+    height: 243px;
+    text-align: center;
+    margin-left: 5vw;
   }
 
   .cc-usercentric__item::after {
     display: none;
   }
 
-  .cc-usercentric__subtitle {
+  /* .cc-usercentric__subtitle {
     margin-bottom: 32px;
-  }
+  } */
 }
 
 @media (max-width: 640px) {

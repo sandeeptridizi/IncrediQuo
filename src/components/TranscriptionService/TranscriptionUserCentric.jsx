@@ -1,6 +1,10 @@
 import React from "react";
 import "../../appStyles/Services/TranscriptionUserCentric.css";
-
+import headphones from "../../assets/services/headphones.png";
+import Board from "../../assets/services/Board.png";
+import Group from "../../assets/services/Group.png";
+import favorite from "../../assets/services/favorite.png";
+import archive from "../../assets/services/archive.png";
 // --- simple line icons using inline SVGs ---
 const LegalIcon = () => (
   <svg viewBox="0 0 24 24" className="ts-usercentric__icon-svg">
@@ -48,7 +52,7 @@ const TranscriptionUserCentric = () => {
   return (
     <section className="ts-usercentric">
       <div className="ts-usercentric__inner">
-        <h2 className="ts-usercentric__title">Make every step user-centric</h2>
+        <h2 className="ts-usercentric__title">Our Transcription Services</h2>
         <p className="ts-usercentric__subtitle">
           Smart, reliable, and high-quality solutions for every need
         </p>
@@ -57,7 +61,8 @@ const TranscriptionUserCentric = () => {
         <div className="ts-usercentric__grid ts-usercentric__grid--top">
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon">
-              <LegalIcon />
+              {/* <LegalIcon /> */}
+              <img src={headphones} alt="legal"/>
             </div>
             <h3>Legal</h3>
             <p>
@@ -66,7 +71,7 @@ Accurate, confidential, and legally compliant documentation you can rely on.    
 
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon">
-              <FinancialIcon />
+              <img src={Group} alt="legal"/>
             </div>
             <h3>Financial</h3>
             <p>
@@ -76,7 +81,7 @@ Accurate, confidential, and legally compliant documentation you can rely on.    
 
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon">
-              <MedicalIcon />
+              <img src={Board} alt="legal"/>
             </div>
             <h3>Medical</h3>
             <p>
@@ -91,7 +96,7 @@ Accurate, confidential, and legally compliant documentation you can rely on.    
         <div className="ts-usercentric__grid ts-usercentric__grid--bottom">
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon ts-usercentric__icon--small">
-              <MediaIcon />
+              <img src={archive} alt="legal"/>
             </div>
             <h3>Media</h3>
             <p>
@@ -101,7 +106,7 @@ Accurate, confidential, and legally compliant documentation you can rely on.    
 
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon ts-usercentric__icon--small">
-              <AcademicIcon />
+              <img src={favorite} alt="legal"/>
             </div>
             <h3>Academic</h3>
             <p>

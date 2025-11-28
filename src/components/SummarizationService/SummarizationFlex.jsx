@@ -7,9 +7,7 @@ const SummarizationFlex = () => {
       <div className="ts-flex__inner">
         <p className="ts-flex__eyebrow">Say hello to Landingfolio</p>
         <h2 className="ts-flex__title">
-          Unlimited options give you the
-          <br />
-          ultimate flexibility
+         Our Streamlined 4-Step Workflow
         </h2>
 
         <div className="ts-flex__grid">

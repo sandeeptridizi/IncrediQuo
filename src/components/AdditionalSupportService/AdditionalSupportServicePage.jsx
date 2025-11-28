@@ -4,6 +4,7 @@ import AdditionalSupportHero from "./AdditionalSupportHero";
 import AdditionalSupportUserCentric from "./AdditionalSupportUserCentric";
 import AdditionalSupportFlex from "./AdditionalSupportFlex";
 import AdditionalSupportRelatedServices from "./AdditionalSupportRelatedServices";
+import CTA from "../HomePage/CTA";
 
 const AdditionalSupportServicePage = ({ onOpenContact }) => {
   return (
@@ -12,6 +13,7 @@ const AdditionalSupportServicePage = ({ onOpenContact }) => {
       <AdditionalSupportUserCentric />
       <AdditionalSupportFlex />
       <AdditionalSupportRelatedServices />
+            <CTA />
     </main>
   );
 };
