@@ -37,7 +37,7 @@
 .banner__stripes {
   position: absolute;
   left: -30px;
-  top: 0;
+  top: 80px;
   transform: rotate(-0.6deg);
   transform-origin: left top;
   display: flex;
@@ -47,7 +47,7 @@
 }
 
 .banner__stripe {
-  height: 14px;
+  height: 16px;
   border-radius: 999px;
   background-color: rgba(255, 233, 236, 0.15);
 }
@@ -72,12 +72,14 @@
 
 .banner__text h2 {
   font-family: "Raleway", sans-serif;
-  font-size: clamp(32px, 5vw, 60px);
+  font-size: 60px;
   font-weight: 500;
-  line-height: 1.1;
-  margin: 0;
+  line-height: 60px;
   color: #ffffff;
+  margin: 0;
+  white-space: nowrap;   /* 🔥 forces single line */
 }
+
 
 .banner__text p {
   font-family: "Raleway", sans-serif;
@@ -92,7 +94,7 @@
    BUTTON
    ========================================= */
 .banner__button {
-  margin-top: 48px;
+  margin-top: 18px;
   width: 240px;
   height: 60px;
   border-radius: 10px;
