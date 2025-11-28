@@ -19,7 +19,7 @@
 
 .terms-content h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 36px;
+  font-size: 36px;              /* main section headings */
   line-height: 1.2;
   font-weight: 700;
   color: #000000;
@@ -29,7 +29,7 @@
 
 .terms-content h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 24px;              /* sub headings */
   line-height: 32px;
   font-weight: 700;
   color: #000000;
@@ -41,8 +41,8 @@
 
 .terms-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 24px;              /* Figma: 24px */
+  line-height: 32px;            /* Figma: 32px */
   font-weight: 400;
   color: #000000;
   margin-top: 0;
@@ -60,23 +60,24 @@
 
 .terms-content li {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 24px;              /* Figma: 24px */
+  line-height: 32px;            /* Figma: 32px */
   font-weight: 400;
   color: #000000;
   margin-bottom: 6px;
 }
 
-/* --- CONTACT INFO / STRONG TEXT --- */
+/* --- STRONG TEXT (SPAN in Figma) --- */
 
 .terms-content strong {
   font-family: "Raleway", sans-serif;
-  font-weight: 700;
+  font-weight: 700;             /* bold span */
 }
 
-/* just spacing for the last block, no typography changes */
+/* --- CONTACT BLOCK (BOTTOM) : ONLY SPACING --- */
+
 .terms-contact {
-  margin-top: 24px;
+  margin-top: 24px;             /* just gap above block */
 }
 
 /* ========= TABLET (≤ 1024px) ========= */

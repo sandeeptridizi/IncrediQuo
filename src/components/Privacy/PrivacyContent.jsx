@@ -1,10 +1,10 @@
 import React from "react";
-import "../../appStyles/TermsPageStyles/TermsContent.css";
+import "../../appStyles/PrivacyPageStyles/PrivacyContent.css";
 
 const PrivacyContent = () => {
   return (
-    <section className="terms-content">
-      <div className="terms-content__inner">
+    <section className="privacy-content">
+      <div className="privacy-content__inner">
         <p>
           Your privacy is important to us. This policy explains how we collect,
           use, store, and safeguard your information.
@@ -40,18 +40,12 @@ const PrivacyContent = () => {
         <h2>How We Use Your Information</h2>
         <p>We use collected information to:</p>
         <ul>
-          <li>
-            Provide transcription, captioning, summarization, and support
-            services
-          </li>
+          <li>Provide transcription, captioning, summarization, and support services</li>
           <li>Improve website performance and user experience</li>
           <li>Process payments and send invoices</li>
           <li>Communicate project updates</li>
           <li>Ensure quality control</li>
-          <li>
-            Enhance internal training and process improvement (without exposing
-            client identity)
-          </li>
+          <li>Enhance internal training and process improvement</li>
         </ul>
         <p>We do not sell or rent personal data to third parties.</p>
 
@@ -63,10 +57,6 @@ const PrivacyContent = () => {
           <li>NDA-backed workforce operations</li>
           <li>Secure file transfer methods</li>
         </ul>
-        <p>
-          While we maintain strong security standards, no internet-based system
-          is 100% secure.
-        </p>
 
         <h2>Cookies &amp; Tracking Technologies</h2>
         <p>We use cookies to:</p>
@@ -75,14 +65,9 @@ const PrivacyContent = () => {
           <li>Analyze traffic</li>
           <li>Customize user experience</li>
         </ul>
-        <p>You may disable cookies through your browser settings.</p>
 
         <h2>File Storage &amp; Retention</h2>
-        <p>Files are stored only for the duration required to deliver services.</p>
-        <p>
-          Standard retention period: 30–90 days (custom agreements available).
-          Upon request, files can be deleted immediately after delivery.
-        </p>
+        <p>Standard retention period: 30–90 days (custom agreements available).</p>
 
         <h2>Sharing of Information</h2>
         <p>We may share limited information with:</p>
@@ -91,7 +76,6 @@ const PrivacyContent = () => {
           <li>Payment gateways for transactions</li>
           <li>Legal authorities when required by law</li>
         </ul>
-        <p>We never sell client files or personal data.</p>
 
         <h2>Your Rights</h2>
         <p>You may request to:</p>
@@ -101,19 +85,9 @@ const PrivacyContent = () => {
           <li>Request deletion of files or personal data</li>
           <li>Withdraw consent for communications</li>
         </ul>
-        <p>Email us anytime to initiate these requests.</p>
-
-        <h2>Children’s Privacy</h2>
-        <p>
-          We do not knowingly collect information from individuals under 16
-          years of age.
-        </p>
 
         <h2>External Links</h2>
-        <p>
-          Our website may contain links to third-party websites. We are not
-          responsible for their privacy practices or content.
-        </p>
+        <p>Our website may contain links to third-party websites.</p>
 
         <h2>Changes to This Policy</h2>
         <p>
@@ -121,21 +95,15 @@ const PrivacyContent = () => {
           be posted on this page with the updated date.
         </p>
 
-        {/* FINAL CONTACT BLOCK */}
         <h3>Contact Information</h3>
 
-        <div className="terms-contact">
+        <div className="privacy-contact">
           <p>For privacy or data-related queries, contact us at:</p>
 
-          <p>
-            <strong>Email:</strong> info@incrediquosolutions.com
-          </p>
+          <p><strong>Email:</strong> info@incrediquosolutions.com</p>
 
-          <p>
-            <strong>Location:</strong> Hyderabad, India
-          </p>
+          <p><strong>Location:</strong> Hyderabad, India</p>
         </div>
-
       </div>
     </section>
   );

@@ -1,0 +1,145 @@
+/* ================= PRIVACY CONTENT PAGE ================= */
+
+.privacy-content {
+  width: 100%;
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 120px 5% 120px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.privacy-content__inner {
+  max-width: 1061px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* HEADINGS */
+
+.privacy-content h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+
+.privacy-content h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 36px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* PARAGRAPH */
+
+.privacy-content p {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 16px 0;
+}
+
+/* LISTS */
+
+.privacy-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.privacy-content li {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+/* STRONG */
+
+.privacy-content strong {
+  font-weight: 700;
+}
+
+/* CONTACT BLOCK — ONLY SPACING */
+
+.privacy-contact {
+  margin-top: 24px;
+}
+
+/* ========= TABLET (≤ 1024px) ========= */
+
+@media (max-width: 1024px) {
+  .privacy-content {
+    padding: 80px 32px;
+  }
+
+  .privacy-content h2 {
+    font-size: 32px;
+  }
+
+  .privacy-content h3 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+/* ========= MOBILE (≤ 600px) ========= */
+
+@media (max-width: 600px) {
+  .privacy-content {
+    padding: 60px 16px;
+  }
+
+  .privacy-content h2 {
+    font-size: 28px;
+  }
+
+  .privacy-content h3 {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .privacy-content p,
+  .privacy-content li {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .privacy-content ul {
+    padding-left: 15px;
+  }
+
+  .privacy-contact {
+    margin-top: 20px;
+  }
+}
+/* FIX — Make last contact block fonts match everything */
+.privacy-contact p {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0 0 16px 0;
+  font-family: "Raleway", sans-serif;
+}
+
+.privacy-contact strong {
+  font-weight: 700;
+}

@@ -1,13 +1,9 @@
-/* ========= PAGE WRAPPER ========= */
-
 .blog-page {
-  max-width: 1440px;              /* desktop frame width */
+  max-width: 1440px;
   margin: 0 auto;
   padding: 120px 60px 120px;
   background: #ffffff;
 }
-
-/* ========= HERO ========= */
 
 .blog-hero {
   margin-bottom: 56px;
@@ -15,33 +11,29 @@
 
 .blog-hero__image {
   display: block;
-  max-width: 1138px;              /* 1138 × 397 from Figma */
+  max-width: 1138px;
   width: 100%;
   height: auto;
-  border-radius: 70px;             /* radius 70px */
+  border-radius: 70px;
   object-fit: cover;
-  margin: 0 auto;                  /* centered inside page */
+  margin: 0 auto;
 }
 
-/* ========= ARTICLE ========= */
-
-/* wrapper (Feed-Desktop: 1018px wide) */
 .blog-article {
   max-width: 1018px;
-  margin: 0 auto 80px;             /* centers block under image */
+  margin: 0 auto 80px;
 }
 
 .blog-article__title {
   font-family: "DM Serif Display", "Times New Roman", serif;
-  font-size: 40px;                 /* size 40px */
-  line-height: 1;                  /* 100% line-height */
-  font-weight: 400;                /* Regular */
-  color: #002147;                  /* dark blue from Figma */
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 400;
+  color: #002147;
   margin: 0 0 16px;
-  max-width: 983px;                /* title frame width */
+  max-width: 983px;
 }
 
-/* meta group: 274 × 50 */
 .blog-article__meta {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -60,7 +52,6 @@
   margin: 0;
 }
 
-/* main text: Lexend style block 1018 × 794 */
 .blog-article__content {
   font-family: "Lexend Deca", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -74,9 +65,6 @@
   margin: 0 0 24px;
 }
 
-/* ========= CONTACT BLOCK (DESKTOP – FIGMA MEASUREMENTS) ========= */
-
-/* Outer pink rectangle: 1278 × 530, color #FFE9EC */
 .blog-contact {
   background: #ffe9ec;
   border-radius: 0;
@@ -91,10 +79,9 @@
   padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 34px; /* space between form card and text */
+  gap: 34px;
 }
 
-/* LEFT CARD: 642 × 457 */
 .blog-contact__card {
   background: #ffffff;
   border-radius: 4px;
@@ -102,7 +89,7 @@
   border: 1px solid #f7d0dd;
   width: 642px;
   height: 457px;
-  padding: 40px 29px 32px; /* 642 - 2*29 = 584 input width */
+  padding: 40px 29px 32px;
 }
 
 .blog-contact__form {
@@ -120,7 +107,6 @@
   margin-bottom: 6px;
 }
 
-/* Inputs: 584 × 64, radius 10px */
 .blog-contact__field input,
 .blog-contact__field textarea {
   width: 584px;
@@ -136,7 +122,6 @@
   box-sizing: border-box;
 }
 
-/* Message: 584 × 141 */
 .blog-contact__field textarea {
   height: auto;
   min-height: 141px;
@@ -148,7 +133,6 @@
   color: #d1d5db;
 }
 
-/* Submit button: 163.77 × 45, radius 6.39px */
 .blog-contact__submit {
   margin-top: 20px;
   width: 163.77px;
@@ -163,13 +147,11 @@
   font-weight: 500;
   cursor: pointer;
 
-  /* NEW — centers button inside card */
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
-/* Heading: Inter Black 84px, line-height 71px, letter-spacing -4% */
 .blog-contact__text {
   width: 506px;
 }
@@ -177,101 +159,108 @@
 .blog-contact__text h2 {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-weight: 900;          /* Black */
+  font-weight: 900;
   font-size: 84px;
-  line-height: 71px;         /* exact Figma line-height */
-  letter-spacing: -0.04em;   /* -4% */
+  line-height: 71px;
+  letter-spacing: -0.04em;
   color: #002147;
   margin: 0 0 12px;
 }
 
-/* Body text: Inter, 16px, Semi Bold, 493 × 38 */
 .blog-contact__text p {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 16px;
-  font-weight: 600;  /* Semi Bold */
-  line-height: 1;    /* 100% */
+  font-weight: 600;
+  line-height: 1;
   color: #111827;
   max-width: 493px;
   margin: 0;
 }
 
-/* ========= BOTTOM PINK “ABOUT US” STRIP ========= */
-
-/* Outer group: ~1438 × 391, centered, full-width safe */
 .blog-approach {
   background: #ffe9ec;
-  padding: 80px 0px 20px;           /* gives total height close to 391px with text + button */
-  margin: 0;                 /* no negative margin – avoids horizontal scroll */
+  padding: 80px 0px 20px;
+  margin: 0;
 }
 
 .blog-approach__inner {
-  max-width: 1438px;         /* group width from Figma */
+  max-width: 1438px;
   margin: 0 auto;
-  padding: 0 24px;           /* small side padding for smaller screens */
+  padding: 0 24px;
   text-align: center;
 }
 
-/* Text block: 1061 × 200, Poppins 20px, line-height 32px */
 .blog-approach__text {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 20px;           /* Figma size */
-  line-height: 32px;         /* Figma line-height */
-  font-weight: 400;          /* Regular */
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
   color: #111827;
-  max-width: 1061px;         /* text frame width */
-  margin: 0 auto 32px;       /* centered, 32px gap above button */
+  max-width: 1061px;
+  margin: 0 auto 32px;
 }
 
-/* Button frame: 153 × 55, radius 10px, text 18px, 7% tracking */
 .blog-approach__button {
   width: 153px;
   height: 55px;
   border-radius: 10px;
   border: none;
-  background: #002147;       /* same dark navy as design */
+  background: #002147;
   color: #ffffff;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 18px;           /* button text size */
-  font-weight: 500;          /* Medium */
-  letter-spacing: 0.07em;    /* ≈ 7% */
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   cursor: pointer;
 
-  display: inline-flex;      /* centers label inside */
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 6px 20px;         /* top/bottom 6, left/right 20 like Figma frame */
-  margin: 0 auto;    
-  text-decoration: none;        /* centers the whole button block */
+  padding: 6px 20px;
+  margin: 0 auto;
+  text-decoration: none;
 }
 
-
-/* ================= TABLET (≤ 1024px) — RESPONSIVE FIX ================= */
 @media (max-width: 1024px) {
 
-  /* Prevent hero image from going under navbar */
   .blog-page {
-    padding-top: 150px; /* keeps hero image below navbar */
+    padding-top: 150px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
 
-  /* Hero image centered + cleaner spacing */
   .blog-hero__image {
     border-radius: 40px;
     margin-top: 10px;
   }
 
-  /* Article spacing */
   .blog-article {
+    max-width: 100%;
     margin: 0 auto 60px;
-    padding: 0 10px;
+    padding: 0;
   }
 
-  /* Contact section stack vertically */
+  .blog-article__title {
+    font-size: 32px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+  }
+
+  .blog-article__meta {
+    margin-bottom: 24px;
+  }
+
+  .blog-article__content {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 60px;
+  }
+
   .blog-contact__inner {
     display: flex;
     flex-direction: column;
@@ -283,7 +272,6 @@
     width: 100%;
   }
 
-  /* Pink strip responsiveness */
   .blog-approach {
     padding: 60px 24px 50px;
     border-radius: 30px;
@@ -297,44 +285,53 @@
   }
 }
 
-/* ================= MOBILE (≤ 600px) — RESPONSIVE FIX ================= */
 @media (max-width: 600px) {
 
-  /* Extra safe space so image never hides under navbar */
   .blog-page {
     padding-top: 170px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
-  /* Hero image */
   .blog-hero__image {
     width: 100%;
     max-width: 100%;
     border-radius: 26px;
   }
 
-  /* Article title */
   .blog-article__title {
     font-size: 24px;
     line-height: 32px;
+    margin: 0 0 8px;
   }
 
   .blog-article__meta {
     font-size: 13px;
+    margin-bottom: 20px;
   }
 
   .blog-article__content {
     font-size: 15px;
     line-height: 26px;
+    margin-bottom: 40px;
+  }
+  
+  .blog-article__content p {
+    margin: 0 0 18px;
   }
 
-  /* Contact card full width */
   .blog-contact__card {
     width: 100%;
     height: auto;
     padding: 26px 20px;
   }
+  
+  .blog-contact__submit {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
 
-  /* Contact heading */
   .blog-contact__text h2 {
     font-size: 26px;
     line-height: 32px;
@@ -345,7 +342,6 @@
     line-height: 22px;
   }
 
-  /* Pink strip mobile */
   .blog-approach {
     padding: 40px 18px 48px;
     border-radius: 22px;
