@@ -3,10 +3,8 @@
    =========================== */
 
 .section.services {
-  padding: 56px 60px 64px;
   background-color: #fdf9fb;
-
-  /* intro animation */
+  padding: 72px 0 80px;          /* space above/below section */
   opacity: 0;
   transform: translateY(26px);
   animation: servicesFadeUp 0.85s ease-out forwards;
@@ -23,33 +21,34 @@
   }
 }
 
-/* center block */
+/* center whole block on page */
 .services-container {
-  max-width: 1120px;           /* fits 2 × 526px cards + gap */
+  max-width: 1120px;            /* close to Figma group width */
   margin: 0 auto;
+  padding: 0 24px;              /* small side padding for safety */
 }
 
-/* SECTION TITLE – Raleway 40 / 40, 242×40 */
+/* SECTION TITLE – 242 × 40 Raleway 40 / 40 */
 .services-title {
   font-family: "Raleway", sans-serif;
-  font-size: 40px;        /* same as Figma */
+  font-size: 40px;
   font-weight: 700;
   line-height: 40px;
-  color: #001247;         /* dark blue like screenshot */
-  text-align: center;
-  margin: 0 0 28px;       /* space above cards */
+  color: #001247;
+  text-align: center;           /* centered like Figma */
+  margin: 0 0 36px;             /* distance to cards */
 }
-
 
 /* ===========================
    GRID – 2 × 2 CARDS
    =========================== */
 
 .services-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 526px); /* each card 526px */
+  column-gap: 44px;                        /* ~ gap between cards */
+  row-gap: 36px;                           /* gap between rows */
+  justify-content: center;                 /* center group under title */
 }
 
 /* ===========================
@@ -60,10 +59,10 @@
   width: 526px;
   height: 334px;
   box-sizing: border-box;
-  background-color: #ffe8f0;
-  border-radius: 20px;
+  background-color: #ffe9ec;
+  border-radius: 10px;                    /* Figma radius 10px */
   padding: 32px 32px 28px;
-  box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25); /* Figma drop shadow */
+  box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25); /* drop shadow */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -82,11 +81,11 @@
   width: 80px;
   height: 80px;
   border-radius: 20px;
-  background-color: #08153a;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;
+  margin-bottom: 18px;             /* matches Figma spacing */
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -96,55 +95,63 @@
   object-fit: contain;
 }
 
-/* icon hover pop */
 .service-card:hover .service-card__icon {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.26);
 }
 
 /* ===========================
-   TITLE – Raleway 20 / 26 ExtraBold
+   TITLE – 400 × 26, 20 / 26
    =========================== */
 
 .service-card__title {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 800;              /* ExtraBold */
   line-height: 26px;
   color: #08153a;
-  margin: 0 0 8px;
+  margin: 0;
 }
 
 /* ===========================
-   UNDERLINE – 131.5 × 6, radius 6
+   RED UNDERLINES
+   #1: 87.67 × 6
+   #2: 29.22 × 6
    =========================== */
 
 .service-card__underline {
-  margin: 2px 0 16px;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin: 6px 0 18px;
 }
 
-/* main bar (single red bar like Figma) */
-.service-card__underline .line-main {
-  width: 131.5px;
+.service-card__underline .line-main,
+.service-card__underline .line-sub {
   height: 6px;
   border-radius: 6px;
   background-color: #ff3e54;
-  display: block;
+  display: inline-block;
 }
 
-/* no secondary bar for this design */
+.service-card__underline .line-main {
+  width: 87.67px;
+}
+
 .service-card__underline .line-sub {
-  display: none;
+  width: 29.22px;
 }
 
-/* slight grow on hover */
+/* subtle grow on hover */
 .service-card:hover .service-card__underline .line-main {
-  width: 140px;
+  width: 95px;
+}
+.service-card:hover .service-card__underline .line-sub {
+  width: 34px;
 }
 
 /* ===========================
-   DESCRIPTION – Raleway 16 / 26
-   width ≈ 438 × 102
+   DESCRIPTION – 438 × 102
    =========================== */
 
 .service-card__desc {
@@ -166,24 +173,27 @@
     max-width: 100%;
   }
 
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr); /* 1 card per row */
+    column-gap: 0;
+  }
+
   .service-card {
     width: 100%;
     height: auto;
-  }
-
-  .services-grid {
-    flex-direction: column;
+    max-width: 526px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .section.services {
-    padding: 40px 20px 48px;
+    padding: 48px 0 56px;
   }
 
   .services-title {
     font-size: 32px;
     line-height: 36px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 }

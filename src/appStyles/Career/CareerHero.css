@@ -1,13 +1,13 @@
 /* ===================== CAREER HERO WRAPPER ===================== */
 
 .career-hero {
-  padding-top: 260px;
-  padding-bottom: 170px;   /* ✅ reduced from 260px */
+  padding-top: 260px;          /* hero starts under navbar */
+  padding-bottom: 170px;
   background: #ffffff;
 }
 
 .career-hero__inner {
-  max-width: 1178px;
+  max-width: 1178px;           /* Figma: 1178 x 500 panel */
   margin: 0 auto;
   position: relative;
 }
@@ -16,8 +16,8 @@
 
 .career-hero__panel {
   background: #002147;
-  border-radius: 15px;
-  min-height: 500px;
+  border-radius: 15px;         /* Figma radius 15 */
+  min-height: 500px;           /* Figma height 500 */
   padding: 60px 72px;
   display: flex;
   align-items: center;
@@ -28,7 +28,7 @@
 /* ===================== LEFT TEXT ===================== */
 
 .career-hero__text {
-  max-width: 627px;
+  max-width: 627px;            /* heading frame 627 x 219 */
 }
 
 .career-hero__text h1 {
@@ -37,32 +37,33 @@
   font-weight: 600;
   font-size: 59px;
   line-height: 73px;
-  margin: 0 0 24px;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  margin: -30px 0 14px;
 }
 
 .career-hero__subtitle {
   font-family: "Poppins", sans-serif;
   color: #e5edff;
   font-size: 24px;
-  line-height: 1.5;
-  margin-top: 4px;
-  max-width: 322px;
+  line-height: 38px;
+  letter-spacing: -0.03em;
+  max-width: 554px;
+  margin: -10px 0 22px;
 }
 
-/* ===================== BUTTONS ===================== */
+/* ===================== BUTTON ===================== */
 
 .career-hero__buttons {
-  margin-top: 32px;
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
+/* Apply Job – 103 x 41, radius 10 */
 .ch-btn {
-  min-width: 135px;
+  min-width: 103px;
   height: 41px;
-  padding: 0 24px;
+  padding: 10px 15px;
   border-radius: 10px;
   border: none;
   font-size: 14px;
@@ -74,14 +75,8 @@
 }
 
 .ch-btn--light {
-  background: #fff;
+  background: #ffffff;
   color: #002147;
-}
-
-.ch-btn--ghost {
-  background: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 /* ===================== RIGHT IMAGE ===================== */
@@ -97,22 +92,25 @@
   height: 522px;
   border-radius: 50px;
   object-fit: cover;
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
 }
 
 /* ===================== SEARCH BAR ===================== */
+/* white pill – 719 x 102, radius 20 */
 
 .career-hero__search {
   position: absolute;
   left: 50%;
-  bottom: -52px;
   transform: translateX(-50%);
+  bottom: -51px;
   width: 719px;
   height: 102px;
-  background: #fff;
-  border-radius: 16px;
+
+  background: #ffffff;
+  border-radius: 20px;
   box-shadow: 0 20px 40px rgba(9, 30, 66, 0.18);
+
   padding: 20px 32px;
   display: flex;
   align-items: center;
@@ -120,71 +118,166 @@
   z-index: 10;
 }
 
+/* shared container for the two fields (Location / Title) */
 .search-field {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding-right: 24px;
-  font-size: 12px;
+  justify-content: flex-start;
+  padding-right: 32px;
 }
 
+/* vertical divider after Location */
 .search-field:first-child {
-  border-right: 1px solid #e4e4f0;
+  border-right: 2px solid #dcdceb;
+  margin-right: 32px;
+}
+
+/* extra divider after Title (before Search button) */
+.search-field:nth-child(2) {
+  position: relative;
   margin-right: 24px;
+  padding-right: 32px;
 }
 
+.search-field:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: #dcdceb;
+}
+
+/* labels: Location / Title */
 .search-field label {
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: #15152f;
   font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #110229;
+  margin: 0 0 2px 0;
 }
 
-.search-field select {
+/* value text */
+.search-field select,
+.search-field input,
+.search-field span.search-value {
   border: none;
   outline: none;
-  font-size: 13px;
-  color: #a0a3bd;
   background: transparent;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #8f90a6;
 }
 
-.ch-btn--search {
-  background: #002147;
-  color: #fff;
-  padding: 10px 28px;
-  border-radius: 999px;
-  border: none;
-  font-weight: 600;
+/* row that holds value + icon: text + icon close together */
+.search-field__value {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  cursor: pointer;
+  justify-content: flex-start;
+  gap: 4px;           /* this is the horizontal space between text + icon */
 }
 
-/* ================= TABLET FIX (≤ 1024px) ================= */
-@media (max-width: 1024px) {
+/* value text */
+.search-value {
+  display: inline-block;
+  flex: 0 0 auto;
+}
 
-  /* Stop image from overlapping navbar */
+/* generic icon wrapper – sits just after text */
+.search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-left: 0;     /* prevents drifting to the right */
+}
+
+/* pin icon – 12 x 14.67, 1.4px, #8F90A6 */
+.search-icon--pin svg {
+  width: 12px;
+  height: 14.67px;
+  stroke-width: 1.4px;
+  stroke: #8f90a6;
+  display: block;
+  transform: translateY(1px); /* baseline alignment */
+}
+
+/* chevron – 12 x 6, 1.5px, #8F90A6 */
+.search-icon--chevron svg {
+  width: 12px;
+  height: 6px;
+  stroke-width: 1.5px;
+  stroke: #8f90a6;
+  display: block;
+  transform: translateY(1px);
+}
+
+/* SEARCH button – 159 x 54, radius 10 */
+.ch-btn--search {
+  min-width: 159px;
+  height: 54px;
+  padding: 0 32px;
+  background: #002147;
+  color: #ffffff;
+  border-radius: 10px;
+  border: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;       /* Figma SEARCH text size */
+  line-height: 36px;
+  letter-spacing: 0.07em; /* ≈ 7% tracking */
+}
+
+.ch-btn__label {
+  display: inline-block;
+}
+
+/* search icon in button – ~17.76 x 17.76, stroke 3px */
+.ch-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(1px);
+}
+
+.ch-btn__icon svg {
+  width: 17.76px;
+  height: 17.76px;
+  display: block;
+}
+
+
+/* ================= TABLET (≤ 1024px) ================= */
+
+@media (max-width: 1024px) {
   .career-hero {
     padding-top: 160px;
     padding-bottom: 120px;
   }
 
-  /* Blue panel stacks cleanly */
   .career-hero__panel {
     flex-direction: column;
     text-align: center;
     padding: 56px 32px 120px;
   }
 
-  /* Heading + subtitle centered */
   .career-hero__text {
-    text-align: center;
     max-width: 100%;
   }
 
-  /* Image centered and below text */
   .career-hero__image-wrapper {
     position: static;
     margin: 40px auto 0;
@@ -196,26 +289,24 @@
     max-width: 100%;
   }
 
-  /* Search bar full width under card */
   .career-hero__search {
     position: static;
-    transform: none;
+    left: auto;
+    bottom: auto;
     margin: 48px auto 0;
     width: 100%;
     max-width: 700px;
   }
 }
 
-/* ================= MOBILE FIX (≤ 640px) ================= */
-@media (max-width: 640px) {
+/* ================= MOBILE (≤ 640px) ================= */
 
-  /* Provide space for navbar + hero image */
+@media (max-width: 640px) {
   .career-hero {
     padding-top: 180px;
     padding-bottom: 80px;
   }
 
-  /* Blue panel spacing */
   .career-hero__panel {
     padding: 40px 20px 100px;
   }
@@ -228,10 +319,10 @@
 
   .career-hero__subtitle {
     font-size: 15px;
-    margin-bottom: 16px;
+    line-height: 24px;
+    max-width: 100%;
   }
 
-  /* Buttons stacked */
   .career-hero__buttons {
     flex-direction: column;
     gap: 12px;
@@ -240,27 +331,22 @@
 
   .ch-btn {
     width: 100%;
-    justify-content: center;
   }
 
-  /* Image smaller on mobile */
   .career-hero__image-wrapper {
     margin-top: 28px;
   }
 
   .career-hero__image {
     width: 280px;
-    height: auto;
-    max-width: 100%;
     border-radius: 36px;
   }
 
-  /* Search bar vertical layout */
   .career-hero__search {
     flex-direction: column;
     gap: 18px;
     height: auto;
-    padding: 20px 20px;
+    padding: 20px;
     border-radius: 18px;
     margin-top: 38px;
   }
@@ -277,6 +363,5 @@
 
   .ch-btn--search {
     width: 100%;
-    justify-content: center;
   }
 }

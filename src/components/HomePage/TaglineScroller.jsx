@@ -9,11 +9,9 @@ const TaglineScroller = () => {
       <div className="tagline-row tagline-row--top">
         <div className="tagline-track">
           <span className="tagline-text tagline-text--muted">
-            DRIVING TECHNOLOGY TOGETHER
+            Human Precision + Smart Technology = 99% Accuracy Every Time
           </span>
-          <span className="tagline-text tagline-text--muted">
-            DRIVING TECHNOLOGY TOGETHER
-          </span>
+          
         </div>
       </div>
 
@@ -21,11 +19,9 @@ const TaglineScroller = () => {
       <div className="tagline-row tagline-row--middle">
         <div className="tagline-track">
           <span className="tagline-text tagline-text--highlight">
-            DRIVEN BY EXPERTISE, COMMITTED TO EXCELLENCE
+           Trusted Transcription & Language Solutions Delivered with Speed, Clarity, and Consistency
           </span>
-          <span className="tagline-text tagline-text--highlight">
-            DRIVEN BY EXPERTISE, COMMITTED TO EXCELLENCE
-          </span>
+          
         </div>
       </div>
 
@@ -33,11 +29,9 @@ const TaglineScroller = () => {
       <div className="tagline-row tagline-row--bottom">
         <div className="tagline-track">
           <span className="tagline-text tagline-text--muted">
-            EMPOWERING BUSINESSES WITH CLOUD EXPERTISE
+            Secure, Scalable, and Quality-Driven Services Built for Businesses of Every Size
           </span>
-          <span className="tagline-text tagline-text--muted">
-            EMPOWERING BUSINESSES WITH CLOUD EXPERTISE
-          </span>
+          
         </div>
       </div>
     </section>

@@ -10,25 +10,25 @@ const industries = [
   {
     id: "01",
     title: "Legal & Dispute Resolution",
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page.",
+    desc: "Accurate, confidential transcripts that support clarity and case strength.",
     icon: legalIcon,
   },
   {
     id: "02",
     title: "Financial & Investment",
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page.",
+    desc: "Precision-driven documentation for high-stakes financial communication",
     icon: financeIcon,
   },
   {
     id: "03",
     title: "Medical & Healthcare",
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page.",
+    desc: "Reliable medical transcripts with strict accuracy and compliance",
     icon: medicalIcon,
   },
   {
     id: "04",
     title: "Media, Broadcast & Production",
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page.",
+    desc: "Fast, polished content delivery tailored for media workflows",
     icon: mediaIcon,
   },
 ];

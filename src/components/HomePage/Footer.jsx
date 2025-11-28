@@ -2,10 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Footer.css";
-import logo from "../../assets/logo.png";
+import vector from "../../assets/footer/Vector.png";
 
 const Footer = () => {
-  // helper so even if user is already on same route, it scrolls to top
   const handleNavClick = () => {
     window.scrollTo(0, 0);
   };
@@ -16,12 +15,19 @@ const Footer = () => {
         <div className="footer-top">
           {/* -------- LEFT BRAND BLOCK -------- */}
           <div className="footer-brand">
-            <div className="footer-logo">
-              <div className="footer-logo-mark">
-                <img src={logo} alt="Logoipsum logo" />
-              </div>
+            {/* Logo + brand name (clickable, goes to Home) */}
+            <Link
+              to="/"
+              className="footer-logo"
+              onClick={handleNavClick}
+            >
+              <img
+                src={vector}
+                alt="IncrediQuo-Solutions logo"
+                className="footer-logo-icon"
+              />
               <span className="footer-logo-text">IncrediQuo-Solutions</span>
-            </div>
+            </Link>
 
             <p className="footer-description">
               Your trusted partner for precision
@@ -55,7 +61,7 @@ const Footer = () => {
                     className="footer-link"
                     onClick={handleNavClick}
                   >
-                    Closed Captioning &amp; Subtitling
+                    Closed Captioning & Subtitling
                   </Link>
                 </li>
                 <li>
@@ -79,7 +85,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Quikers group + privacy/terms */}
+            {/* Quikers group + Privacy/Terms at bottom */}
             <div className="footer-column footer-column--quikers">
               <h4 className="footer-heading">Quikers</h4>
               <ul>
@@ -121,10 +127,11 @@ const Footer = () => {
                 </li>
               </ul>
 
+              {/* sits at bottom of Quikers box */}
               <div className="footer-bottom-links">
                 <Link
                   to="/privacy-policy"
-                  className="footer-bottom-link privacy-policy"
+                  className="footer-bottom-link"
                   onClick={handleNavClick}
                 >
                   Privacy Policy

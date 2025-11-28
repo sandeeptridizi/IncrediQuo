@@ -1,52 +1,69 @@
-/* SECTION */
+/* ===================== OUR INDUSTRIES ===================== */
+
+/* SECTION WRAPPER */
 .section.industries {
-  padding: 60px 60px 70px;
+  padding: 40px 0 70px;          /* heading a bit higher */
   background-color: #ffffff;
 }
 
-/* TITLE  —— 270 × 40 / 40px Bold centered */
+/* INNER CONTAINER: title + cards share same center */
+.industries-container {
+  max-width: 1142px;             /* 4 × 263 + 3 × 30 = 1142 */
+  margin: 0 auto;
+}
+
+/* reset global section__title only here */
+.section.industries .section__title {
+  margin: 0;
+  padding: 0;
+}
+
+/* SECTION HEADING */
 .industries-title {
+  display: block;
   font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
-  width: 270px;
-  height: 40px;
+  color: #0E1F51;
   text-align: center;
-  color: #0b1535;
-  margin: 0 auto 80px;
+  margin: 0 auto 82px;           /* centered + gap to cards */
 }
 
-
-/* GRID —— 4 cards */
+/* GRID — 4 cards in one row, equal gaps */
 .industries-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 22px;
+  display: grid;
+  grid-template-columns: repeat(4, 263px);
+  column-gap: 30px;
+  justify-content: center;
+  margin-top: 42px;
 }
 
-/* CARD —— 263 × 334px */
+
+/* ================== CARD ================== */
+
 .industry-card {
   width: 263px;
   height: 334px;
-  background-color: #ffe8f0;
+  background-color: #FEE8EC;     
   border-radius: 24px;
   padding: 34px 24px 26px;
   display: flex;
   flex-direction: column;
   position: relative;
   cursor: pointer;
+  box-shadow: 0 18px 34px rgba(14, 31, 81, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
-  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
 }
 
-/* hover */
 .industry-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 42px rgba(15, 23, 42, 0.26);
+  box-shadow: 0 24px 42px rgba(14, 31, 81, 0.25);
 }
 
-/* ICON —— 60 × 60px */
+
+/* ICON —— 60 × 60 */
+
 .industry-card__icon {
   width: 60px;
   height: 60px;
@@ -55,7 +72,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -65,89 +82,103 @@
   object-fit: contain;
 }
 
-/* hover icon pop */
 .industry-card:hover .industry-card__icon {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.23);
+  box-shadow: 0 8px 20px rgba(14, 31, 81, 0.23);
 }
 
-/* NUMBER (01 / 02 / 03 / 04) */
+
+/* NUMBER 01 / 02 / 03 / 04 */
+
 .industry-card__number {
   position: absolute;
   top: 22px;
   right: 24px;
-  font-size: 28px;
-  font-weight: 700;
-  color: #f5cad8;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 50px;
+  color: #0E1F51;
+  opacity: 10%;                 /* 10% like Figma */
+  pointer-events: none;
 }
 
-/* TITLE —— 159 × 52px (Raleway 800 / 20px) */
+
+/* TITLE INSIDE CARD */
+
 .industry-card__title {
-  width: 159px;
-  height: 52px;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
   font-weight: 800;
   line-height: 26px;
-  color: #0b1535;
-  margin-bottom: 10px;
+  color: #0E1F51;
+  margin: 0 0 10px;
+  width: fit-content;            /* title width adapts per card */
 }
 
-/* UNDERLINE */
+
+/* UNDERLINE —— main 90×6, sub 20×6 */
+
 .industry-card__underline {
-  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.industry-card__underline .line-main,
+.industry-card__underline .line-sub {
+  height: 6px;
+  border-radius: 6px;
+  background-color: #FF3E54;    
+  display: inline-block;
 }
 
 .industry-card__underline .line-main {
-  width: 48px;
-  height: 4px;
-  background-color: #ff3b5c;
-  border-radius: 999px;
-  display: inline-block;
-  transition: width 0.25s ease;
+  width: 90px;
 }
 
 .industry-card__underline .line-sub {
-  width: 16px;
-  height: 4px;
-  background-color: #ff9fb2;
-  border-radius: 999px;
-  display: inline-block;
-  margin-left: 4px;
-  transition: width 0.25s ease;
+  width: 20px;
 }
 
-/* hover underline grows */
-.industry-card:hover .line-main {
-  width: 56px;
-}
-.industry-card:hover .line-sub {
-  width: 22px;
-}
 
-/* DESCRIPTION —— 203 × 102px */
+/* DESCRIPTION */
+
 .industry-card__desc {
-  width: 203px;
-  height: 102px;
+  max-width: 223px;              /* matches Figma desc widths */
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 26px;
-  color: #374151;
-  margin-top: auto; /* Push text down naturally */
+  color: #000000;
+  margin: 0;
 }
 
-/* RESPONSIVE */
+
+/* ================== RESPONSIVE ================== */
+
 @media (max-width: 1024px) {
   .industries-grid {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 263px);
+    row-gap: 32px;
+    column-gap: 26px;
     justify-content: center;
-    gap: 26px;
   }
 }
 
 @media (max-width: 640px) {
   .section.industries {
-    padding: 40px 20px 50px;
+    padding: 32px 0 48px;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-card {
+    width: 100%;
+    max-width: 263px;
+    margin: 0 auto;
   }
 }

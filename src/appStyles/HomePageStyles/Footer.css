@@ -48,9 +48,10 @@
   gap: 96px;
 }
 
-/* left brand block */
+/* left brand block  
+   Figma: logo group ~169px, text ~340px */
 .footer-brand {
-  max-width: 260px;
+  max-width: 340px; /* UPDATED: match description width */
 }
 
 /* === LOGO AREA === */
@@ -58,9 +59,10 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 16px;
+  margin-bottom: 12px; /* slightly tighter like Figma */
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
+  text-decoration: none;
 }
 
 .footer-logo:hover {
@@ -72,7 +74,6 @@
   width: 32px;
   height: 32px;
   border-radius: 999px;
-  background-color: #ffe8f0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,30 +85,31 @@
 }
 
 .footer-logo-mark img {
-  width: 18px;
-  height: 18px;
+  width: 40px;
+  height: 35px;
   object-fit: contain;
 }
 
 .footer-logo-text {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #ffffff;
 }
 
-/* description text */
+/* description text – Figma 340 × 44.87 */
 .footer-description {
+  max-width: 340px;            /* UPDATED: fix width */
   font-size: 13px;
-  line-height: 1.7;
+  line-height: 30px;           /* 30px line-height like Figma */
   color: #d1e0ff;
-  margin: 0 0 22px;
+  margin: 0 0 18px;            /* a bit closer to icon */
 }
 
-/* LinkedIn square */
+/* LinkedIn square – Figma: 50 × 50, radius 10 */
 .footer-social {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
+  width: 50px;                 /* UPDATED */
+  height: 50px;                /* UPDATED */
+  border-radius: 10px;         /* UPDATED */
   border: none;
   background-color: #ffffff;
   color: #022447;
@@ -116,7 +118,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 22px;         /* bring it closer to text */
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
@@ -127,8 +129,10 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
 
+/* Copyright – Figma: Rubik 16 / 30 */
 .footer-copy-left {
-  font-size: 12px;
+  font-size: 16px;             /* UPDATED */
+  line-height: 30px;           /* UPDATED */
   color: #d1e0ff;
 }
 
@@ -136,19 +140,29 @@
 .footer-links {
   display: flex;
   gap: 80px;
+  white-space: nowrap;
 }
 
-/* Quikers column */
+/* Services column – approx 230 × 146 */
+.footer-column--services {
+  flex-basis: 230px;           /* UPDATED */
+  max-width: 230px;            /* UPDATED */
+}
+
+/* Quikers column – approx 380 × 221 (includes bottom links) */
 .footer-column--quikers {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: 160px;
+  flex-basis: 380px;
+  max-width: 380px;
 }
+
 
 /* headings */
 .footer-column h4 {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   color: #ff6a7a;
   margin: 0 0 6px;
@@ -160,8 +174,8 @@
   position: absolute;
   left: 0;
   bottom: -4px;
-  width: 32px;
-  height: 2px;
+  width: 70.5px;
+  height: 3.64px;
   border-radius: 999px;
   background-color: #ff6a7a;
 }
@@ -196,16 +210,30 @@
   text-decoration: underline;
 }
 
+/* Quikers column – make it a vertical flex box with fixed-ish height */
+.footer-column--quikers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;  /* pushes bottom links down */
+  min-height: 221px; 
+  font-size: 16px;
+  margin-left:-10px;
+
+}
+
 /* bottom row (Privacy + Terms) */
 .footer-bottom-links {
   margin-top: auto;
-  margin-bottom: 10px;
+  margin-bottom: -20px;
   display: flex;
   gap: 40px;
   padding-top: 10px;
   white-space: nowrap;
-  font-size: 14px;
+  font-size: 16px;
   flex-wrap: nowrap;
+  margin-right: -25px;
+  
 }
 
 .footer-bottom-link,
@@ -221,6 +249,7 @@
 .footer-bottom-links span:hover {
   text-decoration: underline;
 }
+
 
 /* ===== RESPONSIVE ===== */
 
@@ -288,11 +317,11 @@
   }
 }
 
-/* small mobiles (your screenshot size) */
+/* small mobiles */
 @media (max-width: 480px) {
   .footer {
     padding: 40px 16px 22px;
-    background-position: top left; /* shift curve a bit */
+    background-position: top left;
   }
 
   .footer-inner {

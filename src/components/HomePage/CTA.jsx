@@ -11,26 +11,31 @@ const CTA = () => {
       {/* Pink card section */}
       <section className="cta-wrapper">
         <div className="cta-card">
-          <h2 className="cta-title">
-            Get Accurate Transcripts  <br />
-            Faster - Every Time
-          </h2>
+          <div className="cta-inner">
+            <h2 className="cta-title">
+              Get Accurate Transcripts <br />
+              Faster - Every Time
+            </h2>
 
-          <p className="cta-text">
-           Professional transcription made simple: quick turnaround, premium accuracy, and complete confidentiality.
-          </p>
+            <p className="cta-text">
+              Professional transcription made simple: quick turnaround, premium
+              accuracy, and complete confidentiality.
+            </p>
 
-          <button
-            className="cta-button"
-            onClick={() => setShowContact(true)}
-          >
-            Get Started
-          </button>
+            <button
+              className="cta-button"
+              onClick={() => setShowContact(true)}
+            >
+              Get Started
+            </button>
+          </div>
         </div>
       </section>
 
       {/* Popup contact form */}
-      {showContact && <ContactSection onClose={() => setShowContact(false)} />}
+      {showContact && (
+        <ContactSection onClose={() => setShowContact(false)} />
+      )}
     </>
   );
 };

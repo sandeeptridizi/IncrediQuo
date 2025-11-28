@@ -1,26 +1,19 @@
 /* =========================================
-   BANNER / HERO (Cloud Expertise Section)
+   BANNER / HERO
    ========================================= */
 
-/* MAIN WRAPPER */
 .banner {
   position: relative;
   width: 100%;
-  height: 624px;                        /* Figma height */
-  background-color: #002147;            /* exact Figma color */
+  background-color: #002147;
   color: #ffffff;
-  padding: 80px 60px;
-  display: flex;
-  justify-content: center;
   overflow: hidden;
 
-  /* fade reveal animation */
   opacity: 0;
   transform: translateY(26px);
   animation: bannerFadeUp 0.9s ease-out forwards;
 }
 
-/* animation keyframes */
 @keyframes bannerFadeUp {
   from {
     opacity: 0;
@@ -32,105 +25,100 @@
   }
 }
 
+/* Figma frame: 1440 x 624 */
 .banner__inner {
-  max-width: 1160px;
-  width: 100%;
-  height: 100%;
+  position: relative;
+  max-width: 1440px;
+  height: 624px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   LEFT PILL STRIPES (Frame 2303)
+   ========================================= */
+
+.banner__stripes {
+  position: absolute;
+  left: -26px;        /* or whatever position you like for the whole group */
+  top: 0px;
+  transform: rotate(-0.6deg);
+  transform-origin: left top;
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;       /* text at top, ticker at bottom */
+  gap: 44px;
+
+  /* 🔥 NEW: center each stripe horizontally (like your 2nd image) */
+  align-items: center;
 }
 
-/* =========================
-   LEFT STRIPES DECORATION
-   (alternating long / short)
-   ========================= */
-.banner::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 88px;                            /* lines start a bit below top like Figma */
-  width: 180px;
-  height: 280px;
-  background:
-  linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 0 / 80px 4px no-repeat,
-    /* long */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 0 / 140px 4px no-repeat,
-    /* short */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 32px / 100px 4px no-repeat,
-    /* medium */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 64px / 120px 4px no-repeat,
-    /* long */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 104px / 150px 4px no-repeat,
-    /* medium */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 144px / 120px 4px no-repeat,
-    /* short */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 184px / 80px 4px no-repeat,
-    /* tiny */
-    linear-gradient(to right, rgba(255, 255, 255, 0.15) 0 0) 0 224px / 40px 4px no-repeat;
-  opacity: 0.35;
+
+.banner__stripe {
+  height: 14.47px;
+  border-radius: 999px;
+  background-color: rgba(255, 233, 236, 0.15);
 }
 
-/* =========================
-   RIGHT STARS DECORATION
-   ========================= */
-.banner::after {
-  content: "";
-  position: absolute;
-  right: 190px;     /* SAME POSITION as previous */
-  bottom: 105px;    /* SAME POSITION as previous */
-  width: 103px;     /* adjust to PNG width */
-  height: 94px;     /* adjust to PNG height */
-  background-image: url("../../assets/Banner/Groupstar.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 1;       /* full visibility */
-}
+/* exact line widths */
+.banner__stripe:nth-child(1) { width: 138.93px; }
+.banner__stripe:nth-child(2) { width: 98.41px;  }
+.banner__stripe:nth-child(3) { width: 156.3px;  }
+.banner__stripe:nth-child(4) { width: 237.34px; }
+.banner__stripe:nth-child(5) { width: 127.35px; }
+.banner__stripe:nth-child(6) { width: 173.66px; }
+.banner__stripe:nth-child(7) { width: 75.25px;  }
+.banner__stripe:nth-child(8) { width: 28.94px;  }
 
-/* =========================
-   TEXT BLOCK (ALIGNMENT)
-   ========================= */
+/* =========================================
+   TEXT + BUTTON BLOCK
+   ========================================= */
+
+/* Heading block:
+   top from rectangle: 1134 - 1045 = 89
+   left: 219
+*/
 .banner__text {
-  max-width: 1131px;                     /* Figma width for heading block */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  position: relative;
+  width: 1131px;
+  margin-top: 89px;
+  margin-left: 219px;
   text-align: left;
-  margin-left: 150px;
-  margin-top: 4px;
-  margin-left: 80px;
 }
 
-/* HEADING */
 .banner__text h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 60px;                        /* Figma */
-  font-weight: 500;                       /* Medium */
-  line-height: 60px;                      /* Figma */
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 60px;
   color: #ffffff;
-  width: 1131px;                          /* Figma heading width */
-
-  /* gap between heading and paragraph */
-  margin: 0 0 30px;
+  width: 1131px;
+  height: 102px;
+  margin: 0;
 }
 
-/* PARAGRAPH */
+/* Paragraph:
+   vertical gap: 1287 - 1134 - 102 = 51
+   width: 757, left is almost same (221)
+*/
 .banner__text p {
   font-family: "Raleway", sans-serif;
-  width: 633px;                           /* Figma width */
-  font-size: 24px;                        /* Figma */
-  line-height: 32px;                      /* Figma */
+  width: 757px;
+  font-size: 24px;
+  line-height: 32px;
   color: #d6e1f2;
-
-  /* gap to button */
-  margin: 0 0 40px;
+  margin: 51px 0 0;
 }
 
-/* BUTTON – aligned under text, a tiny bit lower */
+/* Button:
+   vertical gap: 1457 - 1287 - 102 = 68
+   left: 211 (so we pull it slightly left with margin-left)
+*/
 .banner__button {
-  width: 250px;                           /* Figma */
-  height: 60px;                           /* Figma */
-  border-radius: 10px;                    /* Figma */
+  width: 250px;
+  height: 60px;
+  margin-top: 68px;
+  margin-left: -8px;          /* 219 -> 211 */
+  border-radius: 10px;
   background-color: #ffe9ec;
   border: none;
   cursor: pointer;
@@ -138,11 +126,8 @@
   font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 600;
-
-  /* extra drop so it sits where Figma shows */
-  margin-top: 28px;
-
-  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .banner__button:hover {
@@ -152,40 +137,49 @@
 }
 
 /* =========================================
-   TV-STYLE SCROLLING TICKER (BOTTOM)
+   BOTTOM “24 Hours / Real-time …”
    ========================================= */
 
+/* In Figma:
+   "24 Hours" top: 1603
+   Rectangle top: 1045  -> local top ≈ 558
+   left: 33
+*/
 .banner__ticker {
   position: absolute;
-  left: 60px;
-  right: 60px;
-  bottom: 0;
-  height: 60px;
-  border-top: 2px solid #001a40;
+  left: 33px;
+  right: 0;
+  bottom: 0;              /* locks to rectangle bottom */
+  height: 66px;           /* 624 - 558 ≈ 66 */
+  border-top: none;
+  display: flex;
+  align-items: flex-start;
   overflow: hidden;
 }
 
-/* moving track that scrolls left */
+/* moving content */
 .banner__ticker-track {
   display: inline-flex;
   align-items: center;
   gap: 80px;
   white-space: nowrap;
   animation: bannerTicker 18s linear infinite;
+  transform: translateX(0);     /* ensures first item appears first */
 }
 
-/* individual labels */
+
+/* Figma: size 50, line-height 40, weight 600 */
 .banner__ticker-track span {
   position: relative;
   font-family: "Raleway", sans-serif;
-  font-size: 50px;                       /* visually closer to the mock */
+  font-size: 50px;
   line-height: 40px;
   font-weight: 600;
   color: #ffe9ec;
   padding-left: 28px;
 }
 
-/* bullet before each label */
+/* dot before each word */
 .banner__ticker-track span::before {
   content: "";
   position: absolute;
@@ -198,72 +192,88 @@
   background-color: #ffe9ec;
 }
 
-/* underline on hover like highlight */
 .banner__ticker-track span:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
 
-/* ticker animation: continuous loop */
 @keyframes bannerTicker {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
 }
 
-/* =========================
+/* =========================================
+   RIGHT STAR CLUSTER
+   ========================================= */
+
+.banner__inner::after {
+  content: "";
+  position: absolute;
+  right: 190px;
+  bottom: 105px;
+  width: 103px;
+  height: 94px;
+  background-image: url("../../assets/Banner/Groupstar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* =========================================
    RESPONSIVE
-   ========================= */
-@media (max-width: 900px) {
-  .banner {
+   ========================================= */
+
+@media (max-width: 1200px) {
+  .banner__inner {
     height: auto;
-    padding: 60px 20px 70px;
+    padding: 60px 24px 70px 24px;
+  }
+
+  .banner__stripes {
+    display: none;
   }
 
   .banner__text {
-    margin-left: 0;
-    margin-top: 0;
-  }
-
-  .banner__text,
-  .banner__text h2,
-  .banner__text p {
-    max-width: 100%;
+    margin: 0;
     width: 100%;
   }
 
   .banner__text h2 {
+    width: 100%;
+  }
+
+  .banner__text p {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .banner__button {
+    margin-top: 24px;
+    margin-left: 0;
+  }
+
+  .banner__ticker {
+    position: static;
+    margin-top: 32px;
+    height: 60px;
+    left: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner__text h2 {
     font-size: 32px;
     line-height: 40px;
-    margin-bottom: 16px;
   }
 
   .banner__text p {
     font-size: 18px;
     line-height: 28px;
-    margin-bottom: 24px;
-  }
-
-  .banner__button {
-    margin-top: 16px;
-  }
-
-  .banner__ticker {
-    left: 20px;
-    right: 20px;
-    height: 48px;
   }
 
   .banner__ticker-track span {
     font-size: 18px;
-  }
-
-  .banner::before,
-  .banner::after {
-    opacity: 0.25;
+    line-height: 24px;
   }
 }

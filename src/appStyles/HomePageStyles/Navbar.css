@@ -48,7 +48,7 @@
 .navbar__logo img {
   width: 30px;
   height: 30px;
-  object-fit: contain;  /* show the full navy circle with lightning */
+  object-fit: contain;
   transition: transform 0.25s ease;
 }
 
@@ -74,7 +74,7 @@
   font-weight: 500;
   color: #022447;
   text-decoration: none;
-  transition: color 0.25s ease;   /* smooth text color */
+  transition: color 0.25s ease;
 }
 
 /* hover color + underline */
@@ -129,7 +129,6 @@
 /* ===== DROPDOWN (Our Services) ===== */
 .dropdown {
   position: relative;
-  cursor: pointer;
 }
 
 /* TITLE */
@@ -138,6 +137,7 @@
   font-size: 15px;
   font-weight: 500;
   color: #022447;
+  cursor: pointer;
   transition: color 0.25s ease;
 }
 
@@ -154,68 +154,87 @@
   transition: width 0.25s ease;
 }
 
-.dropdown:hover .dropdown__title {
+/* active / open state */
+.dropdown.open .dropdown__title,
+.dropdown__title:hover {
   color: #ff6a7a;
 }
 
-.dropdown:hover .dropdown__title::after {
+.dropdown.open .dropdown__title::after,
+.dropdown__title:hover::after {
   width: 100%;
 }
 
-/* ===== DROPDOWN PANEL (DESKTOP BASE) ===== */
+/* ===== DROPDOWN PANEL (DESKTOP BASE, FIGMA) ===== */
 .dropdown__menu {
   position: absolute;
-  top: 100%;                 /* directly below title */
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 6px;
 
-  background: #00244b;
-  padding: 32px;
-  border-radius: 26px;
+  width: 404px;
+  height: 326px;
+  background: #002147;
+  border-radius: 34px;
 
-  width: 340px;
-  max-width: 90vw;
-  box-sizing: border-box;
-
+  padding: 37px 25px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
+  box-sizing: border-box;
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-
-  transition: opacity 0.2s ease, visibility 0.2s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
   z-index: 1200;
+
+  overflow-y: hidden; /* 🚀 scrollbars removed */
+  scrollbar-width: none;
 }
 
-/* stays open while hovering title OR menu */
-.dropdown:hover .dropdown__menu,
-.dropdown__menu:hover {
+/* show when state is open */
+.dropdown.open .dropdown__menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* menu options */
+/* menu options - base */
 .dropdown__menu a {
-  font-size: 18px;
-  font-weight: 450;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 36px;
+
   text-decoration: none;
   color: #ffffff;
-  padding: 10px 14px;
-  border-radius: 14px;
-  transition: background 0.2s ease, color 0.2s ease;
-  text-align: left;
-  line-height: 1.4;
+
+  padding: 4px 6px;
+  border-radius: 12px;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* hover highlight */
+/* first option - pink bar per Figma (355 x 56, radius 13) */
+.dropdown__menu a:first-child {
+  width: 355px;
+  height: 56px;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: transparent;
+  color: #ffffff;
+}
+
+
+/* hover highlight for all items */
 .dropdown__menu a:hover {
-  background: #ffe8f2;
-  color: #00244b;
+  background: #ffe9ec;
+  color: #002147;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -235,8 +254,8 @@
   }
 
   .dropdown__menu {
-    padding: 26px;
-    /* still a floating panel here */
+    width: 360px;
+    height: auto;
   }
 }
 
@@ -244,21 +263,19 @@
 @media (max-width: 768px) {
   .navbar {
     padding: 12px 18px;
-    flex-wrap: wrap;            /* allow 2 rows */
+    flex-wrap: wrap;
     row-gap: 10px;
   }
 
-  /* first row: logo left, button right */
   .navbar__logo {
     font-size: 16px;
   }
 
   .navbar__button {
     padding: 8px 20px;
-    margin-left: auto;          /* push button to the right on first row */
+    margin-left: auto;
   }
 
-  /* second row: nav links, full width */
   .navbar__links {
     width: 100%;
     justify-content: space-between;
@@ -274,21 +291,24 @@
     scroll-margin-top: 82px;
   }
 
-  /* ✅ MOBILE / SMALL TABLET DROPDOWN
-     make it a full-width panel under navbar */
+  /* Mobile dropdown: full width panel */
   .dropdown__menu {
     position: fixed;
-    top: 64px;                           /* just under navbar */
+    top: 64px;
     left: 50%;
     transform: translateX(-50%);
-    width: calc(100vw - 32px);           /* full width minus side gap */
+    width: calc(100vw - 32px);
     max-width: 480px;
+    height: auto;
+    max-height: calc(100vh - 96px);
     padding: 22px 18px;
     border-radius: 20px;
     gap: 16px;
-    max-height: calc(100vh - 96px);      /* scroll inside if too tall */
-    overflow-y: auto;
-    box-sizing: border-box;
+  }
+
+  .dropdown__menu a,
+  .dropdown__menu a:first-child {
+    width: 100%;
   }
 
   .dropdown__menu a {
@@ -296,7 +316,7 @@
   }
 }
 
-/* Very small phones – same fixed panel, slightly tighter padding */
+/* Very small phones */
 @media (max-width: 520px) {
   .navbar {
     flex-direction: column;
@@ -328,7 +348,7 @@
   }
 
   .dropdown__menu {
-    top: 70px;                            /* tiny bit lower on very small phones */
+    top: 70px;
     width: calc(100vw - 28px);
     max-width: none;
     padding: 18px 16px;

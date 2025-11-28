@@ -4,15 +4,16 @@
 
 .about-hero {
   background: #ffffff;
-  padding: 120px 0 100px;
+  /* navbar (~60–70px) + 133px ≈ 205px top in Figma */
+  padding: 140px 0 120px;
 }
 
 .about-hero__inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 95px;                /* left in Figma ~95px */
+  padding: 0 95px;                /* Left = 95px like Figma */
   display: flex;
-  align-items: center;
+  align-items: flex-start;        /* text & image start at same top */
   justify-content: space-between;
   gap: 60px;
   box-sizing: border-box;
@@ -20,10 +21,10 @@
 
 /* LEFT SIDE */
 .about-hero__text {
-  max-width: 655px;               /* 655 × 222 heading frame */
+  max-width: 655px;               /* Heading frame 655px */
 }
 
-/* Heading – Outfit 52 / 72 */
+/* Heading – Outfit 52 / 72, 655 × 222 */
 .about-hero__text h1 {
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -31,7 +32,7 @@
   line-height: 72px;
   font-weight: 700;
   color: #002147;
-  margin: 0 0 24px;
+  margin: 0 0 40px;               /* gap ≈ 37px before paragraph */
 }
 
 /* pink part: Transcription and Language Solutions */
@@ -39,7 +40,7 @@
   color: #ff3e54;
 }
 
-/* Paragraph – DM Sans 20 / 30, width 568px */
+/* Paragraph – DM Sans 20 / 30, 568 × 60 */
 .about-hero__text p {
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -48,10 +49,10 @@
   line-height: 30px;
   font-weight: 500;
   color: #6b7280;
-  margin: 0 0 32px;
+  margin: 0 0 40px;               /* gap ≈ 41px before button */
 }
 
-/* Button – 360 × 46, radius 30 */
+/* Button – 360 × 46, radius 30, text 18 / 26 */
 .about-hero__button {
   width: 360px;
   height: 46px;
@@ -60,7 +61,8 @@
   background: #002147;
   color: #ffffff;
   font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 16px;
+  font-size: 18px;                /* as in Body-Text/18-Medium */
+  line-height: 26px;
   font-weight: 500;
   cursor: pointer;
   display: inline-flex;
@@ -78,12 +80,12 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
 
-/* RIGHT IMAGE CARD – with soft shadow like mock */
+/* RIGHT IMAGE CARD – 640 × 536 */
 .about-hero__image {
-  width: 640px;            
+  width: 640px;
   height: 536px;           /* hero height like image 1 */
   overflow: hidden;        /* crop the tall image */
-  border-radius: 0;        /* no rounded card */
+  border-radius: 0;
   background: transparent;
   box-shadow: none;
   display: flex;
@@ -96,12 +98,11 @@
   height: 100%;
   object-fit: cover;       /* zoom + crop to fill wide area */
   display: block;
-  border-radius: 0;   /* REMOVE any rounded frame */
-  box-shadow: none;   /* REMOVE drop shadow */
-  background: none;   /* REMOVE extra background */
-  padding: 0;         /* REMOVE padding */
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  padding: 0;
 }
-
 
 /* ================== RESPONSIVE ================== */
 
@@ -127,6 +128,7 @@
 
   .about-hero__button {
     margin: 0 auto;
+    width: 260px;          /* a bit smaller for tablet */
   }
 
   .about-hero__image {
@@ -153,6 +155,7 @@
   .about-hero__text h1 {
     font-size: 32px;
     line-height: 40px;
+    margin-bottom: 24px;
   }
 
   .about-hero__text p {

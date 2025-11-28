@@ -3,7 +3,7 @@
    =========================== */
 
 .core-team {
-  padding: 90px 0 80px;
+  padding: 70px 0 80px;
   background: #ffffff;
   overflow-x: hidden;
 }
@@ -18,7 +18,7 @@
 .core-team__inner h2 {
   max-width: 755px;
   width: 100%;
-  margin: 0 auto 40px;
+  margin: 0 auto 80px;
   text-align: center;
   font-family: "Poppins", system-ui, sans-serif;
   font-size: 52px;
@@ -32,15 +32,17 @@
 .core-team__grid {
   display: grid;
   grid-template-columns: repeat(2, 430px);
-  column-gap: 50px;
+  column-gap: 76px;            /* spacing between the two cards */
   justify-content: center;
-  align-items: flex-start;
 }
 
+/* card */
 .core-team__card {
-  position: relative;      /* needed for overlay */
+  position: relative;
   width: 430px;
   height: 568px;
+  border-radius: 20px;
+  overflow: hidden;            /* clip image + gradient + text */
 }
 
 /* image */
@@ -54,49 +56,69 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 20px;
 }
 
-/* ===== TEXT OVERLAY (on image bottom) ===== */
-.core-team__overlay {
+/* bottom gradient so white text is visible */
+.core-team__card::after {
+  content: "";
   position: absolute;
-  left: 20px;
-  bottom: 14px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0px;                         /* almost no space between name & role */       /* soft blur effect */
-  padding: 10px 14px;
-  border-radius: 10px;              /* smooth corners like figma */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.0)
+  );
+  pointer-events: none;
 }
 
+/* ===== EXACT TEXT POSITION (like your blue boxes) ===== */
 
-/* name – Bold/18px, line-height 24px */
+/* NAME — visible and bright, still Figma spec */
 .core-team__name {
-  font-family: "Poppins", system-ui, sans-serif;
+  position: absolute;
+  left: 24px;
+  bottom: 40px;
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   line-height: 24px;
-  font-weight: 600;         /* SemiBold */
+  font-weight: 600;
   letter-spacing: -0.5px;
   color: #ffffff;
-  margin-bottom: -2px;
+  margin: 0;
+  text-shadow: 
+      0 0 6px rgba(0, 0, 0, 0.70),   /* strong separation from background */
+      0 0 2px rgba(255, 253, 253, 0.904); /* slight glow like Figma */
 }
 
-/* role – Regular/14px, line-height 22px */
+/* ROLE — visible but slightly softer (still readable) */
 .core-team__role {
-  font-family: "Poppins", system-ui, sans-serif;
+  position: absolute;
+  left: 24px;
+  bottom: 18px;
+  font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  color: #ffffff;
+  letter-spacing: 0;
+  color: #E6E6E6; /* brighter than #D4D4D8 for visibility */
+  margin: 0;
+  text-shadow: 
+      0 0 5px rgba(0, 0, 0, 0.65);
 }
 
+
+
 /* ---------- Responsive ---------- */
+
 @media (max-width: 1024px) {
   .core-team__inner h2 {
     font-size: 40px;
     line-height: 48px;
     max-width: 100%;
+    margin-bottom: 40px;
   }
 
   .core-team__grid {
@@ -113,6 +135,18 @@
 
   .core-team__image-wrap img {
     height: auto;
+  }
+
+  .core-team__card::after {
+    height: 100px;
+  }
+
+  .core-team__name {
+    bottom: 32px;
+  }
+
+  .core-team__role {
+    bottom: 14px;
   }
 }
 
@@ -133,10 +167,5 @@
 
   .core-team__card {
     max-width: 360px;
-  }
-
-  .core-team__overlay {
-    left: 16px;
-    bottom: 16px;
   }
 }

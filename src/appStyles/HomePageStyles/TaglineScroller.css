@@ -2,7 +2,7 @@
 .tagline-section {
   width: 100%;
   background: #ffffff;
-  padding: 32px 0;              /* ↓ was 42px – smaller gap from top */
+  padding: 32px 0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -12,10 +12,22 @@
 
 /* each scrolling row */
 .tagline-row {
-  width: 1560px;                /* desktop Figma width */
   height: 61px;
   position: relative;
   overflow: hidden;
+}
+
+/* Figma desktop widths */
+.tagline-row--top {
+  width: 1903px;   /* “99% ACCURACY EVERY TIME” */
+}
+
+.tagline-row--middle {
+  width: 2760px;   /* “TRUSTED TRANSCRIPTION & LANGUAGE SOLUTIONS …” */
+}
+
+.tagline-row--bottom {
+  width: 2391px;   /* “SERVICES BUILT FOR BUSINESSES OF EVERY SIZE” */
 }
 
 /* SCROLL TRACK */
@@ -25,7 +37,7 @@
   animation: marquee-left 22s linear infinite;
 }
 
-/* universal font style */
+/* universal font style – matches Figma */
 .tagline-text {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
@@ -33,13 +45,13 @@
   font-style: italic;
   line-height: 100%;
   letter-spacing: 0.04em;
-  margin-right: 70px;
+  margin-right: 70px;   /* space between repeated texts */
 }
 
 /* Top + Bottom muted lines */
 .tagline-text--muted {
   color: rgba(0, 0, 0, 0.35);
-  opacity: 0.4;
+  opacity: 0.4;   /* same 40% as Figma right side panel */
 }
 
 /* Middle gradient line */
@@ -61,22 +73,28 @@
   opacity: 0.4;
 }
 
-/* ANIMATION SPEED PER ROW */
+/* ANIMATION SPEED + DIRECTION PER ROW */
 .tagline-row--top .tagline-track {
-  animation-duration: 26s;
+  animation-duration: 26s;          /* slowest */
 }
+
 .tagline-row--middle .tagline-track {
-  animation-duration: 22s;
+  animation-duration: 22s;          /* a bit faster */
 }
+
 .tagline-row--bottom .tagline-track {
   animation: marquee-right 28s linear infinite;
 }
 
-/* KEYFRAMES */
+/* KEYFRAMES
+   NOTE: this assumes your .tagline-track has the text duplicated twice
+   like:  <span>TEXT</span><span>TEXT</span>
+*/
 @keyframes marquee-left {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
 @keyframes marquee-right {
   from { transform: translateX(-50%); }
   to   { transform: translateX(0); }
@@ -85,7 +103,7 @@
 /* ---------- TABLET (≤ 1024px) ---------- */
 @media (max-width: 1024px) {
   .tagline-section {
-    padding: 26px 0;           
+    padding: 26px 0;
     gap: 14px;
   }
 
@@ -103,9 +121,9 @@
 /* ---------- MOBILE (≤ 768px) ---------- */
 @media (max-width: 768px) {
   .tagline-section {
-    padding: 10px 200px;           /* smaller gap above section */
+    padding: 16px 0;
     gap: 12px;
-    margin-top: -18px; 
+    margin-top: -18px;
   }
 
   .tagline-row {
@@ -122,9 +140,9 @@
 /* ---------- SMALL MOBILE (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .tagline-section {
-    padding: 12px 0;      
+    padding: 12px 0;
     gap: 10px;
-    margin-top: -8px; 
+    margin-top: -8px;
   }
 
   .tagline-row {
