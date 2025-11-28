@@ -22,8 +22,7 @@ const ContactFormSection = () => {
     <div className="contact-main__copy">
       <h2>Get in touch<br />with us</h2>
       <p>
-        We strive to respond to all inquiries within 48 hours. Thank you
-        for your patience and interest.
+        We strive to respond to all inquiries within 48 hours. Thank you for your patience and interest.
       </p>
     </div>
 

@@ -3,7 +3,6 @@
 .contact-info {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 0 72px;
   background: #ffeef4;
 }
 
@@ -14,6 +13,7 @@
   padding: 0 60px;
   display: flex;
   align-items: center;
+  margin-top: 2vw;
   gap: 40px;
 }
 
@@ -33,6 +33,7 @@
   display: flex;
   flex: 1;
   gap: 24px;
+  margin-bottom: 1.65vw;
   justify-content: flex-start;
 }
 
@@ -53,6 +54,7 @@
 .contact-info__icon {
   width: 60px;
   height: 72px;
+  margin-top: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,6 +74,7 @@
   font-weight: 600;
   color: #111827;
   margin: 0;
+  margin-top: -7px;
   line-height: 1.5;
 }
 

@@ -3,9 +3,11 @@
 .contact-hero {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 200px 0 32px;        /* space from navbar down to cards area */
-  background: #ffeef4;
+  margin-top: 5vw;
+  padding: 200px 0 32px;
+  background: url("../../assets/contactUs/incrContact.png") no-repeat center center/cover;
 }
+
 
 .contact-hero__inner {
   max-width: 1001px;
