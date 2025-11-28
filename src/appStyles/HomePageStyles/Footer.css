@@ -6,11 +6,8 @@
   margin-top: -2px;
   overflow: hidden;
 
-  /* fluid padding for all screens */
-  /* This is great for responsiveness, using clamp() */
   padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
 
-  /* background */
   background-image: url("../../assets/footer/Rectangle 13.png");
   background-size: cover;
   background-position: top center;
@@ -49,11 +46,10 @@
   gap: 96px;
 }
 
-/* left brand block 
-  Figma: logo group ~169px, text ~340px */
+/* left brand block */
 .footer-brand {
-  max-width: 340px; /* UPDATED: match description width */
-  flex-shrink: 0; /* Prevents shrinking on larger tablet views */
+  max-width: 340px;
+  flex-shrink: 0;
 }
 
 /* === LOGO AREA === */
@@ -61,7 +57,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 12px; /* slightly tighter like Figma */
+  margin-bottom: 12px;
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
@@ -93,25 +89,25 @@
 }
 
 .footer-logo-text {
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 700;
   color: #ffffff;
 }
 
-/* description text – Figma 340 × 44.87 */
+/* description text */
 .footer-description {
-  max-width: 340px; /* UPDATED: fix width */
-  font-size: 13px;
-  line-height: 30px; /* 30px line-height like Figma */
+  max-width: 340px;
+  font-size: 16px;
+  line-height: 30px;
   color: #d1e0ff;
-  margin: 0 0 18px; /* a bit closer to icon */
+  margin: 0 0 18px;
 }
 
-/* LinkedIn square – Figma: 50 × 50, radius 10 */
+/* LinkedIn square */
 .footer-social {
-  width: 50px; /* UPDATED */
-  height: 50px; /* UPDATED */
-  border-radius: 10px; /* UPDATED */
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
   border: none;
   background-color: #ffffff;
   color: #022447;
@@ -120,7 +116,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px; /* bring it closer to text */
+  margin-bottom: 22px;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
@@ -131,10 +127,10 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
 
-/* Copyright – Figma: Rubik 16 / 30 */
+/* Copyright */
 .footer-copy-left {
-  font-size: 16px; /* UPDATED */
-  line-height: 30px; /* UPDATED */
+  font-size: 16px;
+  line-height: 30px;
   color: #d1e0ff;
 }
 
@@ -142,40 +138,39 @@
 .footer-links {
   display: flex;
   gap: 80px;
-  white-space: nowrap;
+  white-space: normal;      /* ✅ allow wrapping so text doesn’t overlap */
+  align-items: flex-start;
 }
 
-/* General column style to ensure responsive flexibility */
+/* General column style */
 .footer-column {
-  /* This ensures columns can shrink/grow as necessary */
   flex-shrink: 1;
-  min-width: 150px; /* Base minimum width for wrapping */
+  min-width: 150px;
 }
 
-/* Services column – approx 230 × 146 */
+/* Services column */
 .footer-column--services {
-  flex-basis: 230px; /* UPDATED */
-  max-width: 230px; /* UPDATED */
+  flex-basis: 230px;
+  max-width: 230px;
 }
 
-/* Quikers column – approx 380 × 221 (includes bottom links) */
+/* Quikers column */
 .footer-column--quikers {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 221px; /* Setting base height on desktop */
-  flex-basis: 380px;
-  max-width: 380px;
-  justify-content: space-between; /* pushes bottom links down */
+  min-height: 221px;
+  flex-basis: 230px;        /* ✅ narrower so columns don’t collide */
+  max-width: 230px;
+  justify-content: space-between;
   font-size: 16px;
-  margin-left: -10px;
+  margin-left: -55px;           /* ✅ remove negative shift that caused overlap */
 }
-
 
 /* headings */
 .footer-column h4 {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 500;
   color: #ff6a7a;
   margin: 0 0 6px;
   position: relative;
@@ -201,11 +196,13 @@
 }
 
 .footer-column li {
-  font-size: 13px;
+  font-size: 16px;
+  line-height: 30px;
   color: #e5edff;
   cursor: pointer;
   transition: color 0.25s ease, transform 0.2s ease;
   list-style: none;
+  font-weight: 400;
 }
 
 .footer-column li + li {
@@ -252,7 +249,6 @@
 
 /* ===== RESPONSIVE ===== */
 
-/* tablets / small laptops (Refined column behavior for cleaner wrap) */
 @media (max-width: 1024px) {
   .footer-inner {
     padding-top: 56px;
@@ -263,32 +259,28 @@
   }
 
   .footer-links {
-    gap: 40px; /* Slightly reduced gap */
+    gap: 40px;
     flex-wrap: wrap;
-    white-space: normal; /* Allow text inside links to wrap if necessary */
-    /* Removed the explicit min-width on columns to let the 768px query handle the stacking */
+    white-space: normal;
   }
 
-  /* Ensure columns are flexible enough to stack, but don't take up full width yet */
   .footer-column {
-    min-width: 180px; /* Increased min-width for better two-column layout */
+    min-width: 180px;
   }
 
   .footer-column--quikers {
     min-height: auto;
-    /* Reset large desktop margin */
     margin-left: 0;
   }
 }
 
-/* large mobiles & small tablets (Refined two-column stacking) */
 @media (max-width: 768px) {
   .footer-inner {
     padding-top: 40px;
   }
 
   .footer-top {
-    flex-direction: column; /* Stack Brand/Links container */
+    flex-direction: column;
     align-items: flex-start;
     gap: 28px;
   }
@@ -300,28 +292,27 @@
   .footer-links {
     width: 100%;
     flex-wrap: wrap;
-    gap: 24px 20px; /* Adjusted vertical gap for better spacing */
+    gap: 24px 20px;
     margin-top: 4px;
   }
 
   .footer-column {
-    /* Set basis for two columns per row */
-    min-width: 45%; 
+    min-width: 45%;
     flex-basis: 45%;
     max-width: 50%;
   }
 
   .footer-column h4 {
-    font-size: 16px; /* Increased font size slightly from original 13px for readability */
+    font-size: 16px;
   }
 
   .footer-column li {
-    font-size: 13px; /* Increased font size slightly from original 12px for readability */
+    font-size: 13px;
   }
 
   .footer-bottom-links {
-    margin-top: 30px; /* Increased margin for better separation */
-    font-size: 14px; /* Increased font size slightly from original 12px for readability */
+    margin-top: 30px;
+    font-size: 14px;
     gap: 20px;
     flex-wrap: wrap;
     white-space: normal;
@@ -329,10 +320,8 @@
   }
 }
 
-/* small mobiles (Refined stacking and typography) */
 @media (max-width: 480px) {
   .footer {
-    /* Adjusted padding to use clamp() from the top, fallback to fixed px */
     padding: clamp(32px, 8vw, 40px) 16px 22px;
     background-position: top left;
   }
@@ -351,16 +340,16 @@
 
   .footer-description {
     font-size: 12px;
-    line-height: 24px; /* Slightly reduced line height for mobile density */
+    line-height: 24px;
   }
   
   .footer-copy-left {
-    font-size: 14px; /* Improved readability */
+    font-size: 14px;
     line-height: 24px;
   }
 
   .footer-links {
-    flex-direction: column; /* Stack all columns vertically */
+    flex-direction: column;
     gap: 16px;
     margin-top: 6px;
   }
@@ -380,10 +369,10 @@
   }
 
   .footer-bottom-links {
-    flex-direction: column; /* Stack Privacy/Terms vertically */
+    flex-direction: column;
     align-items: flex-start;
     gap: 6px;
     margin-top: 18px;
-    font-size: 12px; /* Adjusted for better mobile scaling */
+    font-size: 12px;
   }
 }

@@ -5,6 +5,7 @@ import legalIcon from "../../assets/industries/legal.png";
 import financeIcon from "../../assets/industries/finance.png";
 import medicalIcon from "../../assets/industries/medical.png";
 import mediaIcon from "../../assets/industries/media.png";
+import pinkBg from "../../assets/industries/Rectangle 14.png";   // 🔥 added
 
 const industries = [
   {
@@ -41,7 +42,11 @@ const Industries = () => {
 
         <div className="industries-grid">
           {industries.map((item) => (
-            <article key={item.id} className="industry-card">
+            <article
+              key={item.id}
+              className="industry-card"
+              style={{ backgroundImage: `url(${pinkBg})` }}    // 🔥 added
+            >
               <div className="industry-card__top">
                 <div className="industry-card__icon">
                   <img src={item.icon} alt={item.title} />

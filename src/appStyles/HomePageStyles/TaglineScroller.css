@@ -43,7 +43,7 @@
 /* Top + Bottom muted lines */
 .tagline-text--muted {
   color: rgba(0, 0, 0, 0.35);
-  opacity: 0.4;  
+  opacity: 0.4;
 }
 
 /* Middle gradient line */
@@ -65,52 +65,40 @@
   opacity: 0.4;
 }
 
-
-/* .tagline-row .tagline-track {
-  white-space: nowrap;
-  display: inline-block;
-  animation: scroll-left 20s linear infinite;
-  transform: translateX(20%);
-} */
-
-
-/* @keyframes scroll-left {
-  0%   { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
-} */
-
-/* .tagline-row--top .tagline-text {
-  padding-left: 5vw;
-}
-
-.tagline-row--middle .tagline-text {
-  padding-left: 15vw;
-}
-
-.tagline-row--bottom .tagline-text {
-  padding-left:33vw;
-} */
-/* Default state: stopped */
+/* ===== MARQUEE TRACK BASE ===== */
 .tagline-track {
   white-space: nowrap;
   display: inline-block;
-  transform: translateX(20%); /* starts from middle */
 }
 
-/* When animation starts */
-.tagline-track.animate {
-  animation: scroll-left 60s linear infinite;
+/* ===== ANIMATIONS FOR DIRECTIONS ===== */
+
+/* RIGHT → LEFT (scroll to left) */
+@keyframes marquee-left {
+  0%   { transform: translateX(20%); }
+  100% { transform: translateX(-100%); }
 }
 
-@keyframes scroll-left {
-  0% {
-    transform: translateX(20%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+/* LEFT → RIGHT (scroll to right) */
+@keyframes marquee-right {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(20%); }
 }
 
+/* TOP → LEFT */
+.tagline-row--top .tagline-track.animate {
+  animation: marquee-left 55s linear infinite;
+}
+
+/* MIDDLE → RIGHT (opposite direction) */
+.tagline-row--middle .tagline-track.animate {
+  animation: marquee-right 55s linear infinite;
+}
+
+/* BOTTOM → LEFT */
+.tagline-row--bottom .tagline-track.animate {
+  animation: marquee-left 55s linear infinite;
+}
 
 /* ---------- TABLET (≤ 1024px) ---------- */
 @media (max-width: 1024px) {
@@ -152,7 +140,6 @@
 /* ---------- SMALL MOBILE (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .tagline-section {
-    /* padding: 12px 0; */
     gap: 10px;
     margin-top: -200px;
   }
