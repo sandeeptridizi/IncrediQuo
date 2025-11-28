@@ -5,7 +5,6 @@ import "../../appStyles/Services/TranscriptionHero.css";
 // import PNG card images correctly
 import visionCard from "../../assets/icons/Group 5.png";
 import goalCard from "../../assets/icons/Group 9.png";
-
 import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/ServiceIcon1.png";
 
