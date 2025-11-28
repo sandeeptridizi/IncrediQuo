@@ -6,15 +6,15 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 18px;
 }
 
 /* each scrolling row */
 .tagline-row {
+  width: 100vw;
   height: 61px;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 /* Figma desktop widths */
@@ -30,28 +30,20 @@
   width: 2391px;   /* “SERVICES BUILT FOR BUSINESSES OF EVERY SIZE” */
 }
 
-/* SCROLL TRACK */
-.tagline-track {
-  display: inline-flex;
-  white-space: nowrap;
-  animation: marquee-left 22s linear infinite;
-}
-
 /* universal font style – matches Figma */
 .tagline-text {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
   font-weight: 500;
   font-style: italic;
-  line-height: 100%;
-  letter-spacing: 0.04em;
-  margin-right: 70px;   /* space between repeated texts */
+  margin-right: 70px;
+  white-space: nowrap;
 }
 
 /* Top + Bottom muted lines */
 .tagline-text--muted {
   color: rgba(0, 0, 0, 0.35);
-  opacity: 0.4;   /* same 40% as Figma right side panel */
+  opacity: 0.4;  
 }
 
 /* Middle gradient line */
@@ -73,32 +65,52 @@
   opacity: 0.4;
 }
 
-/* ANIMATION SPEED + DIRECTION PER ROW */
-.tagline-row--top .tagline-track {
-  animation-duration: 26s;          /* slowest */
+
+/* .tagline-row .tagline-track {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll-left 20s linear infinite;
+  transform: translateX(20%);
+} */
+
+
+/* @keyframes scroll-left {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+} */
+
+/* .tagline-row--top .tagline-text {
+  padding-left: 5vw;
 }
 
-.tagline-row--middle .tagline-track {
-  animation-duration: 22s;          /* a bit faster */
+.tagline-row--middle .tagline-text {
+  padding-left: 15vw;
 }
 
-.tagline-row--bottom .tagline-track {
-  animation: marquee-right 28s linear infinite;
+.tagline-row--bottom .tagline-text {
+  padding-left:33vw;
+} */
+/* Default state: stopped */
+.tagline-track {
+  white-space: nowrap;
+  display: inline-block;
+  transform: translateX(20%); /* starts from middle */
 }
 
-/* KEYFRAMES
-   NOTE: this assumes your .tagline-track has the text duplicated twice
-   like:  <span>TEXT</span><span>TEXT</span>
-*/
-@keyframes marquee-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+/* When animation starts */
+.tagline-track.animate {
+  animation: scroll-left 20s linear infinite;
 }
 
-@keyframes marquee-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+@keyframes scroll-left {
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
+
 
 /* ---------- TABLET (≤ 1024px) ---------- */
 @media (max-width: 1024px) {
@@ -140,9 +152,9 @@
 /* ---------- SMALL MOBILE (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .tagline-section {
-    padding: 12px 0;
+    /* padding: 12px 0; */
     gap: 10px;
-    margin-top: -8px;
+    margin-top: -200px;
   }
 
   .tagline-row {
