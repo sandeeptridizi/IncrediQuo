@@ -3,7 +3,7 @@ import heroIllustration from "../../assets/services/ClosedCaptionServicePage.png
 import "../../appStyles/Services/TranscriptionHero.css";
 
 import BulbIcon from "../../assets/services/ServiceIcon.png";
-import BulbIcon2 from "../../assets/services/serviceIcon1.png";
+import BulbIcon2 from "../../assets/services/Icon1.png";
 
 const ClosedCaptionHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {

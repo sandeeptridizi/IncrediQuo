@@ -4,7 +4,7 @@ import "../../appStyles/Services/TranscriptionHero.css";
 
 // Icons used in cards
 import BulbIcon from "../../assets/services/ServiceIcon.png";
-import BulbIcon2 from "../../assets/services/serviceIcon1.png";
+import BulbIcon2 from "../../assets/services/Icon1.png";
 
 const TranscriptionHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
