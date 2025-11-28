@@ -241,7 +241,7 @@ margin: 1vw;
   }
 
   .vg-card {
-    width: 100%;                 /* full width */
+    width: 90vw;                 /* full width */
     padding: 4vw;                /* reduce padding */
     gap: 3vw;
     align-items: center;         /* icon & text centered vertically */
