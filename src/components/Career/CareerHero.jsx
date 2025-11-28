@@ -1,6 +1,7 @@
 import React from "react";
 import "../../appStyles/Career/CareerHero.css";
 import heroImg from "../../assets/carrers/carrerphoto.png";
+import { Button } from "../Button/Button";
 
 const CareerHero = () => {
   return (
@@ -23,9 +24,22 @@ const CareerHero = () => {
             </p>
 
             <div className="career-hero__buttons">
-              <button type="button" className="ch-btn ch-btn--light">
+              {/* <button type="button" className="ch-btn ch-btn--light">
                 Apply Job
-              </button>
+              </button> */}
+              <div>
+                <Button
+                name="Apply Job"
+                  paddingXL="8.6vw"
+  paddingXM="24.5vw"
+  widthL="10.5vw"
+  widthM="3.3vw"
+  bacgrounClr="#ffff"
+  bacgrounArrow="#022447"
+  colorArrow="#ffff"
+  colorText="#022447"
+  colorTextHover="#ffff" />
+              </div>
             </div>
           </div>
 
@@ -71,12 +85,27 @@ const CareerHero = () => {
           </div>
 
           {/* SEARCH BUTTON */}
-          <button className="ch-btn ch-btn--search" type="button">
+          {/* <button className="ch-btn ch-btn--search" type="button">
             <span className="ch-btn__label">SEARCH</span>
             <span className="ch-btn__icon" aria-hidden="true">
               <img src="/search button.png" alt="" />
             </span>
-          </button>
+          </button> */}
+
+          <Button
+  name="Search....."
+  type="button"
+  paddingXL="8.6vw"
+  paddingXM="24.5vw"
+  widthL="10.5vw"
+  widthM="3.3vw"
+  bacgrounClr="#022447"
+  bacgrounArrow="#ffff"
+  colorArrow="#022447"
+  colorText="#ffff"
+  colorTextHover="#022447"
+/>
+
         </div>
       </div>
     </section>

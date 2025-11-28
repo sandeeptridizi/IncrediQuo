@@ -18,6 +18,7 @@ import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Button } from "../Button/Button";
 
 export const CreateBlog = () => {
   const [title, setTitle] = useState("");
@@ -208,9 +209,21 @@ export const CreateBlog = () => {
               <img src={preview} alt="Preview" className="preview-img" />
             )}
 
-            <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Publishing..." : "Publish Blog"}
-            </button>
+<Button
+  name={isSubmitting ? "Publishing..." : "Publish Blog"}
+  type="submit"
+  disabled={isSubmitting}
+  paddingXL="8.6vw"
+  paddingXM="24.5vw"
+  widthL="10.7vw"
+  widthM="30.3vw"
+  bacgrounClr="#022447"
+  bacgrounArrow="#ffff"
+  colorArrow="#022447"
+  colorText="#ffff"
+  colorTextHover="#022447"
+/>
+
           </form>
         </div>
       </div>

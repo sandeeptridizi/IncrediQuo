@@ -1,5 +1,6 @@
 import React from "react";
 import "../../appStyles/AboutUs/GuidanceBanner.css";
+import { Button } from "../Button/Button";
 
 const GuidanceBanner = () => {
   return (
@@ -17,7 +18,10 @@ const GuidanceBanner = () => {
           draft.
         </p>
 
-        <button className="guidance-banner__button">Get Started</button>
+        {/* <button className="guidance-banner__button">Get Started</button> */}
+          <div>
+            <Button name="Get Started" />
+          </div>
       </div>
     </section>
   );

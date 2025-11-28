@@ -32,7 +32,7 @@ const TaglineScroller = () => {
           copy[index] = true;
           return copy;
         });
-      }, index * 3000); // 5 sec difference between lines
+      }, index * 2000); // 5 sec difference between lines
     });
   }, []);
 

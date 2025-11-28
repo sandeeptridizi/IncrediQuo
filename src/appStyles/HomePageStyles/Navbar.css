@@ -100,8 +100,9 @@
 
 /* ===== RIGHT — contact button ===== */
 .navbar__button {
-  padding: 10px 30px;
-  border-radius: 999px;
+  margin-top: -1vw;
+  /* padding: 10px 30px; */
+  /* border-radius: 999px;
   background: #022447;
   color: #ffffff;
   font-size: 16px;
@@ -112,14 +113,14 @@
     background 0.25s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
-.navbar__button:hover {
+/* .navbar__button:hover {
   background: #001c38;
   transform: translateY(-1px);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-}
+} */
 
 .navbar__button:active {
   transform: translateY(0);

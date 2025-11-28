@@ -1,12 +1,15 @@
 // src/components/HomePage/Navbar.jsx
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import { Navigate, NavLink } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/logo.png";
+import { Button } from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
+    const navigate = useNavigate();
 
   // close dropdown when clicking outside
   useEffect(() => {
@@ -82,9 +85,16 @@ const Navbar = () => {
         <NavLink to="/careers">Careers</NavLink>
       </nav>
 
-      <NavLink to="/contact" className="navbar__button">
+      {/* <NavLink to="/contact" className="navbar__button">
         Contact Us
-      </NavLink>
+      </NavLink> */}
+     <div
+        className="navbar__button"
+        onClick={() => navigate("/contact")}
+        style={{ cursor: "pointer" }}
+      >
+        <Button name="Contact Us" />
+      </div>
     </header>
   );
 };

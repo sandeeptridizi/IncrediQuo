@@ -1,0 +1,85 @@
+.About_btn_container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+    margin-top: 2vw;
+}
+
+.About_bbcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1vw 2vw 0.1vw 1vw;
+    border-radius: 5vw;
+    background-color: var(--bacgrounClr);
+    position: relative;
+}
+
+.About_contact_btn {
+    font-size: 1vw;
+    color: var(--colorText);
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: .8vw 3vw .8vw .4vw;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    font-weight: 500;
+}
+
+.About_Arrow_Icon {
+    width: 2.8vw;
+    height: 2.8vw;
+    font-size: .1vw;
+    padding: 1.1vw;
+    color: var(--colorArrow);
+    border-radius: 5vw;
+    background-color: var(--bacgrounArrow);
+    transition: all 0.3s ease;
+    position: absolute;
+    right: .2vw;
+
+}
+
+.About_bbcontainer:hover .About_contact_btn {
+    color: var(--colorTextHover);
+    cursor: pointer;
+
+}
+
+.About_bbcontainer:hover .About_Arrow_Icon {
+    border-radius: 5vw;
+    padding-left: var(--paddingXL);
+    width: var(--widthL);
+    font-size: 5vw;
+    /* color: white; */
+    cursor: pointer;
+}
+
+@media screen and (min-width: 320px) and (max-width: 720px) {
+
+    .About_bbcontainer {
+        padding: .8vw 4.5vw .8vw 4vw;
+    }
+
+    .About_contact_btn {
+        font-size: 3.5vw;
+        padding: 2vw 6vw 2vw 1vw;
+    }
+
+    .About_Arrow_Icon {
+        width: 8.9vw;
+        height: 8.9vw;
+        padding: 2.7vw;
+        right: 1vw;
+    }
+
+    .About_bbcontainer:hover .About_Arrow_Icon {
+        border-radius: 5vw;
+        width: var(--widthM);
+        padding-left: var(--paddingXM);
+
+    }
+}
