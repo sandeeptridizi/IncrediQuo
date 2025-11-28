@@ -3,7 +3,7 @@
 /* SECTION WRAPPER */
 .section.industries {
   padding: 40px 0 70px;          /* heading a bit higher */
-  background-color: #ffffff;
+
 }
 
 /* INNER CONTAINER: title + cards share same center */
@@ -45,7 +45,9 @@
 .industry-card {
   width: 263px;
   height: 334px;
-  background-color: #FEE8EC;     
+  background-size: cover;              /* 🔥 added */
+  background-repeat: no-repeat;        /* 🔥 added */
+  background-position: center;         /* 🔥 added */
   border-radius: 24px;
   padding: 34px 24px 26px;
   display: flex;
@@ -54,12 +56,32 @@
   cursor: pointer;
   box-shadow: 0 18px 34px rgba(14, 31, 81, 0.15);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 8px 20px rgba(14, 31, 81, 0.12); 
+  box-shadow: 0 16px 32px rgba(14, 31, 81, 0.18); 
+  transform: none;                    
+  box-shadow: 0 16px 32px rgba(14, 31, 81, 0.18);
+}
+
+.industry-card {
+  box-shadow: none;
+}
+.industry-card:hover {
+  box-shadow: none;
 }
 
 .industry-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 42px rgba(14, 31, 81, 0.25);
 }
+
+.industry-card {
+  background-size: 100% 100%;          /* image locked to card shape */
+  background-clip: padding-box;       /* prevents background from sliding */
+}
+.industry-card:hover {
+  background-size: 100% 100%;         /* keeps image fixed on hover */
+}
+
 
 
 /* ICON —— 60 × 60 */

@@ -1,45 +1,82 @@
 // src/components/HomePage/LatestPosts.jsx
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../appStyles/HomePageStyles/LatestPosts.css";
 
-import post1 from "../../assets/posts/post-1.jpg";
-import post2 from "../../assets/posts/post-2.jpg";
-import post3 from "../../assets/posts/post-3.jpg";
-
-import ranoldAvatar from "../../assets/authors/ranold.jpg";
-import patriciaAvatar from "../../assets/authors/patricia.jpg";
-import elaineAvatar from "../../assets/authors/elaine.jpg";
-
-const posts = [
-  {
-    id: 1,
-    title: "The most Popular Business Of the Year",
-    author: "Ranold Jeff.",
-    date: "May 4th, 2022",
-    image: post1,
-    avatar: ranoldAvatar,
-  },
-  {
-    id: 2,
-    title: "The most Popular Business Of the Year",
-    author: "Patricia Anderson",
-    date: "Apr 27th, 2022",
-    image: post2,
-    avatar: patriciaAvatar,
-  },
-  {
-    id: 3,
-    title: "The most Popular Business Of the Year",
-    author: "Elaine Luna",
-    date: "Apr 20th, 2022",
-    image: post3,
-    avatar: elaineAvatar,
-  },
-];
+import { database, ref, get } from "../../Firebase/firebase";
 
 const LatestPosts = () => {
+  const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
+
+  // ---- FETCH LATEST 3 BLOGS FROM FIREBASE ----
+  useEffect(() => {
+    const fetchLatestBlogs = async () => {
+      try {
+        const blogRef = ref(database, "blogs");
+        const snapshot = await get(blogRef);
+
+        if (!snapshot.exists()) {
+          setPosts([]);
+          return;
+        }
+
+        const data = snapshot.val();
+
+        // object -> array
+        const allBlogs = Object.keys(data).map((key) => ({
+          id: key,
+          ...data[key],
+          imageUrl: data[key].image_url || data[key].imageUrl || "",
+          author: data[key].author || "Unknown author",
+          authorImage:
+            data[key].authorImage || data[key].author_image || "", // fetched (for later use)
+        }));
+
+        // sort by date (newest first)
+        const getTime = (blog) => {
+          const raw =
+            blog.createdAt ||
+            blog.created_at ||
+            blog.date ||
+            blog.publishedAt;
+
+          if (!raw) return 0;
+          const d = new Date(raw);
+          return Number.isNaN(d.getTime()) ? 0 : d.getTime();
+        };
+
+        const sorted = allBlogs.sort((a, b) => getTime(b) - getTime(a));
+
+        // keep only latest 3
+        setPosts(sorted.slice(0, 3));
+      } catch (err) {
+        console.error("Error fetching latest blogs:", err);
+        setPosts([]);
+      }
+    };
+
+    fetchLatestBlogs();
+  }, []);
+
+  // ---- FORMAT DATE (for small label under title) ----
+  const formatDate = (blog) => {
+    const raw =
+      blog.createdAt ||
+      blog.created_at ||
+      blog.date ||
+      blog.publishedAt;
+
+    if (!raw) return "";
+    const d = new Date(raw);
+    if (Number.isNaN(d.getTime())) return "";
+
+    return d.toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    });
+  };
 
   return (
     <section id="blogs" className="section latest-posts">
@@ -51,15 +88,17 @@ const LatestPosts = () => {
             <article
               key={post.id}
               className="latest-card"
-              onClick={() => navigate(`/post/${post.id}`)}
+              onClick={() => navigate(`/blogs/${post.id}`)} // use same route as BlogsListPage
               style={{ cursor: "pointer" }}
             >
               <div className="latest-card__image-wrap">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="latest-card__image"
-                />
+                {post.imageUrl && (
+                  <img
+                    src={post.imageUrl}
+                    alt={post.title}
+                    className="latest-card__image"
+                  />
+                )}
               </div>
 
               <div className="latest-card__content">
@@ -67,16 +106,26 @@ const LatestPosts = () => {
 
                 <div className="latest-card__meta">
                   <div className="latest-card__author">
+                    {/* Avatar kept for layout – you can plug in authorImage later */}
                     <div className="latest-card__avatar">
-                      <img src={post.avatar} alt={post.author} />
+                      {/* {post.authorImage && (
+                        <img src={post.authorImage} alt={post.author} />
+                      )} */}
                     </div>
                     <span>{post.author}</span>
                   </div>
-                  <span className="latest-card__date">{post.date}</span>
+
+                  <span className="latest-card__date">
+                    {formatDate(post)}
+                  </span>
                 </div>
               </div>
             </article>
           ))}
+
+          {posts.length === 0 && (
+            <p className="latest-empty">No posts found.</p>
+          )}
         </div>
       </div>
     </section>

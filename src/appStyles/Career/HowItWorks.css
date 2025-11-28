@@ -1,4 +1,3 @@
-
 body {
   background: #ffffff;
   margin: 0;
@@ -8,7 +7,6 @@ body {
 
 .hiw__title {
   text-align: center;
-  /* Changed fixed width to max-width for better fluid centering */
   max-width: 400px;
   width: 100%;
   height: auto;
@@ -22,35 +20,29 @@ body {
 
 .hiw {
   background: #ffe9ec;
-  /* Fluid vertical padding using clamp() */
   padding: clamp(30px, 5vw, 38.5px) 0;
   margin-top: 0;
   overflow: hidden;
 }
 
 .hiw__row {
-  /* CRITICAL CHANGE: Use max-width instead of fixed width for responsiveness */
   max-width: 1195px;
-  width: auto;
-  height: auto;
   margin: 0 auto;
   display: flex;
-  justify-content: center; /* Changed from space-between for better wrapping consistency */
+  justify-content: center;
   align-items: center;
-  /* Fluid gap for desktop/large screens */
   gap: clamp(40px, 8vw, 124px);
+  padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .hiw__card {
   display: flex;
   align-items: center;
-  /* Use max-width instead of fixed width to allow them to scale down */
   max-width: 330px;
-  height: auto;
   gap: 7px;
   flex-shrink: 1;
   flex-grow: 1;
-  /* Ensure a minimum width so cards don't squeeze too much before 1024px breakpoint */
   min-width: 250px;
 }
 
@@ -76,7 +68,6 @@ body {
 
 .hiw__text {
   text-align: left;
-  /* Removed fixed width, allowing it to take up remaining space */
   width: 100%;
   min-width: 0;
 }
@@ -104,28 +95,30 @@ body {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 32px 24px; /* Increased vertical gap for better separation */
+    gap: 32px 24px;
     padding: 0 20px;
-    height: auto;
   }
 
   .hiw__card {
-    /* Ensures two cards per row, with breathing room */
     width: 47%;
     max-width: none;
-    height: auto;
     justify-content: flex-start;
-    min-width: 300px;
+    min-width: 260px;
   }
 }
 
-/* ================= LARGE MOBILE (≤ 768px) ================= 
-   Added this intermediate breakpoint for smoother transition from 2-column to 1-column */
+/* ================= LARGE MOBILE / SMALL TABLET (≤ 768px) ================= */
 @media (max-width: 768px) {
+  .hiw__row {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 24px;
+    padding: 0 20px;
+  }
+
   .hiw__card {
-    /* Cards now take up full width (centered) */
     width: 100%;
-    max-width: 450px;
+    max-width: 480px;
     min-width: 0;
     margin: 0 auto;
   }
@@ -134,18 +127,20 @@ body {
 /* ================= MOBILE (≤ 600px) ================= */
 @media (max-width: 600px) {
   .hiw__title {
-    font-size: 26px;
+    font-size: 22px;         /* smaller so full text fits */
     margin: 32px auto 12px;
-    padding: 0 16px; /* Added padding for title on small screens */
+    padding: 0 12px;
     width: auto;
+    max-width: 100%;
+    white-space: normal;     /* allow wrapping on very small phones */
+    line-height: 1.3;
   }
 
   .hiw {
-    padding: 18px 0;
+    padding: 18px 0 28px;
   }
 
   .hiw__row {
-    flex-direction: column;
     gap: 20px;
     padding: 0 16px;
   }
@@ -153,7 +148,6 @@ body {
   .hiw__card {
     width: 100%;
     max-width: 100%;
-    height: auto;
     padding-right: 0;
     margin: 0;
   }
@@ -161,10 +155,6 @@ body {
   .hiw__icon {
     width: 50px;
     height: 50px;
-  }
-
-  .hiw__text {
-    width: auto;
   }
 
   .hiw__text h4 {
@@ -178,7 +168,7 @@ body {
 }
 
 .hiw__icon img {
-  width: 24px; /* fits exactly like Figma */
+  width: 24px;
   height: 24px;
   object-fit: contain;
 }

@@ -23,7 +23,7 @@
 }
 
 /* =========================================
-   STRIPES
+   STRIPES (ANIMATED)
    ========================================= */
 .banner__stripes {
   position: absolute;
@@ -35,19 +35,34 @@
   gap: clamp(22px, 3.8vw, 45px);
   align-items: center;
 }
+
 .banner__stripe {
   height: clamp(10px, 1.1vw, 16px);
   border-radius: 50px;
   background: rgba(255, 233, 236, 0.14);
+
+  /* 🔥 zoom in / zoom out animation */
+  transform-origin: center;
+  animation: stripePulse 3s ease-in-out infinite;
+  will-change: transform;
 }
-.banner__stripe:nth-child(1){width:140px;}
-.banner__stripe:nth-child(2){width:100px;}
-.banner__stripe:nth-child(3){width:160px;}
-.banner__stripe:nth-child(4){width:240px;}
-.banner__stripe:nth-child(5){width:130px;}
-.banner__stripe:nth-child(6){width:170px;}
-.banner__stripe:nth-child(7){width:75px;}
-.banner__stripe:nth-child(8){width:30px;}
+
+/* widths + stagger delays */
+.banner__stripe:nth-child(1){width:140px; animation-delay: 0s;}
+.banner__stripe:nth-child(2){width:100px; animation-delay: 0.2s;}
+.banner__stripe:nth-child(3){width:160px; animation-delay: 0.4s;}
+.banner__stripe:nth-child(4){width:240px; animation-delay: 0.6s;}
+.banner__stripe:nth-child(5){width:130px; animation-delay: 0.8s;}
+.banner__stripe:nth-child(6){width:170px; animation-delay: 1s;}
+.banner__stripe:nth-child(7){width:75px; animation-delay: 1.2s;}
+.banner__stripe:nth-child(8){width:30px; animation-delay: 1.4s;}
+
+/* Pulse animation */
+@keyframes stripePulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
 
 /* =========================================
    TEXT
@@ -65,12 +80,8 @@
   margin: 0;
   white-space: nowrap;
 }
-
 @media (max-width: 540px) {
-  .banner__text h2 {
-    white-space: normal;       /* break only on very small screens */
-    line-height: 1.15;
-  }
+  .banner__text h2 { white-space: normal; line-height: 1.15; }
 }
 
 .banner__text p {
@@ -120,9 +131,10 @@
 .banner__ticker-track {
   display: inline-flex;
   gap: clamp(28px, 6vw, 64px);
-  animation: ticker 18s linear infinite;
+  animation: ticker 32s linear infinite;
   white-space: nowrap;
   padding-left: 100%;
+  gap: 42px;
 }
 .banner__ticker-track span {
   font-family: "Raleway", sans-serif;
@@ -130,23 +142,32 @@
   font-weight: 600;
   color: #ffe9ec;
   position: relative;
-  padding-left: 24px;
+  padding: 0 32px; /* spacing both sides */
 }
+
+/* DOT between items */
 .banner__ticker-track span::before {
-  content: "";
+  content: "•";               
   position: absolute;
-  left: 6px; top: 50%;
+  left: -14px;                
+  top: 50%;
   transform: translateY(-50%);
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: #ffe9ec;
+  font-size: 32px;
+  color: #ffe9ec;
+  opacity: 0.9;
 }
+
+/* REMOVE DOT on the first item */
+.banner__ticker-track span:first-child::before {
+  content: "";
+}
+
 @keyframes ticker {
   to { transform: translateX(-100%); }
 }
 
 /* =========================================
-   STAR GRAPHIC
+   STAR (BOTTOM RIGHT)
    ========================================= */
 .banner__inner::after {
   content: "";
@@ -159,18 +180,16 @@
 }
 
 /* =========================================
-   BREAKPOINTS
+   RESPONSIVE TWEAKS
    ========================================= */
 @media (max-width: 1024px) {
   .banner__stripes { display: none; }
   .banner__text { margin-left: 0; }
 }
-
 @media (max-width: 640px) {
-  .banner__text { text-align: center; margin-inline:auto; }
-  .banner__text p { margin-inline:auto; }
-  .banner__button { display: block; margin-inline:auto; }
+  .banner__text { text-align: center; margin-inline: auto; }
+  .banner__text p { margin-inline: auto; }
+  .banner__button { display: block; margin-inline: auto; }
   .banner__ticker { position: static; margin-top: 40px; }
   .banner__inner::after { display: none; }
 }
-
