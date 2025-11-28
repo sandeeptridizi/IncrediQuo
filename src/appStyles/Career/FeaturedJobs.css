@@ -360,3 +360,63 @@ body {
       border-radius: 999px;
   }
 }
+
+/* POPUP OVERLAY */
+.job-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+/* POPUP BOX */
+.job-modal {
+  background: #fff;
+  width: 480px;
+  max-width: 90%;
+  padding: 28px;
+  border-radius: 12px;
+  position: relative;
+  animation: fadeIn 0.25s ease;
+}
+
+/* CLOSE BUTTON */
+.job-modal__close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.job-modal__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #022447;
+}
+
+.job-modal__desc {
+  color: #1a2d45;
+  margin-bottom: 16px;
+}
+
+.job-modal__meta {
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}

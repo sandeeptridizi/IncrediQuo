@@ -85,12 +85,27 @@ const CareerHero = () => {
           </div>
 
           {/* SEARCH BUTTON */}
-          <button className="ch-btn ch-btn--search" type="button">
+          {/* <button className="ch-btn ch-btn--search" type="button">
             <span className="ch-btn__label">SEARCH</span>
             <span className="ch-btn__icon" aria-hidden="true">
               <img src="/search button.png" alt="" />
             </span>
-          </button>
+          </button> */}
+
+          <Button
+  name="Search....."
+  type="button"
+  paddingXL="8.6vw"
+  paddingXM="24.5vw"
+  widthL="10.5vw"
+  widthM="3.3vw"
+  bacgrounClr="#022447"
+  bacgrounArrow="#ffff"
+  colorArrow="#022447"
+  colorText="#ffff"
+  colorTextHover="#022447"
+/>
+
         </div>
       </div>
     </section>
