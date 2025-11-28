@@ -1,8 +1,8 @@
 import React from "react";
-import heroIllustration from "../../assets/services/Additionalsupport.png"; // <-- correct image
+import heroIllustration from "../../assets/services/Additionalsupport.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
-import BulbIcon from "../../assets/services/ServiceIcon.png";
+import BulbIcon from "../../assets/services/serviceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";
 
 const AdditionalSupportHero = ({ onOpenContact }) => {
@@ -15,16 +15,10 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
   return (
     <section className="ts-hero">
       <div className="ts-hero__inner">
-        {/* LEFT IMAGE */}
         <div className="ts-hero__left">
-          <img
-            src={heroIllustration}
-            alt="Additional Support illustration"
-            className="ts-hero__image"
-          />
+          <img src={heroIllustration} alt="Additional Support illustration" className="ts-hero__image" />
         </div>
 
-        {/* RIGHT TEXT */}
         <div className="ts-hero__right">
           <p className="ts-hero__eyebrow">Additional Support</p>
 
