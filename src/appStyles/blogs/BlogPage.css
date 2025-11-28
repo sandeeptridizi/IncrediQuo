@@ -65,32 +65,37 @@
   margin: 0 0 24px;
 }
 
+/* ======= CONTACT BLOCK (GET IN TOUCH) ======= */
+
 .blog-contact {
-  background: #ffe9ec;
-  border-radius: 0;
-  padding: 40px 0 80px;
+  background: #ffe9ec;         /* panel color */
+  padding: 40px 0;             /* panel height ~530 with card inside */
   margin: 0 0 80px;
 }
 
 .blog-contact__inner {
-  max-width: 1278px;
+  max-width: 1278px;           /* Figma: 1278 */
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0;                  /* no extra side padding so width matches */
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 34px;                   /* Figma gap between card & text */
 }
 
+/* form card (pink with shadow) */
 .blog-contact__card {
-  background: #ffffff;
-  border-radius: 4px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
-  border: 1px solid #f7d0dd;
-  width: 642px;
-  height: 457px;
-  padding: 40px 29px 32px;
+  background: #ffe9ec;         /* Figma rectangle color */
+  border-radius: 5px;          /* Figma radius */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);  /* Figma drop shadow */
+  border: none;
+  width: 642px;                /* Figma: 642 */
+  height: 457px;               /* Figma: 457 */
+  padding: 40px 29px 32px;     /* from screenshot */
+  box-sizing: border-box;
 }
+
+/* form fields */
 
 .blog-contact__form {
   display: flex;
@@ -109,13 +114,13 @@
 
 .blog-contact__field input,
 .blog-contact__field textarea {
-  width: 584px;
+  width: 584px;                /* Figma: 584 */
   max-width: 100%;
-  height: 64px;
+  height: 64px;                /* Figma: 64 */
   border: none;
-  border-radius: 10px;
+  border-radius: 10px;         /* Figma: 10px */
   background: #001f5b;
-  color: #FFE9EC;
+  color: #ffe9ec;
   padding: 14px 18px;
   font-size: 14px;
   outline: none;
@@ -123,7 +128,7 @@
 }
 
 .blog-contact__field textarea {
-  height: auto;
+  height: 141px;               /* Figma: 141 */
   min-height: 141px;
   resize: vertical;
 }
@@ -133,11 +138,13 @@
   color: #d1d5db;
 }
 
+/* submit button */
+
 .blog-contact__submit {
   margin-top: 20px;
-  width: 163.77px;
-  height: 45px;
-  border-radius: 6.39px;
+  width: 163.77px;             /* Figma */
+  height: 45px;                /* Figma */
+  border-radius: 6.39px;       /* Figma */
   border: none;
   background: #001f5b;
   color: #ffffff;
@@ -146,22 +153,23 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
-
   display: block;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* text side */
+
 .blog-contact__text {
-  width: 506px;
+  width: 506px;                /* Figma group width */
 }
 
 .blog-contact__text h2 {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-weight: 900;
-  font-size: 84px;
-  line-height: 71px;
+  font-weight: 900;            /* very bold */
+  font-size: 84px;             /* Figma: 84 */
+  line-height: 71px;           /* Figma: 71 */
   letter-spacing: -0.04em;
   color: #002147;
   margin: 0 0 12px;
@@ -170,13 +178,67 @@
 .blog-contact__text p {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1;
+  font-size: 16px;             /* Figma: 16 */
+  font-weight: 600;            /* Semi Bold */
+  line-height: 1;              /* 100% */
   color: #111827;
-  max-width: 493px;
+  max-width: 493px;            /* Figma text frame width */
   margin: 0;
 }
+
+/* ======= RESPONSIVE TWEAKS JUST FOR THIS BLOCK ======= */
+
+@media (max-width: 1024px) {
+  .blog-contact__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .blog-contact__card {
+    width: 100%;
+    max-width: 642px;
+    height: auto;              /* allow card to grow with content */
+  }
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100%;
+  }
+
+  .blog-contact__text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-contact {
+    padding: 32px 0 40px;
+  }
+
+  .blog-contact__card {
+    padding: 26px 20px;
+  }
+
+  .blog-contact__submit {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .blog-contact__text h2 {
+    font-size: 32px;
+    line-height: 34px;
+  }
+
+  .blog-contact__text p {
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 8px;
+  }
+}
+
 
 .blog-approach {
   background: #ffe9ec;

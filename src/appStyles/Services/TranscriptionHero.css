@@ -25,6 +25,10 @@
   width: 555px;
   height: 500px;
   object-fit: contain;
+
+  /* 🔥 3D/Zoom animation removed — now static */
+  transition: none;
+  transform: none;
 }
 
 /* RIGHT CONTENT */
@@ -43,7 +47,7 @@
   margin-bottom: 6px;
 }
 
-/* TITLE - CLEAN & NATURAL FLOW */
+/* TITLE */
 .ts-hero__title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
@@ -114,6 +118,8 @@
   .ts-hero__image {
     width: 100%;
     height: auto;
+    margin-top: 25px;
+    max-width: 520px;
   }
 
   .ts-hero__title {
@@ -127,6 +133,8 @@
 
   .ts-hero__cards {
     flex-direction: column;
+    width: 100%;
+    align-items: stretch;
   }
 }
 
@@ -147,33 +155,13 @@
     font-size: 28px;
     line-height: 38px;
   }
-}
 
-/* Tablet – keep layout clean and push image slightly down */
-@media (max-width: 1024px) {
   .ts-hero__left {
-    justify-content: center;
+    margin-top: 35px;
   }
 
   .ts-hero__image {
-    margin-top: 25px; /* image little bit down */
-    max-width: 520px;
-  }
-
-  .ts-hero__cards {
-    width: 100%;
-    align-items: stretch;
-  }
-}
-
-/* Mobile – spacing + down movement for image */
-@media (max-width: 600px) {
-  .ts-hero__left {
-    margin-top: 35px; /* More space for small mobiles */
-  }
-
-  .ts-hero__image {
-    margin-top: 45px; /* image more down on mobile */
+    margin-top: 45px;
     width: 100%;
     max-width: 380px;
   }
@@ -183,17 +171,17 @@
   }
 
   .ts-hero__cta {
-    margin-top: 40px; /* prevents button pushing too low */
+    margin-top: 40px;
   }
 }
 
+/* ===== VG CARDS ===== */
 .vg-container {
   display: flex;
   gap: 0vw;
   padding: 20px 0;
   flex-wrap: row;
   width:46vw;
-  /* border: 2px solid red; */
 }
 
 .vg-card {
@@ -202,20 +190,20 @@
   gap: 1vw;
   padding: 15px;
   border-radius: 12px;
-  width: 330px;         /* adjust based on design */
-  /* border: 1px solid green; */
+  width: 330px;
 }
 
-.innerIMg_bulb{
+.innerIMg_bulb {
   width: 7vw;
   height: 4.5vw;
-   background: #f1f5fc;
-   border-radius: 0.5vw;
+  background: #f1f5fc;
+  border-radius: 0.5vw;
 }
+
 .vg-icon {
   width: 40px;
   height: 40px;
-margin: 1vw;
+  margin: 1vw;
 }
 
 .vg-text h4 {
@@ -233,22 +221,21 @@ margin: 1vw;
 }
 
 @media (max-width: 600px) {
-
   .vg-container {
-    flex-direction: column;      /* stack vertically */
-    gap: 4vw;                    /* spacing between cards */
+    flex-direction: column;
+    gap: 4vw;
     padding: 4vw 0;
   }
 
   .vg-card {
-    width: 90vw;                 /* full width */
-    padding: 4vw;                /* reduce padding */
+    width: 90vw;
+    padding: 4vw;
     gap: 3vw;
-    align-items: center;         /* icon & text centered vertically */
+    align-items: center;
   }
 
   .innerIMg_bulb {
-    width: 18vw;                 /* increase space for icon box */
+    width: 18vw;
     height: 16vw;
     border-radius: 1vw;
   }
@@ -260,7 +247,7 @@ margin: 1vw;
   }
 
   .vg-text h4 {
-    font-size: 4vw;              /* responsive font */
+    font-size: 4vw;
   }
 
   .vg-text p {
@@ -268,4 +255,29 @@ margin: 1vw;
     margin-top: 1vw;
   }
 }
+/* ===== FLAT HERO IMAGE, NO CARD, LESS GAP ===== */
 
+/* reduce distance between image and right text */
+.ts-hero__inner {
+  column-gap: 40px;          /* was 80px */
+}
+
+/* make sure left side is clean */
+.ts-hero__left {
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* make image flat, no shadow, no rounded card */
+.ts-hero__image {
+  max-width: 480px;          /* a bit smaller so white area is less */
+  width: 100%;
+  height: auto;
+  display: block;
+
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}

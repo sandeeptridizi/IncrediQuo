@@ -7,6 +7,7 @@
   overflow: hidden;
 
   /* fluid padding for all screens */
+  /* This is great for responsiveness, using clamp() */
   padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
 
   /* background */
@@ -48,10 +49,11 @@
   gap: 96px;
 }
 
-/* left brand block  
-   Figma: logo group ~169px, text ~340px */
+/* left brand block 
+  Figma: logo group ~169px, text ~340px */
 .footer-brand {
   max-width: 340px; /* UPDATED: match description width */
+  flex-shrink: 0; /* Prevents shrinking on larger tablet views */
 }
 
 /* === LOGO AREA === */
@@ -98,18 +100,18 @@
 
 /* description text – Figma 340 × 44.87 */
 .footer-description {
-  max-width: 340px;            /* UPDATED: fix width */
+  max-width: 340px; /* UPDATED: fix width */
   font-size: 13px;
-  line-height: 30px;           /* 30px line-height like Figma */
+  line-height: 30px; /* 30px line-height like Figma */
   color: #d1e0ff;
-  margin: 0 0 18px;            /* a bit closer to icon */
+  margin: 0 0 18px; /* a bit closer to icon */
 }
 
 /* LinkedIn square – Figma: 50 × 50, radius 10 */
 .footer-social {
-  width: 50px;                 /* UPDATED */
-  height: 50px;                /* UPDATED */
-  border-radius: 10px;         /* UPDATED */
+  width: 50px; /* UPDATED */
+  height: 50px; /* UPDATED */
+  border-radius: 10px; /* UPDATED */
   border: none;
   background-color: #ffffff;
   color: #022447;
@@ -118,7 +120,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;         /* bring it closer to text */
+  margin-bottom: 22px; /* bring it closer to text */
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
@@ -131,8 +133,8 @@
 
 /* Copyright – Figma: Rubik 16 / 30 */
 .footer-copy-left {
-  font-size: 16px;             /* UPDATED */
-  line-height: 30px;           /* UPDATED */
+  font-size: 16px; /* UPDATED */
+  line-height: 30px; /* UPDATED */
   color: #d1e0ff;
 }
 
@@ -143,10 +145,17 @@
   white-space: nowrap;
 }
 
+/* General column style to ensure responsive flexibility */
+.footer-column {
+  /* This ensures columns can shrink/grow as necessary */
+  flex-shrink: 1;
+  min-width: 150px; /* Base minimum width for wrapping */
+}
+
 /* Services column – approx 230 × 146 */
 .footer-column--services {
-  flex-basis: 230px;           /* UPDATED */
-  max-width: 230px;            /* UPDATED */
+  flex-basis: 230px; /* UPDATED */
+  max-width: 230px; /* UPDATED */
 }
 
 /* Quikers column – approx 380 × 221 (includes bottom links) */
@@ -154,9 +163,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 160px;
+  min-height: 221px; /* Setting base height on desktop */
   flex-basis: 380px;
   max-width: 380px;
+  justify-content: space-between; /* pushes bottom links down */
+  font-size: 16px;
+  margin-left: -10px;
 }
 
 
@@ -210,18 +222,6 @@
   text-decoration: underline;
 }
 
-/* Quikers column – make it a vertical flex box with fixed-ish height */
-.footer-column--quikers {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;  /* pushes bottom links down */
-  min-height: 221px; 
-  font-size: 16px;
-  margin-left:-10px;
-
-}
-
 /* bottom row (Privacy + Terms) */
 .footer-bottom-links {
   margin-top: auto;
@@ -233,7 +233,6 @@
   font-size: 16px;
   flex-wrap: nowrap;
   margin-right: -25px;
-  
 }
 
 .footer-bottom-link,
@@ -253,7 +252,7 @@
 
 /* ===== RESPONSIVE ===== */
 
-/* tablets / small laptops */
+/* tablets / small laptops (Refined column behavior for cleaner wrap) */
 @media (max-width: 1024px) {
   .footer-inner {
     padding-top: 56px;
@@ -264,23 +263,32 @@
   }
 
   .footer-links {
-    gap: 48px;
+    gap: 40px; /* Slightly reduced gap */
     flex-wrap: wrap;
+    white-space: normal; /* Allow text inside links to wrap if necessary */
+    /* Removed the explicit min-width on columns to let the 768px query handle the stacking */
+  }
+
+  /* Ensure columns are flexible enough to stack, but don't take up full width yet */
+  .footer-column {
+    min-width: 180px; /* Increased min-width for better two-column layout */
   }
 
   .footer-column--quikers {
     min-height: auto;
+    /* Reset large desktop margin */
+    margin-left: 0;
   }
 }
 
-/* large mobiles & small tablets */
+/* large mobiles & small tablets (Refined two-column stacking) */
 @media (max-width: 768px) {
   .footer-inner {
     padding-top: 40px;
   }
 
   .footer-top {
-    flex-direction: column;
+    flex-direction: column; /* Stack Brand/Links container */
     align-items: flex-start;
     gap: 28px;
   }
@@ -292,35 +300,40 @@
   .footer-links {
     width: 100%;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px 20px; /* Adjusted vertical gap for better spacing */
     margin-top: 4px;
   }
 
   .footer-column {
-    min-width: 45%;
+    /* Set basis for two columns per row */
+    min-width: 45%; 
+    flex-basis: 45%;
+    max-width: 50%;
   }
 
   .footer-column h4 {
-    font-size: 13px;
+    font-size: 16px; /* Increased font size slightly from original 13px for readability */
   }
 
   .footer-column li {
-    font-size: 12px;
+    font-size: 13px; /* Increased font size slightly from original 12px for readability */
   }
 
   .footer-bottom-links {
-    margin-top: 20px;
-    font-size: 12px;
-    gap: 18px;
+    margin-top: 30px; /* Increased margin for better separation */
+    font-size: 14px; /* Increased font size slightly from original 12px for readability */
+    gap: 20px;
     flex-wrap: wrap;
     white-space: normal;
+    margin-right: 0;
   }
 }
 
-/* small mobiles */
+/* small mobiles (Refined stacking and typography) */
 @media (max-width: 480px) {
   .footer {
-    padding: 40px 16px 22px;
+    /* Adjusted padding to use clamp() from the top, fallback to fixed px */
+    padding: clamp(32px, 8vw, 40px) 16px 22px;
     background-position: top left;
   }
 
@@ -338,23 +351,39 @@
 
   .footer-description {
     font-size: 12px;
+    line-height: 24px; /* Slightly reduced line height for mobile density */
+  }
+  
+  .footer-copy-left {
+    font-size: 14px; /* Improved readability */
+    line-height: 24px;
   }
 
   .footer-links {
-    flex-direction: column;
+    flex-direction: column; /* Stack all columns vertically */
     gap: 16px;
     margin-top: 6px;
   }
 
   .footer-column {
     min-width: 100%;
+    width: 100%;
+    flex-basis: 100%;
+  }
+  
+  .footer-column h4 {
+    font-size: 14px;
+  }
+
+  .footer-column li {
+    font-size: 12px;
   }
 
   .footer-bottom-links {
-    flex-direction: column;
+    flex-direction: column; /* Stack Privacy/Terms vertically */
     align-items: flex-start;
     gap: 6px;
     margin-top: 18px;
-    font-size: 11px;
+    font-size: 12px; /* Adjusted for better mobile scaling */
   }
 }

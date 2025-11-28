@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   background: linear-gradient(90deg, #002147 0%, #ffe9ec 100%);
-  padding: 158px 16px 140px; /* overall height close to 447px */
+  padding: 158px 24px 140px; /* a little more side padding than 16px */
   overflow: hidden;
 }
 
@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   position: relative;
   z-index: 1; /* above white curve */
 }
@@ -26,9 +27,8 @@
     "Segoe UI", sans-serif;
   font-weight: 700;
   font-size: 70px;
-  line-height: 1;
+  line-height: 1.05;
   color: #ffffff;
-  text-align: center;
 }
 
 /* white curved break (section-break frame) – rising wave to the right */
@@ -36,9 +36,9 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -2px;          /* ⬅️ pushes curve 2px down to hide seam */
+  bottom: -2px;
   width: 100%;
-  height: 225px;         /* slightly taller so overlap stays hidden */
+  height: 225px;
   background: #ffffff;
   clip-path: polygon(
     0% 100%,
@@ -58,25 +58,65 @@
   );
 }
 
-
 /* ---------- Responsive ---------- */
 
+/* tablets / small laptops */
 @media (max-width: 900px) {
   .terms-hero {
-    padding: 120px 16px 96px;
+    padding: 120px 20px 100px;
   }
 
   .terms-hero__title {
-    font-size: 40px;
+    font-size: 46px;
+    line-height: 1.1;
+  }
+
+  .terms-hero::after {
+    height: 190px; /* little shorter so curve doesn’t dominate */
   }
 }
 
+/* phones */
 @media (max-width: 600px) {
   .terms-hero {
-    padding: 100px 16px 72px;
+    padding: 140px 18px 80px;
+    background: linear-gradient(135deg, #002147 0%, #ffe9ec 100%);
+  }
+
+  .terms-hero__inner {
+    max-width: 100%;
   }
 
   .terms-hero__title {
-    font-size: 32px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .terms-hero::after {
+    height: 150px;
+    clip-path: polygon(
+      0% 100%,
+      10% 94%,
+      22% 88%,
+      34% 83%,
+      47% 78%,
+      60% 72%,
+      74% 66%,
+      87% 58%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+/* very small phones */
+@media (max-width: 400px) {
+  .terms-hero {
+    padding: 90px 14px 70px;
+  }
+
+  .terms-hero__title {
+    font-size: 26px;
   }
 }

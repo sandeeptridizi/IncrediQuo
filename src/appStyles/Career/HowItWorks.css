@@ -1,3 +1,4 @@
+
 body {
   background: #ffffff;
   margin: 0;
@@ -7,39 +8,50 @@ body {
 
 .hiw__title {
   text-align: center;
-  width: 208px; 
-  height: 48px; 
-  font-size: 32px; 
-  font-weight: 500; 
+  /* Changed fixed width to max-width for better fluid centering */
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  font-size: 32px;
+  font-weight: 500;
   color: #333333;
-  margin: 48px auto 16px; 
-  letter-spacing: 0.02em; 
-  line-height: 1.5; 
+  margin: 48px auto 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
 }
 
 .hiw {
-  background: #ffe9ec; 
-  padding: 38.5px 0; 
+  background: #ffe9ec;
+  /* Fluid vertical padding using clamp() */
+  padding: clamp(30px, 5vw, 38.5px) 0;
   margin-top: 0;
   overflow: hidden;
 }
 
 .hiw__row {
-  width: 1195px; 
-  height: 67px; 
+  /* CRITICAL CHANGE: Use max-width instead of fixed width for responsiveness */
+  max-width: 1195px;
+  width: auto;
+  height: auto;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Changed from space-between for better wrapping consistency */
   align-items: center;
-  gap: 124px; 
+  /* Fluid gap for desktop/large screens */
+  gap: clamp(40px, 8vw, 124px);
 }
 
 .hiw__card {
   display: flex;
   align-items: center;
-  width: 330px; 
-  height: 67px; 
-  gap: 7px; 
+  /* Use max-width instead of fixed width to allow them to scale down */
+  max-width: 330px;
+  height: auto;
+  gap: 7px;
+  flex-shrink: 1;
+  flex-grow: 1;
+  /* Ensure a minimum width so cards don't squeeze too much before 1024px breakpoint */
+  min-width: 250px;
 }
 
 .hiw__icon {
@@ -53,6 +65,7 @@ body {
   flex-shrink: 0;
 }
 
+/* old SVG class – harmless if unused */
 .hiw__svg-icon {
   width: 26px;
   height: 26px;
@@ -63,84 +76,109 @@ body {
 
 .hiw__text {
   text-align: left;
-  width: 235px;
+  /* Removed fixed width, allowing it to take up remaining space */
+  width: 100%;
+  min-width: 0;
 }
 
 .hiw__text h4 {
-  font-size: 20px; 
-  font-weight: 600; 
-  margin: 0 0 4px 0; 
-  color: #333333;
-  line-height: 1; 
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #000000;
+  line-height: 1.2;
 }
 
 .hiw__text p {
-  font-size: 13px; 
+  font-size: 13px;
   font-weight: 400;
-  line-height: 17px; 
+  line-height: 17px;
   margin: 0;
-  color: #333333;
+  color: #000000;
 }
-
 
 /* ================= TABLET (≤ 1024px) ================= */
 @media (max-width: 1024px) {
   .hiw__row {
     max-width: 100%;
     width: 100%;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 24px; 
-    padding: 0 20px; 
+    gap: 32px 24px; /* Increased vertical gap for better separation */
+    padding: 0 20px;
     height: auto;
   }
 
   .hiw__card {
-    width: 45%; 
-    height: auto; 
+    /* Ensures two cards per row, with breathing room */
+    width: 47%;
+    max-width: none;
+    height: auto;
     justify-content: flex-start;
+    min-width: 300px;
+  }
+}
+
+/* ================= LARGE MOBILE (≤ 768px) ================= 
+   Added this intermediate breakpoint for smoother transition from 2-column to 1-column */
+@media (max-width: 768px) {
+  .hiw__card {
+    /* Cards now take up full width (centered) */
+    width: 100%;
+    max-width: 450px;
+    min-width: 0;
+    margin: 0 auto;
   }
 }
 
 /* ================= MOBILE (≤ 600px) ================= */
 @media (max-width: 600px) {
   .hiw__title {
-    font-size: 26px; 
+    font-size: 26px;
     margin: 32px auto 12px;
-    width: 100%; 
+    padding: 0 16px; /* Added padding for title on small screens */
+    width: auto;
   }
 
   .hiw {
-    padding: 18px 0; 
+    padding: 18px 0;
   }
 
   .hiw__row {
-    flex-direction: column; 
-    gap: 20px; 
-    padding: 0 16px; 
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 16px;
   }
 
   .hiw__card {
-    width: 100%; 
-    height: auto; 
-    padding-right: 16px; 
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding-right: 0;
+    margin: 0;
   }
 
   .hiw__icon {
-    width: 50px; 
-    height: 50px; 
+    width: 50px;
+    height: 50px;
   }
 
   .hiw__text {
     width: auto;
   }
-  
+
   .hiw__text h4 {
-    font-size: 18px; 
+    font-size: 18px;
   }
 
   .hiw__text p {
-    font-size: 12px; 
+    font-size: 12px;
     line-height: 1.4;
   }
+}
+
+.hiw__icon img {
+  width: 24px; /* fits exactly like Figma */
+  height: 24px;
+  object-fit: contain;
 }

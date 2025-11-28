@@ -15,18 +15,24 @@ const SummarizationRelatedServices = () => {
       title: "Transcription Services",
       icon: transcriptionIcon,
       path: "/services/transcription",
+      description:
+        "Accurate, human-refined transcripts for audio and video content, delivered with clarity, consistency, and quick turnaround.",
     },
     {
       index: "02",
       title: "Closed Captioning & Subtitling",
       icon: subtitlingIcon,
       path: "/services/closed-captioning",
+      description:
+        "Precise, well-timed captions and multilingual subtitles that improve accessibility and expand your global reach.",
     },
     {
       index: "03",
       title: "Additional Support",
       icon: supportIcon,
       path: "/services/additional-support",
+      description:
+        "Custom formatting, QC checks, timestamping, and workflow-specific assistance to polish and enhance your final output.",
     },
   ];
 
@@ -52,10 +58,7 @@ const SummarizationRelatedServices = () => {
 
               <h3>{service.title}</h3>
               <div className="ts-related__underline" />
-              <p>
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page.
-              </p>
+              <p>{service.description}</p>
             </article>
           ))}
         </div>

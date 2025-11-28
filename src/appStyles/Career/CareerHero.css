@@ -1,23 +1,26 @@
 /* ===================== CAREER HERO WRAPPER ===================== */
 
 .career-hero {
-  padding-top: 260px;          /* hero starts under navbar */
-  padding-bottom: 170px;
+  /* Fluid padding using clamp for smoother scaling between breakpoints */
+  padding-top: clamp(120px, 20vw, 260px); 
+  padding-bottom: clamp(80px, 15vw, 170px);
   background: #ffffff;
 }
 
 .career-hero__inner {
-  max-width: 1178px;           /* Figma: 1178 x 500 panel */
+  max-width: 1178px;
   margin: 0 auto;
   position: relative;
+  /* Ensure horizontal padding on smaller desktops/tablets */
+  padding: 0 20px; 
 }
 
 /* ===================== BLUE PANEL ===================== */
 
 .career-hero__panel {
   background: #002147;
-  border-radius: 15px;         /* Figma radius 15 */
-  min-height: 500px;           /* Figma height 500 */
+  border-radius: 15px;
+  min-height: 500px;
   padding: 60px 72px;
   display: flex;
   align-items: center;
@@ -28,15 +31,16 @@
 /* ===================== LEFT TEXT ===================== */
 
 .career-hero__text {
-  max-width: 627px;            /* heading frame 627 x 219 */
+  max-width: 627px;
 }
 
 .career-hero__text h1 {
   font-family: "Poppins", sans-serif;
   color: #fff;
   font-weight: 600;
-  font-size: 59px;
-  line-height: 73px;
+  /* Using clamp to ensure smooth heading scale */
+  font-size: clamp(36px, 6vw, 59px); 
+  line-height: 1.25; /* Adjusted from 73px for better responsiveness */
   letter-spacing: 0;
   margin: -30px 0 14px;
 }
@@ -44,8 +48,9 @@
 .career-hero__subtitle {
   font-family: "Poppins", sans-serif;
   color: #e5edff;
-  font-size: 24px;
-  line-height: 38px;
+  /* Using clamp to ensure smooth subtitle scale */
+  font-size: clamp(18px, 3vw, 24px); 
+  line-height: 1.6; /* Adjusted from 38px for better responsiveness */
   letter-spacing: -0.03em;
   max-width: 554px;
   margin: -10px 0 22px;
@@ -94,6 +99,7 @@
   object-fit: cover;
   background: #ffffff;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  max-width: 100%; /* Important for image scaling */
 }
 
 /* ===================== SEARCH BAR ===================== */
@@ -104,8 +110,10 @@
   transform: translateX(-50%);
   bottom: -51px;
 
-  width: 719px;      /* Figma width */
-  height: 102px;     /* Figma height */
+  /* Use max-width for better fluidity */
+  max-width: 719px; 
+  width: calc(100% - 40px); /* Fill container minus padding on the sides */
+  height: 102px;
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(9, 30, 66, 0.18);
@@ -124,6 +132,7 @@
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 32px;
+  min-width: 0; /* Prevents overflow if content is long */
 }
 
 /* Divider after Location */
@@ -157,6 +166,7 @@
   font-weight: 600;
   color: #110229;
   margin: 0 0 2px 0;
+  white-space: nowrap;
 }
 
 /* VALUE ROW (text + icon) */
@@ -164,7 +174,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 22px;          /* spacing between text & icon */
+  gap: 22px;
 }
 
 .search-value {
@@ -174,6 +184,9 @@
   font-weight: 400;
   color: #8F90A6;
   display: inline-block;
+  overflow: hidden; /* prevents overflow */
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* ICON WRAPPER */
@@ -194,7 +207,7 @@
   width: 12px;
   height: 14.67px;
   object-fit: contain;
-  transform: translateY(1px);   /* baseline alignment */
+  transform: translateY(1px);
 }
 
 /* Chevron — 12 x 6 */
@@ -226,6 +239,7 @@
   justify-content: center;
   gap: 8px;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Search icon in button — 17.76 x 17.76 */
@@ -254,16 +268,25 @@
   .career-hero__panel {
     flex-direction: column;
     text-align: center;
-    padding: 56px 32px 120px;
+    /* Adjust padding to prevent image from overlapping content */
+    padding: 56px 32px 120px; 
   }
 
   .career-hero__text {
     max-width: 100%;
   }
 
+  /* Center the buttons for the column layout */
+  .career-hero__buttons {
+    justify-content: center;
+  }
+
   .career-hero__image-wrapper {
     position: static;
     margin: 40px auto 0;
+    /* Reset right/top offsets */
+    right: auto;
+    top: auto; 
   }
 
   .career-hero__image {
@@ -276,8 +299,10 @@
     position: static;
     left: auto;
     bottom: auto;
+    /* Reset transform */
+    transform: none; 
     margin: 48px auto 0;
-    width: 100%;
+    width: auto;
     max-width: 700px;
   }
 }
@@ -291,19 +316,23 @@
   }
 
   .career-hero__panel {
-    padding: 40px 20px 100px;
+    /* Adjusted padding */
+    padding: 40px 20px 100px; 
   }
 
   .career-hero__text h1 {
     font-size: 30px;
     line-height: 38px;
     margin-bottom: 16px;
+    margin-top: 0; /* Resetting negative margin */
   }
 
   .career-hero__subtitle {
     font-size: 15px;
     line-height: 24px;
     max-width: 100%;
+    margin-top: 0; /* Resetting negative margin */
+    margin-bottom: 20px;
   }
 
   .career-hero__buttons {
@@ -314,6 +343,7 @@
 
   .ch-btn {
     width: 100%;
+    min-width: unset; /* Allow full width override */
   }
 
   .career-hero__image-wrapper {
@@ -332,6 +362,7 @@
     padding: 20px;
     border-radius: 18px;
     margin-top: 38px;
+    width: 100%; /* Ensure search bar fills container */
   }
 
   .search-field {
@@ -339,9 +370,21 @@
     padding-right: 0;
   }
 
+  /* Remove vertical divider for the first field */
   .search-field:first-child {
     border: none;
     margin: 0;
+  }
+
+  /* Remove all margins and padding for the second field for vertical stacking */
+  .search-field:nth-child(2) {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  
+  /* CRITICAL FIX: Remove the pseudo-element divider when fields stack vertically */
+  .search-field:nth-child(2)::after {
+    content: none;
   }
 
   .ch-btn--search {

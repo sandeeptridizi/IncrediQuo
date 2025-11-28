@@ -11,25 +11,25 @@ const services = [
   {
     title: "Transcription",
     icon: transcriptionIcon,
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    desc: "Accurate, human-refined transcripts for audio and video content, delivered with clarity, consistency, and quick turnaround.",
     path: "/services/transcription",
   },
   {
     title: "Closed Captioning & Subtitling",
     icon: subtitlingIcon,
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    desc: "Precise, well-timed captions and multilingual subtitles that improve accessibility and expand your global reach.",
     path: "/services/closed-captioning",
   },
   {
     title: "Summarization",
     icon: summarizationIcon,
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    desc: "Concise, high-quality summaries of long audio, video, or text to help you grasp key insights instantly.",
     path: "/services/summarization",
   },
   {
     title: "Additional Support",
     icon: supportIcon,
-    desc: "It is a long established fact that a reader will be distra by the readable content of a page when looking at its layout, when looking at its layout.",
+    desc: "Custom formatting, QC checks, time-stamping, and workflow-specific assistance to polish and enhance your final output.",
     path: "/services/additional-support",
   },
 ];

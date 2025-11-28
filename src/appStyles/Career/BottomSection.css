@@ -18,7 +18,7 @@
 /* DOT IMAGE – Figma: 183.86 x 132.6, left ~101px */
 .dot-pattern {
   position: absolute;
-  top: 80px;          /* 👈 before: 0px – ippudu kinda ki shift */
+  top: 80px;
   left: 101px;
   width: 183.86px;
   height: 132.6px;
@@ -67,7 +67,7 @@
 /* ========= TABLET (≤ 1024px) ========= */
 @media (max-width: 1024px) {
   .career-bottom {
-    padding: 100px 32px 60px;
+    padding: 160px 32px 60px;   /* little less top padding for shorter screens */
   }
 
   .career-bottom p {
@@ -76,9 +76,9 @@
   }
 
   .dot-pattern {
-    top: 20px;
+    top: 32px;
     left: 24px;
-    transform: scale(0.85);
+    transform: scale(0.75);
     transform-origin: top left;
   }
 }
@@ -86,7 +86,8 @@
 /* ========= MOBILE (≤ 600px) ========= */
 @media (max-width: 600px) {
   .career-bottom {
-    padding: 140px 16px 56px;
+    padding: 160px 16px 56px;   /* tighter but still same layout */
+    align-items: center;
   }
 
   .career-bottom p {
@@ -104,9 +105,22 @@
   }
 
   .dot-pattern {
-    top: 16px;
+    top: 20px;
     left: 16px;
-    transform: scale(0.65);
+    transform: scale(0.6);
     transform-origin: top left;
+  }
+}
+
+/* very small phones – just avoid overlap */
+@media (max-width: 400px) {
+  .career-bottom {
+    padding-top: 150px;
+  }
+
+  .dot-pattern {
+    transform: scale(0.5);
+    top: 16px;
+    left: 12px;
   }
 }

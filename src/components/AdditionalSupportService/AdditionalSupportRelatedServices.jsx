@@ -13,6 +13,8 @@ const relatedServices = [
     icon: subtitlingIcon,
     alt: "Closed Captioning & Subtitling",
     path: "/services/closed-captioning",
+    description:
+      "Precise, well-timed captions and multilingual subtitles that improve accessibility and expand your global reach.",
   },
   {
     index: "02",
@@ -20,6 +22,8 @@ const relatedServices = [
     icon: summarizationIcon,
     alt: "Summarization",
     path: "/services/summarization",
+    description:
+      "Concise, high-quality summaries of long audio, video, or text to help you grasp key insights instantly.",
   },
   {
     index: "03",
@@ -27,6 +31,8 @@ const relatedServices = [
     icon: transcriptionIcon,
     alt: "Transcription Services",
     path: "/services/transcription",
+    description:
+      "Accurate, human-refined transcripts for audio and video content, delivered with clarity, consistency, and quick turnaround.",
   },
 ];
 
@@ -47,9 +53,7 @@ const AdditionalSupportRelatedServices = () => {
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ") {
-                  navigate(service.path);
-                }
+                if (e.key === "Enter" || e.key === " ") navigate(service.path);
               }}
             >
               <span className="ts-related__card-index">{service.index}</span>
@@ -65,10 +69,7 @@ const AdditionalSupportRelatedServices = () => {
               <h3>{service.title}</h3>
               <div className="ts-related__underline" />
 
-              <p>
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page.
-              </p>
+              <p>{service.description}</p>
             </article>
           ))}
         </div>

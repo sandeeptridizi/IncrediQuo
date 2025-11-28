@@ -15,18 +15,24 @@ const ClosedCaptionRelatedServices = () => {
       title: "Transcription Services",
       icon: transcriptionIcon,
       path: "/services/transcription",
+      description:
+        "Accurate, human-refined transcripts for audio and video content, delivered with clarity, consistency, and quick turnaround.",
     },
     {
       index: "02",
       title: "Summarization",
       icon: summarizationIcon,
       path: "/services/summarization",
+      description:
+        "Concise, high-quality summaries of long audio, video, or text to help you grasp key insights instantly.",
     },
     {
       index: "03",
       title: "Additional Support",
       icon: supportIcon,
       path: "/services/additional-support",
+      description:
+        "Custom formatting, QC checks, timestamping, and workflow-specific assistance to polish and enhance your final output.",
     },
   ];
 
@@ -47,15 +53,16 @@ const ClosedCaptionRelatedServices = () => {
               <span className="ts-related__card-index">{service.index}</span>
 
               <div className="ts-related__icon-wrap">
-                <img src={service.icon} alt={service.title} className="ts-related__icon" />
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className="ts-related__icon"
+                />
               </div>
 
               <h3>{service.title}</h3>
               <div className="ts-related__underline" />
-              <p>
-                It is a long established fact that a reader will be distracted by
-                the readable content of a page.
-              </p>
+              <p>{service.description}</p>
             </article>
           ))}
         </div>
