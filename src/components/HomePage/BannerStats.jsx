@@ -13,7 +13,6 @@ const BannerStats = ({ onOpenContact }) => {
   return (
     <section className="banner">
       <div className="banner__inner">
-
         {/* LEFT SIDE PILL STRIPES */}
         <div className="banner__stripes">
           <div className="banner__stripe"></div>
@@ -28,7 +27,7 @@ const BannerStats = ({ onOpenContact }) => {
 
         <div className="banner__text">
           <h2>
-            Flexible Work Modes Designed for Your 
+            Flexible Work Modes Designed for Your
             <br />
             Every Deadline
           </h2>
@@ -41,19 +40,20 @@ const BannerStats = ({ onOpenContact }) => {
           {/* <button className="banner__button" onClick={handleClick}>
             Get Started
           </button> */}
-            <div onClick={handleClick}>
-                                      <Button
-                                      name="Get Started"
-                                        paddingXL="8.6vw"
-                        paddingXM="24.5vw"
-                        widthL="10.9vw"
-                        widthM="3.3vw"
-                        bacgrounClr="#ffff"
-                        bacgrounArrow="#022447"
-                        colorArrow="#ffff"
-                        colorText="#022447"
-                        colorTextHover="#ffff" />
-                    </div>
+          <div onClick={handleClick}>
+            <Button
+              name="Get Started"
+              paddingXL="8.6vw"
+              paddingXM="24.5vw"
+              widthL="10.7vw"
+              widthM="30.3vw"
+              bacgrounClr="#ffff"
+              bacgrounArrow="#022447"
+              colorArrow="#ffff"
+              colorText="#022447"
+              colorTextHover="#ffff"
+            />
+          </div>
         </div>
 
         <div className="banner__ticker">

@@ -29,16 +29,17 @@ const CareerHero = () => {
               </button> */}
               <div>
                 <Button
-                name="Apply Job"
+                  name="Apply Job"
                   paddingXL="8.6vw"
-  paddingXM="24.5vw"
-  widthL="10.5vw"
-  widthM="3.3vw"
-  bacgrounClr="#ffff"
-  bacgrounArrow="#022447"
-  colorArrow="#ffff"
-  colorText="#022447"
-  colorTextHover="#ffff" />
+                  paddingXM="24.5vw"
+                  widthL="10.5vw"
+                  widthM="3.3vw"
+                  bacgrounClr="#ffff"
+                  bacgrounArrow="#022447"
+                  colorArrow="#ffff"
+                  colorText="#022447"
+                  colorTextHover="#ffff"
+                />
               </div>
             </div>
           </div>
@@ -93,19 +94,18 @@ const CareerHero = () => {
           </button> */}
 
           <Button
-  name="Search....."
-  type="button"
-  paddingXL="8.6vw"
-  paddingXM="24.5vw"
-  widthL="10.5vw"
-  widthM="3.3vw"
-  bacgrounClr="#022447"
-  bacgrounArrow="#ffff"
-  colorArrow="#022447"
-  colorText="#ffff"
-  colorTextHover="#022447"
-/>
-
+            name="Search....."
+            type="button"
+            paddingXL="8.6vw"
+            paddingXM="24.5vw"
+            widthL="10.5vw"
+            widthM="3.3vw"
+            bacgrounClr="#022447"
+            bacgrounArrow="#ffff"
+            colorArrow="#022447"
+            colorText="#ffff"
+            colorTextHover="#022447"
+          />
         </div>
       </div>
     </section>
