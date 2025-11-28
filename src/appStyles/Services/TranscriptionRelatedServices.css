@@ -22,8 +22,10 @@
 /* Grid */
 .ts-related__grid {
   display: flex;
-  justify-content: space-between;
-  gap: 32px;
+  flex-direction: row;
+  /* justify-content: space-between; */
+  margin-left: 7vw;
+  gap: 4vw;
 }
 
 /* Card */
@@ -112,6 +114,7 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 28px;
+    margin-left: 0vw;
   }
 
   .ts-related__card {

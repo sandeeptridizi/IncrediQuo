@@ -191,16 +191,19 @@
   display: flex;
   gap: 0vw;
   padding: 20px 0;
-  flex-wrap: wrap; /* responsive */
+  flex-wrap: row;
+  width:46vw;
+  /* border: 2px solid red; */
 }
 
 .vg-card {
   display: flex;
   align-items: flex-start;
   gap: 1vw;
-  padding: 20px;
+  padding: 15px;
   border-radius: 12px;
-  width: 320px;         /* adjust based on design */
+  width: 330px;         /* adjust based on design */
+  /* border: 1px solid green; */
 }
 
 .innerIMg_bulb{
@@ -238,7 +241,7 @@ margin: 1vw;
   }
 
   .vg-card {
-    width: 100%;                 /* full width */
+    width: 90vw;                 /* full width */
     padding: 4vw;                /* reduce padding */
     gap: 3vw;
     align-items: center;         /* icon & text centered vertically */
