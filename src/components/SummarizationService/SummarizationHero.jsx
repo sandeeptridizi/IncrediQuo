@@ -2,7 +2,7 @@ import React from "react";
 import heroIllustration from "../../assets/services/SummarizationHero.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
-import BulbIcon from "../../assets/services/serviceIcon.png";
+import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/serviceIcon1.png";
 
 const SummarizationHero = ({ onOpenContact }) => {
