@@ -1,6 +1,11 @@
 // src/components/SummarizationService/SummarizationUserCentric.jsx
 import React from "react";
 import "../../appStyles/Services/SummarizationUserCentric.css";
+import headphones from "../../assets/services/headphones.png";
+import Board from "../../assets/services/Board.png";
+import Group from "../../assets/services/Group.png";
+import favorite from "../../assets/services/favorite.png";
+import archive from "../../assets/services/archive.png";
 
 const LegalIcon = () => (
   <svg viewBox="0 0 24 24">
@@ -52,7 +57,7 @@ const SummarizationUserCentric = () => {
         <div className="cc-usercentric__grid cc-usercentric__grid--top">
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <LegalIcon />
+              <img src={headphones} alt="legal"/>
             </div>
             <h3>Legal proceedings</h3>
             <p>
@@ -62,7 +67,7 @@ const SummarizationUserCentric = () => {
 
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <MeetingsIcon />
+              <img src={Board} alt="legal"/>
             </div>
             <h3>Meetings</h3>
             <p>
@@ -76,7 +81,7 @@ const SummarizationUserCentric = () => {
         <div className="cc-usercentric__grid cc-usercentric__grid--bottom">
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <ReportsIcon />
+              <img src={archive} alt="legal"/>
             </div>
             <h3>Reports</h3>
             <p>
@@ -86,7 +91,7 @@ const SummarizationUserCentric = () => {
 
           <article className="cc-usercentric__item">
             <div className="cc-usercentric__icon">
-              <InterviewsIcon />
+              <img src={Group} alt="legal"/>
             </div>
             <h3>Interviews</h3>
             <p>

@@ -4,6 +4,7 @@ import TranscriptionHero from "./TranscriptionHero";
 import TranscriptionUserCentric from "./TranscriptionUserCentric";
 import TranscriptionFlexSection from "./TranscriptionFlexSection";
 import TranscriptionRelatedServices from "./TranscriptionRelatedServices";
+import CTA from "../HomePage/CTA";
 
 const TranscriptionServicePage = ({ onOpenContact }) => {
   return (
@@ -12,6 +13,7 @@ const TranscriptionServicePage = ({ onOpenContact }) => {
       <TranscriptionUserCentric />
       <TranscriptionFlexSection />
       <TranscriptionRelatedServices />
+            <CTA />
     </main>
   );
 };

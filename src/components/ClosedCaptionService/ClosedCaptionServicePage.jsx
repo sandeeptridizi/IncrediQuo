@@ -4,6 +4,7 @@ import ClosedCaptionHero from "./ClosedCaptionHero";
 import ClosedCaptionUserCentric from "./ClosedCaptionUserCentric";
 import TranscriptionFlexSection from "../TranscriptionService/TranscriptionFlexSection";
 import ClosedCaptionRelatedServices from "./ClosedCaptionRelatedServices";
+import CTA from "../HomePage/CTA";
 
 const ClosedCaptionServicePage = ({ onOpenContact }) => {
   return (
@@ -12,6 +13,7 @@ const ClosedCaptionServicePage = ({ onOpenContact }) => {
       <ClosedCaptionUserCentric />
       <TranscriptionFlexSection />
       <ClosedCaptionRelatedServices />
+            <CTA />
     </main>
   );
 };
