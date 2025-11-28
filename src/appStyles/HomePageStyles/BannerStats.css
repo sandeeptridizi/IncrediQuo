@@ -1,6 +1,3 @@
-/* =========================================
-   BANNER / HERO
-   ========================================= */
 
 .banner {
   position: relative;
@@ -8,7 +5,6 @@
   background-color: #002147;
   color: #ffffff;
   overflow: hidden;
-
   opacity: 0;
   transform: translateY(26px);
   animation: bannerFadeUp 0.9s ease-out forwards;
@@ -25,109 +21,89 @@
   }
 }
 
-/* Figma frame: 1440 x 624 */
+/* =========================================
+   INNER CONTAINER
+   ========================================= */
 .banner__inner {
-  position: relative;
   max-width: 1440px;
-  height: 624px;
   margin: 0 auto;
+  padding: 120px 40px 110px;
+  position: relative;
 }
 
 /* =========================================
-   LEFT PILL STRIPES (Frame 2303)
+   STRIPES (Hidden on small)
    ========================================= */
-
 .banner__stripes {
   position: absolute;
-  left: -26px;        /* or whatever position you like for the whole group */
-  top: 0px;
+  left: -30px;
+  top: 0;
   transform: rotate(-0.6deg);
   transform-origin: left top;
-
   display: flex;
   flex-direction: column;
   gap: 44px;
-
-  /* 🔥 NEW: center each stripe horizontally (like your 2nd image) */
   align-items: center;
 }
 
-
 .banner__stripe {
-  height: 14.47px;
+  height: 14px;
   border-radius: 999px;
   background-color: rgba(255, 233, 236, 0.15);
 }
 
-/* exact line widths */
-.banner__stripe:nth-child(1) { width: 138.93px; }
-.banner__stripe:nth-child(2) { width: 98.41px;  }
-.banner__stripe:nth-child(3) { width: 156.3px;  }
-.banner__stripe:nth-child(4) { width: 237.34px; }
-.banner__stripe:nth-child(5) { width: 127.35px; }
-.banner__stripe:nth-child(6) { width: 173.66px; }
-.banner__stripe:nth-child(7) { width: 75.25px;  }
-.banner__stripe:nth-child(8) { width: 28.94px;  }
+.banner__stripe:nth-child(1) { width: 138px; }
+.banner__stripe:nth-child(2) { width: 98px; }
+.banner__stripe:nth-child(3) { width: 156px; }
+.banner__stripe:nth-child(4) { width: 237px; }
+.banner__stripe:nth-child(5) { width: 127px; }
+.banner__stripe:nth-child(6) { width: 173px; }
+.banner__stripe:nth-child(7) { width: 75px; }
+.banner__stripe:nth-child(8) { width: 28px; }
 
 /* =========================================
-   TEXT + BUTTON BLOCK
+   MAIN TEXT CONTENT
    ========================================= */
-
-/* Heading block:
-   top from rectangle: 1134 - 1045 = 89
-   left: 219
-*/
 .banner__text {
   position: relative;
-  width: 1131px;
-  margin-top: 89px;
-  margin-left: 219px;
-  text-align: left;
+  max-width: 900px;
+  margin-left: 190px;
 }
 
 .banner__text h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 60px;
+  font-size: clamp(32px, 5vw, 60px);
   font-weight: 500;
-  line-height: 60px;
-  color: #ffffff;
-  width: 1131px;
-  height: 102px;
+  line-height: 1.1;
   margin: 0;
+  color: #ffffff;
 }
 
-/* Paragraph:
-   vertical gap: 1287 - 1134 - 102 = 51
-   width: 757, left is almost same (221)
-*/
 .banner__text p {
   font-family: "Raleway", sans-serif;
-  width: 757px;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: clamp(16px, 2.6vw, 24px);
+  line-height: 1.4;
+  margin-top: 36px;
+  max-width: 700px;
   color: #d6e1f2;
-  margin: 51px 0 0;
 }
 
-/* Button:
-   vertical gap: 1457 - 1287 - 102 = 68
-   left: 211 (so we pull it slightly left with margin-left)
-*/
+/* =========================================
+   BUTTON
+   ========================================= */
 .banner__button {
-  width: 250px;
+  margin-top: 48px;
+  width: 240px;
   height: 60px;
-  margin-top: 68px;
-  margin-left: -8px;          /* 219 -> 211 */
   border-radius: 10px;
   background-color: #ffe9ec;
   border: none;
   cursor: pointer;
   color: #002147;
   font-family: "Raleway", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
-  transition: background 0.25s ease, transform 0.25s ease,
-    box-shadow 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .banner__button:hover {
@@ -137,143 +113,97 @@
 }
 
 /* =========================================
-   BOTTOM “24 Hours / Real-time …”
+   TICKER ROW
    ========================================= */
-
-/* In Figma:
-   "24 Hours" top: 1603
-   Rectangle top: 1045  -> local top ≈ 558
-   left: 33
-*/
 .banner__ticker {
   position: absolute;
-  left: 33px;
+  left: 0;
   right: 0;
-  bottom: 0;              /* locks to rectangle bottom */
-  height: 66px;           /* 624 - 558 ≈ 66 */
-  border-top: none;
+  bottom: 0;
+  height: 66px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   overflow: hidden;
 }
 
-/* moving content */
 .banner__ticker-track {
   display: inline-flex;
   align-items: center;
-  gap: 80px;
+  gap: 64px;
+  padding-left: 100%;
   white-space: nowrap;
   animation: bannerTicker 18s linear infinite;
-  transform: translateX(0);     /* ensures first item appears first */
 }
 
-
-/* Figma: size 50, line-height 40, weight 600 */
 .banner__ticker-track span {
-  position: relative;
   font-family: "Raleway", sans-serif;
-  font-size: 50px;
-  line-height: 40px;
+  font-size: clamp(18px, 3vw, 48px);
   font-weight: 600;
   color: #ffe9ec;
-  padding-left: 28px;
+  position: relative;
+  padding-left: 26px;
 }
 
-/* dot before each word */
 .banner__ticker-track span::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: 4px;
   top: 50%;
+  width: 7px;
+  height: 7px;
   transform: translateY(-50%);
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
   background-color: #ffe9ec;
-}
-
-.banner__ticker-track span:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
+  border-radius: 50%;
 }
 
 @keyframes bannerTicker {
-  0%   { transform: translateX(0); }
+  0% { transform: translateX(0); }
   100% { transform: translateX(-100%); }
 }
 
 /* =========================================
-   RIGHT STAR CLUSTER
+   STAR CLUSTER GRAPHIC
    ========================================= */
-
 .banner__inner::after {
   content: "";
   position: absolute;
-  right: 190px;
-  bottom: 105px;
-  width: 103px;
-  height: 94px;
+  right: clamp(40px, 12vw, 190px);
+  bottom: 100px;
+  width: clamp(60px, 8vw, 103px);
+  height: clamp(55px, 7vw, 94px);
   background-image: url("../../assets/Banner/Groupstar.png");
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE BREAKPOINTS
    ========================================= */
+@media (max-width: 1100px) {
+  .banner__stripes { display: none; }
+  .banner__text { margin-left: 0; }
+  .banner__inner { padding: 110px 28px 90px; }
+}
 
-@media (max-width: 1200px) {
-  .banner__inner {
-    height: auto;
-    padding: 60px 24px 70px 24px;
-  }
+@media (max-width: 820px) {
+  .banner__inner { padding: 90px 22px 110px; }
+  .banner__button { width: 200px; height: 54px; }
+}
 
-  .banner__stripes {
-    display: none;
-  }
-
-  .banner__text {
-    margin: 0;
-    width: 100%;
-  }
-
-  .banner__text h2 {
-    width: 100%;
-  }
-
-  .banner__text p {
-    width: 100%;
-    margin-top: 20px;
-  }
-
+@media (max-width: 640px) {
+  .banner__text { text-align: center; }
+  .banner__text p { margin-left: auto; margin-right: auto; }
   .banner__button {
-    margin-top: 24px;
-    margin-left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
-
   .banner__ticker {
     position: static;
-    margin-top: 32px;
-    height: 60px;
-    left: 0;
-    right: 0;
+    margin-top: 40px;
   }
 }
 
-@media (max-width: 900px) {
-  .banner__text h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .banner__text p {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
-  .banner__ticker-track span {
-    font-size: 18px;
-    line-height: 24px;
-  }
+@media (max-width: 450px) {
+  .banner__ticker-track { gap: 36px; }
 }
