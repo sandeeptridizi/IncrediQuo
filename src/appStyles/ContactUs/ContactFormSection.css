@@ -71,7 +71,7 @@
 
 /* Submit button */
 .contact-main__submit {
-  margin-top: 18px;
+  /* margin-top: 18px;
   width: 164px;
   height: 45px;
   border-radius: 6px;
@@ -84,12 +84,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: 0.25s ease;
+  transition: 0.25s ease; */
   margin-left: 13vw;
 }
 
 .contact-main__submit:hover {
-  background: #062c85;
+  /* background: #062c85; */
   transform: translateY(-1px);
 }
 

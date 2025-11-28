@@ -256,8 +256,9 @@ body {
   }
 
   .hiw__card {
-      width: 45%; 
+      width: 95%; 
       height: auto; 
+      gap: 3vw;
       justify-content: flex-start;
   }
 
