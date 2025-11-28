@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import "../../appStyles/HomePageStyles/CTA.css";
 import ContactSection from "./ContactSection";
+import { Button } from "../Button/Button";
 
 const CTA = () => {
   const [showContact, setShowContact] = useState(false);
@@ -22,12 +23,15 @@ const CTA = () => {
               accuracy, and complete confidentiality.
             </p>
 
-            <button
+            {/* <button
               className="cta-button"
               onClick={() => setShowContact(true)}
             >
               Get Started
-            </button>
+            </button> */}
+            <div onClick={() => setShowContact(true)}>
+            <Button name="Get Started" />
+          </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React from "react";
 import "../../appStyles/AboutUs/AboutHero.css";
 import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg"; // your image
+import { Button } from "../Button/Button";
 
 const AboutHero = () => {
   return (
@@ -21,7 +22,10 @@ const AboutHero = () => {
             solutions trusted by global enterprises.
           </p>
 
-          <button className="about-hero__button">Learn More</button>
+          {/* <button className="about-hero__button">Learn More</button> */}
+            <div>
+            <Button name="Learn More" />
+          </div>
         </div>
 
         {/* RIGHT IMAGE */}

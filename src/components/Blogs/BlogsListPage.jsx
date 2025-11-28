@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../../appStyles/blogs/BlogsListPage.css";
 import { database, ref, get } from "../../Firebase/firebase";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../Button/Button";
 
 const BlogsListPage = () => {
   const [blogs, setBlogs] = useState([]);
-
+    const navigate = useNavigate();
   // ---- FETCH BLOGS FROM FIREBASE ----
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -168,9 +170,16 @@ const BlogsListPage = () => {
             Expertise Adds Value To Every Client We Serve.
           </p>
 
-          <Link to="/about" className="blogs-approach__button">
+          {/* <Link to="/about" className="blogs-approach__button">
             ABOUT US
-          </Link>
+          </Link> */}
+               <div
+                  className="blogs-approach__button"
+                  onClick={() => navigate("/about")}
+                  style={{ cursor: "pointer" }}
+                >
+                  <Button name="ABOUT US" />
+                </div>
         </div>
       </section>
     </main>

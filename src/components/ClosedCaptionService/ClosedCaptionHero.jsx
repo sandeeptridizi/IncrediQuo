@@ -4,6 +4,7 @@ import "../../appStyles/Services/TranscriptionHero.css";
 
 import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/Icon1.png";
+import { Button } from "../Button/Button";
 
 const ClosedCaptionHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
@@ -62,9 +63,12 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
             </div>
           </div>
 
-          <button className="ts-hero__cta" onClick={handleGetStarted}>
+          {/* <button className="ts-hero__cta" onClick={handleGetStarted}>
             Get Started
-          </button>
+          </button> */}
+                 <div onClick={handleGetStarted}>
+                      <Button name="Get Started" />
+                    </div>
         </div>
       </div>
     </section>

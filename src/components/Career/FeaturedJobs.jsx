@@ -1,6 +1,7 @@
 import React from "react";
 import "../../appStyles/Career/FeaturedJobs.css";
 import careersData from "./careersData";
+import { Button } from "../Button/Button";
 
 const FeaturedJobs = () => {
   return (
@@ -31,7 +32,10 @@ const FeaturedJobs = () => {
 
             {/* RIGHT: buttons */}
             <div className="jobcard__right">
-              <button className="job-btn job-btn--primary">APPLY NOW</button>
+              {/* <button className="job-btn job-btn--primary">APPLY NOW</button> */}
+                     <div className="job-btn job-btn--primary">
+            <Button name="Apply Now" />
+          </div>
               <button className="job-btn job-btn--outline">DETAILS</button>
             </div>
           </div>
