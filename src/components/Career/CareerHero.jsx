@@ -1,4 +1,3 @@
-// src/components/Career/CareerHero.jsx
 import React from "react";
 import "../../appStyles/Career/CareerHero.css";
 import heroImg from "../../assets/carrers/carrerphoto.png";

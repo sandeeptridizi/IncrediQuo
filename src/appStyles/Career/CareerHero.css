@@ -97,16 +97,15 @@
 }
 
 /* ===================== SEARCH BAR ===================== */
-/* white pill – 719 x 102, radius 20 */
 
 .career-hero__search {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: -51px;
-  width: 719px;
-  height: 102px;
 
+  width: 719px;      /* Figma width */
+  height: 102px;     /* Figma height */
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(9, 30, 66, 0.18);
@@ -118,7 +117,7 @@
   z-index: 10;
 }
 
-/* shared container for the two fields (Location / Title) */
+/* Location + Title columns */
 .search-field {
   flex: 1;
   display: flex;
@@ -127,19 +126,18 @@
   padding-right: 32px;
 }
 
-/* vertical divider after Location */
+/* Divider after Location */
 .search-field:first-child {
   border-right: 2px solid #dcdceb;
   margin-right: 32px;
 }
 
-/* extra divider after Title (before Search button) */
+/* Divider after Title */
 .search-field:nth-child(2) {
   position: relative;
   margin-right: 24px;
   padding-right: 32px;
 }
-
 .search-field:nth-child(2)::after {
   content: "";
   position: absolute;
@@ -151,7 +149,7 @@
   background: #dcdceb;
 }
 
-/* labels: Location / Title */
+/* LABELS */
 .search-field label {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
@@ -161,104 +159,89 @@
   margin: 0 0 2px 0;
 }
 
-/* value text */
-.search-field select,
-.search-field input,
-.search-field span.search-value {
-  border: none;
-  outline: none;
-  background: transparent;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  line-height: 36px;
-  font-weight: 400;
-  color: #8f90a6;
-}
-
-/* row that holds value + icon: text + icon close together */
+/* VALUE ROW (text + icon) */
 .search-field__value {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4px;           /* this is the horizontal space between text + icon */
+  gap: 4px;          /* spacing between text & icon */
 }
 
-/* value text */
 .search-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #8F90A6;
   display: inline-block;
-  flex: 0 0 auto;
 }
 
-/* generic icon wrapper – sits just after text */
+/* ICON WRAPPER */
 .search-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  margin-left: 0;     /* prevents drifting to the right */
+  margin-left: 0;
 }
 
-/* pin icon – 12 x 14.67, 1.4px, #8F90A6 */
+/* Location pin — 12 x 14.67, stroke 1.4 */
 .search-icon--pin svg {
   width: 12px;
   height: 14.67px;
   stroke-width: 1.4px;
-  stroke: #8f90a6;
+  stroke: #8F90A6;
   display: block;
-  transform: translateY(1px); /* baseline alignment */
+  transform: translateY(1px);   /* baseline alignment */
 }
 
-/* chevron – 12 x 6, 1.5px, #8F90A6 */
+/* Chevron — 12 x 6, stroke 1.5 */
 .search-icon--chevron svg {
   width: 12px;
   height: 6px;
   stroke-width: 1.5px;
-  stroke: #8f90a6;
+  stroke: #8F90A6;
   display: block;
   transform: translateY(1px);
 }
 
-/* SEARCH button – 159 x 54, radius 10 */
+/* SEARCH BUTTON — 159 x 54 (with icon) */
 .ch-btn--search {
   min-width: 159px;
   height: 54px;
   padding: 0 32px;
   background: #002147;
-  color: #ffffff;
-  border-radius: 10px;
   border: none;
+  border-radius: 10px;
+
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.07em;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   cursor: pointer;
-
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-size: 18px;       /* Figma SEARCH text size */
-  line-height: 36px;
-  letter-spacing: 0.07em; /* ≈ 7% tracking */
 }
 
-.ch-btn__label {
-  display: inline-block;
-}
-
-/* search icon in button – ~17.76 x 17.76, stroke 3px */
+/* Search icon in button — 17.76 x 17.76, stroke 3 */
 .ch-btn__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transform: translateY(1px);
 }
-
 .ch-btn__icon svg {
   width: 17.76px;
   height: 17.76px;
+  stroke-width: 3px;
+  stroke: #FFFFFF;
   display: block;
 }
-
 
 /* ================= TABLET (≤ 1024px) ================= */
 

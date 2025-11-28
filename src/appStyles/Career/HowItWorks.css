@@ -5,41 +5,43 @@ body {
 
 /* ================= HOW IT WORKS SECTION ================= */
 
-/* TITLE */
 .hiw__title {
   text-align: center;
-  font-size: 32px;
-  font-weight: 500;
-  margin: 48px 0 16px;   /* perfect spacing from hero */
+  width: 208px; 
+  height: 48px; 
+  font-size: 32px; 
+  font-weight: 500; 
   color: #333333;
+  margin: 48px auto 16px; 
+  letter-spacing: 0.02em; 
+  line-height: 1.5; 
 }
 
-/* PINK STRIP CONTAINER */
 .hiw {
-  background: #ffe9f1;
-  border-radius: 18px;
-  padding: 24px 0;
-  margin-top: 0;        /* no extra gap */
+  background: #ffe9ec; 
+  padding: 38.5px 0; 
+  margin-top: 0;
+  overflow: hidden;
 }
 
-/* ROW */
 .hiw__row {
-  max-width: 1004px;
+  width: 1195px; 
+  height: 67px; 
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 124px; 
 }
 
-/* CARD */
 .hiw__card {
   display: flex;
   align-items: center;
-  gap: 16px;
-  width: 298px;
+  width: 330px; 
+  height: 67px; 
+  gap: 7px; 
 }
 
-/* ICON BOX */
 .hiw__icon {
   width: 56px;
   height: 56px;
@@ -51,7 +53,6 @@ body {
   flex-shrink: 0;
 }
 
-/* SVG */
 .hiw__svg-icon {
   width: 26px;
   height: 26px;
@@ -60,39 +61,43 @@ body {
   stroke-width: 2;
 }
 
-/* TEXT AREA */
 .hiw__text {
   text-align: left;
+  width: 235px;
 }
 
-/* CARD TITLE */
 .hiw__text h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 4px 0;
-  color: #000000;
+  font-size: 20px; 
+  font-weight: 600; 
+  margin: 0 0 4px 0; 
+  color: #333333;
+  line-height: 1; 
 }
 
-/* CARD DESCRIPTION */
 .hiw__text p {
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: 13px; 
+  font-weight: 400;
+  line-height: 17px; 
   margin: 0;
-  color: #595959;
+  color: #333333;
 }
 
 
 /* ================= TABLET (≤ 1024px) ================= */
 @media (max-width: 1024px) {
   .hiw__row {
-    flex-wrap: wrap;
+    max-width: 100%;
+    width: 100%;
+    flex-wrap: wrap; 
     justify-content: center;
-    gap: 24px;
-    padding: 0 20px;
+    gap: 24px; 
+    padding: 0 20px; 
+    height: auto;
   }
 
   .hiw__card {
-    width: 45%; /* 2 cards per row */
+    width: 45%; 
+    height: auto; 
     justify-content: flex-start;
   }
 }
@@ -100,34 +105,42 @@ body {
 /* ================= MOBILE (≤ 600px) ================= */
 @media (max-width: 600px) {
   .hiw__title {
-    font-size: 26px;
-    margin: 32px 0 12px;
+    font-size: 26px; 
+    margin: 32px auto 12px;
+    width: 100%; 
   }
 
   .hiw {
-    padding: 18px 0;
+    padding: 18px 0; 
   }
 
   .hiw__row {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 16px;
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 0 16px; 
   }
 
   .hiw__card {
-    width: 100%; /* 1 card per row */
+    width: 100%; 
+    height: auto; 
+    padding-right: 16px; 
   }
 
   .hiw__icon {
-    width: 50px;
-    height: 50px;
+    width: 50px; 
+    height: 50px; 
   }
 
+  .hiw__text {
+    width: auto;
+  }
+  
   .hiw__text h4 {
-    font-size: 15px;
+    font-size: 18px; 
   }
 
   .hiw__text p {
-    font-size: 13px;
+    font-size: 12px; 
+    line-height: 1.4;
   }
 }

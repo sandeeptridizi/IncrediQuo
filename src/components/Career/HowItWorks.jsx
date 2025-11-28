@@ -21,8 +21,8 @@ const HowItWorks = () => {
               </svg>
             </div>
             <div className="hiw__text">
-              <h4>Create a resume</h4>
-              <p>Add your personal info, work story data of experience etc.</p>
+              <h4>Explore Opportunities</h4>
+              <p>Find roles that match your skills, passion, and career goals..</p>
             </div>
           </div>
 
@@ -35,8 +35,8 @@ const HowItWorks = () => {
               </svg>
             </div>
             <div className="hiw__text">
-              <h4>Search</h4>
-              <p>As per location</p>
+              <h4>Apply with Confidence</h4>
+              <p>Submit your application and showcase your strengths and experience</p>
             </div>
           </div>
 
@@ -53,8 +53,8 @@ const HowItWorks = () => {
               </svg>
             </div>
             <div className="hiw__text">
-              <h4>Apply & Be selected</h4>
-              <p>If criteria match then apply & recruiters let you know</p>
+              <h4>Grow with IncrediQuo</h4>
+              <p>Join a team that supports your development and values your contribution</p>
             </div>
           </div>
 

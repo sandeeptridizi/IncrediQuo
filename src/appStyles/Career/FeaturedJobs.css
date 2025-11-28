@@ -1,158 +1,290 @@
 body {
   background: #ffffff;
-  margin-top: 0px;
+  margin: 0;
 }
 
-/* ================= FEATURED SECTION ================= */
+/* ================= UTILITY: GRID ALIGNMENT ================= */
+/* మొత్తం కంటెంట్ 1160px వెడల్పులో సెంటర్ అవుతుంది */
+.content-grid {
+    width: 1160px; /* Active Jobs list width నుండి తీసుకున్నాను */
+    margin-left: auto;
+    margin-right: auto;
+    /* మొబైల్‌లో ఫుల్ స్క్రీన్‌కు వెళ్లడానికి max-width */
+    max-width: 90%; 
+}
+
+/* ================= HOW IT WORKS SECTION ================= */
+
+.hiw__title {
+  /* "How it works" టైటిల్ - సెంటర్డ్ */
+  text-align: center;
+  width: 208px; /* */
+  height: 48px; 
+  font-size: 32px; /* */
+  font-weight: 500; 
+  color: #333333;
+  margin: 48px auto 16px; 
+  letter-spacing: 0.02em; 
+  line-height: 1.5; 
+}
+
+.hiw {
+  /* Rectangle 53 కొలతలు మరియు రంగు */
+  background: #ffe9ec; 
+  padding: 38.5px 0; /* (144px - 67px) / 2 = 38.5px */
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.hiw__row {
+  /* Frame 45 కొలతలు */
+  width: 1195px; 
+  height: 67px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 124px; /* */
+  margin: 0 auto; /* ఇది 1160px కంటే పెద్దది కాబట్టి సెంటర్ అవుతుంది */
+}
+
+.hiw__card {
+  /* Frame 44 కొలతలు */
+  display: flex;
+  align-items: center;
+  width: 330px; 
+  height: 67px; 
+  gap: 7px; /* */
+}
+
+.hiw__icon {
+  /* Frame 38 కొలతలు */
+  width: 56px;
+  height: 56px;
+  background: #03244d;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hiw__svg-icon {
+  width: 26px;
+  height: 26px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+}
+
+.hiw__text {
+  /* Group 39 కొలతలు */
+  text-align: left;
+  width: 235px;
+}
+
+.hiw__text h4 {
+  /* "Explore Opportunities" టెక్స్ట్ */
+  font-size: 20px; 
+  font-weight: 600; 
+  margin: 0 0 4px 0; 
+  color: #333333;
+  line-height: 1; 
+}
+
+.hiw__text p {
+  /* వివరణాత్మక టెక్స్ట్ */
+  font-size: 13px; 
+  font-weight: 400;
+  line-height: 17px; 
+  margin: 0;
+  color: #333333;
+}
+
+
+/* ================= ACTIVE JOBS SECTION ================= */
 
 .featured {
-  margin-top: 80px;
+  margin-top: 48px; 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* దీనివల్ల .featured__title మరియు .featured__list మధ్యలో వస్తాయి */
 }
 
-/* SAME WIDTH for heading + list */
-.featured__title,
-.featured__list {
-  width: 1160px;   /* ✅ Figma width */
-}
-
-/* TITLE */
+/* TITLE - "Active Jobs" */
 .featured__title {
-  text-align: center;
+  /* image_29c021.png నుండి */
+  text-align: left; /* టైటిల్ ఎడమ వైపు align అయ్యేలా */
   font-size: 32px;
   font-weight: 500;
   color: #333333;
+  width: 192px; /* */
   height: 48px;
+  margin-bottom: 37px; /* Frame 36 నుండి గ్యాప్ */
 }
 
-/* LIST */
+/* LIST - జాబ్ కార్డ్‌ల కంటైనర్ */
 .featured__list {
-  margin-top: 26px;
+  /* Frame 36/Frame 33 నుండి */
+  width: 1160px;
+  margin-top: 0; 
   display: flex;
   flex-direction: column;
-  gap: 10px; /* ✅ Figma gap */
+  gap: 37px; /* */
 }
 
-/* ================= JOB CARD ================= */
+/* ================= JOB CARD (Single Item) ================= */
 
 .jobcard {
-  background: #ffe9f1;
+  /* Frame 33 కొలతలు */
+  background: #FFE9EC; 
   border-radius: 10px;
-  padding: 30px;           /* ✅ Figma padding */
-  height: 108px;           /* ✅ Figma height */
-  width: 1100px;           /* ✅ Figma width */
+  padding: 30px; 
+  width: 1160px; 
+  height: 108px; 
   display: flex;
   align-items: center;
+  position: relative; 
 }
 
-/* INNER ROW */
+/* INNER ROW (కార్డ్ లోపల కంటెంట్) */
 .jobcard__left {
+  /* Frame 31 కొలతలు */
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 48px;            /* ✅ Figma inner height */
-  justify-content: space-between;
+  width: 1100px; 
+  height: 48px; 
+  justify-content: flex-start;
 }
 
-/* TITLE */
+/* TITLE - "Transcriptionist" */
 .jobcard__title {
-  width: 228px;
-  font-size: 20px;
-  font-weight: 500;
-  color: #333333;
+  /* image_29bd17.png నుండి */
+  width: 160px; 
+  font-size: 20px; 
+  font-weight: 400; 
+  color: #000000;
   display: flex;
   align-items: center;
+  letter-spacing: 0.02em; 
 }
 
-/* LOCATION */
+/* LOCATION AREA - "work remotely" (ఖచ్చితమైన స్థానం) */
 .jobcard__meta-inline {
-  position: absolute;
-  left: 45%;
-  transform: translateX(-50%);
+  /* Transcriptionist తర్వాత 231px గ్యాప్ కోసం */
+  margin-left: 231px; 
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 8px; 
 }
 
-
-
-/* ICON */
+/* ICON (Location icon) */
 .jobcard__loc-icon {
-  width: 32px;
-  height: 32px;
+  width: 20px; 
+  height: 20px; 
   stroke: #000000;
   fill: none;
   stroke-width: 1.6;
 }
 
-/* TEXT */
+/* TEXT - "work remotely" */
 .jobcard__location-text {
-  font-size: 16px;
-  font-weight: 500;
+  /* image_29575c.png నుండి */
+  font-size: 16px; 
+  font-weight: 400; 
   color: #333333;
 }
 
 /* BUTTON AREA */
 .jobcard__right {
+  /* బటన్లను కుడి వైపు సెట్ చేయడానికి */
   display: flex;
-  gap: 20px;
+  gap: 10px; 
+  position: absolute;
+  right: 30px; /* jobcard padding (30px) కి సరిపోయేలా */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* ================= BUTTONS ================= */
 
 .job-btn {
-  height: 48px;
-  width:153px;
-  padding: 0 22px;
-  border-radius: 999px;
+  /* Frame 13 & 28 నుండి */
+  height: 48px; 
+  border-radius: 10px; 
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   cursor: pointer;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
-/* PRIMARY */
+/* PRIMARY - APPLY NOW */
 .job-btn--primary {
-  background: #03244d;
+  width: 153px; /* */
+  padding: 6px 15px; /* */
+  background: #002147; /* */
   color: #ffffff;
-  border: 1px solid #03244d;
+  border: 1px solid #002147;
 }
 
-/* OUTLINE */
+/* OUTLINE - DETAILS */
 .job-btn--outline {
+  width: 117px; /* */
+  padding: 6px 10px; /* */
   background: transparent;
   color: #3c3c3c;
   border: 1px solid #d3c0c4;
 }
 
 
+/* ================= MEDIA QUERIES (RESPONSIVENESS) ================= */
+
+/* TABLET (≤ 1024px) */
 @media (max-width: 1024px) {
+  
+  .hiw__row {
+      width: 100%; 
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 24px; 
+      padding: 0 20px; 
+      height: auto;
+  }
+
+  .hiw__card {
+      width: 45%; 
+      height: auto; 
+      justify-content: flex-start;
+  }
+
   .featured__title,
   .featured__list {
-    width: 100%;
-    padding: 0 24px;
+      width: 100%;
+      padding: 0 24px;
+      margin-left: 0;
+      margin-right: 0;
   }
 
   .jobcard {
     width: 100%;
     height: auto;
     padding: 26px 24px;
+    position: static; 
   }
 
   .jobcard__left {
+    width: 100%;
     height: auto;
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  /* remove absolute location, place inline */
   .jobcard__meta-inline {
     position: static;
-    transform: none;
-    gap: 6px;
+    margin-left: 0; 
     order: 2;
   }
 
@@ -162,10 +294,13 @@ body {
 
   .jobcard__right {
     order: 3;
+    position: static; 
+    transform: none;
+    margin-top: 16px; 
   }
 }
 
-
+/* MOBILE (≤ 600px) */
 @media (max-width: 600px) {
   .featured {
     margin-top: 50px;
@@ -174,6 +309,11 @@ body {
   .featured__title {
     font-size: 26px;
     height: auto;
+    margin-bottom: 20px; 
+  }
+  
+  .featured__list {
+      gap: 20px;
   }
 
   .jobcard {
@@ -201,6 +341,7 @@ body {
   .jobcard__right {
     width: 100%;
     justify-content: space-between;
+    gap: 10px;
   }
 
   .job-btn {
@@ -208,6 +349,13 @@ body {
     height: 42px;
     padding: 0;
     font-size: 11px;
-    border-radius: 999px;
+    border-radius: 999px; 
+  }
+  
+  .job-btn--primary,
+  .job-btn--outline {
+      width: 48%; 
+      padding: 0;
+      border-radius: 999px;
   }
 }

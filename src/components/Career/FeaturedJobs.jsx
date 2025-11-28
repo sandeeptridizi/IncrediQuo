@@ -5,7 +5,7 @@ import careersData from "./careersData";
 const FeaturedJobs = () => {
   return (
     <section className="featured">
-      <h2 className="featured__title">Featured jobs</h2>
+      <h2 className="featured__title">Active Jobs</h2>
 
       <div className="featured__list">
         {careersData.map((job) => (

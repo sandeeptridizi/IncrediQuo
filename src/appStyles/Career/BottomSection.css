@@ -1,6 +1,8 @@
+/* ================= CAREER BOTTOM SECTION ================= */
+
 .career-bottom {
   width: 100%;
-  max-width: 1438px;        /* keeps it nice on big screens */
+  max-width: 1438px; 
   margin: 0 auto;
   position: relative;
   background: #ffffff;
@@ -8,17 +10,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 120px 5% 80px;   /* responsive side padding */
+  /* (Padding: 120px top, 5% sides, 80px bottom) */
+  padding: 120px 5% 80px; 
   box-sizing: border-box;
+  overflow: hidden; 
 }
 
 /* DOT TRIANGLE */
 .dot-pattern {
   position: absolute;
   top: 40px;
-  left: 40px;
-  width: 183.86px;
-  height: 132.6px;
+  /* డిజైన్ ప్రకారం 101px */
+  left: 101px; /* */
+  width: 183.86px; /* */
+  height: 132.6px; /* */
   background-image: radial-gradient(#000000 2px, transparent 2px);
   background-size: 14px 14px;
   mask-image: linear-gradient(135deg, #000 50%, transparent 50%);
@@ -26,20 +31,31 @@
 
 /* TEXT BLOCK */
 .career-bottom p {
-  max-width: 1061px;
+  max-width: 1061px; /* */
   width: 100%;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 20px; /* */
+  line-height: 32px; /* */
   font-weight: 400;
   color: #000000;
   text-align: center;
   margin: 0 auto;
+  
+  /* **ఓవర్‌లాప్ FIX**
+     డాట్ ప్యాటర్న్ వెడల్పు 184px. 
+     టెక్స్ట్ మధ్యలో ఉన్నప్పటికీ, డాట్ ప్యాటర్న్ ఏరియాను తప్పించడానికి 
+     ఎడమ వైపుకు అదనపు ప్యాడింగ్ ఇస్తున్నాను. */
+  padding-left: 100px; /* 100px ప్యాడింగ్ ఇచ్చి చూద్దాం */
+  padding-right: 100px; /* టెక్స్ట్ సెంటర్‌గా ఉండటానికి కుడి వైపు కూడా ఇస్తున్నాను */
+  box-sizing: border-box; 
 }
 
 /* BUTTON */
 .bottom-btn {
   margin-top: 32px;
-  padding: 10px 32px;
+  /* image_2948ba.png ప్రకారం కొలతలు */
+  width: 153px; /* */
+  height: 55px; /* */
+  padding: 6px 20px; /* */
   border-radius: 10px;
   border: none;
   background: #000000;
@@ -54,9 +70,10 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  box-sizing: border-box;
 }
 
-/* ========= TABLET ========= */
+/* ========= TABLET (≤ 1024px) ========= */
 @media (max-width: 1024px) {
   .career-bottom {
     padding: 100px 32px 60px;
@@ -65,6 +82,9 @@
   .career-bottom p {
     font-size: 18px;
     line-height: 30px;
+    /* ట్యాబ్లెట్‌లో కూడా ఓవర్‌లాప్ నివారణకు ప్యాడింగ్ తగ్గించి చూద్దాం */
+    padding-left: 0; 
+    padding-right: 0; 
   }
 
   .dot-pattern {
@@ -75,15 +95,17 @@
   }
 }
 
-/* ========= MOBILE ========= */
+/* ========= MOBILE (≤ 600px) ========= */
 @media (max-width: 600px) {
-   .career-bottom {
-    padding: 140px 16px 56px;   /* INCREASED top padding */
+    .career-bottom {
+    padding: 140px 16px 56px;
   }
 
   .career-bottom p {
     font-size: 16px;
     line-height: 26px;
+    padding-left: 0; 
+    padding-right: 0;
   }
 
   .bottom-btn {
@@ -92,6 +114,7 @@
     height: 48px;
     font-size: 16px;
     margin-top: 24px;
+    padding: 0; 
   }
 
   .dot-pattern {
