@@ -1,6 +1,7 @@
 import React from "react";
 import "../../appStyles/Career/CareerHero.css";
 import heroImg from "../../assets/carrers/carrerphoto.png";
+import { Button } from "../Button/Button";
 
 const CareerHero = () => {
   return (
@@ -23,9 +24,22 @@ const CareerHero = () => {
             </p>
 
             <div className="career-hero__buttons">
-              <button type="button" className="ch-btn ch-btn--light">
+              {/* <button type="button" className="ch-btn ch-btn--light">
                 Apply Job
-              </button>
+              </button> */}
+              <div>
+                <Button
+                name="Apply Job"
+                  paddingXL="8.6vw"
+  paddingXM="24.5vw"
+  widthL="10.5vw"
+  widthM="3.3vw"
+  bacgrounClr="#ffff"
+  bacgrounArrow="#022447"
+  colorArrow="#ffff"
+  colorText="#022447"
+  colorTextHover="#ffff" />
+              </div>
             </div>
           </div>
 

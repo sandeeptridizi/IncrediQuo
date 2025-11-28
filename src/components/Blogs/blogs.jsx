@@ -4,11 +4,13 @@ import { useParams, Link } from "react-router-dom";
 import "../../appStyles/blogs/BlogPage.css";
 import { database, ref, get } from "../../Firebase/firebase";
 import BlogHeroImg from "../../assets/blogs/Rectangle 3.png";
+import { Button } from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const BlogPage = () => {
   const { blogId } = useParams();
   const [blog, setBlog] = useState(null);
-
+    const navigate = useNavigate();
   // FETCH BLOG DETAILS
   useEffect(() => {
     const fetchBlog = async () => {
@@ -112,9 +114,13 @@ const BlogPage = () => {
                 <textarea placeholder="Your Message" rows={4} />
               </label>
 
-              <button type="button" className="blog-contact__submit">
+              {/* <button type="button" className="blog-contact__submit">
                 Submit
-              </button>
+              </button> */}
+
+                <div>
+            <Button name="Submit form" className="blog-contact__submit"/>
+          </div>
             </form>
           </div>
 
@@ -136,9 +142,16 @@ const BlogPage = () => {
             Support You With Tools, Expert Guidance, And Tailored Resources.
           </p>
 
-          <Link to="/about" className="blog-approach__button">
+          {/* <Link to="/about" className="blog-approach__button">
             ABOUT US
-          </Link>
+          </Link> */}
+                         <div
+                            className="blogs-approach__button"
+                            onClick={() => navigate("/about")}
+                            style={{ cursor: "pointer" }}
+                          >
+                            <Button name="ABOUT US" />
+                          </div>
         </div>
       </section>
     </main>

@@ -178,7 +178,7 @@
 }
 
 .blogs-approach__button {
-  width: 153px;
+  /* width: 153px;
   height: 55px;
   border-radius: 10px;
   border: none;
@@ -191,7 +191,10 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
+  text-decoration: none; */
+  margin-left: 40vw;
+    align-items: center;
+  justify-content: center;
 }
 
 /* ========= RESPONSIVE FIX — IMAGE WILL ALWAYS SHOW ========= */

@@ -223,11 +223,12 @@ body {
 
 /* PRIMARY - APPLY NOW */
 .job-btn--primary {
-  width: 153px; /* */
-  padding: 6px 15px; /* */
-  background: #002147; /* */
+  /* width: 153px; 
+  padding: 6px 15px; 
+  background: #002147; 
   color: #ffffff;
-  border: 1px solid #002147;
+  border: 1px solid #002147; */
+  margin-top: -1vw;
 }
 
 /* OUTLINE - DETAILS */
