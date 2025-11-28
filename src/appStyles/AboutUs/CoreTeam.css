@@ -32,7 +32,7 @@
 .core-team__grid {
   display: grid;
   grid-template-columns: repeat(2, 430px);
-  column-gap: 76px;            /* spacing between the two cards */
+  column-gap: 76px;
   justify-content: center;
 }
 
@@ -42,7 +42,7 @@
   width: 430px;
   height: 568px;
   border-radius: 20px;
-  overflow: hidden;            /* clip image + gradient + text */
+  overflow: hidden;
 }
 
 /* image */
@@ -58,29 +58,29 @@
   display: block;
 }
 
-/* bottom gradient so white text is visible */
+/* === GRADIENT BACKGROUND FOR TEXT (Figma exact style) === */
 .core-team__card::after {
   content: "";
   position: absolute;
   left: 0;
-  right: 0;
   bottom: 0;
-  height: 120px;
+  width: 100%;
+  height: 223px; /* EXACT from Figma */
+  border-radius: 0 0 20px 20px;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.0)
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.0) 100%
   );
   pointer-events: none;
+  z-index: 1; /* under text, above image */
 }
 
-/* ===== EXACT TEXT POSITION (like your blue boxes) ===== */
-
-/* NAME — visible and bright, still Figma spec */
+/* NAME (Shashank Paturi) */
 .core-team__name {
   position: absolute;
   left: 24px;
-  bottom: 40px;
+  bottom: 60px;                /* sits inside gradient box */
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   line-height: 24px;
@@ -88,31 +88,24 @@
   letter-spacing: -0.5px;
   color: #ffffff;
   margin: 0;
-  text-shadow: 
-      0 0 6px rgba(0, 0, 0, 0.70),   /* strong separation from background */
-      0 0 2px rgba(255, 253, 253, 0.904); /* slight glow like Figma */
+  z-index: 2;
 }
 
-/* ROLE — visible but slightly softer (still readable) */
+/* ROLE (Co Founder & Director) */
 .core-team__role {
   position: absolute;
   left: 24px;
-  bottom: 18px;
+  bottom: 32px;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  letter-spacing: 0;
-  color: #E6E6E6; /* brighter than #D4D4D8 for visibility */
+  color: #E6E6E6;
   margin: 0;
-  text-shadow: 
-      0 0 5px rgba(0, 0, 0, 0.65);
+  z-index: 2;
 }
 
-
-
 /* ---------- Responsive ---------- */
-
 @media (max-width: 1024px) {
   .core-team__inner h2 {
     font-size: 40px;
@@ -138,15 +131,15 @@
   }
 
   .core-team__card::after {
-    height: 100px;
+    height: 190px;
   }
 
   .core-team__name {
-    bottom: 32px;
+    bottom: 48px;
   }
 
   .core-team__role {
-    bottom: 14px;
+    bottom: 24px;
   }
 }
 

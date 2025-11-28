@@ -150,3 +150,13 @@
     max-width: 360px;
   }
 }
+
+
+.how__item {
+  transition: transform 0.38s ease, box-shadow 0.38s ease;
+}
+
+.how__item:hover {
+  transform: translateY(-3px) scale(1.015);   /* softer + small zoom */
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+}

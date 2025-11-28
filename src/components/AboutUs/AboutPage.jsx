@@ -9,15 +9,17 @@ import CTA from "../HomePage/CTA";
 // ✅ import shared layout CSS
 import "../../appStyles/AppLayout.css";
 
-const AboutPage = () => {
+const AboutPage = ({ onOpenContact }) => {
   return (
     <main className="app-layout page-animate">
       <div className="app-layout__content">
-        <AboutHero />
+        {/* pass onOpenContact down */}
+        <AboutHero onOpenContact={onOpenContact} />
         <HowItWorks />
         <CompanyHistory />
         <CoreTeam />
-        <CTA /> {/* Reused CTA */}
+        {/* pass the same handler to CTA like on Home page */}
+        <CTA onOpenContact={onOpenContact} />
       </div>
     </main>
   );
