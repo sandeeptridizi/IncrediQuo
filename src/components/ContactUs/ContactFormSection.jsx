@@ -1,11 +1,12 @@
+// src/components/ContactUs/ContactFormSection.jsx
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; // ✅ Fix
+import { useLocation } from "react-router-dom";
 import "../../appStyles/ContactUs/ContactFormSection.css";
 import { Button } from "../Button/Button";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ContactFormSection = () => {
+const ContactFormSection = ({ onSuccess, onError }) => {
   const location = useLocation();
 
   const getSourcePage = () => {
@@ -32,8 +33,6 @@ const ContactFormSection = () => {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [showSuccessModal, setShowSuccessModal] = useState(false);
-  const [showErrorModal, setShowErrorModal] = useState(false);
 
   useEffect(() => {
     setFormData((prev) => ({ ...prev, Sourcepage: getSourcePage() }));
@@ -70,21 +69,16 @@ const ContactFormSection = () => {
       toast.dismiss(toastId);
 
       if (result.status === "success") {
-        setShowSuccessModal(true);
-        setFormData({
-          ...formData,
-          Name: "",
-          Email: "",
-          PhoneNumber: "",
-          Message: "",
-        });
-        setTimeout(() => onClose?.(), 2000);
+        toast.success("Message sent successfully!");
+        setFormData({ ...formData, Name: "", Email: "", PhoneNumber: "", Message: "" });
+        onSuccess(); // Show success modal in ContactPage
       } else {
         throw new Error("Submission failed");
       }
     } catch (err) {
-      // toast.dismiss(toastId);
-      setShowErrorModal(true);
+      toast.dismiss(toastId);
+      toast.error("Failed to send message. Please try again.");
+      onError(); // Show error modal in ContactPage
     } finally {
       setIsSubmitting(false);
     }
@@ -95,12 +89,10 @@ const ContactFormSection = () => {
       <div className="contact-main__card">
         <form className="contact-main__form" onSubmit={handleSubmit}>
           <div className="contact-main__field">
-            {/* <input type="text" placeholder="Your Name" /> */}
             <input
               type="text"
               name="Name"
               placeholder="Your name"
-              // className="contact-input"
               value={formData.Name}
               onChange={handleChange}
               required
@@ -108,12 +100,10 @@ const ContactFormSection = () => {
             />
           </div>
           <div className="contact-main__field">
-            {/* <input type="email" placeholder="Your Email" /> */}
             <input
               type="email"
               name="Email"
               placeholder="Email"
-              // className="contact-input"
               value={formData.Email}
               onChange={handleChange}
               required
@@ -131,42 +121,32 @@ const ContactFormSection = () => {
             />
           </div>
           <div className="contact-main__field">
-            {/* <textarea rows="5" placeholder="Your Message"></textarea> */}
             <textarea
               rows="4"
               name="Message"
               placeholder="Your message"
-              // className="contact-textarea"
               value={formData.Message}
               onChange={handleChange}
               required
               disabled={isSubmitting}
             />
           </div>
-          {/* <button className="contact-main__submit">Submit</button> */}
-          {/* <div className="contact-main__submit">
-            <Button name="Submit form" />
-          </div> */}
+
           <div className="contact-main__submit">
-            {/* <Button
+            <Button
               name={isSubmitting ? "Submitting..." : "Submit form"}
+              type="submit"
               disabled={isSubmitting}
-              
-            /> */}
-                          <Button
-                            name={isSubmitting ? "Submitting..." : "Submit form"}
-                            paddingXL="8.6vw"
-                            paddingXM="24.5vw"
-                            widthL="11.25vw"
-                            widthM="30.3vw"
-                            bacgrounClr="#022447"
-                            bacgrounArrow="#ffffff"
-                            colorArrow="#022447"
-                            colorText="#ffffff"
-                            colorTextHover="#022447"
-                            type="submit" // ← This makes it work as form submit
-                            disabled={isSubmitting} // ← Disable during submission
-                          />
+              paddingXL="8.6vw"
+              paddingXM="24.5vw"
+              widthL="11.25vw"
+              widthM="30.3vw"
+              bacgrounClr="#022447"
+              bacgrounArrow="#ffffff"
+              colorArrow="#022447"
+              colorText="#ffffff"
+              colorTextHover="#022447"
+            />
           </div>
         </form>
 
@@ -182,46 +162,6 @@ const ContactFormSection = () => {
           </p>
         </div>
       </div>
-      {/* SUCCESS MODAL */}
-      {showSuccessModal && (
-        <div className="success-modal-backdrop">
-          <div className="success-modal">
-            <div className="success-icon">✔</div>
-            <h3>Thank You!</h3>
-            <p>Your message has been sent successfully.</p>
-            <button
-              className="success-close-btn"
-              onClick={() => {
-                setShowSuccessModal(false);
-                onClose?.();
-              }}
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* ERROR MODAL */}
-      {showErrorModal && (
-        <div className="error-modal-backdrop">
-          <div className="error-modal">
-            <div className="error-icon">✖</div>
-            <h3>Oops! Something went wrong</h3>
-            <p>
-              We couldn't send your message right now.
-              <br />
-              Please try again later or contact us directly.
-            </p>
-            <button
-              className="error-close-btn"
-              onClick={() => setShowErrorModal(false)}
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 };
