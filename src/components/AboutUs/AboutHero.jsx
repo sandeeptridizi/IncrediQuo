@@ -50,7 +50,19 @@ const AboutHero = () => {
 
           {/* <button className="about-hero__button">Learn More</button> */}
           <div>
-            <Button name="Learn More" />
+            {/* <Button name="Learn More" /> */}
+                        <Button
+  name="Learn More"
+  paddingXL = "8.6vw"
+  paddingXM = "24.5vw"
+  widthL = "10.9vw"
+  widthM = "30.31vw"
+  bacgrounClr="#022447"
+  bacgrounArrow="#ffffff"
+  colorArrow="#022447"
+  colorText="#ffffff"
+  colorTextHover="#022447"
+/>
           </div>
         </div>
 
