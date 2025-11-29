@@ -135,7 +135,7 @@ const BlogsListPage = () => {
                       {excerpt}
                       {excerpt && (
                         <button className="blog-item__readmore">
-                          ...read more
+                          ....Read more
                         </button>
                       )}
                     </p>

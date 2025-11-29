@@ -22,7 +22,7 @@ const CoreTeam = () => {
   ];
 
   return (
-    <section className="core-team">
+    <section className="core-team snap-section">
       <div className="core-team__inner">
         <h2>Our Founders</h2>
 

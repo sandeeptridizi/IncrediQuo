@@ -1,11 +1,27 @@
+/* OPTIONAL: enable vertical scroll snap for full-page sections */
+html,
+body {
+  scroll-snap-type: y mandatory;
+}
+
+/* any section you give class="snap-section" will snap into frame */
+.snap-section {
+  scroll-snap-align: start;
+}
+
 /* ===========================
    OUR FOUNDERS
    =========================== */
 
 .core-team {
-  padding: 70px 0 80px;
+  padding: 30px 0 80px;
   background: #ffffff;
   overflow-x: hidden;
+
+  /* NEW: make section fit screen height & center content */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .core-team__inner {

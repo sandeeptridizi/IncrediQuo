@@ -5,7 +5,7 @@
 /* --- HISTORY SECTION CONTAINER --- */
 .history {
   /* Spacing */
-  padding: 120px 0;
+  padding: 120px 0px;
   /* Appearance */
   background: #ffffff;
 }
@@ -28,18 +28,16 @@
 /* --- HEADING (h2) --- */
 .history__content h2 {
   /* Layout / Size */
-  max-width: 694px; /* Heading max-width */
+  max-width: 694px; 
   width: 100%;
-  /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 52px;
+  font-size: 48px;
   line-height: 62px;
   font-weight: 700;
   color: #002147;
   text-align: center;
-  /* Spacing */
-  margin: 0 0 65px; /* Gap below heading */
+  margin: 0 0 65px; 
 }
 
 /* --- PARAGRAPHS (Base Style) --- */
@@ -47,7 +45,7 @@
   /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 41px;
   font-weight: 400;
   color: #4b5563;
