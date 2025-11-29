@@ -6,6 +6,7 @@ import parse from "html-react-parser";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "../Button/Button";
 
 const SmallCard = () => {
   const [menuOpenId, setMenuOpenId] = useState(null);
@@ -72,14 +73,29 @@ const SmallCard = () => {
 
   return (
     <div className="small-main-container">
-      <div className="sub-container-small">
-        <button
+      <div className="sub-container-small"  onClick={() => {
+            navigate("/createCareer");
+          }}>
+        {/* <button
           onClick={() => {
             navigate("/createCareer");
           }}
         >
           Create Career
-        </button>
+        </button> */}
+                <Button
+                  name="Create Career"
+                  type="submit"
+                  paddingXL="8.6vw"
+                  paddingXM="24.5vw"
+                  widthL="12.1vw"
+                  widthM="30.3vw"
+                  bacgrounClr="#022447"
+                  bacgrounArrow="#ffffff"
+                  colorArrow="#022447"
+                  colorText="#ffffff"
+                  colorTextHover="#022447"
+                />
       </div>
 
       <div className="small-card_container">

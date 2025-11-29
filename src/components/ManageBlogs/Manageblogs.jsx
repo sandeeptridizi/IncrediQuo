@@ -6,6 +6,7 @@ import { HiDotsVertical } from "react-icons/hi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import parse from "html-react-parser";
+import { Button } from "../Button/Button";
 
 export const Manageblogs = () => {
   const [Blogs, setBlogs] = useState([]);
@@ -80,9 +81,24 @@ export const Manageblogs = () => {
 
   return (
     <div className="blog_page_layer1">
-      <h1 className="CreateBlogPage" onClick={() => navigate("/createBlog")}>
+      {/* <h1 className="CreateBlogPage" onClick={() => navigate("/createBlog")}>
         Create Blog
-      </h1>
+      </h1> */}
+      <div className="CreateBlogPage" onClick={() => navigate("/createBlog")}>
+        <Button
+          name="Create Blog"
+          type="submit"
+          paddingXL="8.6vw"
+          paddingXM="24.5vw"
+          widthL="11.05vw"
+          widthM="30.3vw"
+          bacgrounClr="#022447"
+          bacgrounArrow="#ffffff"
+          colorArrow="#022447"
+          colorText="#ffffff"
+          colorTextHover="#022447"
+        />
+      </div>
 
       <div className="blog_card_outer">
         {Blogs.map((data) => (
@@ -117,7 +133,15 @@ export const Manageblogs = () => {
                 {/* <p>{data.blog_content}</p> */}
                 {/* <div dangerouslySetInnerHTML={{ __html: data.blog_content }} /> */}
 
-                <div style={{maxHeight:"10vw", height:"10vw",overflowY:"scroll"}}>{parse(data.blog_content)}</div>
+                <div
+                  style={{
+                    maxHeight: "10vw",
+                    height: "10vw",
+                    overflowY: "scroll",
+                  }}
+                >
+                  {parse(data.blog_content)}
+                </div>
               </div>
 
               {/* <p

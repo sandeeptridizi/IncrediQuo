@@ -50,12 +50,13 @@
 }
 
 .logout-btn {
-  background-color: #fff;
-  color: #050038;
+  /* background-color: #fff;
+  color: #050038; */
+  margin-left: 5vw;
 }
 
 .logout-btn:hover {
-  background-color: #e6e6e6;
+  /* background-color: #e6e6e6; */
 }
 
 /* Mobile responsiveness */

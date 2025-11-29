@@ -1,6 +1,7 @@
 import React from "react";
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
+import { Button } from "../Button/Button";
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -27,10 +28,25 @@ const Dashboard = () => {
           >
             Go to Careers Manage
           </button>
-          <button onClick={handleLogout} className="btn logout-btn">
+          {/* <button onClick={handleLogout} className="btn logout-btn">
             Sign Out
-          </button>
-        </div>
+          </button> */}
+          <div  onClick={handleLogout} className="btn logout-btn">
+                    <Button
+                        name="Sign Out"
+                        type="submit"
+                        paddingXL="7.1vw"
+                        paddingXM="18.5vw"
+                        widthL="9.65vw"
+                        widthM="39.3vw"
+                        bacgrounClr="#ffff"
+                        bacgrounArrow="#022447"
+                        colorArrow="#ffff"
+                        colorText="#022447"
+                        colorTextHover="#fff"/>
+        
+          </div>
+</div>
       </div>
     </div>
   );
