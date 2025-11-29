@@ -113,6 +113,9 @@
   .contact-modal {
     padding: 22px 18px 24px;
   }
+  .contact-submit-btn {
+    margin-left: 25vw;
+  }
 }
 
 /************ POP-IN ANIMATION ************/

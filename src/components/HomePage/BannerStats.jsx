@@ -40,7 +40,7 @@ const BannerStats = ({ onOpenContact }) => {
           {/* <button className="banner__button" onClick={handleClick}>
             Get Started
           </button> */}
-          <div onClick={handleClick}>
+          <div onClick={handleClick} className="banner__button-wrapper">
             <Button
               name="Get Started"
               paddingXL="8.6vw"

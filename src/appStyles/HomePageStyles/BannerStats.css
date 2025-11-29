@@ -192,4 +192,10 @@
   .banner__button { display: block; margin-inline: auto; }
   .banner__ticker { position: static; margin-top: 40px; }
   .banner__inner::after { display: none; }
+  .banner__button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 100%;
+  }
 }
