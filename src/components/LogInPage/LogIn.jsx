@@ -114,16 +114,16 @@ const LoginPage = () => {
 
           {error && <p className="error-message">{error}</p>}
 
-             {/* <button type="submit" className="btn-login">
+          {/* <button type="submit" className="btn-login">
             Login
           </button> */}
-          <div  className="btn-login">
+          <div className="btn-login">
           <Button
               name="Login"
               type="submit"
-              paddingXL="7.1vw"
-              paddingXM="18.5vw"
-              widthL="6.7vw"
+              paddingXL="5vw"
+              paddingXM="5.5vw"
+              widthL="8.2vw"
               widthM="39.3vw"
               bacgrounClr="#ffff"
               bacgrounArrow="#022447"

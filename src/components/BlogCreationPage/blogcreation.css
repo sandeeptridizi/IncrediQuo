@@ -196,6 +196,12 @@
   padding: 0.2vw 0 0 0;
   color: red;
 }
+.red_alter2 {
+  font-size: 0.8vw;
+  padding: 0.2vw 0 0 0;
+  font-style: italic;
+  color: rgb(104, 104, 104);
+}
 .upload_container {
   display: flex;
   justify-content: start;

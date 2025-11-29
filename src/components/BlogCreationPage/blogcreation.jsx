@@ -204,6 +204,7 @@ export const CreateBlog = () => {
               }}
             />
             <span className="red_alter">Only images upto 5MB are allowed.</span>
+            <span className="red_alter2">Note: Image size should be 1280 px X 640 px</span>
 
             {preview && (
               <img src={preview} alt="Preview" className="preview-img" />

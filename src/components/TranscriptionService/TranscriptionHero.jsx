@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; // <-- Import useState and useEffect
 import heroIllustration from "../../assets/transcription/Mask group.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
@@ -7,12 +7,41 @@ import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/Icon1.png";
 import { Button } from "../Button/Button";
 
+// Typewriter Component for the animation
+const Typewriter = ({ text, delay }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prevText => prevText + text[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, delay, text]);
+
+  // Only returns the progressively displayed text
+  return (
+    <span className="ts-hero__eyebrow-text">
+      {displayText}
+    </span>
+  );
+};
+
+
 const TranscriptionHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") {
       onOpenContact(); // open popup modal
     }
   };
+
+  const animatedText = "Transcription Services";
+  const typingDelay = 75; // Milliseconds per character (Slightly slower for eyebrow)
 
   return (
     <section className="ts-hero">
@@ -29,14 +58,17 @@ const TranscriptionHero = ({ onOpenContact }) => {
 
         {/* RIGHT — Text */}
         <div className="ts-hero__right">
-          <p className="ts-hero__eyebrow">Transcription Services</p>
+          
+          {/* APPLYING TYPEWRITER HERE */}
+          <p className="ts-hero__eyebrow">
+            <Typewriter text={animatedText} delay={typingDelay} />
+          </p>
 
           <h1 className="ts-hero__title">
             Precision-Driven Language
             <br />
             Services You Can Trust
           </h1>
-
           <p className="ts-hero__description">
             IncrediQuo Solutions delivers high-accuracy transcription,
             captioning, summarisation, and language support designed for modern

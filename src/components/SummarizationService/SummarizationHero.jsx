@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; // <-- Import useState and useEffect
 import heroIllustration from "../../assets/services/SummarizationHero.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
@@ -6,12 +6,41 @@ import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/Icon1.png";
 import { Button } from "../Button/Button";
 
+// Reusable Typewriter Component
+const Typewriter = ({ text, delay }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prevText => prevText + text[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, delay, text]);
+
+  // Use a span for progressive display to ensure it fits the line correctly
+  return (
+    <span className="ts-hero__eyebrow-text">
+      {displayText}
+    </span>
+  );
+};
+
+
 const SummarizationHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") {
       onOpenContact();
     }
   };
+
+  const animatedText = "Summarization"; // <-- The text to be animated
+  const typingDelay = 75; // Milliseconds per character
 
   return (
     <section className="ts-hero">
@@ -27,7 +56,10 @@ const SummarizationHero = ({ onOpenContact }) => {
 
         {/* RIGHT: Text content */}
         <div className="ts-hero__right">
-          <p className="ts-hero__eyebrow">Summarization</p>
+          {/* Applying Typewriter to the eyebrow text */}
+          <p className="ts-hero__eyebrow">
+            <Typewriter text={animatedText} delay={typingDelay} />
+          </p>
 
           <h1 className="ts-hero__title">
             Precision Summaries That Save Time & Deliver Clarity
@@ -65,21 +97,9 @@ const SummarizationHero = ({ onOpenContact }) => {
           {/* <button className="ts-hero__cta" onClick={handleGetStarted}>
             Get Started
           </button> */}
-                 <div onClick={handleGetStarted}>
-                      {/* <Button name="Get Started" /> */}
-                                                                     <Button
-                                    name="Get Started"
-                                    paddingXL="8.6vw"
-                                    paddingXM="24.5vw" // ← mobile padding
-                                    widthL="10.8vw" // ← THIS IS KEY: let content decide width
-                                    widthM="30.3vw" // ← auto width on mobile too
-                                    bacgrounClr="#022447"
-                                    bacgrounArrow="#ffffff"
-                                    colorArrow="#022447"
-                                    colorText="#ffffff"
-                                    colorTextHover="#022447"
-                                  />
-                    </div>
+          <div onClick={handleGetStarted}>
+            <Button name="Get Started" />
+          </div>
         </div>
       </div>
     </section>

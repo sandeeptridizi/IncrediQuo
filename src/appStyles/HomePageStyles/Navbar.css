@@ -24,7 +24,7 @@
 }
 
 .page-section {
-  scroll-margin-top: 90px;
+  scroll-margin-top: 90px; 
 }
 
 @keyframes navbarFadeDown {
@@ -119,6 +119,84 @@
   box-shadow: none;
 }
 
+/* --- PHONE ICON ANIMATION SETUP --- */
+
+.contact-button-wrapper {
+  display: flex; 
+  align-items: center;
+  gap: 8px;
+  margin-top: -1vw; 
+  cursor: pointer;
+}
+
+/* icon container */
+.phone-icon-container {
+  position: absolute;
+  right: 250px;
+  top: 40px;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+/* icon */
+.ringing-phone-icon {
+  font-size: 35px;
+  color: #022447;
+  transform-origin: bottom center;
+  transition: color 0.25s ease, transform 0.25s ease;
+  z-index: 2;
+  animation: quick-wiggle 1.2s ease 4s infinite;
+}
+
+/* pulsing signal */
+.phone-pulse-wave {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #ff6a7a; 
+  opacity: 0;
+  z-index: 1;
+}
+
+.contact-button-wrapper:hover .ringing-phone-icon {
+  color: #ff6a7a;
+  animation: quick-wiggle 0.8s ease infinite;
+}
+
+.contact-button-wrapper:hover .phone-pulse-wave {
+  animation: pulse-wave 1.5s ease-out infinite;
+}
+
+/* Wiggle animation */
+@keyframes quick-wiggle {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(10deg); }
+  60% { transform: rotate(-5deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Pulse animation */
+@keyframes pulse-wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
 /* ===== DROPDOWN (Our Services) ===== */
 .dropdown {
   position: relative;
@@ -147,7 +225,7 @@
   width: 100%;
 }
 
-/* ===== DROPDOWN PANEL (DESKTOP BASE) ===== */
+/* MENU */
 .dropdown__menu {
   /* Positioning */
   position: absolute;
@@ -188,7 +266,6 @@
   pointer-events: auto;
 }
 
-/* menu options - base */
 .dropdown__menu a {
   /* Typography */
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
@@ -205,7 +282,6 @@
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* first option */
 .dropdown__menu a:first-child {
   width: 355px;
   height: 56px;
@@ -218,7 +294,6 @@
   margin-left: -10px;
 }
 
-/* hover highlight for all items */
 .dropdown__menu a:hover {
   background: #ffe9ec;
   color: #002147;
@@ -345,7 +420,7 @@
   }
 
   .navbar__links a {
-    font-size: 15px;
+    font-size: 15px; 
   }
 
   .navbar__button {
@@ -361,9 +436,15 @@
     width: 360px;
     height: auto;
   }
+
+  .phone-icon-container, .ringing-phone-icon {
+    width: 30px; 
+    height: 30px;
+    font-size: 30px;
+  }
 }
 
-/* Small tablets & big phones (<= 768px) */
+/* Small tablets & phones (<= 768px) */
 @media (max-width: 768px) {
   /* --- HISTORY SECTION RESPONSIVE --- */
   .history__inner {
@@ -416,7 +497,7 @@
     scroll-margin-top: 82px;
   }
 
-  /* Mobile dropdown: centered panel */
+  /* dropdown mobile */
   .dropdown__menu {
     position: fixed;
     top: 64px;
@@ -439,6 +520,12 @@
   .dropdown__menu a {
     font-size: 18px;
     line-height: 32px;
+  }
+
+  .phone-icon-container, .ringing-phone-icon {
+    width: 30px; 
+    height: 30px;
+    font-size: 30px;
   }
 }
 
@@ -493,7 +580,6 @@
   .navbar__button {
     width: 100%;
     text-align: center;
-    margin-left: 0;
     padding: 8px 18px;
     font-size: 14px;
   }
@@ -505,12 +591,17 @@
   .dropdown__menu {
     top: 70px;
     width: calc(100vw - 28px);
-    max-width: none;
     padding: 18px 16px;
   }
 
   .dropdown__menu a {
     font-size: 16px;
     padding: 12px 14px;
+  }
+
+  .phone-icon-container, .ringing-phone-icon {
+    width: 22px; 
+    height: 22px;
+    font-size: 22px;
   }
 }

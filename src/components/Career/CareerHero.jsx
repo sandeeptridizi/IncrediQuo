@@ -1,9 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../appStyles/Career/CareerHero.css";
 import heroImg from "../../assets/carrers/carrerphoto.png";
 import { Button } from "../Button/Button";
 
+// Dedicated component to handle typing animation and line breaks
+const AnimatedH1 = ({ text, delay }) => {
+    const [displayText, setDisplayText] = useState('');
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const separator = '~'; // Using tilde to clearly denote line breaks in the input string
+
+    useEffect(() => {
+        if (currentIndex < text.length) {
+            const timeout = setTimeout(() => {
+                setDisplayText(prevText => prevText + text[currentIndex]);
+                setCurrentIndex(prevIndex => prevIndex + 1);
+            }, delay);
+
+            return () => clearTimeout(timeout);
+        }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [currentIndex, delay, text]);
+
+    // Split the raw output by the separator and insert <br /> tags
+    const renderedText = displayText.split(separator).map((item, index) => (
+        <React.Fragment key={index}>
+            {item}
+            {/* Add <br /> only between the segments */}
+            {index < displayText.split(separator).length - 1 && <br />}
+        </React.Fragment>
+    ));
+
+    return (
+        <>{renderedText}</>
+    );
+};
+
 const CareerHero = () => {
+  // Use '~' as a separator to represent the desired line breaks (<br />)
+  const rawAnimatedText = "Build Your Future~with IncrediQuo~Solutions"; 
+  const typingDelay = 75; // Milliseconds per character
+
   return (
     <section className="career-hero">
       <div className="career-hero__inner">
@@ -12,9 +48,8 @@ const CareerHero = () => {
           {/* LEFT TEXT */}
           <div className="career-hero__text">
             <h1>
-              Build Your Future <br />
-              with IncrediQuo <br />
-              Solutions
+              {/* Using the dedicated component for the animation */}
+              <AnimatedH1 text={rawAnimatedText} delay={typingDelay} />
             </h1>
 
             <p className="career-hero__subtitle">
@@ -24,9 +59,6 @@ const CareerHero = () => {
             </p>
 
             <div className="career-hero__buttons">
-              {/* <button type="button" className="ch-btn ch-btn--light">
-                Apply Job
-              </button> */}
               <div>
                 <Button
                   name="Apply Job"
@@ -86,25 +118,19 @@ const CareerHero = () => {
           </div>
 
           {/* SEARCH BUTTON */}
-          {/* <button className="ch-btn ch-btn--search" type="button">
-            <span className="ch-btn__label">SEARCH</span>
-            <span className="ch-btn__icon" aria-hidden="true">
-              <img src="/search button.png" alt="" />
-            </span>
-          </button> */}
-
-                                                     <Button
-                                name="Search here"
-                                paddingXL="8.6vw"
-                                paddingXM="24.5vw" // ← mobile padding
-                                widthL="11.2vw" // ← THIS IS KEY: let content decide width
-                                widthM="30.3vw" // ← auto width on mobile too
-                                bacgrounClr="#022447"
-                                bacgrounArrow="#ffffff"
-                                colorArrow="#022447"
-                                colorText="#ffffff"
-                                colorTextHover="#022447"
-                              />
+          <Button
+            name="Search....."
+            type="button"
+            paddingXL="8.6vw"
+            paddingXM="24.5vw"
+            widthL="10.5vw"
+            widthM="3.3vw"
+            bacgrounClr="#022447"
+            bacgrounArrow="#ffff"
+            colorArrow="#022447"
+            colorText="#ffff"
+            colorTextHover="#022447"
+          />
         </div>
       </div>
     </section>

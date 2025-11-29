@@ -1,6 +1,10 @@
-/* ===========================
-    ABOUT / COMPANY HISTORY
-    =========================== */
+
+:root {
+  --iq-dark-blue: #002147;
+  --iq-light-pink: #f0e6f2; /* Estimated light pink/white color from video */
+  --animation-duration: 8s; /* NEW: Slower animation time */
+  --stagger-delay: 0.2s; /* Delay between letters */
+}
 
 /* --- HISTORY SECTION CONTAINER --- */
 .history {
@@ -35,12 +39,12 @@
   font-size: 48px;
   line-height: 62px;
   font-weight: 700;
-  color: #002147;
+  color: var(--iq-dark-blue); 
   text-align: center;
   margin: 0 0 65px; 
 }
 
-/* --- PARAGRAPHS (Base Style) --- */
+/* Base style for all 3 text blocks (rest of history section remains the same) */
 .history__para {
   /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
@@ -49,8 +53,7 @@
   line-height: 41px;
   font-weight: 400;
   color: #4b5563;
-  /* Resetting base margin for specific control below */
-  margin: 0 auto;
+  margin: 0;           
 }
 
 /* --- PARAGRAPH SPECIFIC STYLES --- */
@@ -58,27 +61,94 @@
 /* 1) FIRST PARAGRAPH */
 .history__para:nth-of-type(1) {
   max-width: 1213px;
-
-   text-align: center;
-  margin-bottom: 28px;
+  text-align: justify;
+  margin: 0 auto 28px; 
 }
 
 /* 2) SECOND PARAGRAPH (Center + Extra Gap) */
 .history__para:nth-of-type(2) {
   max-width: 1186px;
   text-align: center;
- 
-  margin-top: 32px;
-  margin-bottom: 32px;
+  margin: 32px auto 32px; 
 }
 
 /* 3) THIRD PARAGRAPH (Center + Gap Above Only) */
 .history__para:nth-of-type(3) {
   max-width: 1186px;
   text-align: center;
-  /* Spacing: 32px top, 0 bottom (section ends) */
-  margin-top: 32px;
-  margin-bottom: 0;
+  margin: 32px auto 0; 
+}
+
+/* --- LOGO ANIMATION STYLES (Per-Letter Cascade) --- */
+
+.history__logo-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px; 
+  width: 100%;
+  margin-bottom: 40px; 
+}
+
+.logo-word {
+  display: flex; /* Standard row display */
+}
+
+.animated-letter {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 200px; 
+  font-weight: 700;
+  
+  /* Initial state: Light pink/white */
+  color: var(--iq-light-pink);
+  
+  /* Animation properties: Using the new slower duration */
+  animation: color-shift-fade var(--animation-duration) ease-in-out infinite; 
+}
+
+/* --- RIGHT-TO-LEFT STAGGERED DELAY (11 letters total in "IncrediQuo") --- */
+/* We target the 11th letter first, then the 10th, and so on. */
+/* The general formula for a word of length L is L - n + 1 where n is the child number. */
+
+.animated-letter:nth-child(11) { animation-delay: calc(1 * var(--stagger-delay)); } /* o */
+.animated-letter:nth-child(10) { animation-delay: calc(2 * var(--stagger-delay)); } /* u */
+.animated-letter:nth-child(9) { animation-delay: calc(3 * var(--stagger-delay)); } /* Q */
+.animated-letter:nth-child(8) { animation-delay: calc(4 * var(--stagger-delay)); } /* i */
+.animated-letter:nth-child(7) { animation-delay: calc(5 * var(--stagger-delay)); } /* d */
+.animated-letter:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); } /* e */
+.animated-letter:nth-child(5) { animation-delay: calc(7 * var(--stagger-delay)); } /* r */
+.animated-letter:nth-child(4) { animation-delay: calc(8 * var(--stagger-delay)); } /* c */
+.animated-letter:nth-child(3) { animation-delay: calc(9 * var(--stagger-delay)); } /* n */
+.animated-letter:nth-child(2) { animation-delay: calc(10 * var(--stagger-delay)); } /* I */
+.animated-letter:nth-child(1) { animation-delay: calc(11 * var(--stagger-delay)); } /* I (This is the start, but we reversed the order for a correct cascade) */
+
+
+/* Keyframes for the color shift and fade effect */
+@keyframes color-shift-fade {
+  /* The total duration is 8s. */
+  
+  /* 0% to 10%: Start completely faded (light color) */
+  0%, 10% {
+    color: var(--iq-light-pink);
+  }
+  
+  /* 15%: Transition to dark blue */
+  15% {
+    color: var(--iq-dark-blue);
+    text-shadow: 0 0 8px rgba(0, 33, 71, 0.8), 0 0 16px rgba(0, 33, 71, 0.4);
+  }
+  
+  /* 60%: Hold the dark blue color */
+  60% {
+    color: var(--iq-dark-blue);
+    text-shadow: 0 0 8px rgba(0, 33, 71, 0.8), 0 0 16px rgba(0, 33, 71, 0.4);
+  }
+  
+  /* 65% to 100%: Fade back to the light color */
+  65%, 100% {
+    color: var(--iq-light-pink);
+    text-shadow: none;
+  }
 }
 
 /* ================== RESPONSIVE MEDIA QUERIES ================== */
@@ -92,6 +162,15 @@
   /* --- Inner Padding --- */
   .history__inner {
     padding: 0 20px;
+  }
+  
+  /* Animation adjustments */
+  .history__logo-animation {
+    height: 100px;
+    margin-bottom: 30px;
+  }
+  .animated-letter {
+    font-size: 120px;
   }
 
   /* --- Heading (h2) --- */
@@ -113,22 +192,7 @@
     /* Typography */
     font-size: 22px;
     line-height: 32px;
-  }
-
-  /* Resetting margins for consistency on mobile/tablet */
-  .history__para:nth-of-type(1) {
-    margin-bottom: 28px;
-  }
-
-  .history__para:nth-of-type(2),
-  .history__para:nth-of-type(3) {
-    margin-top: 28px; /* Use a common vertical rhythm */
-    margin-bottom: 0;
-  }
-  
-  .history__para:nth-of-type(2) {
-    /* If the intention was to keep the extra gap, adjust this value */
-    margin-bottom: 28px;
+    text-align: left;       
   }
 }
 
@@ -136,6 +200,15 @@
   /* --- Inner Padding --- */
   .history__inner {
     padding: 0 16px;
+  }
+  
+  /* Animation adjustments */
+  .history__logo-animation {
+    height: 80px;
+    margin-bottom: 24px;
+  }
+  .animated-letter {
+    font-size: 100px;
   }
 
   /* --- Heading (h2) --- */
@@ -156,6 +229,15 @@
   .history {
     padding: 72px 0;
   }
+  
+  /* Animation adjustments */
+  .history__logo-animation {
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  .animated-letter {
+    font-size: 60px;
+  }
 
   /* --- Heading (h2) --- */
   .history__content h2 {
@@ -169,3 +251,5 @@
     line-height: 26px;
   }
 }
+
+

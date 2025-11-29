@@ -1,9 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../../appStyles/AboutUs/AboutHero.css";
 import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg"; // your image
 import { Button } from "../Button/Button";
 
+// Updated Typewriter Component: Cursor removed, text remains
+const Typewriter = ({ text, delay }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prevText => prevText + text[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, delay, text]);
+
+  // Only returns the progressively displayed text
+  return (
+    <span className="about-hero__highlight">
+      {displayText}
+    </span>
+  );
+};
+
 const AboutHero = () => {
+  const animatedText = "Transcription and Language Solutions";
+  const typingDelay = 50; // Milliseconds per character
+
   return (
     <section className="about-hero">
       <div className="about-hero__inner">
@@ -11,9 +39,7 @@ const AboutHero = () => {
         <div className="about-hero__text">
           <h1>
             Your Trusted Partner for Professional{" "}
-            <span className="about-hero__highlight">
-              Transcription and Language Solutions
-            </span>
+            <Typewriter text={animatedText} delay={typingDelay} />
           </h1>
 
           <p>
@@ -23,28 +49,15 @@ const AboutHero = () => {
           </p>
 
           {/* <button className="about-hero__button">Learn More</button> */}
-            <div>
-            {/* <Button name="Learn More" /> */}
-                        <Button
-              name="Learn More"
-              paddingXL="8.6vw"
-              paddingXM="24.5vw" // ← mobile padding
-              widthL="10.89vw" // ← THIS IS KEY: let content decide width
-              widthM="30.3vw" // ← auto width on mobile too
-              bacgrounClr="#022447"
-              bacgrounArrow="#ffffff"
-              colorArrow="#022447"
-              colorText="#ffffff"
-              colorTextHover="#022447"
-            />
+          <div>
+            <Button name="Learn More" />
           </div>
         </div>
 
         {/* RIGHT IMAGE */}
         <div className="about-hero__image">
-  <img src={AboutHeroImg} alt="Team collaborating at a laptop" />
-</div>
-
+          <img src={AboutHeroImg} alt="Team collaborating at a laptop" />
+        </div>
       </div>
     </section>
   );

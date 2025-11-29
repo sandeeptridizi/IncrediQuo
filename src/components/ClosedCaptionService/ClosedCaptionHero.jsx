@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import heroIllustration from "../../assets/services/ClosedCaptionServicePage.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
@@ -6,12 +6,41 @@ import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/Icon1.png";
 import { Button } from "../Button/Button";
 
+// Reusable Typewriter Component
+const Typewriter = ({ text, delay }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prevText => prevText + text[currentIndex]);
+        setCurrentIndex(prevIndex => prevIndex + 1);
+      }, delay);
+
+      return () => clearTimeout(timeout);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, delay, text]);
+
+  // Use a span for progressive display to ensure it fits the line correctly
+  return (
+    <span className="ts-hero__eyebrow-text">
+      {displayText}
+    </span>
+  );
+};
+
+
 const ClosedCaptionHero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") {
       onOpenContact();
     }
   };
+
+  const animatedText = "Closed Captioning & Subtitling";
+  const typingDelay = 75; // Milliseconds per character
 
   return (
     <section className="ts-hero">
@@ -28,7 +57,11 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
 
         {/* RIGHT — text */}
         <div className="ts-hero__right">
-          <p className="ts-hero__eyebrow">Closed Captioning &amp; Subtitling</p>
+          
+          {/* Applying Typewriter to the eyebrow text */}
+          <p className="ts-hero__eyebrow">
+            <Typewriter text={animatedText} delay={typingDelay} />
+          </p>
 
           <h1 className="ts-hero__title">
             Precision Captioning & Subtitles for a Truly Inclusive Audience
@@ -40,7 +73,6 @@ const ClosedCaptionHero = ({ onOpenContact }) => {
             clarity, timing precision, and compliance so every viewer
             understands your story.
           </p>
-
           <div className="vg-container">
             <div className="vg-card">
               <div className="innerIMg_bulb">
