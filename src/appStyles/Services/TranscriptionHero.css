@@ -4,31 +4,44 @@
   background: #ffffff;
 }
 
-/* ===== INNER GRID ===== */
+/* ===== INNER GRID (UPDATED COLUMN GAP) ===== */
 .ts-hero__inner {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
   grid-template-columns: 555px 1fr;
-  column-gap: 80px;
+  column-gap: 40px; /* reduced from 80px */
   align-items: center;
 }
 
-/* LEFT IMAGE */
+/* LEFT IMAGE (UPDATED FOR FLAT IMAGE STYLE) */
 .ts-hero__left {
   display: flex;
   justify-content: flex-start;
+  margin-left: 30px;
+  
+  /* Make sure left side is clean */
+  padding: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 .ts-hero__image {
-  width: 555px;
-  height: 500px;
-  object-fit: contain;
+  /* Flat image style */
+  max-width: 480px; /* smaller image */
+  width: 100%;
+  height: auto;
+  display: block;
 
-  /* 🔥 3D/Zoom animation removed — now static */
+  /* Reset appearance */
+  object-fit: contain;
   transition: none;
   transform: none;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* RIGHT CONTENT */
@@ -69,14 +82,14 @@
   width: auto;
 }
 
-/* CARDS ROW */
+/* CARDS ROW (KEPT FOR STRUCTURE, but likely unused in HTML if cards are moved) */
 .ts-hero__cards {
   display: flex;
   gap: 20px;
   margin-top: 28px;
 }
 
-/* SINGLE CARD */
+/* SINGLE CARD (KEPT FOR STRUCTURE, but likely unused in HTML if cards are moved) */
 .ts-hero__card {
   width: 296px;
   height: 100px;
@@ -108,7 +121,7 @@
   transform: translateY(-1px);
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===== RESPONSIVE (TS-HERO) ===== */
 @media (max-width: 1024px) {
   .ts-hero__inner {
     grid-template-columns: 1fr;
@@ -120,6 +133,7 @@
     height: auto;
     margin-top: 25px;
     max-width: 520px;
+    margin-left: 20px;
   }
 
   .ts-hero__title {
@@ -161,9 +175,10 @@
   }
 
   .ts-hero__image {
-    margin-top: 45px;
+    margin-top: 100px;
     width: 100%;
     max-width: 380px;
+    margin-left: -15px;
   }
 
   .ts-hero__cards {
@@ -181,7 +196,7 @@
   gap: 0vw;
   padding: 20px 0;
   flex-wrap: row;
-  width:46vw;
+  width: 46vw;
 }
 
 .vg-card {
@@ -220,6 +235,7 @@
   line-height: 1.4;
 }
 
+/* ===== RESPONSIVE (VG CARDS) ===== */
 @media (max-width: 600px) {
   .vg-container {
     flex-direction: column;
@@ -254,47 +270,4 @@
     font-size: 3.4vw;
     margin-top: 1vw;
   }
-}
-/* ===== FLAT HERO IMAGE, NO CARD, LESS GAP ===== */
-
-/* reduce distance between image and right text */
-.ts-hero__inner {
-  column-gap: 40px;          /* was 80px */
-}
-
-/* make sure left side is clean */
-.ts-hero__left {
-  padding: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-}
-
-/* make image flat, no shadow, no rounded card */
-.ts-hero__image {
-  max-width: 480px;          /* a bit smaller so white area is less */
-  width: 100%;
-  height: auto;
-  display: block;
-
-  border-radius: 0 !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-.ts-hero__eyebrow {
-  font-family: "Raleway", sans-serif;
-  font-size: 24px;
-  font-weight: 700;
-  color: #022447;
-  margin-bottom: 6px;
-  /* Add this to ensure the parent is styled */
-  height: 24px; /* Fix height to prevent layout shift during typing */
-}
-
-/* Ensure the text inside the typewriter component inherits the styles */
-.ts-hero__eyebrow-text {
-  /* Inherit all parent styles */
-  color: inherit;
-  font-weight: inherit;
-  font-size: inherit;
 }
