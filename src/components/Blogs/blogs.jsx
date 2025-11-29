@@ -124,7 +124,7 @@ const BlogPage = () => {
               name="Submit form"
               paddingXL="8.6vw"
               paddingXM="24.5vw" // ← mobile padding
-              widthL="11.24vw" // ← THIS IS KEY: let content decide width
+              widthL="11.15vw" // ← THIS IS KEY: let content decide width
               widthM="30.3vw" // ← auto width on mobile too
               bacgrounClr="#022447"
               bacgrounArrow="#ffffff"
@@ -167,7 +167,7 @@ const BlogPage = () => {
                                                             name="ABOUT US"
                                                             paddingXL="8.6vw"
                                                             paddingXM="24.5vw" // ← mobile padding
-                                                            widthL="10.85vw" // ← THIS IS KEY: let content decide width
+                                                            widthL="10.87vw" // ← THIS IS KEY: let content decide width
                                                             widthM="30.3vw" // ← auto width on mobile too
                                                             bacgrounClr="#022447"
                                                             bacgrounArrow="#ffffff"
