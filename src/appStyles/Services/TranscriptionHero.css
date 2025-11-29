@@ -281,3 +281,20 @@
   box-shadow: none !important;
   outline: none !important;
 }
+.ts-hero__eyebrow {
+  font-family: "Raleway", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #022447;
+  margin-bottom: 6px;
+  /* Add this to ensure the parent is styled */
+  height: 24px; /* Fix height to prevent layout shift during typing */
+}
+
+/* Ensure the text inside the typewriter component inherits the styles */
+.ts-hero__eyebrow-text {
+  /* Inherit all parent styles */
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+}

@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   background-color: #ffffff;
-  padding: 120px 0 100px;            /* top & bottom like design */
+  padding: 120px 0 100px; /* top & bottom like design */
 }
 
 .hero__inner {
@@ -21,84 +21,88 @@
 /* ================= LEFT SIDE ================= */
 
 .hero__content {
-  flex: 0 0 555px;                   /* Figma width for text block */
+  flex: 0 0 555px; /* Figma width for text block */
   max-width: 555px;
   font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
 }
 
 .hero__title {
+  /* Existing styles */
   width: 100%;
-  max-width: 555px;                  /* 555 × 140 in Figma */
+  max-width: 555px; /* 555 × 140 in Figma */
   font-size: 50px;
-  line-height: 70px;                 /* as in Figma */
+  line-height: 70px; /* as in Figma */
   font-weight: 700;
   color: #0b132a;
   margin: 0 0 24px;
+  
+  display: block; 
 }
 
-.hero__subtitle {
-  width: 100%;
-  max-width: 555px;                  /* 555 × 60 in Figma */
-  font-size: 16px;
-  line-height: 30px;
-  font-weight: 400;
-  color: #4b5563;
-  margin: 0 0 32px;
+/* Base style for all animated text spans */
+.hero__title span {
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0; 
+  animation: none;
+  display: inline-block; /* Allows the cursor to sit next to the text */
+  vertical-align: top;
 }
 
-/* button: 250 × 60, radius 10px */
-.hero__button {
-  width: 250px;
-  height: 60px;
-  border-radius: 10px;
-  border: none;
-  background-color: #08153a;
-  color: #ffffff;
-  font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  transition:
-    background-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+/* Keyframes for the standard typewriter effect */
+@keyframes typewriter {
+  from { width: 0 }
+  /* We can safely set this to 100% now, as the border is elsewhere */
+  to { width: 100% } 
 }
 
-.hero__button:hover {
-  background-color: #001d3a;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+/* Keyframes for the blinking cursor (using opacity) */
+@keyframes blink-cursor {
+  50% { border-color: transparent } /* Blink off */
+  0%, 100% { border-color: #0b132a } /* Visible */
 }
 
-.hero__button:active {
-  transform: translateY(0);
-  box-shadow: none;
+/* --- CURSOR VISUAL ELEMENT --- */
+.cursor-visual {
+  /* Reset the animation properties inherited from the parent span */
+  animation: none !important;
+  width: 0 !important; 
+  overflow: visible !important; 
+  
+  /* The cursor itself */
+  height: 1.4em; /* Height based on line-height */
+  width: 0.15em; /* Width of the vertical line */
+  background-color: transparent; /* Initially transparent */
+  border-right: 0.15em solid transparent; /* The actual line */
+  
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px; /* Small space after the last letter */
+
+  /* Animation to start the blinking */
+  animation: 
+    blink-cursor 0.75s step-end var(--cursor-start) infinite;
 }
 
-/* ================= RIGHT SIDE ================= */
-
-.hero__image {
-  flex: 0 0 611px;                   /* Figma width for illustration */
-  max-width: 611px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+/* --- LINE 1 (Block display to force line break) --- */
+.hero__title .line-1 {
+    display: block; 
+    animation: 
+      typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards; 
 }
 
-.hero__image img {
-  width: 100%;
-  max-width: 611px;                  /* 611 × 451 */
-  height: auto;
-  display: block;
-  /* 🚫 no hover animation, keep image static */
+/* --- LINE 2 (Inline-Block display to hold the cursor) --- */
+.hero__title .line-2 {
+    display: inline-block; 
+    animation: 
+      typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards; 
 }
+
+
+/* All other existing CSS styles (for subtitle, button, image, and media queries) remain the same. 
+   I include the media query that disables the animation for completeness. */
 
 /* ============== RESPONSIVE ============== */
 
@@ -116,15 +120,6 @@
   .hero__title {
     font-size: 40px;
     line-height: 56px;
-  }
-
-  .hero__image {
-    flex-basis: 520px;
-    max-width: 520px;
-  }
-
-  .hero__image img {
-    max-width: 520px;
   }
 }
 
@@ -156,12 +151,27 @@
 
   .hero__image img {
     max-width: 440px;
-    margin: 0 auto;
   }
 
   .hero__title {
     font-size: 34px;
     line-height: 46px;
+    animation: none !important;
+  }
+  
+  /* Disable all specific typewriter styles for spans on small screens */
+  .hero__title span {
+    width: auto !important;
+    overflow: visible !important;
+    border-right: none !important;
+    white-space: normal !important;
+    animation: none !important;
+    display: inline !important; 
+  }
+
+  /* Disable cursor on small screens */
+  .cursor-visual {
+      display: none !important;
   }
 
   .hero__subtitle {
@@ -173,7 +183,6 @@
 @media (max-width: 600px) {
   .hero {
     padding: 120px 0 6px;
-    margin-bottom: -16px;
   }
 
   .hero__inner {

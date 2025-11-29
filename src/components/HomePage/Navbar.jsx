@@ -1,11 +1,10 @@
-// src/components/HomePage/Navbar.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Navigate, NavLink } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/logo.png";
 import { Button } from "../Button/Button";
 import { useNavigate } from "react-router-dom";
-
+import { PiPhoneCall } from "react-icons/pi";
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -85,16 +84,20 @@ const Navbar = () => {
         <NavLink to="/careers">Careers</NavLink>
       </nav>
 
-      {/* <NavLink to="/contact" className="navbar__button">
-        Contact Us
-      </NavLink> */}
-     <div
-        className="navbar__button"
-        onClick={() => navigate("/contact")}
-        style={{ cursor: "pointer" }}
-      >
-        <Button name="Contact Us" />
-      </div>
+<div
+                className="navbar__button contact-button-wrapper"
+                onClick={() => navigate("/contact")}
+                style={{ cursor: "pointer" }}
+            >
+
+                <div className="phone-icon-container">
+                   
+                    <PiPhoneCall className="ringing-phone-icon" /> 
+                    
+                </div>
+
+                <Button name="Contact Us" />
+            </div>
     </header>
   );
 };

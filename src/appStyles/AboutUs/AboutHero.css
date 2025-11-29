@@ -1,10 +1,5 @@
-/* ===========================
-   ABOUT HERO
-   =========================== */
-
 .about-hero {
   background: #ffffff;
-  /* navbar (~60–70px) + 133px ≈ 205px top in Figma */
   padding: 140px 0 120px;
 }
 
@@ -174,3 +169,5 @@
     max-width: 360px;
   }
 }
+
+
