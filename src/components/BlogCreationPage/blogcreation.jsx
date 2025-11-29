@@ -209,12 +209,12 @@ export const CreateBlog = () => {
               <img src={preview} alt="Preview" className="preview-img" />
             )}
 
-            <Button
+            {/* <Button
               name={isSubmitting ? "Publishing..." : "Publish Blog"}
               type="submit"
               disabled={isSubmitting}
               paddingXL="8.6vw"
-              paddingXM="24.5vw"
+              paddingXM="20.5vw"
               widthL="10.7vw"
               widthM="30.3vw"
               bacgrounClr="#022447"
@@ -222,7 +222,10 @@ export const CreateBlog = () => {
               colorArrow="#022447"
               colorText="#ffff"
               colorTextHover="#022447"
-            />
+            /> */}
+             <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Publishing..." : "Publish Blog"}
+            </button>
           </form>
         </div>
       </div>

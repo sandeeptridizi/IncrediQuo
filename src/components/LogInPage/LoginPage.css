@@ -50,7 +50,7 @@
 }
 
 .btn-login {
-  width: 100%;
+  /* width: 100%;
   padding: 14px;
   font-size: 16px;
   font-weight: bold;
@@ -60,11 +60,13 @@
   color: #050038;
   cursor: pointer;
   transition: 0.3s ease;
+  border: 2px solid red; */
+  margin-left: 6vw;
 }
 
-.btn-login:hover {
+/* .btn-login:hover {
   background-color: #f9a89d;
-}
+} */
 .password-wrapper {
   position: relative;
 }

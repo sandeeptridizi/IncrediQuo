@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
-import { auth } from "../../Firebase/firebase"; // Adjust path if needed
+import { auth } from "../../Firebase/firebase"; 
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { GrView } from "react-icons/gr";
 import { BiHide } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 import { getDatabase, ref, get, set } from "firebase/database";
+import { Button } from "../Button/Button";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -29,24 +30,39 @@ const LoginPage = () => {
       sessionStorage.setItem("authToken", token);
 
       const db = getDatabase();
-      const roleRef = ref(db, `roles/${user.uid}/role`);
+      // const roleRef = ref(db, `roles/${user.uid}/role`);
+      const roleRef = ref(db, `roles/${user.uid}`);
       const snapshot = await get(roleRef);
 
       console.log("UID:", user.uid);
       console.log("Role from DB:", snapshot.val());
 
-      if (snapshot.exists()) {
-        const role = snapshot.val();
-        console.log("User role:", role);
+      // if (snapshot.exists()) {
+      //   const role = snapshot.val();
+      //   console.log("User role:", role);
 
-        if (role === "admin") {
-          navigate("/dashboard");
-        } else {
-          alert("Access denied: You are not an admin.");
-        }
-      } else {
-        alert("Role not found for this user in database.");
-      }
+      //   if (role === "admin") {
+      //     navigate("/dashboard");
+      //   } else {
+      //     alert("Access denied: You are not an admin.");
+      //   }
+      // } else {
+      //   alert("Role not found for this user in database.");
+      // }
+      if (snapshot.exists()) {
+  const userData = snapshot.val();
+  const role = userData.role;  // ← THIS IS THE KEY LINE
+
+  console.log("User role:", role);
+
+  if (role === "admin") {
+    navigate("/dashboard");
+  } else {
+    alert("Access denied: You are not an admin.");
+  }
+} else {
+  alert("Role not found for this user in database.");
+}
     } catch (err) {
       console.error("Login failed", err.code, err.message);
       setError(err.message);
@@ -98,9 +114,26 @@ const LoginPage = () => {
 
           {error && <p className="error-message">{error}</p>}
 
-             <button type="submit" className="btn-login">
+             {/* <button type="submit" className="btn-login">
             Login
-          </button>
+          </button> */}
+          <div  className="btn-login">
+          <Button
+              name="Login"
+              type="submit"
+
+              // disabled={isSubmitting}
+              paddingXL="7.1vw"
+              paddingXM="18.5vw"
+              widthL="6.7vw"
+              widthM="39.3vw"
+              bacgrounClr="#ffff"
+              bacgrounArrow="#022447"
+              colorArrow="#ffff"
+              colorText="#022447"
+              colorTextHover="#fff"/>
+          </div>
+
         </form>
       </div>
     </div>
