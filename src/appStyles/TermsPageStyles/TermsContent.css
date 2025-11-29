@@ -19,7 +19,7 @@
 
 .terms-content h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 36px;              /* main section headings */
+  font-size: 20px;              /* main section headings */
   line-height: 1.2;
   font-weight: 700;
   color: #000000;
@@ -29,7 +29,7 @@
 
 .terms-content h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;              /* sub headings */
+  font-size: 20px;              /* sub headings */
   line-height: 32px;
   font-weight: 700;
   color: #000000;
@@ -41,7 +41,7 @@
 
 .terms-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;              /* Figma: 24px */
+  font-size: 20px;              /* Figma: 24px */
   line-height: 32px;            /* Figma: 32px */
   font-weight: 400;
   color: #000000;
@@ -60,7 +60,7 @@
 
 .terms-content li {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;              /* Figma: 24px */
+  font-size: 20px;              /* Figma: 24px */
   line-height: 32px;            /* Figma: 32px */
   font-weight: 400;
   color: #000000;

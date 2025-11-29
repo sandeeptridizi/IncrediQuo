@@ -19,7 +19,7 @@
 
 .privacy-content h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
   color: #000000;
@@ -29,7 +29,7 @@
 
 .privacy-content h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 36px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: 700;
   color: #000000;
@@ -41,7 +41,7 @@
 
 .privacy-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: 400;
   color: #000000;
@@ -52,13 +52,13 @@
 
 .privacy-content ul {
   list-style: disc;
-  padding-left: 20px;
+  padding-left: 24px;
   margin-bottom: 16px;
 }
 
 .privacy-content li {
   font-family: "Raleway", sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: 400;
   color: #000000;
@@ -74,7 +74,8 @@
 /* CONTACT BLOCK — ONLY SPACING */
 
 .privacy-contact {
-  margin-top: 24px;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 /* ========= TABLET (≤ 1024px) ========= */
@@ -104,7 +105,7 @@
 
 @media (max-width: 600px) {
   .privacy-content {
-    padding: 60px 16px;
+    padding: 120px 16px;
   }
 
   .privacy-content h2 {
@@ -132,7 +133,7 @@
 }
 /* FIX — Make last contact block fonts match everything */
 .privacy-contact p {
-  font-size: 24px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: 400;
   color: #000000;

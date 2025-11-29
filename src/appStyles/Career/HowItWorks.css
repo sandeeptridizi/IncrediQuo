@@ -172,3 +172,38 @@ body {
   height: 24px;
   object-fit: contain;
 }
+
+/* ================= ICON ANIMATIONS ================= */
+
+/* ========== ICON ANIMATION ON HOVER (CARD HOVER) ========== */
+
+/* Hover the whole card → animate icon */
+.hiw__card:hover .hiw__icon {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ========== OPTIONAL: SMALL ENTRANCE ANIMATION ========== */
+@keyframes hiwIconFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* run once on load */
+.hiw__icon {
+  animation: hiwIconFadeUp 0.5s ease forwards;
+}
+
+/* slight stagger if you have multiple cards */
+.hiw__card:nth-child(2) .hiw__icon {
+  animation-delay: 0.08s;
+}
+.hiw__card:nth-child(3) .hiw__icon {
+  animation-delay: 0.16s;
+}
