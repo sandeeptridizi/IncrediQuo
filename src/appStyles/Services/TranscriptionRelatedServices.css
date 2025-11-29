@@ -23,20 +23,38 @@
 .ts-related__grid {
   display: flex;
   flex-direction: row;
-  /* justify-content: space-between; */
   margin-left: 7vw;
   gap: 4vw;
 }
 
-/* Card */
+/* ===== UPDATED CARD BACKGROUND ===== */
 .ts-related__card {
   position: relative;
   width: 263px;
   height: 334px;
-  background: #FFE9F1;
+  background-image: url("../../assets/industries/Rectangle 14.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 20px;
   padding: 22px 20px;
   text-align: left;
+}
+
+/* Soft overlay for readability */
+.ts-related__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* Keep card content above overlay */
+.ts-related__card > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* Faded index number (01,02,03) */
@@ -95,7 +113,7 @@
   color: #4B5670;
 }
 
-/* lift + shadow on hover for related service cards */
+/* Hover animation */
 .page-animate .ts-related__card {
   transform: translateY(0);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
@@ -106,7 +124,6 @@
   transform: translateY(-14px);
   box-shadow: 0 18px 34px rgba(0, 0, 0, 0.14);
 }
-
 
 /* ===== TABLET (1024px and below) ===== */
 @media (max-width: 1024px) {

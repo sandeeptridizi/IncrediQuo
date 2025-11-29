@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   background-color: #ffffff;
-  padding: 120px 0 100px;            /* top & bottom like design */
+  padding: 120px 0 100px;
 }
 
 .hero__inner {
@@ -21,7 +21,7 @@
 /* ================= LEFT SIDE ================= */
 
 .hero__content {
-  flex: 0 0 555px;                   /* Figma width for text block */
+  flex: 0 0 555px;
   max-width: 555px;
   font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -29,9 +29,9 @@
 
 .hero__title {
   width: 100%;
-  max-width: 555px;                  /* 555 × 140 in Figma */
+  max-width: 555px;
   font-size: 50px;
-  line-height: 70px;                 /* as in Figma */
+  line-height: 70px;
   font-weight: 700;
   color: #0b132a;
   margin: 0 0 24px;
@@ -39,7 +39,7 @@
 
 .hero__subtitle {
   width: 100%;
-  max-width: 555px;                  /* 555 × 60 in Figma */
+  max-width: 555px;
   font-size: 16px;
   line-height: 30px;
   font-weight: 400;
@@ -85,19 +85,30 @@
 /* ================= RIGHT SIDE ================= */
 
 .hero__image {
-  flex: 0 0 611px;                   /* Figma width for illustration */
+  flex: 0 0 611px;
   max-width: 611px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;               /* for overlay */
 }
 
-.hero__image img {
+/* main big illustration */
+.hero__image-main {
   width: 100%;
-  max-width: 611px;                  /* 611 × 451 */
+  max-width: 611px;
   height: auto;
   display: block;
-  /* 🚫 no hover animation, keep image static */
+}
+
+/* waveform overlay (Frame 2301) */
+.hero__wave {
+  position: absolute;
+  width: 160px; 
+  height: 82px;
+  top: 24%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* ============== RESPONSIVE ============== */
@@ -123,8 +134,14 @@
     max-width: 520px;
   }
 
-  .hero__image img {
+  .hero__image-main {
     max-width: 520px;
+  }
+
+  .hero__wave {
+    width: 19%;
+    top: 50%;
+    left: 52%;
   }
 }
 
@@ -154,7 +171,7 @@
     max-width: 440px;
   }
 
-  .hero__image img {
+  .hero__image-main {
     max-width: 440px;
     margin: 0 auto;
   }
@@ -166,6 +183,12 @@
 
   .hero__subtitle {
     font-size: 15px;
+  }
+
+  .hero__wave {
+    width: 22%;
+    top: 50%;
+    left: 52%;
   }
 }
 
@@ -195,8 +218,14 @@
     max-width: 260px;
   }
 
-  .hero__image img {
+  .hero__image-main {
     max-width: 360px;
+  }
+
+  .hero__wave {
+    width: 26%;
+    top: 50%;
+    left: 52%;
   }
 }
 

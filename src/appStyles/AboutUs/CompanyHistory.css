@@ -1,28 +1,36 @@
 /* ===========================
-   ABOUT / COMPANY HISTORY
-   =========================== */
+    ABOUT / COMPANY HISTORY
+    =========================== */
 
+/* --- HISTORY SECTION CONTAINER --- */
 .history {
+  /* Spacing */
+  padding: 120px 0;
+  /* Appearance */
   background: #ffffff;
-  padding: 120px 0 120px;
 }
 
 .history__inner {
+  /* Layout */
   max-width: 1320px;
+  /* Spacing */
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .history__content {
+  /* Layout */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* Heading – 694 x 62 */
+/* --- HEADING (h2) --- */
 .history__content h2 {
-  max-width: 694px;
+  /* Layout / Size */
+  max-width: 694px; /* Heading max-width */
   width: 100%;
+  /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 52px;
@@ -30,77 +38,115 @@
   font-weight: 700;
   color: #002147;
   text-align: center;
-  margin: 0 0 65px;    /* gap between heading and first paragraph */
+  /* Spacing */
+  margin: 0 0 65px; /* Gap below heading */
 }
 
-/* Base style for all 3 text blocks */
+/* --- PARAGRAPHS (Base Style) --- */
 .history__para {
+  /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 32px;
+  font-size: 20px;
   line-height: 41px;
   font-weight: 400;
   color: #4b5563;
-  margin: 0;           /* we control spacing per block below */
+  /* Resetting base margin for specific control below */
+  margin: 0 auto;
 }
 
-/* 1) FIRST PARAGRAPH – 1213 x 116, JUSTIFIED */
+/* --- PARAGRAPH SPECIFIC STYLES --- */
+
+/* 1) FIRST PARAGRAPH */
 .history__para:nth-of-type(1) {
   max-width: 1213px;
-  text-align: justify;
-  margin: 0 auto 28px;   /* small gap below (to second block) */
+
+   text-align: center;
+  margin-bottom: 28px;
 }
 
-/* 2) SECOND BLOCK – 1186 x 427, CENTER + EXTRA GAP TOP/BOTTOM */
+/* 2) SECOND PARAGRAPH (Center + Extra Gap) */
 .history__para:nth-of-type(2) {
   max-width: 1186px;
   text-align: center;
-  margin: 32px auto 32px; /* bigger gap above & below – like Figma */
+ 
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
 
-/* 3) THIRD BLOCK – 1186 wide, CENTER, GAP ABOVE ONLY */
+/* 3) THIRD PARAGRAPH (Center + Gap Above Only) */
 .history__para:nth-of-type(3) {
   max-width: 1186px;
   text-align: center;
-  margin: 32px auto 0;   /* gap above, then section ends */
+  /* Spacing: 32px top, 0 bottom (section ends) */
+  margin-top: 32px;
+  margin-bottom: 0;
 }
 
-/* ================== RESPONSIVE ================== */
+/* ================== RESPONSIVE MEDIA QUERIES ================== */
 
 @media (max-width: 1024px) {
+  /* --- Section Padding --- */
   .history {
-    padding: 96px 0 96px;
+    padding: 96px 0;
   }
 
+  /* --- Inner Padding --- */
   .history__inner {
     padding: 0 20px;
   }
 
+  /* --- Heading (h2) --- */
   .history__content h2 {
-    max-width: 100%;
+    /* Layout */
+    max-width: 100%; /* Allows heading to use full width */
+    /* Typography */
     font-size: 40px;
     line-height: 48px;
+    /* Spacing */
     margin-bottom: 24px;
   }
 
+  /* --- Paragraphs (Base & Specific) --- */
   .history__para {
-    max-width: 100%;
+    /* Layout */
+    max-width: 100%; /* Allows paragraphs to use full width */
+    text-align: left; /* Improved readability on smaller screens */
+    /* Typography */
     font-size: 22px;
     line-height: 32px;
-    text-align: left;      /* more readable on tablet/desktop small */
+  }
+
+  /* Resetting margins for consistency on mobile/tablet */
+  .history__para:nth-of-type(1) {
+    margin-bottom: 28px;
+  }
+
+  .history__para:nth-of-type(2),
+  .history__para:nth-of-type(3) {
+    margin-top: 28px; /* Use a common vertical rhythm */
+    margin-bottom: 0;
+  }
+  
+  .history__para:nth-of-type(2) {
+    /* If the intention was to keep the extra gap, adjust this value */
+    margin-bottom: 28px;
   }
 }
 
 @media (max-width: 768px) {
+  /* --- Inner Padding --- */
   .history__inner {
     padding: 0 16px;
   }
 
+  /* --- Heading (h2) --- */
   .history__content h2 {
     font-size: 32px;
     line-height: 40px;
   }
 
+  /* --- Paragraphs --- */
   .history__para {
     font-size: 18px;
     line-height: 28px;
@@ -108,15 +154,18 @@
 }
 
 @media (max-width: 480px) {
+  /* --- Section Padding --- */
   .history {
-    padding: 72px 0 72px;
+    padding: 72px 0;
   }
 
+  /* --- Heading (h2) --- */
   .history__content h2 {
     font-size: 26px;
     line-height: 34px;
   }
 
+  /* --- Paragraphs --- */
   .history__para {
     font-size: 16px;
     line-height: 26px;
