@@ -87,7 +87,7 @@
 /* ============== MOBILE (≤ 600px) ============== */
 @media (max-width: 600px) {
   .contact-hero {
-    padding: 150px 0 22px; /* prevents hero text from going under navbar */
+    padding: 180px 0 22px; /* prevents hero text from going under navbar */
   }
 
   .contact-hero__inner {
