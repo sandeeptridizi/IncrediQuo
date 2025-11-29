@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 :root {
   --iq-dark-blue: #002147;
@@ -6,11 +5,6 @@
   --animation-duration: 8s; /* NEW: Slower animation time */
   --stagger-delay: 0.2s; /* Delay between letters */
 }
-=======
-/* ===========================
-    ABOUT / COMPANY HISTORY
-    =========================== */
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 
 /* --- HISTORY SECTION CONTAINER --- */
 .history {
@@ -50,11 +44,7 @@
   margin: 0 0 65px; 
 }
 
-<<<<<<< HEAD
 /* Base style for all 3 text blocks (rest of history section remains the same) */
-=======
-/* --- PARAGRAPHS (Base Style) --- */
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 .history__para {
   /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
@@ -63,12 +53,7 @@
   line-height: 41px;
   font-weight: 400;
   color: #4b5563;
-<<<<<<< HEAD
   margin: 0;           
-=======
-  /* Resetting base margin for specific control below */
-  margin: 0 auto;
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 }
 
 /* --- PARAGRAPH SPECIFIC STYLES --- */
@@ -76,34 +61,21 @@
 /* 1) FIRST PARAGRAPH */
 .history__para:nth-of-type(1) {
   max-width: 1213px;
-<<<<<<< HEAD
   text-align: justify;
   margin: 0 auto 28px; 
-=======
-
-   text-align: center;
-  margin-bottom: 28px;
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 }
 
 /* 2) SECOND PARAGRAPH (Center + Extra Gap) */
 .history__para:nth-of-type(2) {
   max-width: 1186px;
   text-align: center;
-<<<<<<< HEAD
   margin: 32px auto 32px; 
-=======
- 
-  margin-top: 32px;
-  margin-bottom: 32px;
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 }
 
 /* 3) THIRD PARAGRAPH (Center + Gap Above Only) */
 .history__para:nth-of-type(3) {
   max-width: 1186px;
   text-align: center;
-<<<<<<< HEAD
   margin: 32px auto 0; 
 }
 
@@ -177,11 +149,6 @@
     color: var(--iq-light-pink);
     text-shadow: none;
   }
-=======
-  /* Spacing: 32px top, 0 bottom (section ends) */
-  margin-top: 32px;
-  margin-bottom: 0;
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
 }
 
 /* ================== RESPONSIVE MEDIA QUERIES ================== */
@@ -283,10 +250,6 @@
     font-size: 16px;
     line-height: 26px;
   }
-<<<<<<< HEAD
 }
 
 
-=======
-}
->>>>>>> 47b6c44e251275c5546bb95076dabfe1090119cf
