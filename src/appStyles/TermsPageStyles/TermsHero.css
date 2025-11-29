@@ -63,7 +63,7 @@
 /* tablets / small laptops */
 @media (max-width: 900px) {
   .terms-hero {
-    padding: 120px 20px 100px;
+    padding: 140px 20px 100px;
   }
 
   .terms-hero__title {
@@ -79,7 +79,7 @@
 /* phones */
 @media (max-width: 600px) {
   .terms-hero {
-    padding: 140px 18px 80px;
+    padding: 180px 18px 80px;
     background: linear-gradient(135deg, #002147 0%, #ffe9ec 100%);
   }
 
@@ -113,7 +113,7 @@
 /* very small phones */
 @media (max-width: 400px) {
   .terms-hero {
-    padding: 90px 14px 70px;
+    padding: 100px 14px 70px;
   }
 
   .terms-hero__title {

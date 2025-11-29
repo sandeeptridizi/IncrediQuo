@@ -1,6 +1,6 @@
 /* ===== NAVBAR WRAPPER ===== */
 .navbar {
-  position: fixed;          /* stay at top while scrolling */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -10,17 +10,15 @@
   justify-content: space-between;
   padding: 20px 70px;
   background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); /* subtle shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
 }
 
-/* sections that you scroll to with anchors */
 .page-section {
-  scroll-margin-top: 90px;   /* keeps content visible below fixed navbar */
+  scroll-margin-top: 90px;
 }
 
-/* small fade-down on first paint */
 @keyframes navbarFadeDown {
   from {
     opacity: 0;
@@ -43,26 +41,22 @@
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
-
-  /* 👇 Add these for white background */
   background: #ffffff;
   padding: 6px 10px;
-  border-radius: 10px;   /* make it smooth rounded */
+  border-radius: 10px;
 }
 
 
 .navbar__logo img {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
   transition: transform 0.25s ease;
-
   background: #ffffff;
   padding: 6px;
   border-radius: 50%;
 }
 
-/* logo hover: tiny scale for feedback */
 .navbar__logo:hover {
   transform: translateY(-1px);
 }
@@ -71,7 +65,7 @@
   transform: scale(1.05);
 }
 
-/* ===== CENTER — nav links ===== */
+/* ===== CENTER — nav links (UPDATED WITH ACTIVE STATE) ===== */
 .navbar__links {
   display: flex;
   align-items: center;
@@ -87,50 +81,28 @@
   transition: color 0.25s ease;
 }
 
-/* hover color + underline */
+
 .navbar__links a:hover {
   color: #ff6a7a;
-}
-
-.navbar__links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  border-radius: 999px;
-  background: #ff6a7a;
-  transition: width 0.25s ease;
 }
 
 .navbar__links a:hover::after {
   width: 100%;
 }
 
+/* ACTIVE STATE for regular links */
+.navbar__links a.active {
+  color: #ff6a7a;
+}
+
+.navbar__links a.active::after {
+  width: 100%;
+}
+
 /* ===== RIGHT — contact button ===== */
 .navbar__button {
   margin-top: -1vw;
-  /* padding: 10px 30px; */
-  /* border-radius: 999px;
-  background: #022447;
-  color: #ffffff;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition:
-    background 0.25s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-  text-decoration: none; */
 }
-
-/* .navbar__button:hover {
-  background: #001c38;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
-} */
 
 .navbar__button:active {
   transform: translateY(0);
@@ -165,48 +137,45 @@
   transition: width 0.25s ease;
 }
 
-/* active / open state */
+/* ACTIVE STATE, open state, and hover */
 .dropdown.open .dropdown__title,
-.dropdown__title:hover {
+.dropdown__title:hover,
+.dropdown__title.active {
   color: #ff6a7a;
 }
 
 .dropdown.open .dropdown__title::after,
-.dropdown__title:hover::after {
+.dropdown__title:hover::after,
+.dropdown__title.active::after {
   width: 100%;
 }
 
-/* ===== DROPDOWN PANEL (DESKTOP BASE, FIGMA) ===== */
+/* ===== DROPDOWN PANEL (DESKTOP BASE) ===== */
 .dropdown__menu {
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 6px;
-
   width: 404px;
   height: 326px;
   background: #002147;
   border-radius: 34px;
-
   padding: 37px 25px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   box-sizing: border-box;
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
   box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
   z-index: 1200;
-
   overflow-y: hidden;
   scrollbar-width: none;
 }
 
-/* show when state is open */
 .dropdown.open .dropdown__menu {
   opacity: 1;
   visibility: visible;
@@ -220,16 +189,14 @@
   font-size: 21px;
   font-weight: 500;
   line-height: 36px;
-
   text-decoration: none;
   color: #ffffff;
-
   padding: 4px 6px;
   border-radius: 12px;
   transition: background 0.25s ease, color 0.25s ease;
 }
 
-/* first option - pink bar per Figma (355 x 56, radius 13) */
+/* first option */
 .dropdown__menu a:first-child {
   width: 355px;
   height: 56px;
@@ -248,10 +215,112 @@
   color: #002147;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ===========================
+    ABOUT / COMPANY HISTORY
+    =========================== */
+
+.history {
+  padding: 120px 0;
+  background: #ffffff;
+}
+
+.history__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.history__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.history__content h2 {
+  max-width: 694px;
+  width: 100%;
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 700;
+  color: #002147;
+  text-align: center;
+  margin: 0 0 65px;
+}
+
+.history__para {
+  font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 41px;
+  font-weight: 400;
+  color: #4b5563;
+  margin: 0 auto;
+}
+
+/* PARAGRAPH SPECIFIC STYLES (MATCHING CENTER ALIGNMENT) */
+
+/* 1) FIRST PARAGRAPH */
+.history__para:nth-of-type(1) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 32px;
+}
+
+/* 2) SECOND PARAGRAPH */
+.history__para:nth-of-type(2) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 32px;
+}
+
+/* 3) THIRD PARAGRAPH */
+.history__para:nth-of-type(3) {
+  max-width: 1186px;
+  text-align: center;
+  margin: 32px auto 0;
+}
+
+/* ================== RESPONSIVE ================== */
 
 /* Tablets / small laptops (<= 1024px) */
 @media (max-width: 1024px) {
+  .history {
+    padding: 96px 0 96px;
+  }
+
+  .history__inner {
+    padding: 0 20px;
+  }
+
+  .history__content h2 {
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 48px;
+    margin-bottom: 24px;
+  }
+
+  .history__para {
+    max-width: 100%;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: left;
+  }
+  
+  /* Responsive margin adjustments for paragraphs */
+  .history__para:nth-of-type(1),
+  .history__para:nth-of-type(2) {
+    margin-top: 28px;
+    margin-bottom: 28px;
+  }
+  
+  .history__para:nth-of-type(3) {
+    margin-top: 28px;
+    margin-bottom: 0;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 16px 32px;
   }
@@ -261,7 +330,7 @@
   }
 
   .navbar__links a {
-    font-size: 15px; /* slightly smaller than desktop but still clear */
+    font-size: 15px;
   }
 
   .navbar__button {
@@ -281,12 +350,26 @@
 
 /* Small tablets & big phones (<= 768px) */
 @media (max-width: 768px) {
+  .history__inner {
+    padding: 0 16px;
+  }
+
+  .history__content h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .history__para {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 12px 18px;
     column-gap: 12px;
   }
 
-  /* keep logo + links + button in one row as long as possible */
   .navbar__logo {
     font-size: 16px;
   }
@@ -344,6 +427,22 @@
 
 /* Very small phones (<= 520px) */
 @media (max-width: 520px) {
+  /* --- HISTORY SECTION RESPONSIVE --- */
+  .history {
+    padding: 72px 0 72px;
+  }
+
+  .history__content h2 {
+    font-size: 26px;
+    line-height: 34px;
+  }
+
+  .history__para {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     flex-direction: column;
     align-items: stretch;
