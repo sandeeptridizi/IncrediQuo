@@ -135,7 +135,8 @@
 .blog-contact__field textarea {
   height: 141px;               /* Figma: 141 */
   min-height: 141px;
-  resize: vertical;
+  /* resize: vertical; */
+  resize: none;
 }
 
 .blog-contact__field input::placeholder,
@@ -146,7 +147,7 @@
 /* submit button */
 
 .blog-contact__submit {
-  margin-left: 12vw;
+  margin-left: 0vw;
   margin-top: -1.5vw;
 }
 
