@@ -57,7 +57,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
@@ -82,9 +82,15 @@
   transform: scale(1.05);
 }
 
+.footer-logo {
+  display: inline-flex;
+  align-items: center; /* centers icon + text vertically */
+  gap: 10px;
+}
+
 .footer-logo-mark img {
   width: 40px;
-  height: 35px;
+  height: 40px;
   object-fit: contain;
 }
 
@@ -92,6 +98,7 @@
   font-size: 25px;
   font-weight: 700;
   color: #ffffff;
+  transform: translateY(3px);  /* 🔥 slightly pulls text down for perfect alignment */
 }
 
 /* description text */
@@ -103,6 +110,7 @@
   margin: 0 0 18px;
 }
 
+/* LinkedIn square */
 /* LinkedIn square */
 .footer-social {
   width: 50px;
@@ -116,10 +124,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 22px;
+  /* ⬇️ was 22px before – group will handle spacing */
+  margin-bottom: 0;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
+
 
 .footer-social:hover {
   background-color: #ffe8f0;
@@ -132,7 +142,9 @@
   font-size: 16px;
   line-height: 30px;
   color: #d1e0ff;
+  margin-top: 40px;   /* ⬅️ moves text down slightly */
 }
+
 
 /* right side columns */
 .footer-links {
@@ -166,7 +178,12 @@
   font-size: 16px;
   margin-left: -55px;           /* ✅ remove negative shift that caused overlap */
 }
+.footer-bottom-links { margin-top: auto; margin-bottom: -20px; display: flex; gap: 40px; padding-top: 10px; white-space: nowrap; font-size: 16px; flex-wrap: nowrap; margin-right: -25px; }
 
+.footer-column--quikers .footer-bottom-links {
+  margin-top: 66px;   /* 🔥 pushes both links down */
+  margin-bottom: 0;   /* remove upward pull */
+}
 /* headings */
 .footer-column h4 {
   font-size: 18px;
@@ -245,6 +262,42 @@
 .footer-bottom-links span:hover {
   text-decoration: underline;
 }
+
+/* social icons side by side */
+.footer-social-group {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  margin-bottom: 22px;
+  margin-top: 40px;   /* 🔥 moves both icons slightly down */
+}
+
+
+/* Twitter icon same style + size as LinkedIn button */
+/* Twitter icon same style + size as LinkedIn button */
+.footer-social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;              /* center the png */
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+  margin-left: 0;             /* ⬅️ remove shift */
+}
+
+
+/* same hover effect as LinkedIn */
+.footer-social-icon:hover {
+  background-color: #ffe8f0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
+}
+
 
 
 /* ===== RESPONSIVE ===== */

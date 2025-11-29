@@ -2,7 +2,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Footer.css";
+
 import vector from "../../assets/footer/Vector.png";
+import twitter from "../../assets/footer/twitter.png";   // ⬅️ added
 
 const Footer = () => {
   const handleNavClick = () => {
@@ -15,12 +17,7 @@ const Footer = () => {
         <div className="footer-top">
           {/* -------- LEFT BRAND BLOCK -------- */}
           <div className="footer-brand">
-            {/* Logo + brand name (clickable, goes to Home) */}
-            <Link
-              to="/"
-              className="footer-logo"
-              onClick={handleNavClick}
-            >
+            <Link to="/" className="footer-logo" onClick={handleNavClick}>
               <img
                 src={vector}
                 alt="IncrediQuo-Solutions logo"
@@ -35,114 +32,39 @@ const Footer = () => {
               transcription and media support services.
             </p>
 
-            <button className="footer-social">in</button>
+            {/* 👇 LinkedIn + Twitter side-by-side */}
+            <div className="footer-social-group">
+              <button className="footer-social">in</button>
+              <img src={twitter} alt="Twitter" className="footer-social-icon" />
+            </div>
 
-            <p className="footer-copy-left">©2022 IncrediQuo Solutions</p>
+            <p className="footer-copy-left">©2025 IncrediQuo Solutions</p>
           </div>
 
           {/* -------- RIGHT LINK COLUMNS -------- */}
           <div className="footer-links">
-            {/* Services group */}
             <div className="footer-column footer-column--services">
               <h4 className="footer-heading">Services</h4>
               <ul>
-                <li>
-                  <Link
-                    to="/services/transcription"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Transcription
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/closed-captioning"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Closed Captioning & Subtitling
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/summarization"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Summarization
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/services/additional-support"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Additional Support
-                  </Link>
-                </li>
+                <li><Link to="/services/transcription" className="footer-link" onClick={handleNavClick}>Transcription</Link></li>
+                <li><Link to="/services/closed-captioning" className="footer-link" onClick={handleNavClick}>Closed Captioning & Subtitling</Link></li>
+                <li><Link to="/services/summarization" className="footer-link" onClick={handleNavClick}>Summarization</Link></li>
+                <li><Link to="/services/additional-support" className="footer-link" onClick={handleNavClick}>Additional Support</Link></li>
               </ul>
             </div>
 
-            {/* Quikers group + Privacy/Terms at bottom */}
             <div className="footer-column footer-column--quikers">
               <h4 className="footer-heading">Quikers</h4>
               <ul>
-                <li>
-                  <Link
-                    to="/"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Home Page
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/about"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/careers"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    to="/blogs"
-                    className="footer-link"
-                    onClick={handleNavClick}
-                  >
-                    Blogs
-                  </Link>
-                </li>
+                <li><Link to="/" className="footer-link" onClick={handleNavClick}>Home Page</Link></li>
+                <li><Link to="/about" className="footer-link" onClick={handleNavClick}>About Us</Link></li>
+                <li><Link to="/careers" className="footer-link" onClick={handleNavClick}>Careers</Link></li>
+                <li><Link to="/blogs" className="footer-link" onClick={handleNavClick}>Blogs</Link></li>
               </ul>
 
-              {/* sits at bottom of Quikers box */}
               <div className="footer-bottom-links">
-                <Link
-                  to="/privacy-policy"
-                  className="footer-bottom-link"
-                  onClick={handleNavClick}
-                >
-                  Privacy Policy
-                </Link>
-                <Link
-                  to="/terms-of-service"
-                  className="footer-bottom-link"
-                  onClick={handleNavClick}
-                >
-                  Terms of Service
-                </Link>
+                <Link to="/privacy-policy" className="footer-bottom-link" onClick={handleNavClick}>Privacy Policy</Link>
+                <Link to="/terms-of-service" className="footer-bottom-link" onClick={handleNavClick}>Terms of Service</Link>
               </div>
             </div>
           </div>

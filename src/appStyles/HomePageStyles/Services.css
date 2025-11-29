@@ -4,7 +4,7 @@
 
 .section.services {
   background-color: #fdf9fb;
-  padding: 72px 0 80px;          /* space above/below section */
+  padding: 72px 0 80px;
   opacity: 0;
   transform: translateY(26px);
   animation: servicesFadeUp 0.85s ease-out forwards;
@@ -23,20 +23,20 @@
 
 /* center whole block on page */
 .services-container {
-  max-width: 1120px;            /* close to Figma group width */
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 24px;              /* small side padding for safety */
+  padding: 0 24px;
 }
 
-/* SECTION TITLE – 242 × 40 Raleway 40 / 40 */
+/* SECTION TITLE */
 .services-title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 40px;
   color: #001247;
-  text-align: center;           /* centered like Figma */
-  margin: 0 0 36px;             /* distance to cards */
+  text-align: center;
+  margin: 0 0 36px;
 }
 
 /* ===========================
@@ -45,32 +45,33 @@
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, 526px); /* each card 526px */
-  column-gap: 44px;                        /* ~ gap between cards */
-  row-gap: 36px;                           /* gap between rows */
-  justify-content: center;                 /* center group under title */
+  grid-template-columns: repeat(2, 526px);
+  column-gap: 44px;
+  row-gap: 36px;
+  justify-content: center;
 }
 
 /* ===========================
-   SERVICE CARD – 526 × 334
+   SERVICE CARD
    =========================== */
 
 .service-card {
-  width: 526px;
+  width: 536px;
   height: 334px;
   box-sizing: border-box;
-  background-color: #ffe9ec;
-  border-radius: 10px;                    /* Figma radius 10px */
+  border-radius: 10px;
   padding: 32px 32px 28px;
-  box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25); /* drop shadow */
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  background-color: #ffe9ec;
+  box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25);
 }
 
-/* hover float */
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 26px 42px rgba(0, 18, 71, 0.28);
+  background-color: #ffe9ec;
 }
 
 /* ===========================
@@ -85,8 +86,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 18px;             /* matches Figma spacing */
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin-bottom: 18px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .service-card__icon img {
@@ -96,27 +97,25 @@
 }
 
 .service-card:hover .service-card__icon {
+  background-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.26);
 }
 
 /* ===========================
-   TITLE – 400 × 26, 20 / 26
+   TITLE
    =========================== */
 
 .service-card__title {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  font-weight: 800;              /* ExtraBold */
+  font-weight: 800;
   line-height: 26px;
   color: #08153a;
   margin: 0;
 }
 
 /* ===========================
-   RED UNDERLINES
-   #1: 87.67 × 6
-   #2: 29.22 × 6
+   UNDERLINES
    =========================== */
 
 .service-card__underline {
@@ -142,7 +141,6 @@
   width: 29.22px;
 }
 
-/* subtle grow on hover */
 .service-card:hover .service-card__underline .line-main {
   width: 95px;
 }
@@ -151,7 +149,7 @@
 }
 
 /* ===========================
-   DESCRIPTION – 438 × 102
+   DESCRIPTION
    =========================== */
 
 .service-card__desc {
@@ -174,7 +172,73 @@
   }
 
   .services-grid {
-    grid-template-columns: minmax(0, 1fr); /* 1 card per row */
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .service-card {
+    width: 100%;
+    height: auto;
+    max-width: 526px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.services {
+    padding: 48px 0 56px;
+  }
+
+  .services-title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+}
+
+/* ==========================================
+   HARD OVERRIDE: NO WHITE ON HOVER
+   ========================================== */
+
+/* card always pink */
+.section.services .service-card,
+.section.services .service-card:hover {
+  background-color: #ffe9ec !important;
+}
+
+/* icon box always transparent */
+.section.services .service-card__icon,
+.section.services .service-card:hover .service-card__icon {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* ===========================
+   DESCRIPTION
+   =========================== */
+
+.service-card__desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #374151;
+  max-width: 438px;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1150px) {
+  .services-container {
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
     column-gap: 0;
   }
 

@@ -45,7 +45,7 @@
 .industry-card {
   width: 263px;
   height: 334px;
-  background-size: cover;              /* 🔥 added */
+  background-size: 273px , 334px;              /* 🔥 added */
   background-repeat: no-repeat;        /* 🔥 added */
   background-position: center;         /* 🔥 added */
   border-radius: 24px;
@@ -75,11 +75,16 @@
 }
 
 .industry-card {
-  background-size: 100% 100%;          /* image locked to card shape */
+  background-size: 256px 334px;          /* image locked to card shape */
   background-clip: padding-box;       /* prevents background from sliding */
 }
 .industry-card:hover {
-  background-size: 100% 100%;         /* keeps image fixed on hover */
+  background-size: 300px 353px;         /* keeps image fixed on hover */
+}
+/* fix: no white background on hover */
+
+.industry-card:hover {
+  background-color: #fdfafa !important;   /* same pink behind PNG */
 }
 
 
@@ -204,3 +209,5 @@
     margin: 0 auto;
   }
 }
+
+

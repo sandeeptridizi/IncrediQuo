@@ -19,15 +19,23 @@
 
 /* Figma desktop widths */
 .tagline-row--top {
-  width: 1903px;   /* “99% ACCURACY EVERY TIME” */
+  width: 1903px; /* “99% ACCURACY EVERY TIME” */
 }
 
 .tagline-row--middle {
-  width: 2760px;   /* “TRUSTED TRANSCRIPTION & LANGUAGE SOLUTIONS …” */
+  width: 2760px; /* “TRUSTED TRANSCRIPTION & LANGUAGE SOLUTIONS …” */
 }
 
 .tagline-row--bottom {
-  width: 2391px;   /* “SERVICES BUILT FOR BUSINESSES OF EVERY SIZE” */
+  width: 2391px; /* “SERVICES BUILT FOR BUSINESSES OF EVERY SIZE” */
+}
+
+/* container: TEXT + WAVE */
+.tagline-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 70px; /* gap between repeated blocks */
+  gap: 24px; /* space between text and wave */
 }
 
 /* universal font style – matches Figma */
@@ -36,8 +44,14 @@
   font-size: 50px;
   font-weight: 500;
   font-style: italic;
-  margin-right: 70px;
   white-space: nowrap;
+}
+
+/* wave image at end */
+.tagline-wave {
+  height: 30px; 
+  width: auto;
+   transform: translateY(6px);
 }
 
 /* Top + Bottom muted lines */
@@ -53,17 +67,6 @@
   color: transparent;
 }
 
-/* decorative right end wave */
-.tagline-row::after {
-  content: "▮▯▮▯▮";
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 11px;
-  color: #0d274d;
-  opacity: 0.4;
-}
 
 /* ===== MARQUEE TRACK BASE ===== */
 .tagline-track {
@@ -75,14 +78,22 @@
 
 /* RIGHT → LEFT (scroll to left) */
 @keyframes marquee-left {
-  0%   { transform: translateX(20%); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(20%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* LEFT → RIGHT (scroll to right) */
 @keyframes marquee-right {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(20%); }
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(20%);
+  }
 }
 
 /* TOP → LEFT */
@@ -114,7 +125,14 @@
 
   .tagline-text {
     font-size: 34px;
+  }
+
+  .tagline-item {
     margin-right: 50px;
+  }
+
+  .tagline-wave {
+    height: 18px;
   }
 }
 
@@ -133,7 +151,14 @@
 
   .tagline-text {
     font-size: 24px;
+  }
+
+  .tagline-item {
     margin-right: 36px;
+  }
+
+  .tagline-wave {
+    height: 16px;
   }
 }
 
@@ -151,11 +176,15 @@
 
   .tagline-text {
     font-size: 20px;
+  }
+
+  .tagline-item {
     margin-right: 28px;
   }
 
-  /* hide tiny wave on very small screens */
-  .tagline-row::after {
-    display: none;
+  .tagline-wave {
+    height: 14px;
   }
+
+  /* if you still want to hide any extra decoration, nothing to do now */
 }
