@@ -5,6 +5,8 @@ import "../../appStyles/Services/TranscriptionRelatedServices.css";
 import subtitlingIcon from "../../assets/services/subtitling.png";
 import summarizationIcon from "../../assets/services/summarization.png";
 import supportIcon from "../../assets/services/support.png";
+import relatedBg from "../../assets/industries/Rectangle 14.png";
+
 
 const TranscriptionRelatedServices = () => {
   const navigate = useNavigate();

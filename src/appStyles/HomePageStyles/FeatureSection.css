@@ -116,6 +116,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  animation: tickMove 1.8s ease-in-out infinite;
 }
 
 /* ===========================
@@ -132,6 +133,19 @@
     transform: translateY(0);
   }
 }
+/* tick icon subtle left-right move */
+@keyframes tickMove {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);   /* konchem right */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 
 /* ===========================
    RESPONSIVE

@@ -43,13 +43,23 @@
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
+
+  /* 👇 Add these for white background */
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 10px;   /* make it smooth rounded */
 }
 
+
 .navbar__logo img {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   transition: transform 0.25s ease;
+
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 50%;
 }
 
 /* logo hover: tiny scale for feedback */

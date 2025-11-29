@@ -108,3 +108,16 @@
     padding: 40px 16px;
   }
 }
+/* HOVER ANIMATION */
+.ts-flex__card {
+  transition: transform 0.38s ease, box-shadow 0.38s ease;
+}
+
+.ts-flex__card:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+}
+
+
+
+

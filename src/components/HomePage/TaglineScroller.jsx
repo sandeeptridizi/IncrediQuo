@@ -1,30 +1,35 @@
 // src/components/HomePage/TaglineScroller.jsx
 import React, { useEffect, useState } from "react";
 import "../../appStyles/HomePageStyles/TaglineScroller.css";
+import taglineWave from "../../assets/hero/Frame 2301.png"; // 👈 wave image
 
 const lines = [
   {
     text: "Human Precision + Smart Technology = 99% Accuracy Every Time",
     className: "tagline-text tagline-text--muted",
-    rowClass: "tagline-row tagline-row--top"
+    rowClass: "tagline-row tagline-row--top",
   },
   {
     text: "Trusted Transcription & Language Solutions Delivered with Speed, Clarity, and Consistency",
     className: "tagline-text tagline-text--highlight",
-    rowClass: "tagline-row tagline-row--middle"
+    rowClass: "tagline-row tagline-row--middle",
   },
   {
     text: "Secure, Scalable, and Quality-Driven Services Built for Businesses of Every Size",
     className: "tagline-text tagline-text--muted",
-    rowClass: "tagline-row tagline-row--bottom"
-  }
+    rowClass: "tagline-row tagline-row--bottom",
+  },
 ];
 
 const TaglineScroller = () => {
-  const [activeAnimations, setActiveAnimations] = useState([false, false, false]);
+  const [activeAnimations, setActiveAnimations] = useState([
+    false,
+    false,
+    false,
+  ]);
 
   useEffect(() => {
-    // Start animations with 5-second gaps
+    // start animations line by line
     lines.forEach((_, index) => {
       setTimeout(() => {
         setActiveAnimations((prev) => {
@@ -32,7 +37,7 @@ const TaglineScroller = () => {
           copy[index] = true;
           return copy;
         });
-      }, index * 2000); // 5 sec difference between lines
+      }, index * 2000);
     });
   }, []);
 
@@ -40,12 +45,22 @@ const TaglineScroller = () => {
     <section className="tagline-section">
       {lines.map((item, index) => (
         <div key={index} className={item.rowClass}>
-          <div className={`tagline-track ${activeAnimations[index] ? "animate" : ""}`}>
-            <span className={item.className}>{item.text}</span>
-            {/* Duplicate for smooth infinite scrolling */}
-            <span className={item.className}>{item.text}</span>
-                        <span className={item.className}>{item.text}</span>
-
+          <div
+            className={`tagline-track ${
+              activeAnimations[index] ? "animate" : ""
+            }`}
+          >
+            {/* one block = TEXT + WAVE  → repeat 3 times for smooth marquee */}
+            {[0, 1, 2].map((i) => (
+              <span className="tagline-item" key={i}>
+                <span className={item.className}>{item.text}</span>
+                <img
+                  src={taglineWave}
+                  alt="audio wave"
+                  className="tagline-wave"
+                />
+              </span>
+            ))}
           </div>
         </div>
       ))}
