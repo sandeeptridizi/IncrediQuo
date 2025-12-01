@@ -107,7 +107,7 @@ const BlogsListPage = () => {
           {blogs.map((post) => {
             const { day, month } = getDateParts(post);
             const excerpt = getExcerpt(post);
-            const author = post.author || "@samurai2099";
+            const author = post.author || "IncrediQuo Solutions";
             const tags = post.tags || [];
 
             return (

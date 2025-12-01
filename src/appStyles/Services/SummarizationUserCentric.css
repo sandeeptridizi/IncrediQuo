@@ -50,6 +50,7 @@
   width: 297px;
   height: 243px;
   text-align: center;
+    padding: 1vw;
 }
 
 .cc-usercentric__icon {
@@ -101,10 +102,12 @@
 
 /* HOVER ANIMATION EFFECT */
 .cc-usercentric__item {
-  transition: transform 0.38s ease, box-shadow 0.38s ease; /* smooth hover */
-}
+  transition: transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1)}
 
 .cc-usercentric__item:hover {
-  transform: translateY(-3px) scale(1.015); /* small zoom + lift */
+transform: translateY(-8px) scale(1.025);  /* small zoom + lift */
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+  background-color: #ffecf3;
+  padding: 1vw;
+  border-radius: 4%;
 }

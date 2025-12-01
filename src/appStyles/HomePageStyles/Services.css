@@ -62,12 +62,24 @@
   border-radius: 10px;
   padding: 32px 32px 28px;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  
+  transition: 
+    background-color 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
   background-color: #ffe9ec;
   box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25);
 }
-
+.service-card__title,
+.service-card__desc,
+.service-card__underline .line-main,
+.service-card__underline .line-sub {
+  transition: color 0.45s ease, background-color 0.45s ease;
+}
+.service-card__icon img {
+  transition: filter 0.45s ease;
+}
 .service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 26px 42px rgba(0, 18, 71, 0.28);
@@ -96,9 +108,13 @@
   object-fit: contain;
 }
 
-.service-card:hover .service-card__icon {
+/* .service-card:hover .service-card__icon {
   background-color: transparent;
   transform: translateY(-2px);
+} */
+ .service-card:hover .service-card__icon img {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(982%)
+    hue-rotate(306deg) brightness(105%) contrast(101%);
 }
 
 /* ===========================
@@ -113,7 +129,9 @@
   color: #08153a;
   margin: 0;
 }
-
+.service-card:hover .service-card__title, .service-card:hover .service-card__desc{
+  color: #ffe9ec !important;
+}
 /* ===========================
    UNDERLINES
    =========================== */
@@ -201,11 +219,14 @@
    ========================================== */
 
 /* card always pink */
-.section.services .service-card,
-.section.services .service-card:hover {
+.section.services .service-card
+/* .section.services .service-card:hover  */
+{
   background-color: #ffe9ec !important;
 }
-
+.section.services .service-card:hover {
+  background-color: #022447 !important;
+}
 /* icon box always transparent */
 .section.services .service-card__icon,
 .section.services .service-card:hover .service-card__icon {
