@@ -110,17 +110,17 @@
 /* We target the 11th letter first, then the 10th, and so on. */
 /* The general formula for a word of length L is L - n + 1 where n is the child number. */
 
-.animated-letter:nth-child(11) { animation-delay: calc(1 * var(--stagger-delay)); } /* o */
-.animated-letter:nth-child(10) { animation-delay: calc(2 * var(--stagger-delay)); } /* u */
-.animated-letter:nth-child(9) { animation-delay: calc(3 * var(--stagger-delay)); } /* Q */
-.animated-letter:nth-child(8) { animation-delay: calc(4 * var(--stagger-delay)); } /* i */
-.animated-letter:nth-child(7) { animation-delay: calc(5 * var(--stagger-delay)); } /* d */
-.animated-letter:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); } /* e */
-.animated-letter:nth-child(5) { animation-delay: calc(7 * var(--stagger-delay)); } /* r */
-.animated-letter:nth-child(4) { animation-delay: calc(8 * var(--stagger-delay)); } /* c */
-.animated-letter:nth-child(3) { animation-delay: calc(9 * var(--stagger-delay)); } /* n */
-.animated-letter:nth-child(2) { animation-delay: calc(10 * var(--stagger-delay)); } /* I */
-.animated-letter:nth-child(1) { animation-delay: calc(11 * var(--stagger-delay)); } /* I (This is the start, but we reversed the order for a correct cascade) */
+.animated-letter:nth-child(1) { animation-delay: calc(1 * var(--stagger-delay)); } /* I */
+.animated-letter:nth-child(2) { animation-delay: calc(2 * var(--stagger-delay)); } /* n */
+.animated-letter:nth-child(3) { animation-delay: calc(3 * var(--stagger-delay)); } /* c */
+.animated-letter:nth-child(4) { animation-delay: calc(4 * var(--stagger-delay)); } /* r */
+.animated-letter:nth-child(5) { animation-delay: calc(5 * var(--stagger-delay)); } /* e */
+.animated-letter:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); } /* d */
+.animated-letter:nth-child(7) { animation-delay: calc(7 * var(--stagger-delay)); } /* i */
+.animated-letter:nth-child(8) { animation-delay: calc(8 * var(--stagger-delay)); } /* Q */
+.animated-letter:nth-child(9) { animation-delay: calc(9 * var(--stagger-delay)); } /* u */
+.animated-letter:nth-child(10) { animation-delay: calc(10 * var(--stagger-delay)); } /* o */
+.animated-letter:nth-child(11) { animation-delay: calc(11 * var(--stagger-delay)); } /* (End) */ /* I (This is the start, but we reversed the order for a correct cascade) */
 
 
 /* Keyframes for the color shift and fade effect */
