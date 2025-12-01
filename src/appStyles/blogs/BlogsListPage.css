@@ -296,7 +296,7 @@
 /* ========= MOBILE (≤ 600px) ========= */
 @media (max-width: 600px) {
   .blogs-page {
-    padding: 60px 18px 70px;
+    padding: 100px 18px 70px;
     padding-top: 140px;
   }
 

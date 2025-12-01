@@ -54,10 +54,17 @@ const TaglineScroller = () => {
             {[0, 1, 2].map((i) => (
               <span className="tagline-item" key={i}>
                 <span className={item.className}>{item.text}</span>
+                {/* <img
+                 src={taglineWave}
+                  alt="audio wave"
+                  className="tagline-wave"
+                /> */}
                 <img
                   src={taglineWave}
                   alt="audio wave"
-                  className="tagline-wave"
+                  className={`tagline-wave ${
+                    index === 1 ? "wave-pink" : "wave-blue"
+                  }`}
                 />
               </span>
             ))}

@@ -56,15 +56,24 @@
 
 /* Top + Bottom muted lines */
 .tagline-text--muted {
-  color: rgba(0, 0, 0, 0.35);
-  opacity: 0.4;
+  /* color: rgba(0, 0, 0, 0.35); */
+  /* opacity: 0.4; */
+  color: #022447;
 }
 
 /* Middle gradient line */
 .tagline-text--highlight {
-  background: linear-gradient(90deg, #f4c27d, #ff9ea1, #7ca7ff);
+  /* background: linear-gradient(90deg, #f4c27d, #ff9ea1, #7ca7ff); */
+  color: #ff9ea1;
   -webkit-background-clip: text;
-  color: transparent;
+  /* color: transparent; */
+}
+.wave-blue {
+  filter: brightness(0) saturate(100%) invert(14%) sepia(94%) saturate(2300%) hue-rotate(184deg) brightness(90%) contrast(95%);
+}
+
+.wave-pink {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(1469%) hue-rotate(311deg) brightness(102%) contrast(101%);
 }
 
 

@@ -107,7 +107,7 @@ const BlogsListPage = () => {
           {blogs.map((post) => {
             const { day, month } = getDateParts(post);
             const excerpt = getExcerpt(post);
-            const author = post.author || "@samurai2099";
+            const author = post.author || "IncrediQuo Solutions";
             const tags = post.tags || [];
 
             return (
@@ -183,7 +183,7 @@ const BlogsListPage = () => {
                                 name="ABOUT US"
                                 paddingXL="8.6vw"
                                 paddingXM="24.5vw" // ← mobile padding
-                                widthL="10.85vw" // ← THIS IS KEY: let content decide width
+                                widthL="10.88vw" // ← THIS IS KEY: let content decide width
                                 widthM="30.3vw" // ← auto width on mobile too
                                 bacgrounClr="#022447"
                                 bacgrounArrow="#ffffff"

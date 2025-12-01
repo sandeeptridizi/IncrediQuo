@@ -1,10 +1,14 @@
 /* ===== NAVBAR WRAPPER ===== */
 .navbar {
-  position: fixed; 
+  /* Positioning & Size */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
+  height: 85px; /* perfect navbar height */
   z-index: 1000;
+  
+  /* Layout */
   display: flex;
   flex-direction: column; 
   align-items: center; 
@@ -133,8 +137,8 @@
 }
 
 .navbar__logo img {
-  width: 50px;
-  height: 50px;
+  width: 110px;
+  height: 120px;
   object-fit: contain;
   transition: transform 0.25s ease;
   background: transparent; 
@@ -159,6 +163,8 @@
   text-decoration: none;
   transition: color 0.25s ease;
 }
+
+/* Underline base style (implicit, used by hover/active) */
 
 
 .navbar__links-row a:hover {
@@ -315,26 +321,35 @@
 
 /* MENU (Solid dark background) */
 .dropdown__menu {
+  /* Positioning */
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-top: 6px;
+  z-index: 1200;
+  
+  /* Size & Appearance */
   width: 404px;
   height: 326px;
   background: #002147; /* Solid dark background */
   border-radius: 34px;
+  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
+  
+  /* Layout */
   padding: 37px 25px;
   display: flex;
   flex-direction: column;
   gap: 24px;
   box-sizing: border-box;
+  
+  /* Visibility & Animation */
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0.25s ease;
-  box-shadow: 4px 4px 9px rgba(0, 0, 0, 0.25);
-  z-index: 1200;
+  
+  /* Scrolling */
   overflow-y: hidden;
   scrollbar-width: none;
   
@@ -350,13 +365,16 @@
 }
 
 .dropdown__menu a {
+  /* Typography */
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 21px;
   font-weight: 500;
   line-height: 36px;
-  text-decoration: none;
   color: #ffffff;
+  text-decoration: none;
+  
+  /* Appearance */
   padding: 4px 6px;
   border-radius: 12px;
   transition: background 0.25s ease, color 0.25s ease;
@@ -424,22 +442,18 @@
 }
 
 /* PARAGRAPH SPECIFIC STYLES (MATCHING CENTER ALIGNMENT) */
-
-/* 1) FIRST PARAGRAPH */
 .history__para:nth-of-type(1) {
   max-width: 1186px;
   text-align: center;
   margin: 32px auto 32px;
 }
 
-/* 2) SECOND PARAGRAPH */
 .history__para:nth-of-type(2) {
   max-width: 1186px;
   text-align: center;
   margin: 32px auto 32px;
 }
 
-/* 3) THIRD PARAGRAPH */
 .history__para:nth-of-type(3) {
   max-width: 1186px;
   text-align: center;
@@ -450,6 +464,7 @@
 
 /* Tablets / small laptops (<= 1024px) */
 @media (max-width: 1024px) {
+  /* --- HISTORY SECTION RESPONSIVE --- */
   .history {
     padding: 96px 0 96px;
   }
@@ -472,7 +487,6 @@
     text-align: left;
   }
   
-  /* Responsive margin adjustments for paragraphs */
   .history__para:nth-of-type(1),
   .history__para:nth-of-type(2) {
     margin-top: 28px;
@@ -520,6 +534,7 @@
 
 /* Small tablets & phones (<= 768px) */
 @media (max-width: 768px) {
+  /* --- HISTORY SECTION RESPONSIVE --- */
   .history__inner {
     padding: 0 16px;
   }
@@ -538,6 +553,7 @@
   .navbar {
     padding: 10px 18px;
     column-gap: 12px;
+    height: auto;
   }
   
   .navbar__top-row {
@@ -547,12 +563,12 @@
   }
 
   .navbar__logo {
-    font-size: 16px;
+    margin-left: 0;
   }
 
   .navbar__logo img {
-    width: 26px;
-    height: 26px;
+    width: 65px; /* Further reduced logo size for mobile */
+    height: 75px;
   }
 
   .navbar__links-row {
@@ -631,6 +647,7 @@
     align-items: stretch;
     padding: 10px 14px;
     row-gap: 8px;
+    height: auto;
   }
   
   .navbar__top-row {
@@ -643,12 +660,12 @@
   .navbar__logo {
     width: 100%;
     justify-content: flex-start;
-    font-size: 15px;
+    margin-left: 0;
   }
 
   .navbar__logo img {
-    width: 24px;
-    height: 24px;
+    width: 55px;
+    height: 65px;
   }
 
   .navbar__links-row {

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Footer.css";
 
 import vector from "../../assets/footer/Vector.png";
-import twitter from "../../assets/footer/twitter.png";   // ⬅️ added
+import twitter from "../../assets/footer/twitter.png"; // ⬅️ added
 
 const Footer = () => {
   const handleNavClick = () => {
@@ -32,10 +32,23 @@ const Footer = () => {
               transcription and media support services.
             </p>
 
-            {/* 👇 LinkedIn + Twitter side-by-side */}
+            {/* 👇 LinkedIn + Twitter side-by-side (UPDATED WITH LINKS) */}
             <div className="footer-social-group">
-              <button className="footer-social">in</button>
-              <img src={twitter} alt="Twitter" className="footer-social-icon" />
+              <a
+                href="https://www.linkedin.com/company/incrediquo-solutions/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social"
+              >
+                in
+              </a>
+              <a
+                href="https://x.com/IncrediQuo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={twitter} alt="Twitter" className="footer-social-icon" />
+              </a>
             </div>
 
             <p className="footer-copy-left">©2025 IncrediQuo Solutions</p>

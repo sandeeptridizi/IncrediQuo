@@ -206,6 +206,7 @@
     height: 55px;
     opacity: 0.6;
     background-size: 9px 9px;
+    margin-top: -15px;
   }
   .contact-newsletter__button {
     height: 65px;          /* increased height */

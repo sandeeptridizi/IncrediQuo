@@ -35,7 +35,7 @@ const CTA = () => {
               name="Get Started"
               paddingXL="8.6vw"
               paddingXM="24.5vw" // ← mobile padding
-              widthL="10.85vw" // ← THIS IS KEY: let content decide width
+              widthL="10.86vw" // ← THIS IS KEY: let content decide width
               widthM="30.3vw" // ← auto width on mobile too
               bacgrounClr="#022447"
               bacgrounArrow="#ffffff"

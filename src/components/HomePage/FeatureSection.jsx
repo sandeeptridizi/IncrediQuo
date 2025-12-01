@@ -30,6 +30,23 @@ const FeatureSection = () => {
           </ul>
         </div>
       </div>
+<div className="why-choose-container">
+    <h2 className="why-title">Why Choose IncrediQuo:</h2>
+<div className="why-list">
+         <p className="why-item">High accuracy and attention to detail</p>
+      <p className="why-item">Fast turnaround time with expedited options</p>
+      <p className="why-item">Secure file handling and NDA compliance</p>
+      <p className="why-item">Custom formatting and speaker identification</p>
+      <p className="why-item">Multilingual support and timecoding</p>
+      <p className="why-item">Dedicated project managers & multilayer quality checks</p>
+</div>
+
+
+    <p className="why-desc">
+      Our process ensures each transcript passes through multiple layers of
+      review—including initial typing, proofreading, and final quality audit.
+    </p>
+  </div>
     </section>
   );
 };

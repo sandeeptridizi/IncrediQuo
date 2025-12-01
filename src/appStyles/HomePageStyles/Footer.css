@@ -1,5 +1,5 @@
 /* ===== MAIN FOOTER WRAPPER ===== */
-.footer {
+/* .footer {
   position: relative;
   color: #f9fafb;
   width: 100%;
@@ -12,7 +12,55 @@
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
+} */
+
+.footer {
+  position: relative;
+  color: #f9fafb;
+  width: 100%;
+  overflow: hidden;
+
+  padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
+
+  background-color: #022447; /* you can keep your image here also */
 }
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='40 10 1940 100'><path fill='%23FFFFFF' d='M0,30 C600,10 600,190 1440,75 L2000,0 L0,0 Z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  z-index: 1;
+}
+
+ /* .footer::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 140px;        
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 140' preserveAspectRatio='none'><path fill='%23ffffff' d='M0,0 C 320,120 600,30 960,70 1320,110 1440,60 1440,0 L1440,140 L0,140 Z'/></svg>");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;     
+  background-position: center top;
+  z-index: 10;
+  pointer-events: none;
+ } */
+
+
+.footer > * {
+  position: relative;
+  z-index: 5;
+}
+
+
 
 /* inner container */
 .footer-inner {
@@ -63,6 +111,38 @@
   text-decoration: none;
 }
 
+/* --- FIX FOOTER LOGO SIZE --- */
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  text-decoration: none;
+
+  /* ❌ REMOVE THESE IF YOU HAVE THEM:
+  width: 10px;
+  height: 20px;
+  */
+}
+
+/* size the image actually used in JSX */
+.footer-logo-icon {
+  width: 40px;      /* adjust 32–48px as you like */
+  height: 40px;
+  object-fit: contain;
+}
+
+/* optional: fine-tune text vertical alignment */
+.footer-logo-text {
+  font-size: 25px;
+  font-weight: 700;
+  color: #ffffff;
+  transform: translateY(2px);  /* or 0px if not needed */
+}
+
+
 .footer-logo:hover {
   transform: translateY(-1px);
   opacity: 0.95;
@@ -89,10 +169,11 @@
 }
 
 .footer-logo-mark img {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 25px;
   object-fit: contain;
 }
+
 
 .footer-logo-text {
   font-size: 25px;

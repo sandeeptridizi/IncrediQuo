@@ -62,31 +62,27 @@ const TranscriptionUserCentric = () => {
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon">
               {/* <LegalIcon /> */}
-              <img src={headphones} alt="legal"/>
+              <img src={headphones} alt="legal" />
             </div>
-            <h3>Legal</h3>
+            <h3>Legal Transcription</h3>
             <p>
-Accurate, confidential, and legally compliant documentation you can rely on.            </p>
-          </article>
-
-          <article className="ts-usercentric__item">
-            <div className="ts-usercentric__icon">
-              <img src={Group} alt="legal"/>
-            </div>
-            <h3>Financial</h3>
-            <p>
-             Clear, precise, and data-driven support for all financial workflows.
+              Court hearings, arbitrations, depositions, ODR sessions, and legal
+              correspondences.
             </p>
           </article>
-
+          <article className="ts-usercentric__item">
+            <div className="ts-usercentric__icon ts-usercentric__icon--small">
+              <img src={archive} alt="legal" />
+            </div>
+            <h3>Media Transcription</h3>
+            <p>Interviews, podcasts, documentaries, TV and radio content.</p>
+          </article>
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon">
-              <img src={Board} alt="legal"/>
+              <img src={Group} alt="legal" />
             </div>
-            <h3>Medical</h3>
-            <p>
-              Reliable and patient-safe documentation tailored for healthcare accuracy.
-            </p>
+            <h3> Finance Transcription</h3>
+            <p>Earnings calls, analyst briefings, audits, financial reports.</p>
           </article>
         </div>
 
@@ -95,22 +91,23 @@ Accurate, confidential, and legally compliant documentation you can rely on.    
         {/* bottom row: 2 columns, centered */}
         <div className="ts-usercentric__grid ts-usercentric__grid--bottom">
           <article className="ts-usercentric__item">
-            <div className="ts-usercentric__icon ts-usercentric__icon--small">
-              <img src={archive} alt="legal"/>
+            <div className="ts-usercentric__icon">
+              <img src={favorite} alt="legal" />
             </div>
-            <h3>Media</h3>
+            <h3>Healthcare Transcription</h3>
             <p>
-           Fast, creative, and production-ready solutions for dynamic media needs..
+              Medical reports, patient interviews, doctor dictations, and
+              clinical documentation.
             </p>
           </article>
-
           <article className="ts-usercentric__item">
             <div className="ts-usercentric__icon ts-usercentric__icon--small">
-              <img src={favorite} alt="legal"/>
+              <img src={Board} alt="legal" />
             </div>
-            <h3>Academic</h3>
+            <h3>Academic Transcription</h3>
             <p>
-             Structured, clear, and research-friendly support for academic excellence.
+              Lectures, focus group discussions, student
+              interviews, dissertations.
             </p>
           </article>
         </div>
