@@ -348,7 +348,7 @@
 .footer-social-group {
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 25px;
   margin-bottom: 22px;
   margin-top: 40px;   /* 🔥 moves both icons slightly down */
 }

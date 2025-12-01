@@ -28,9 +28,6 @@ const LatestPosts = () => {
           id: key,
           ...data[key],
           imageUrl: data[key].image_url || data[key].imageUrl || "",
-          author: data[key].author || "Unknown author",
-          authorImage:
-            data[key].authorImage || data[key].author_image || "", // fetched (for later use)
         }));
 
         // sort by date (newest first)
@@ -59,7 +56,7 @@ const LatestPosts = () => {
     fetchLatestBlogs();
   }, []);
 
-  // ---- FORMAT DATE (for small label under title) ----
+  // ---- FORMAT DATE ----
   const formatDate = (blog) => {
     const raw =
       blog.createdAt ||
@@ -88,7 +85,7 @@ const LatestPosts = () => {
             <article
               key={post.id}
               className="latest-card"
-              onClick={() => navigate(`/blogs/${post.id}`)} // use same route as BlogsListPage
+              onClick={() => navigate(`/blogs/${post.id}`)}
               style={{ cursor: "pointer" }}
             >
               <div className="latest-card__image-wrap">
@@ -106,13 +103,9 @@ const LatestPosts = () => {
 
                 <div className="latest-card__meta">
                   <div className="latest-card__author">
-                    {/* Avatar kept for layout – you can plug in authorImage later */}
-                    <div className="latest-card__avatar">
-                      {/* {post.authorImage && (
-                        <img src={post.authorImage} alt={post.author} />
-                      )} */}
-                    </div>
-                    <span>{post.author}</span>
+                    <div className="latest-card__avatar"></div>
+                    {/* 🔥 Always show brand instead of author name */}
+                    <span>@IncrediQuoSolutions</span>
                   </div>
 
                   <span className="latest-card__date">

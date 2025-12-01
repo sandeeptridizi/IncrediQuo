@@ -119,6 +119,7 @@
   font-weight: 600;
   color: #0B1535;
   transition: color 0.25s ease;
+  margin-left: -30px;
 }
 
 .latest-card__avatar {

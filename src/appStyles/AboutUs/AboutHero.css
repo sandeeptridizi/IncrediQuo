@@ -1,6 +1,6 @@
 .about-hero {
   background: #ffffff;
-  padding: 140px 0 120px;
+  padding: 200px 0 120px;
 }
 
 .about-hero__inner {
@@ -75,29 +75,33 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
 
-/* RIGHT IMAGE CARD – 640 × 536 */
+/* ============== RIGHT IMAGE CARD – PROPER BIG SIZE ============== */
+/* Desktop: fixed big block that fits nicely with text */
 .about-hero__image {
-  width: 640px;
-  height: 536px;           /* hero height like image 1 */
-  overflow: hidden;        /* crop the tall image */
+  flex: 0 0 520px;        /* fixed width column for image */
+  max-width: 540px;
+  height: 420px;          /* increased height */
+  overflow: hidden;       /* crop tall images */
   border-radius: 0;
   background: transparent;
   box-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .about-hero__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;       /* zoom + crop to fill wide area */
+  width: 100%;            /* fill container width */
+  height: 100%;           /* fill container height */
+  object-fit: cover;      /* zoom + crop to fill area */
   display: block;
   border-radius: 0;
   box-shadow: none;
   background: none;
   padding: 0;
 }
+
 
 /* ================== RESPONSIVE ================== */
 
@@ -115,6 +119,7 @@
 
   .about-hero__text {
     max-width: 655px;
+    margin: 0 auto;
   }
 
   .about-hero__text p {
@@ -123,16 +128,18 @@
 
   .about-hero__button {
     margin: 0 auto;
-    width: 260px;         
+    width: 260px;
   }
 
   .about-hero__image {
     width: 100%;
     max-width: 520px;
-    height: auto;
+    height: auto;          /* let height adapt */
+    margin: 0 auto;
   }
 
   .about-hero__image img {
+    width: 100%;
     height: auto;
   }
 }
@@ -169,5 +176,3 @@
     max-width: 360px;
   }
 }
-
-
