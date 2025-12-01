@@ -3,7 +3,7 @@
   max-width: 1440px;
   margin: 0 auto;
   margin-top: 5vw;
-  padding: 180px 24px 40px;  /* top space for navbar */
+  padding: 120px 24px 40px;  /* top space for navbar */
   background: #ffffff;
 }
 
@@ -106,7 +106,6 @@
   justify-content: center;   /* boxes centered */
   gap: 28px;                 /* equal spacing between boxes */
 }
-
 
 /* -------- existing box text + animations (as before) -------- */
 

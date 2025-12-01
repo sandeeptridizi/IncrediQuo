@@ -2,7 +2,7 @@
 
 .career-hero {
   /* Fluid padding using clamp for smoother scaling between breakpoints */
-  padding-top: clamp(120px, 20vw, 260px); 
+  padding-top: clamp(100px, 20vw, 260px); 
   padding-bottom: clamp(80px, 15vw, 170px);
   background: #ffffff;
 }
