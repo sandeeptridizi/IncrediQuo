@@ -1,14 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Navigate, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/logo.png";
 import { Button } from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { PiPhoneCall } from "react-icons/pi";
+
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false); 
   const dropdownRef = useRef(null);
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  // Handle scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // close dropdown when clicking outside
   useEffect(() => {
@@ -27,14 +44,32 @@ const Navbar = () => {
     setIsServicesOpen(false);
   };
 
-  return (
-    <header className="navbar">
-      <NavLink to="/" className="navbar__logo">
-        <img src={Logo} alt="Logo" />
-        <span>IncrediQuo-Solutions</span>
-      </NavLink>
+  const navbarClass = `navbar ${scrolled ? 'scrolled' : ''}`; // Add 'scrolled' class here
 
-      <nav className="navbar__links">
+  return (
+    // Use the dynamic class name
+    <header className={navbarClass}>
+      {/* 1. TOP ROW: Logo and Contact Button */}
+      <div className="navbar__top-row">
+        {/* LOGO NAME REMOVED */}
+        <NavLink to="/" className="navbar__logo">
+          <img src={Logo} alt="Logo" />
+          {/* <span>IncrediQuo-Solutions</span> <-- REMOVED */}
+        </NavLink>
+
+        <div
+          className="navbar__button contact-button-wrapper"
+          onClick={() => navigate("/contact")}
+          style={{ cursor: "pointer" }}
+        >
+          <div className="phone-icon-container">
+            <PiPhoneCall className="ringing-phone-icon" />
+          </div>
+          <Button name="Contact Us" />
+        </div>
+      </div>
+      {/* 2. BOTTOM ROW: Navigation Links */}
+      <nav className="navbar__links-row">
         <NavLink to="/" end>
           Home
         </NavLink>
@@ -83,21 +118,6 @@ const Navbar = () => {
         <NavLink to="/blogs">Blogs</NavLink>
         <NavLink to="/careers">Careers</NavLink>
       </nav>
-
-<div
-                className="navbar__button contact-button-wrapper"
-                onClick={() => navigate("/contact")}
-                style={{ cursor: "pointer" }}
-            >
-
-                <div className="phone-icon-container">
-                   
-                    <PiPhoneCall className="ringing-phone-icon" /> 
-                    
-                </div>
-
-                <Button name="Contact Us" />
-            </div>
     </header>
   );
 };

@@ -6,55 +6,140 @@
   width: 100%;
   z-index: 1000;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 70px;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  flex-direction: column; 
+  align-items: center; 
+  padding: 10px 70px;
+  
+  /* 🌟 FIX: Set the default background color here to cover content immediately */
+  background: #ffe9ec; 
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
+  padding-top: 15px; 
+  
+  transition: background-color 0.3s ease;
 }
 
-.page-section {
-  scroll-margin-top: 90px; 
+/* ❌ Remove the background from the main container's pseudo-element */
+.navbar::before {
+    content: none;
 }
 
-@keyframes navbarFadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ===================================
+   TOP ROW STYLES (Dotted Background Applied Here)
+   ================================== */
+
+.navbar__top-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding-bottom: 10px; 
+    position: relative; 
+    z-index: 10; 
+    /* Background must be transparent here to allow the pseudo-element to show */
+    background-color: transparent; 
 }
 
-/* ===== LEFT — logo image + text ===== */
+/* Dotted Background applied ONLY to the top row's pseudo-element */
+.navbar__top-row::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    
+    background-color: #ffe9ec; 
+    
+    /* Dotted Grid Pattern (Dark dots for contrast on light background) */
+    background-image: 
+        radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
+    
+    background-size: 20px 20px; 
+    
+    /* Blur Effect and Opacity */
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px); 
+    
+    opacity: 0.98; 
+    
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* ===================================
+   LINKS ROW STYLES
+   ================================== */
+
+.navbar__links-row {
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    gap: 40px;
+    padding: 10px 0; 
+    /* Background must be transparent here as it inherits the solid color from the main .navbar */
+    background-color: transparent; 
+    border-top: 1px solid rgba(0, 0, 0, 0.15); /* Darker line for contrast */
+}
+
+/* ===================================
+   SCROLLED STATE FIX (Now purely for box-shadow/final opacity on dots)
+   ================================== */
+
+.navbar.scrolled {
+    background-color: #ffe9ec; /* Ensures consistency */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
+}
+
+/* Apply scroll transition to the top row's pseudo-element */
+.navbar.scrolled .navbar__top-row::before {
+    opacity: 1; 
+    backdrop-filter: blur(0px); 
+    -webkit-backdrop-filter: blur(0px); 
+}
+
+/* Adjustments for Scrolled Text/Icons (Kept Dark for contrast) */
+.navbar.scrolled .navbar__logo span,
+.navbar.scrolled .navbar__links-row a,
+.navbar.scrolled .dropdown__title,
+.navbar.scrolled .ringing-phone-icon {
+    color: #022447; 
+    transition: color 0.3s ease;
+}
+
+.navbar.scrolled .navbar__links-row a::after,
+.navbar.scrolled .dropdown__title::after {
+    background: #022447; 
+}
+
+
+/* ===== LEFT — logo image (Logo-only, no background/radius) ===== */
 .navbar__logo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 18px;
+  gap: 0; 
+  font-size: 18px; 
   font-weight: 700;
   color: #022447;
   cursor: pointer;
   transition: transform 0.25s ease, opacity 0.25s ease;
   text-decoration: none;
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 10px;
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0; 
 }
-
 
 .navbar__logo img {
   width: 50px;
   height: 50px;
   object-fit: contain;
   transition: transform 0.25s ease;
-  background: #ffffff;
-  padding: 6px;
-  border-radius: 50%;
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0; 
 }
 
 .navbar__logo:hover {
@@ -65,14 +150,8 @@
   transform: scale(1.05);
 }
 
-/* ===== CENTER — nav links (UPDATED WITH ACTIVE STATE) ===== */
-.navbar__links {
-  display: flex;
-  align-items: center;
-  gap: 40px;
-}
-
-.navbar__links a {
+/* ===== CENTER — nav links (Targeting links inside the new wrapper) ===== */
+.navbar__links-row a {
   position: relative;
   font-size: 16px;
   font-weight: 500;
@@ -82,28 +161,36 @@
 }
 
 
-.navbar__links a:hover {
-  color: #ff6a7a;
+.navbar__links-row a:hover {
+  color: #ff6a7a; 
 }
 
-.navbar__links a:hover::after {
+.navbar__links-row a:hover::after {
   width: 100%;
 }
 
-/* ACTIVE STATE for regular links */
-.navbar__links a.active {
-  color: #ff6a7a;
+.navbar__links-row a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background: #022447; 
+  transition: width 0.25s ease;
 }
 
-.navbar__links a.active::after {
+/* ACTIVE STATE for regular links */
+.navbar__links-row a.active {
+  color: #ff6a7a; 
+}
+
+.navbar__links-row a.active::after {
   width: 100%;
 }
 
 /* ===== RIGHT — contact button ===== */
-.navbar__button {
-  margin-top: -1vw;
-}
-
 .navbar__button:active {
   transform: translateY(0);
   box-shadow: none;
@@ -115,26 +202,26 @@
   display: flex; 
   align-items: center;
   gap: 8px;
-  margin-top: -1vw; 
   cursor: pointer;
 }
 
 /* icon container */
 .phone-icon-container {
-  position: absolute;
-  right: 250px;
-  top: 40px;
-  display: flex; 
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
-}
+  display: flex; 
 
+  width: 40px;
+  height: 40px;
+  position: relative; 
+}
 /* icon */
 .ringing-phone-icon {
-  font-size: 35px;
+  font-size: 40px;
   color: #022447;
+
   transform-origin: bottom center;
   transition: color 0.25s ease, transform 0.25s ease;
   z-index: 2;
@@ -143,7 +230,7 @@
 
 /* pulsing signal */
 .phone-pulse-wave {
-  position: absolute;
+  position: absolute; 
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
@@ -156,7 +243,7 @@
 }
 
 .contact-button-wrapper:hover .ringing-phone-icon {
-  color: #ff6a7a;
+  color: #ff6a7a; 
   animation: quick-wiggle 0.8s ease infinite;
 }
 
@@ -210,14 +297,14 @@
   width: 0;
   height: 2px;
   border-radius: 9999px;
-  background: #ff6a7a;
+  background: #022447; 
   transition: width 0.25s ease;
 }
 
 .dropdown.open .dropdown__title,
 .dropdown__title:hover,
 .dropdown__title.active {
-  color: #ff6a7a;
+  color: #ff6a7a; 
 }
 
 .dropdown.open .dropdown__title::after,
@@ -226,7 +313,7 @@
   width: 100%;
 }
 
-/* MENU */
+/* MENU (Solid dark background) */
 .dropdown__menu {
   position: absolute;
   top: 100%;
@@ -235,7 +322,7 @@
   margin-top: 6px;
   width: 404px;
   height: 326px;
-  background: #002147;
+  background: #002147; /* Solid dark background */
   border-radius: 34px;
   padding: 37px 25px;
   display: flex;
@@ -250,6 +337,10 @@
   z-index: 1200;
   overflow-y: hidden;
   scrollbar-width: none;
+  
+  /* Remove blur/grid effect */
+  backdrop-filter: none; 
+  -webkit-backdrop-filter: none;
 }
 
 .dropdown.open .dropdown__menu {
@@ -395,24 +486,24 @@
 
   /* --- NAVBAR RESPONSIVE --- */
   .navbar {
-    padding: 16px 32px;
+    padding: 10px 32px;
   }
 
-  .navbar__links {
+  .navbar__top-row {
+      padding-bottom: 8px;
+  }
+  
+  .navbar__links-row {
     gap: 28px;
+    padding: 8px 0;
   }
 
-  .navbar__links a {
+  .navbar__links-row a {
     font-size: 15px; 
   }
 
-  .navbar__button {
-    padding: 9px 26px;
-    font-size: 15px;
-  }
-
   .page-section {
-    scroll-margin-top: 82px;
+    scroll-margin-top: 130px; 
   }
 
   .dropdown__menu {
@@ -445,8 +536,14 @@
 
   /* --- NAVBAR RESPONSIVE --- */
   .navbar {
-    padding: 12px 18px;
+    padding: 10px 18px;
     column-gap: 12px;
+  }
+  
+  .navbar__top-row {
+      flex-wrap: wrap; 
+      justify-content: space-between;
+      padding-bottom: 6px;
   }
 
   .navbar__logo {
@@ -458,30 +555,27 @@
     height: 26px;
   }
 
-  .navbar__links {
-    flex: 1;
+  .navbar__links-row {
+    flex: none;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
     flex-wrap: wrap;
+    padding: 8px 0;
   }
 
-  .navbar__links a {
-    font-size: 14px;
-  }
-
-  .navbar__button {
-    padding: 8px 20px;
+  .navbar__links-row a {
     font-size: 14px;
   }
 
   .page-section {
-    scroll-margin-top: 82px;
+    scroll-margin-top: 130px; 
   }
 
   /* dropdown mobile */
   .dropdown__menu {
     position: fixed;
-    top: 64px;
+    top: auto; 
+    margin-top: 6px; 
     left: 50%;
     transform: translateX(-50%);
     width: calc(100vw - 32px);
@@ -491,6 +585,10 @@
     padding: 22px 18px;
     border-radius: 20px;
     gap: 16px;
+    
+    /* Ensure no blur on mobile dropdown */
+    backdrop-filter: none; 
+    -webkit-backdrop-filter: none;
   }
 
   .dropdown__menu a,
@@ -534,6 +632,13 @@
     padding: 10px 14px;
     row-gap: 8px;
   }
+  
+  .navbar__top-row {
+      width: 100%;
+      flex-direction: column; 
+      gap: 8px;
+      padding-bottom: 8px;
+  }
 
   .navbar__logo {
     width: 100%;
@@ -546,26 +651,25 @@
     height: 24px;
   }
 
-  .navbar__links {
+  .navbar__links-row {
     width: 100%;
-    justify-content: flex-start;
-    column-gap: 18px;
+    justify-content: space-between;
+    column-gap: 12px;
     row-gap: 6px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
   }
 
-  .navbar__links a {
+  .navbar__links-row a {
     font-size: 13px;
   }
 
-  .navbar__button {
-    width: 100%;
-    text-align: center;
-    padding: 8px 18px;
-    font-size: 14px;
+  .contact-button-wrapper {
+      width: 100%; 
+      justify-content: center;
   }
 
   .page-section {
-    scroll-margin-top: 82px;
+    scroll-margin-top: 170px; 
   }
 
   .dropdown__menu {

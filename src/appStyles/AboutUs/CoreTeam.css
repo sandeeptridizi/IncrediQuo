@@ -1,24 +1,12 @@
-/* OPTIONAL: enable vertical scroll snap for full-page sections */
-html,
-body {
-  scroll-snap-type: y mandatory;
-}
-
-/* any section you give class="snap-section" will snap into frame */
-.snap-section {
-  scroll-snap-align: start;
-}
-
 /* ===========================
-   OUR FOUNDERS
-   =========================== */
+    OUR FOUNDERS
+    =========================== */
 
+/* Base Section Styling (Kept mostly intact) */
 .core-team {
   padding: 30px 0 80px;
   background: #ffffff;
   overflow-x: hidden;
-
-  /* NEW: make section fit screen height & center content */
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -30,7 +18,7 @@ body {
   padding: 0 24px;
 }
 
-/* Heading — 755 × 62, 52 / 62, SemiBold */
+/* Heading */
 .core-team__inner h2 {
   max-width: 755px;
   width: 100%;
@@ -52,16 +40,81 @@ body {
   justify-content: center;
 }
 
-/* card */
+/* ===================================
+   FLIP CARD SETUP (The new structure)
+   =================================== */
+
 .core-team__card {
+  /* Establish 3D perspective space */
+  perspective: 1000px; 
   position: relative;
   width: 430px;
   height: 568px;
   border-radius: 20px;
   overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* image */
+/* Optional: Subtle lift on hover */
+.core-team__card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+
+/* Container for the flipping content */
+.core-team__flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* Duration of the flip animation */
+  transform-style: preserve-3d; /* KEY: Enables the 3D effect */
+}
+
+/* Rotate the flipper container on hover */
+.core-team__card:hover .core-team__flipper {
+  transform: rotateY(180deg);
+}
+
+/* Styles common to both faces */
+.core-team__front,
+.core-team__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Hide the opposite face */
+  backface-visibility: hidden; 
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+
+/* ----------------- FRONT FACE (Image + Overlay Text) ----------------- */
+
+.core-team__front {
+  background: #ffffff;
+}
+
+/* The existing image overlay (the gradient) is now applied to the front */
+.core-team__front::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 223px;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.0) 100%
+  );
+  pointer-events: none;
+  z-index: 1; /* under text, above image */
+}
+
 .core-team__image-wrap {
   width: 100%;
   height: 100%;
@@ -74,52 +127,77 @@ body {
   display: block;
 }
 
-/* === GRADIENT BACKGROUND FOR TEXT (Figma exact style) === */
-.core-team__card::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 223px; /* EXACT from Figma */
-  border-radius: 0 0 20px 20px;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.0) 100%
-  );
-  pointer-events: none;
-  z-index: 1; /* under text, above image */
+/* Overlay text container (to group name/role) */
+.core-team__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    z-index: 2;
+    box-sizing: border-box;
 }
 
-/* NAME (Shashank Paturi) */
+/* Name (Text moved inside overlay, styling updated) */
 .core-team__name {
-  position: absolute;
-  left: 24px;
-  bottom: 60px;                /* sits inside gradient box */
   font-family: "Poppins", sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 600;
   letter-spacing: -0.5px;
   color: #ffffff;
-  margin: 0;
-  z-index: 2;
+  margin: 0 0 4px 0;
 }
 
-/* ROLE (Co Founder & Director) */
+/* Role (Text moved inside overlay, styling updated) */
 .core-team__role {
-  position: absolute;
-  left: 24px;
-  bottom: 32px;
   font-family: "Poppins", sans-serif;
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
   color: #E6E6E6;
   margin: 0;
-  z-index: 2;
 }
+
+/* ----------------- BACK FACE (Bio/Details) ----------------- */
+
+.core-team__back {
+  transform: rotateY(180deg); /* Start rotated 180 degrees */
+  
+  /* Requested Styling */
+  background-color: #ffe9ec; /* Light Pink Background */
+  color: #022447; /* Dark Blue Text Color */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.core-team__back-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #022447;
+}
+
+.core-team__back-role {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #022447;
+    border-bottom: 2px solid #ff6a7a; /* Use an accent color for separator */
+    padding-bottom: 5px;
+}
+
+.core-team__bio-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #022447;
+}
+
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
@@ -136,26 +214,36 @@ body {
     justify-items: center;
   }
 
+  /* Make card flexible on mobile */
   .core-team__card {
     width: 100%;
     max-width: 430px;
-    height: auto;
+    height: 480px; /* Set a fixed height for consistency */
   }
 
-  .core-team__image-wrap img {
-    height: auto;
-  }
-
-  .core-team__card::after {
+  /* Adjust front/back faces to new size */
+  .core-team__front::after {
     height: 190px;
+  }
+  
+  /* Update overlay position for smaller cards */
+  .core-team__overlay {
+    padding: 20px;
   }
 
   .core-team__name {
-    bottom: 48px;
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 2px;
   }
 
   .core-team__role {
-    bottom: 24px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .core-team__back {
+    padding: 30px;
   }
 }
 
@@ -176,5 +264,18 @@ body {
 
   .core-team__card {
     max-width: 360px;
+    height: 420px;
+  }
+  
+  .core-team__back-name {
+      font-size: 24px;
+  }
+  
+  .core-team__back-role {
+      font-size: 16px;
+  }
+  
+  .core-team__bio-text {
+      font-size: 14px;
   }
 }
