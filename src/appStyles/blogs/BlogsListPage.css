@@ -226,12 +226,12 @@
 
 @media (max-width: 1024px) {
   .blogs-page {
-    padding: 80px 40px 100px;
+    padding: 120px 40px 100px;
   }
 
   .blogs-hero__card {
     height: auto;
-    padding: 40px 32px;
+    padding: 70px 32px;
     border-radius: 60px;
     margin-top: 7vw;
   }
@@ -271,12 +271,12 @@
 }
 @media (max-width: 600px) {
   .blogs-page {
-    padding: 100px 18px 70px;
-    padding-top: 140px;
+    padding: 380px 18px 70px;
+    padding-top: 170px;
   }
 
   .blogs-hero__card {
-    padding: 28px 20px;
+    padding: 68px 20px;
     border-radius: 34px;
     height: auto;
   }

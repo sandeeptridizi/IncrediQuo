@@ -366,10 +366,10 @@
   transform: translateX(-50%);
   margin-top: 6px;
   width: 404px;
-  height: 326px;
+  height: 320px;
   background: #002147; 
   border-radius: 34px;
-  padding: 37px 25px;
+  padding: 20px 25px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -382,7 +382,7 @@
   z-index: 1200;
   overflow-y: hidden;
   scrollbar-width: none;
-  
+
   backdrop-filter: none; 
   -webkit-backdrop-filter: none;
 }
@@ -408,7 +408,7 @@
 
 .dropdown__menu a:first-child {
   width: 355px;
-  height: 56px;
+  height: 48px;
   border-radius: 13px;
   display: flex;
   align-items: center;
@@ -419,7 +419,7 @@
 }
 
 .dropdown__menu a:hover {
-  background: #ffffff;
+  background: #ffe9f1;
   color: #002147;
 }
 

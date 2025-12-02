@@ -36,6 +36,9 @@
   border-radius: 20px;
   padding: 22px 20px;
   text-align: left;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .page-animate .ts-related__card {
