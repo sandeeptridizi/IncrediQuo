@@ -6,6 +6,7 @@ import imgLegalTrans from "../../assets/hero/Legal transcription.jpg";
 import imgLegal from "../../assets/hero/Legal.jpg";
 import imgFinancial from "../../assets/hero/Financial transcription .png";
 import { Button } from "../Button/Button";
+
 const images = [imgMedical, imgMedia, imgLegalTrans, imgLegal, imgFinancial];
 const LINE1_TEXT = "Transcriptions That ";
 const LINE2_TEXT = "Speak Your Accuracy";
@@ -24,7 +25,6 @@ const isMobile = window.innerWidth <= 720;
   const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // AUTO-SCROLL
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -46,17 +46,6 @@ const isMobile = window.innerWidth <= 720;
     return () => clearInterval(interval);
   }, []);
 
-  // CLICK ON DOT MANUAL SCROLL
-  const jumpTo = (i) => {
-    const track = trackRef.current;
-    const slides = Array.from(track.children);
-    setActiveIndex(i);
-    track.scrollTo({
-      left: slides[i].offsetLeft,
-      behavior: "smooth",
-    });
-  };
-
   const openCalendly = () => {
     window.open(
       "https://calendly.com/shashank-incrediquosolutions/30min",
@@ -68,7 +57,6 @@ const isMobile = window.innerWidth <= 720;
   return (
     <section id="home" className="hero">
       <div className="hero__inner">
-        {/* LEFT */}
         <div className="hero__content">
           <h1 className="hero__title typewriter-multi-line">
             <span
@@ -96,12 +84,14 @@ const isMobile = window.innerWidth <= 720;
               ></span>
             </span>
           </h1>
+
           <p className="hero__subtitle">
             IncrediQuo Solutions offers professional transcription services with
             exceptional accuracy. Whether it's corporate meetings, academic
             lectures, market research, podcasts, or legal discussions, we
             deliver high-quality transcripts that are precise, secure, and fast.
           </p>
+
           <div className="hero__buttons">
             <div onClick={handleGetStarted}>
               <Button
@@ -137,6 +127,7 @@ const isMobile = window.innerWidth <= 720;
             </div>
           </div>
         </div>
+
         <div className="hero__image">
           <div className="hero__image-track" ref={trackRef}>
             {images.map((img, i) => (
@@ -146,17 +137,6 @@ const isMobile = window.innerWidth <= 720;
                 className="hero__image-main"
                 alt={`Slide ${i}`}
               />
-            ))}
-          </div>
-          <div className="hero__dots">
-            {images.map((_, i) => (
-              <span
-                key={i}
-                className={`hero__dot ${
-                  activeIndex === i ? "active" : ""
-                }`}
-                onClick={() => jumpTo(i)}
-              ></span>
             ))}
           </div>
         </div>

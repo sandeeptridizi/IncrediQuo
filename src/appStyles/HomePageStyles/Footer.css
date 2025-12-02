@@ -204,7 +204,7 @@
 }
 
 .footer-column--quikers .footer-bottom-links {
-  margin-top: 66px;
+  margin-top: 86px;
   margin-bottom: 0;
 }
 
@@ -259,7 +259,7 @@
 
 .footer-bottom-links {
   margin-top: auto;
-  margin-bottom: -20px;
+  margin-bottom: -30px;
   display: flex;
   gap: 40px;
   padding-top: 10px;

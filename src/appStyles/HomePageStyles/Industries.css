@@ -32,28 +32,25 @@
 }
 
 .industry-card {
-  width: 263px;
+  width: 243px;
   height: 334px;
   background-size: 256px 334px;
   background-repeat: no-repeat;
   background-position: center;
-  border-radius: 24px;
   padding: 34px 24px 26px;
-  display: flex;
-  flex-direction: column;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 16px 32px rgba(14, 31, 81, 0.18);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  transform: none;
-  background-clip: padding-box;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .industry-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 42px rgba(14, 31, 81, 0.25);
   background-size: 300px 353px;
-  background-color: #fdfafa !important;
 }
 
 .industry-card__icon {

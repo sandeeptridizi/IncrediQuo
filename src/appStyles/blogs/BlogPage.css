@@ -1,7 +1,7 @@
 .blog-page {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 140px 60px 120px;
+  padding: 180px 60px 120px;
   background: #ffffff;
 }
 
@@ -17,6 +17,7 @@
   border-radius: 70px;   
   object-fit: cover;
   margin: 0 auto;
+  padding-top: 10px;
 }
 
 .blog-article {
@@ -68,37 +69,39 @@
 }
 
 .blog-contact {
-  background: #ffe9ec;        
-  padding: 40px 0;            
+  background: #ffe9ec;
+  padding: 40px 0;
   margin: 0 0 80px;
 }
 
 .blog-contact__inner {
-  max-width: 1278px;          
+  max-width: 1278px;
   width: 100%;
   margin: 0 auto;
-  padding: 0;                  
+  padding: 0;
   display: flex;
   align-items: center;
-  gap: 34px;                  
+  gap: 34px;
 }
 
 .blog-contact__card {
-  background: #ffe9ec;       
-  border-radius: 5px;         
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);  
+  background: #ffe9ec;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
-  width: 642px;              
-  height: 457px;               
-  padding: 40px 29px 32px;    
+  width: 842px;
+  height: 457px;
+  padding: 40px 29px 42px;
   box-sizing: border-box;
+  width: 820px;        /* increase card width */
+  max-width: 100%;
 }
 
 .blog-contact__form {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  align-items: center; 
+  align-items: center;
 }
 
 .blog-contact__field span {
@@ -112,21 +115,19 @@
 
 .blog-contact__field input,
 .blog-contact__field textarea {
-    max-width: 100%;
-  width: 80vw !important;                /* Figma: 584 */
-  height: 64px;                /* Figma: 64 */
-  border: none;
-  border-radius: 10px;        
+  width: 668px;         
+  max-width: 100%;
+  height: 64px;
+  border-radius: 10px;
   background: #001f5b;
   color: #ffe9ec;
   padding: 14px 18px;
   font-size: 14px;
-  outline: none;
   box-sizing: border-box;
 }
 
 .blog-contact__field textarea {
-  height: 141px;              
+  height: 141px;
   min-height: 141px;
   resize: none;
 }
@@ -137,20 +138,20 @@
 }
 
 .blog-contact__submit {
-  margin-left: 0vw;
-  margin-top: -0.9 vw;
+  margin-left: 0;
+  margin-top: -0.9vw; /* or just 0 if you don’t need negative space */
 }
 
 .blog-contact__text {
-  width: 506px;               
+  width: 506px;
 }
 
 .blog-contact__text h2 {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-weight: 900;           
-  font-size: 84px;            
-  line-height: 71px;         
+  font-weight: 900;
+  font-size: 84px;
+  line-height: 71px;
   letter-spacing: -0.04em;
   color: #002147;
   margin: 0 0 12px;
@@ -159,13 +160,15 @@
 .blog-contact__text p {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 16px;            
-  font-weight: 600;           
-  line-height: 1;            
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
   color: #111827;
-  max-width: 493px;           
+  max-width: 493px;
   margin: 0;
 }
+
+/* ====== RESPONSIVE ====== */
 
 @media (max-width: 1024px) {
   .blog-contact__inner {
@@ -177,13 +180,13 @@
   .blog-contact__card {
     width: 100%;
     max-width: 642px;
-    height: auto;             
-    
+    height: auto;
   }
 
   .blog-contact__field input,
   .blog-contact__field textarea {
     width: 100%;
+    max-width: 100%;
   }
 
   .blog-contact__text {
@@ -198,7 +201,10 @@
   }
 
   .blog-contact__card {
+    width: 100%;
+    height: auto;
     padding: 26px 20px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
   }
 
   .blog-contact__submit {
@@ -208,16 +214,16 @@
   }
 
   .blog-contact__text h2 {
-    font-size: 32px;
-    line-height: 34px;
+    font-size: 26px;
+    line-height: 32px;
   }
 
   .blog-contact__text p {
     font-size: 14px;
-    line-height: 20px;
-    margin-top: 8px;
+    line-height: 22px;
   }
 }
+
 
 
 .blog-approach {
