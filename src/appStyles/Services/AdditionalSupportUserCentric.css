@@ -92,7 +92,11 @@
   }
 
   .as-usercentric__item {
-    padding: 0;
+      width: 340px;
+    height: 243px;
+    text-align: center;
+    margin-left: 7vw;
+    padding-top: 4vw !important;
   }
 
   .as-usercentric__item::after {
@@ -100,7 +104,7 @@
   }
   .as-usercentric__item p {
 width: 80vw;
-margin-left: 10vw;
+margin-left: 1vw;
 }
 }
 

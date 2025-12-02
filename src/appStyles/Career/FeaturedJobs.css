@@ -197,6 +197,12 @@ body {
 }
 
 @media (max-width: 1024px) {
+  .hiw {
+margin-top: 10vw;
+}
+.hiw__title {
+  width: 80vw;
+}
   .hiw__row {
     width: 100%;
     flex-wrap: wrap;
