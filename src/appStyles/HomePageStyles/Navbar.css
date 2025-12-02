@@ -8,12 +8,8 @@
   flex-direction: column; 
   align-items: center; 
   padding: 10px 70px;
-<<<<<<< HEAD
   background: #ffffff; 
   
-=======
-  background: #ffe9ec; 
->>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
@@ -45,7 +41,6 @@
   height: 100%;
   z-index: -1; 
   
-<<<<<<< HEAD
   background-color: #ffffff; 
   background-image: 
     /* Denser, slightly transparent pink dots */
@@ -66,17 +61,6 @@
   display: flex; 
   align-items: center;
   cursor: pointer;
-=======
-  background-color: #ffe9ec; 
-  background-image: 
-      radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
-  
-  background-size: 20px 20px; 
-  backdrop-filter: blur(8px); 
-  -webkit-backdrop-filter: blur(8px); 
-  opacity: 0.98; 
-  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
->>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
 }
 
 /* Container for the icon (kept from original code but ensures Z-index) */
@@ -161,13 +145,8 @@
 }
 
 .navbar.scrolled {
-<<<<<<< HEAD
     background-color: #ffffff; /* Ensures consistency */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
-=======
-  background-color: #ffe9ec;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
->>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
 }
 
 .navbar.scrolled .navbar__top-row::before {
