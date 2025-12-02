@@ -20,6 +20,7 @@ const Hero = ({ onOpenContact }) => {
   const handleGetStarted = () => {
     if (typeof onOpenContact === "function") onOpenContact();
   };
+const isMobile = window.innerWidth <= 720;
 
   const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -109,10 +110,14 @@ const Hero = ({ onOpenContact }) => {
             <div onClick={openCalendly}>
               <Button
                 name="Schedule Appointment"
-                paddingXL="4vw"
+                // paddingXL="14vw"
                 paddingXM="22vw"
-                widthL="16vw"
-                widthM="42vw"
+                widthL="15.8vw"
+                // widthM="48vw"
+                  paddingXL={isMobile ? "14vw" : "14vw"}
+    // paddingXM={isMobile ? "22vw" : "22vw"}
+    // widthL={isMobile ? "44vw" : "15.8vw"}
+    widthM={isMobile ? "48vw" : "44vw"}
                 bacgrounClr="#022447"
                 bacgrounArrow="#ffffff"
                 colorArrow="#022447"

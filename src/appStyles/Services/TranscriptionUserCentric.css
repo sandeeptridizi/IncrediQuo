@@ -98,16 +98,21 @@
   }
 
   .ts-usercentric__item {
-    width: 100%;
-    height: auto;
+    width: 90%;
+    height: auto; 
+    margin-bottom: 8vw;
   }
+
+  .ts-usercentric__icon {
+margin-top: 2vw;
+}
 
   .ts-usercentric__divider {
     width: 100%;
   }
   .ts-usercentric__item p {
 width: 80vw;
-margin-left: 5.5vw;
+/* margin-left: 5.5vw; */
 }
 }
 .ts-usercentric__item {

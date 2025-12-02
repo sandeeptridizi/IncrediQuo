@@ -103,6 +103,8 @@
   .how__item {
     width: 100%;
     max-width: 420px;
+height: 65vw;
+padding-top: 3vw !important;
   }
 
   .how__item h3 {
