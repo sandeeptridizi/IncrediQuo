@@ -1,4 +1,3 @@
-// src/components/AdditionalSupportService/AdditionalSupportServicePage.jsx
 import React from "react";
 import AdditionalSupportHero from "./AdditionalSupportHero";
 import AdditionalSupportUserCentric from "./AdditionalSupportUserCentric";

@@ -1,18 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../appStyles/HomePageStyles/Hero.css";
-
-// hero images
 import imgMedical from "../../assets/hero/Medical.jpg";
 import imgMedia from "../../assets/hero/Media.jpeg";
 import imgLegalTrans from "../../assets/hero/Legal transcription.jpg";
 import imgLegal from "../../assets/hero/Legal.jpg";
 import imgFinancial from "../../assets/hero/Financial transcription .png";
-
 import { Button } from "../Button/Button";
-
 const images = [imgMedical, imgMedia, imgLegalTrans, imgLegal, imgFinancial];
-
-// typing animation constants
 const LINE1_TEXT = "Transcriptions That ";
 const LINE2_TEXT = "Speak Your Accuracy";
 
@@ -101,17 +95,13 @@ const Hero = ({ onOpenContact }) => {
               ></span>
             </span>
           </h1>
-
           <p className="hero__subtitle">
             IncrediQuo Solutions offers professional transcription services with
             exceptional accuracy. Whether it's corporate meetings, academic
             lectures, market research, podcasts, or legal discussions, we
             deliver high-quality transcripts that are precise, secure, and fast.
           </p>
-
-          {/* ---- BUTTONS ---- */}
           <div className="hero__buttons">
-            {/* Get Started */}
             <div onClick={handleGetStarted}>
               <Button
                 name="Get Started"
@@ -126,8 +116,6 @@ const Hero = ({ onOpenContact }) => {
                 colorTextHover="#022447"
               />
             </div>
-
-            {/* Schedule Appointment (Calendly) */}
             <div onClick={openCalendly}>
               <Button
                 name="Schedule Appointment"
@@ -144,8 +132,6 @@ const Hero = ({ onOpenContact }) => {
             </div>
           </div>
         </div>
-
-        {/* RIGHT — SCROLLABLE IMAGES */}
         <div className="hero__image">
           <div className="hero__image-track" ref={trackRef}>
             {images.map((img, i) => (
@@ -157,8 +143,6 @@ const Hero = ({ onOpenContact }) => {
               />
             ))}
           </div>
-
-          {/* POINTER DOTS */}
           <div className="hero__dots">
             {images.map((_, i) => (
               <span

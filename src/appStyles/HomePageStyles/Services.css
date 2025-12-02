@@ -1,6 +1,3 @@
-/* ===========================
-   OUR SERVICES SECTION
-   =========================== */
 
 .section.services {
   background-color: #fdf9fb;
@@ -21,14 +18,12 @@
   }
 }
 
-/* center whole block on page */
 .services-container {
   max-width: 1120px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-/* SECTION TITLE */
 .services-title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
@@ -39,10 +34,6 @@
   margin: 0 0 36px;
 }
 
-/* ===========================
-   GRID – 2 × 2 CARDS
-   =========================== */
-
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 526px);
@@ -51,10 +42,6 @@
   justify-content: center;
 }
 
-/* ===========================
-   SERVICE CARD
-   =========================== */
-
 .service-card {
   width: 536px;
   height: 334px;
@@ -62,7 +49,6 @@
   border-radius: 10px;
   padding: 32px 32px 28px;
   cursor: pointer;
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
   
   transition: 
     background-color 0.45s ease,

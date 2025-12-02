@@ -1,4 +1,4 @@
-// src/components/HomePage/CTA.jsx
+
 import React, { useState } from "react";
 import "../../appStyles/HomePageStyles/CTA.css";
 import ContactSection from "./ContactSection";
@@ -34,9 +34,9 @@ const CTA = () => {
               <Button
               name="Get Started"
               paddingXL="8.6vw"
-              paddingXM="24.5vw" // ← mobile padding
-              widthL="10.86vw" // ← THIS IS KEY: let content decide width
-              widthM="30.3vw" // ← auto width on mobile too
+              paddingXM="24.5vw" 
+              widthL="10.86vw" 
+              widthM="30.3vw" 
               bacgrounClr="#022447"
               bacgrounArrow="#ffffff"
               colorArrow="#022447"
@@ -47,8 +47,6 @@ const CTA = () => {
           </div>
         </div>
       </section>
-
-      {/* Popup contact form */}
       {showContact && (
         <ContactSection onClose={() => setShowContact(false)} />
       )}

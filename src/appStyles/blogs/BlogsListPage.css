@@ -1,22 +1,20 @@
-/* ========= PAGE LAYOUT ========= */
 .blogs-page {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 140px 60px 120px;
+  padding: 180px 60px 120px;
   background: #ffffff;
 }
 
-/* ========= HERO CARD ========= */
 .blogs-hero {
   margin-bottom: 72px;
 }
 
 .blogs-hero__card {
-  background: #002147;                 /* Figma: #002147 */
-  border-radius: 70px;                  /* Figma radius 70 */
+  background: #002147;                
+  border-radius: 70px;                  
   width: 100%;
-  max-width: 1138px;                    /* Figma width 1138 */
-  height: 397px;                        /* Figma height 397 */
+  max-width: 1138px;                  
+  height: 397px;                      
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -25,16 +23,16 @@
 
 .blogs-hero__title {
   font-family: "DM Serif Display", "Times New Roman", serif;
-  font-size: 32px;                      /* Figma size 32 */
+  font-size: 32px;                     
   font-weight: 400;
   line-height: 1;
-  color: #ffb5be;                       /* Figma color #FFB5BE */
+  color: #ffb5be;                      
   margin: 0;
 }
 
-/* ========= LIST HEADER ========= */
+
 .blogs-list {
-  max-width: 966px;                     /* Figma card width */
+  max-width: 966px;                    
   margin: 40px auto 0;
 }
 
@@ -60,7 +58,6 @@
   color: #002147;
 }
 
-/* ========= BLOG ITEMS ========= */
 .blogs-list__items {
   display: flex;
   flex-direction: column;
@@ -72,44 +69,37 @@
   color: inherit;
 }
 
-/* Outer card (Group width 966, radius 100, border 1px) */
 .blog-item {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 100px;                 /* Figma radius 100 */
-  border: none;            /* Figma border */
-  padding: 32px 48px 28px;              /* leaves ~876 inner width */
+  border-radius: 100px;                
+  border: none;            
+  padding: 32px 48px 28px;            
   display: grid;
-  grid-template-columns: 73px minmax(0, 1fr); /* left: 73px (date) */
+  grid-template-columns: 73px minmax(0, 1fr); 
   column-gap: 32px;
   align-items: flex-start;
 }
-
-/* LEFT COLUMN (73 × 201) */
 .blog-item__left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
-
 .blog-item__day {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 600;
-  font-size: 32px;                      /* Figma 32 */
+  font-size: 32px;                     
   line-height: 1;
   color: #002147;
 }
-
 .blog-item__month {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 600;
-  font-size: 16px;                      /* close to Figma */
+  font-size: 16px;                    
   letter-spacing: 0.15em;
   color: #002147;
   margin-top: 4px;
 }
-
-/* @samurai2099 – vertical */
 .blog-item__author-vert {
   margin-top: 20px;
   font-family: "Lexend Deca", sans-serif;
@@ -120,27 +110,23 @@
   transform: rotate(180deg);
 }
 
-/* RIGHT COLUMN (Group1 876 × 217) */
 .blog-item__right {
   padding: 0;
   box-sizing: border-box;
 }
-
-/* Title */
 .blog-item__title {
   font-family: "DM Serif Display", serif;
-  font-size: 32px;                      /* Figma 32 */
+  font-size: 32px;                     
   line-height: 1.375;
   font-weight: 400;
   color: #002147;
   margin: 0 0 8px;
 }
 
-/* Excerpt text (876 × 154) */
 .blog-item__excerpt {
   font-family: "Lexend Deca", sans-serif;
-  font-size: 20px;                      /* Figma size 20 */
-  line-height: 1.6;                     /* approx 32px line-height */
+  font-size: 20px;                    
+  line-height: 1.6;                     
   color: #111827;
   margin: 0 0 10px;
 }
@@ -156,14 +142,12 @@
   cursor: pointer;
 }
 
-/* Tags row */
 .blog-item__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
-/* Single tag (116 × 30, radius 100, border 1px) */
 .blog-item__tag {
   font-family: "Lexend Deca", sans-serif;
   font-size: 13px;
@@ -173,7 +157,6 @@
   border: 1px solid #002147;
 }
 
-/* ========= BOTTOM PINK STRIP ========= */
 .blogs-approach {
   background: #ffe9ec;
   padding: 80px 0 60px;
@@ -194,8 +177,6 @@
   margin: 0 auto 32px;
   max-width: 1061px;
 }
-
-/* ========= BOTTOM PINK STRIP ========= */
 .blogs-approach {
   background: #ffe9ec;
   padding: 80px 0 10px;
@@ -212,8 +193,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;   /* ⬅️ vertically center both text + button */
-  gap: 26px;                 /* spacing between text & button (Figma style) */
+  justify-content: center;   
+  gap: 26px;                
 }
 
 
@@ -225,16 +206,12 @@
   max-width: 1061px;
 }
 
-/* CTA BUTTON — centered (no style change) */
 .blogs-approach__button {
   display: flex;
   align-items: center;
   justify-content: center;
-   margin: -10px auto;        /* ⬅️ makes button perfectly centered */
+   margin: -10px auto;       
 }
-
-
-/* ========= IMAGE INSIDE BLOG ITEM (if any) ========= */
 .blog-item img,
 .blog-item__image img,
 .blog-item__right img,
@@ -247,7 +224,6 @@
   display: block;
 }
 
-/* ========= TABLET (≤ 1024px) ========= */
 @media (max-width: 1024px) {
   .blogs-page {
     padding: 80px 40px 100px;
@@ -293,8 +269,6 @@
     border-radius: 42px;
   }
 }
-
-/* ========= MOBILE (≤ 600px) ========= */
 @media (max-width: 600px) {
   .blogs-page {
     padding: 100px 18px 70px;
@@ -322,7 +296,7 @@
   }
 
   .blog-item img {
-    order: -1; /* image always on top */
+    order: -1; 
   }
 
   .blog-item__title {

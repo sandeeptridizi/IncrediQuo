@@ -1,5 +1,3 @@
-/* ========= GLOBAL RESET ========= */
-
 *,
 *::before,
 *::after {
@@ -16,39 +14,30 @@ body {
   scroll-behavior: smooth;
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;          /* ⬅️ No horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* ========= GLOBAL PAGE LAYOUT ========= */
-
-/* every page root <main> will be limited + centered */
 main {
   width: 100%;
-  max-width: 1440px;           /* ⬅️ global page width */
-  margin: 0 auto;              /* center on screen */
+  max-width: 1440px;
+  margin: 0 auto;
   background-color: #ffffff;
 }
 
-/* make sure sections never push outside the page */
 section {
   width: 100%;
   overflow-x: hidden;
 }
 
-/* optional wrapper if you use .app */
 .app {
   min-height: 100vh;
   width: 100%;
 }
 
-/* ========= REUSABLE TRANSITIONS ========= */
-
 :root {
   --transition-fast: 0.2s ease;
   --transition-med: 0.35s ease;
 }
-
-/* ========= KEYFRAME ANIMATIONS ========= */
 
 @keyframes fadeInUp {
   from {
@@ -92,7 +81,6 @@ section {
   }
 }
 
-/* zoom / scale in */
 @keyframes scaleIn {
   from {
     opacity: 0;
@@ -104,9 +92,9 @@ section {
   }
 }
 
-/* floating image motion */
 @keyframes floatImg {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -114,9 +102,9 @@ section {
   }
 }
 
-/* subtle pulse for buttons */
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
@@ -124,7 +112,6 @@ section {
   }
 }
 
-/* hero-style fade up (used globally) */
 @keyframes heroFadeUp {
   from {
     opacity: 0;
@@ -136,63 +123,59 @@ section {
   }
 }
 
-/* ========= GLOBAL PAGE MOTION ========= */
-
-/* wrapper for each page – you already add className="page-animate" */
 .page-animate {
   animation: fadeIn 0.3s ease-out;
 }
 
-/* animate direct children of the page (hero, first section blocks, etc.) */
 .page-animate > * {
   opacity: 0;
   animation: fadeInUp 0.7s ease-out forwards;
 }
 
-/* slight stagger so blocks appear one by one */
-.page-animate > *:nth-child(1) { animation-delay: 0.10s; }
-.page-animate > *:nth-child(2) { animation-delay: 0.20s; }
-.page-animate > *:nth-child(3) { animation-delay: 0.30s; }
-.page-animate > *:nth-child(4) { animation-delay: 0.40s; }
-.page-animate > *:nth-child(5) { animation-delay: 0.50s; }
+.page-animate > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.page-animate > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.page-animate > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.page-animate > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.page-animate > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
 
-/* ========= OPTIONAL UTILITY CLASSES (for extra motion) ========= */
-
-/* fade + move up */
 .fade-up {
   opacity: 0;
   animation: fadeInUp 0.7s ease-out forwards;
 }
 
-/* fade from left */
 .fade-left {
   opacity: 0;
   animation: fadeInLeft 0.7s ease-out forwards;
 }
 
-/* fade from right */
 .fade-right {
   opacity: 0;
   animation: fadeInRight 0.7s ease-out forwards;
 }
 
-/* scale-in */
 .scale-in {
   opacity: 0;
   animation: scaleIn 0.6s ease-out forwards;
 }
 
-/* floating image (for images where you DO want float) */
 .img-float {
   animation: floatImg 4s ease-in-out infinite;
 }
 
-/* pulsing button */
 .btn-pulse {
   animation: pulse 2s ease-in-out infinite;
 }
 
-/* hover lift interaction for cards / buttons */
 .hover-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -202,21 +185,24 @@ section {
   box-shadow: 0 14px 24px rgba(15, 23, 42, 0.15);
 }
 
-/* small delay helpers */
-.delay-1 { animation-delay: 0.15s; }
-.delay-2 { animation-delay: 0.30s; }
-.delay-3 { animation-delay: 0.45s; }
-.delay-4 { animation-delay: 0.60s; }
+.delay-1 {
+  animation-delay: 0.15s;
+}
+.delay-2 {
+  animation-delay: 0.3s;
+}
+.delay-3 {
+  animation-delay: 0.45s;
+}
+.delay-4 {
+  animation-delay: 0.6s;
+}
 
-/* === EXTRA GLOBAL ANIMATIONS BASED ON .page-animate === */
-
-/* All images inside any page: hero-style fade up */
 .page-animate img {
   opacity: 0;
   animation: heroFadeUp 0.9s ease-out forwards;
 }
 
-/* 3D hover for images where you WANT it */
 .page-animate img {
   transform: perspective(800px) translateZ(0);
   transition: transform 0.45s ease, box-shadow 0.45s ease;
@@ -227,7 +213,6 @@ section {
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
 
-/* ===== OVERRIDE: HERO IMAGE SHOULD NOT ANIMATE AT ALL ===== */
 .hero__image img {
   opacity: 1 !important;
   transform: none !important;

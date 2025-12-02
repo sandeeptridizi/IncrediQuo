@@ -1,4 +1,3 @@
-/* =============== TAGLINE SECTION =============== */
 .tagline-section {
   width: 100%;
   background: #ffffff;
@@ -9,7 +8,6 @@
   gap: 18px;
 }
 
-/* each scrolling row */
 .tagline-row {
   width: 100vw;
   height: 61px;
@@ -17,28 +15,25 @@
   position: relative;
 }
 
-/* Figma desktop widths */
 .tagline-row--top {
-  width: 1903px; /* “99% ACCURACY EVERY TIME” */
+  width: 1903px;
 }
 
 .tagline-row--middle {
-  width: 2760px; /* “TRUSTED TRANSCRIPTION & LANGUAGE SOLUTIONS …” */
+  width: 2760px;
 }
 
 .tagline-row--bottom {
-  width: 2391px; /* “SERVICES BUILT FOR BUSINESSES OF EVERY SIZE” */
+  width: 2391px;
 }
 
-/* container: TEXT + WAVE */
 .tagline-item {
   display: inline-flex;
   align-items: center;
-  margin-right: 70px; /* gap between repeated blocks */
-  gap: 24px; /* space between text and wave */
+  margin-right: 70px;
+  gap: 24px;
 }
 
-/* universal font style – matches Figma */
 .tagline-text {
   font-family: "Montserrat", sans-serif;
   font-size: 50px;
@@ -47,26 +42,19 @@
   white-space: nowrap;
 }
 
-/* wave image at end */
 .tagline-wave {
-  height: 30px; 
+  height: 30px;
   width: auto;
-   transform: translateY(6px);
+  transform: translateY(6px);
 }
 
-/* Top + Bottom muted lines */
 .tagline-text--muted {
-  /* color: rgba(0, 0, 0, 0.35); */
-  /* opacity: 0.4; */
   color: #022447;
 }
 
-/* Middle gradient line */
 .tagline-text--highlight {
-  /* background: linear-gradient(90deg, #f4c27d, #ff9ea1, #7ca7ff); */
   color: #ff9ea1;
   -webkit-background-clip: text;
-  /* color: transparent; */
 }
 .wave-blue {
   filter: brightness(0) saturate(100%) invert(14%) sepia(94%) saturate(2300%) hue-rotate(184deg) brightness(90%) contrast(95%);
@@ -76,16 +64,11 @@
   filter: brightness(0) saturate(100%) invert(86%) sepia(18%) saturate(1469%) hue-rotate(311deg) brightness(102%) contrast(101%);
 }
 
-
-/* ===== MARQUEE TRACK BASE ===== */
 .tagline-track {
   white-space: nowrap;
   display: inline-block;
 }
 
-/* ===== ANIMATIONS FOR DIRECTIONS ===== */
-
-/* RIGHT → LEFT (scroll to left) */
 @keyframes marquee-left {
   0% {
     transform: translateX(20%);
@@ -95,7 +78,6 @@
   }
 }
 
-/* LEFT → RIGHT (scroll to right) */
 @keyframes marquee-right {
   0% {
     transform: translateX(-100%);
@@ -105,22 +87,18 @@
   }
 }
 
-/* TOP → LEFT */
 .tagline-row--top .tagline-track.animate {
   animation: marquee-left 55s linear infinite;
 }
 
-/* MIDDLE → RIGHT (opposite direction) */
 .tagline-row--middle .tagline-track.animate {
   animation: marquee-right 55s linear infinite;
 }
 
-/* BOTTOM → LEFT */
 .tagline-row--bottom .tagline-track.animate {
   animation: marquee-left 55s linear infinite;
 }
 
-/* ---------- TABLET (≤ 1024px) ---------- */
 @media (max-width: 1024px) {
   .tagline-section {
     padding: 26px 0;
@@ -145,7 +123,6 @@
   }
 }
 
-/* ---------- MOBILE (≤ 768px) ---------- */
 @media (max-width: 768px) {
   .tagline-section {
     padding: 16px 0;
@@ -171,7 +148,6 @@
   }
 }
 
-/* ---------- SMALL MOBILE (≤ 480px) ---------- */
 @media (max-width: 480px) {
   .tagline-section {
     gap: 10px;
@@ -194,6 +170,4 @@
   .tagline-wave {
     height: 14px;
   }
-
-  /* if you still want to hide any extra decoration, nothing to do now */
 }

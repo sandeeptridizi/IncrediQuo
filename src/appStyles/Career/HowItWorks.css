@@ -3,8 +3,6 @@ body {
   margin: 0;
 }
 
-/* ================= HOW IT WORKS SECTION ================= */
-
 .hiw__title {
   text-align: center;
   max-width: 400px;
@@ -55,9 +53,9 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  animation: hiwIconFadeUp 0.5s ease forwards;
 }
 
-/* old SVG class – harmless if unused */
 .hiw__svg-icon {
   width: 26px;
   height: 26px;
@@ -88,7 +86,6 @@ body {
   color: #000000;
 }
 
-/* ================= TABLET (≤ 1024px) ================= */
 @media (max-width: 1024px) {
   .hiw__row {
     max-width: 100%;
@@ -107,7 +104,6 @@ body {
   }
 }
 
-/* ================= LARGE MOBILE / SMALL TABLET (≤ 768px) ================= */
 @media (max-width: 768px) {
   .hiw__row {
     flex-direction: column;
@@ -124,15 +120,14 @@ body {
   }
 }
 
-/* ================= MOBILE (≤ 600px) ================= */
 @media (max-width: 600px) {
   .hiw__title {
-    font-size: 22px;         /* smaller so full text fits */
+    font-size: 22px;
     margin: 32px auto 12px;
     padding: 0 12px;
     width: auto;
     max-width: 100%;
-    white-space: normal;     /* allow wrapping on very small phones */
+    white-space: normal;
     line-height: 1.3;
   }
 
@@ -173,17 +168,11 @@ body {
   object-fit: contain;
 }
 
-/* ================= ICON ANIMATIONS ================= */
-
-/* ========== ICON ANIMATION ON HOVER (CARD HOVER) ========== */
-
-/* Hover the whole card → animate icon */
 .hiw__card:hover .hiw__icon {
   transform: translateY(-4px) scale(1.08);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
-/* ========== OPTIONAL: SMALL ENTRANCE ANIMATION ========== */
 @keyframes hiwIconFadeUp {
   from {
     opacity: 0;
@@ -195,12 +184,6 @@ body {
   }
 }
 
-/* run once on load */
-.hiw__icon {
-  animation: hiwIconFadeUp 0.5s ease forwards;
-}
-
-/* slight stagger if you have multiple cards */
 .hiw__card:nth-child(2) .hiw__icon {
   animation-delay: 0.08s;
 }

@@ -1,8 +1,5 @@
-/* ===================== CAREER HERO WRAPPER ===================== */
-
 .career-hero {
-  /* Fluid padding using clamp for smoother scaling between breakpoints */
-  padding-top: clamp(100px, 20vw, 260px); 
+  padding-top: clamp(300px, 20vw, 260px);
   padding-bottom: clamp(80px, 15vw, 170px);
   background: #ffffff;
 }
@@ -11,11 +8,8 @@
   max-width: 1178px;
   margin: 0 auto;
   position: relative;
-  /* Ensure horizontal padding on smaller desktops/tablets */
-  padding: 0 20px; 
+  padding: 0 20px;
 }
-
-/* ===================== BLUE PANEL ===================== */
 
 .career-hero__panel {
   background: #002147;
@@ -28,8 +22,6 @@
   overflow: visible;
 }
 
-/* ===================== LEFT TEXT ===================== */
-
 .career-hero__text {
   max-width: 627px;
 }
@@ -38,9 +30,8 @@
   font-family: "Poppins", sans-serif;
   color: #fff;
   font-weight: 600;
-  /* Using clamp to ensure smooth heading scale */
-  font-size: clamp(36px, 6vw, 59px); 
-  line-height: 1.25; /* Adjusted from 73px for better responsiveness */
+  font-size: clamp(36px, 6vw, 59px);
+  line-height: 1.25;
   letter-spacing: 0;
   margin: -30px 0 14px;
 }
@@ -48,15 +39,12 @@
 .career-hero__subtitle {
   font-family: "Poppins", sans-serif;
   color: #e5edff;
-  /* Using clamp to ensure smooth subtitle scale */
-  font-size: clamp(18px, 3vw, 24px); 
-  line-height: 1.6; /* Adjusted from 38px for better responsiveness */
+  font-size: clamp(18px, 3vw, 24px);
+  line-height: 1.6;
   letter-spacing: -0.03em;
   max-width: 554px;
   margin: -10px 0 22px;
 }
-
-/* ===================== BUTTON ===================== */
 
 .career-hero__buttons {
   display: flex;
@@ -64,7 +52,6 @@
   gap: 24px;
 }
 
-/* Apply Job – 103 x 41, radius 10 */
 .ch-btn {
   min-width: 103px;
   height: 41px;
@@ -84,8 +71,6 @@
   color: #002147;
 }
 
-/* ===================== RIGHT IMAGE ===================== */
-
 .career-hero__image-wrapper {
   position: absolute;
   right: 72px;
@@ -99,10 +84,8 @@
   object-fit: cover;
   background: #ffffff;
   box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
-  max-width: 100%; /* Important for image scaling */
+  max-width: 100%;
 }
-
-/* ===================== SEARCH BAR ===================== */
 
 .career-hero__search {
   position: absolute;
@@ -110,9 +93,8 @@
   transform: translateX(-50%);
   bottom: -51px;
 
-  /* Use max-width for better fluidity */
-  max-width: 719px; 
-  width: calc(100% - 40px); /* Fill container minus padding on the sides */
+  max-width: 719px;
+  width: calc(100% - 40px);
   height: 102px;
   background: #ffffff;
   border-radius: 20px;
@@ -125,23 +107,20 @@
   z-index: 10;
 }
 
-/* Location + Title columns */
 .search-field {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   padding-right: 32px;
-  min-width: 0; /* Prevents overflow if content is long */
+  min-width: 0;
 }
 
-/* Divider after Location */
 .search-field:first-child {
   border-right: 2px solid #dcdceb;
   margin-right: 32px;
 }
 
-/* Divider after Title */
 .search-field:nth-child(2) {
   position: relative;
   margin-right: 24px;
@@ -158,7 +137,6 @@
   background: #dcdceb;
 }
 
-/* LABELS */
 .search-field label {
   font-family: "Poppins", sans-serif;
   font-size: 18px;
@@ -169,7 +147,6 @@
   white-space: nowrap;
 }
 
-/* VALUE ROW (text + icon) */
 .search-field__value {
   display: inline-flex;
   align-items: center;
@@ -184,12 +161,11 @@
   font-weight: 400;
   color: #8F90A6;
   display: inline-block;
-  overflow: hidden; /* prevents overflow */
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* ICON WRAPPER */
 .search-icon {
   display: inline-flex;
   align-items: center;
@@ -202,7 +178,6 @@
   display: block;
 }
 
-/* Location pin — 12 x 14.67 */
 .search-icon--pin img {
   width: 12px;
   height: 14.67px;
@@ -210,7 +185,6 @@
   transform: translateY(1px);
 }
 
-/* Chevron — 12 x 6 */
 .search-icon--chevron img {
   width: 12px;
   height: 6px;
@@ -218,7 +192,6 @@
   transform: translateY(1px);
 }
 
-/* SEARCH BUTTON — 159 x 54 (with icon) */
 .ch-btn--search {
   min-width: 159px;
   height: 54px;
@@ -256,8 +229,6 @@
   display: block;
 }
 
-/* ================= TABLET (≤ 1024px) ================= */
-
 @media (max-width: 1024px) {
   .career-hero {
     padding-top: 160px;
@@ -267,15 +238,13 @@
   .career-hero__panel {
     flex-direction: column;
     text-align: center;
-    /* Adjust padding to prevent image from overlapping content */
-    padding: 56px 32px 120px; 
+    padding: 56px 32px 120px;
   }
 
   .career-hero__text {
     max-width: 100%;
   }
 
-  /* Center the buttons for the column layout */
   .career-hero__buttons {
     justify-content: center;
   }
@@ -283,9 +252,8 @@
   .career-hero__image-wrapper {
     position: static;
     margin: 40px auto 0;
-    /* Reset right/top offsets */
     right: auto;
-    top: auto; 
+    top: auto;
   }
 
   .career-hero__image {
@@ -298,15 +266,12 @@
     position: static;
     left: auto;
     bottom: auto;
-    /* Reset transform */
-    transform: none; 
+    transform: none;
     margin: 48px auto 0;
     width: auto;
     max-width: 700px;
   }
 }
-
-/* ================= MOBILE (≤ 640px) ================= */
 
 @media (max-width: 640px) {
   .career-hero {
@@ -315,22 +280,21 @@
   }
 
   .career-hero__panel {
-    /* Adjusted padding */
-    padding: 40px 20px 100px; 
+    padding: 40px 20px 100px;
   }
 
   .career-hero__text h1 {
     font-size: 30px;
     line-height: 38px;
     margin-bottom: 16px;
-    margin-top: 0; /* Resetting negative margin */
+    margin-top: 0;
   }
 
   .career-hero__subtitle {
     font-size: 15px;
     line-height: 24px;
     max-width: 100%;
-    margin-top: 0; /* Resetting negative margin */
+    margin-top: 0;
     margin-bottom: 20px;
   }
 
@@ -342,7 +306,7 @@
 
   .ch-btn {
     width: 100%;
-    min-width: unset; /* Allow full width override */
+    min-width: unset;
   }
 
   .career-hero__image-wrapper {
@@ -361,7 +325,7 @@
     padding: 20px;
     border-radius: 18px;
     margin-top: 38px;
-    width: 100%; /* Ensure search bar fills container */
+    width: 100%;
   }
 
   .search-field {
@@ -369,19 +333,16 @@
     padding-right: 0;
   }
 
-  /* Remove vertical divider for the first field */
   .search-field:first-child {
     border: none;
     margin: 0;
   }
 
-  /* Remove all margins and padding for the second field for vertical stacking */
   .search-field:nth-child(2) {
     margin-right: 0;
     padding-right: 0;
   }
-  
-  /* CRITICAL FIX: Remove the pseudo-element divider when fields stack vertically */
+
   .search-field:nth-child(2)::after {
     content: none;
   }

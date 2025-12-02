@@ -1,4 +1,3 @@
-// src/components/AboutUs/HowItWorks.jsx
 import React from "react";
 import "../../appStyles/AboutUs/HowItWorks.css";
 

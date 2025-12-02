@@ -1,7 +1,7 @@
-// src/components/HomePage/TaglineScroller.jsx
+
 import React, { useEffect, useState } from "react";
 import "../../appStyles/HomePageStyles/TaglineScroller.css";
-import taglineWave from "../../assets/hero/Frame 2301.png"; // 👈 wave image
+import taglineWave from "../../assets/hero/Frame 2301.png"; 
 
 const lines = [
   {
@@ -29,7 +29,6 @@ const TaglineScroller = () => {
   ]);
 
   useEffect(() => {
-    // start animations line by line
     lines.forEach((_, index) => {
       setTimeout(() => {
         setActiveAnimations((prev) => {
@@ -50,7 +49,6 @@ const TaglineScroller = () => {
               activeAnimations[index] ? "animate" : ""
             }`}
           >
-            {/* one block = TEXT + WAVE  → repeat 3 times for smooth marquee */}
             {[0, 1, 2].map((i) => (
               <span className="tagline-item" key={i}>
                 <span className={item.className}>{item.text}</span>

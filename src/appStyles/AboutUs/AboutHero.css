@@ -2,24 +2,19 @@
   background: #ffffff;
   padding: 180px 0 120px;
 }
-
 .about-hero__inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 0 95px;                /* Left = 95px like Figma */
+  padding: 0 95px;                
   display: flex;
-  align-items: flex-start;        /* text & image start at same top */
+  align-items: flex-start;       
   justify-content: space-between;
   gap: 60px;
   box-sizing: border-box;
 }
-
-/* LEFT SIDE */
 .about-hero__text {
-  max-width: 655px;               /* Heading frame 655px */
+  max-width: 655px;              
 }
-
-/* Heading – Outfit 52 / 72, 655 × 222 */
 .about-hero__text h1 {
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -27,15 +22,11 @@
   line-height: 72px;
   font-weight: 700;
   color: #002147;
-  margin: 0 0 40px;               /* gap ≈ 37px before paragraph */
+  margin: 0 0 40px;               
 }
-
-/* pink part: Transcription and Language Solutions */
 .about-hero__highlight {
   color: #ff3e54;
 }
-
-/* Paragraph – DM Sans 20 / 30, 568 × 60 */
 .about-hero__text p {
   font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -44,10 +35,8 @@
   line-height: 30px;
   font-weight: 500;
   color: #6b7280;
-  margin: 0 0 40px;               /* gap ≈ 41px before button */
+  margin: 0 0 40px;            
 }
-
-/* Button – 360 × 46, radius 30, text 18 / 26 */
 .about-hero__button {
   width: 360px;
   height: 46px;
@@ -56,7 +45,7 @@
   background: #002147;
   color: #ffffff;
   font-family: "DM Sans", system-ui, sans-serif;
-  font-size: 18px;                /* as in Body-Text/18-Medium */
+  font-size: 18px;               
   line-height: 26px;
   font-weight: 500;
   cursor: pointer;
@@ -74,14 +63,11 @@
   transform: translateY(-1px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
 }
-
-/* ============== RIGHT IMAGE CARD – PROPER BIG SIZE ============== */
-
 .about-hero__image {
-  flex: 0 0 520px;        /* fixed width column for image */
+  flex: 0 0 520px;        
   max-width: 540px;
-  height: 420px;          /* increased height */
-  overflow: hidden;       /* crop tall images */
+  height: 420px;       
+  overflow: hidden;       
   border-radius: 0;
   background: transparent;
   box-shadow: none;
@@ -90,21 +76,16 @@
   justify-content: center;
   margin-top: 10px;
 }
-
 .about-hero__image img {
-  width: 100%;            /* fill container width */
-  height: 100%;           /* fill container height */
-  object-fit: cover;      /* zoom + crop to fill area */
+  width: 100%;           
+  height: 100%;          
+  object-fit: cover;      
   display: block;
   border-radius: 0;
   box-shadow: none;
   background: none;
   padding: 0;
 }
-
-
-/* ================== RESPONSIVE ================== */
-
 @media (max-width: 992px) {
   .about-hero {
     padding: 180px 0 60px;
@@ -134,7 +115,7 @@
   .about-hero__image {
     width: 100%;
     max-width: 520px;
-    height: auto;          /* let height adapt */
+    height: auto;         
     margin: 0 auto;
   }
 

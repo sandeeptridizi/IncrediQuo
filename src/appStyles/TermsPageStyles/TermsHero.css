@@ -1,16 +1,12 @@
-/* ===========================
-   TERMS HERO
-   =========================== */
 
 .terms-hero {
   position: relative;
   width: 100%;
   background: linear-gradient(90deg, #002147 0%, #ffe9ec 100%);
-  padding: 158px 24px 140px; /* a little more side padding than 16px */
+  padding: 158px 24px 140px; 
   overflow: hidden;
 }
 
-/* center content in 1440px area */
 .terms-hero__inner {
   max-width: 1320px;
   margin: 0 auto;
@@ -19,7 +15,7 @@
   justify-content: center;
   text-align: center;
   position: relative;
-  z-index: 1; /* above white curve */
+  z-index: 1; 
 }
 
 .terms-hero__title {
@@ -30,8 +26,6 @@
   line-height: 1.05;
   color: #ffffff;
 }
-
-/* white curved break (section-break frame) – rising wave to the right */
 .terms-hero::after {
   content: "";
   position: absolute;
@@ -58,9 +52,6 @@
   );
 }
 
-/* ---------- Responsive ---------- */
-
-/* tablets / small laptops */
 @media (max-width: 900px) {
   .terms-hero {
     padding: 140px 20px 100px;
@@ -72,11 +63,10 @@
   }
 
   .terms-hero::after {
-    height: 190px; /* little shorter so curve doesn’t dominate */
+    height: 190px;
   }
 }
 
-/* phones */
 @media (max-width: 600px) {
   .terms-hero {
     padding: 180px 18px 80px;
@@ -110,7 +100,6 @@
   }
 }
 
-/* very small phones */
 @media (max-width: 400px) {
   .terms-hero {
     padding: 100px 14px 70px;

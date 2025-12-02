@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Footer.css";
 
 import vector from "../../assets/footer/Vector.png";
-import twitter from "../../assets/footer/twitter.png"; // ⬅️ added
-
+import twitter from "../../assets/footer/twitter.png"; 
 const Footer = () => {
   const handleNavClick = () => {
     window.scrollTo(0, 0);
@@ -15,7 +14,6 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="footer-inner">
         <div className="footer-top">
-          {/* -------- LEFT BRAND BLOCK -------- */}
           <div className="footer-brand">
             <Link to="/" className="footer-logo" onClick={handleNavClick}>
               <img
@@ -32,7 +30,6 @@ const Footer = () => {
               transcription and media support services.
             </p>
 
-            {/* 👇 LinkedIn + Twitter side-by-side (UPDATED WITH LINKS) */}
             <div className="footer-social-group">
               <a
                 href="https://www.linkedin.com/company/incrediquo-solutions/"

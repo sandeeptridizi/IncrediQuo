@@ -1,9 +1,4 @@
-/* =========================================
-   BANNER BASE
-   ========================================= */
 
-
-   
 .banner {
   width: 100%;
   background: #002147;
@@ -17,7 +12,6 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* CONTAINER */
 .banner__inner {
   max-width: 1440px;
   margin: 0 auto;
@@ -25,9 +19,7 @@
   position: relative;
 }
 
-/* =========================================
-   STRIPES (ANIMATED)
-   ========================================= */
+
 .banner__stripes {
   position: absolute;
   left: clamp(-36px, -4vw, -24px);
@@ -44,13 +36,11 @@
   border-radius: 50px;
   background: rgba(255, 233, 236, 0.14);
 
-  /* 🔥 zoom in / zoom out animation */
   transform-origin: center;
   animation: stripePulse 3s ease-in-out infinite;
   will-change: transform;
 }
 
-/* widths + stagger delays */
 .banner__stripe:nth-child(1){width:140px; animation-delay: 0s;}
 .banner__stripe:nth-child(2){width:100px; animation-delay: 0.2s;}
 .banner__stripe:nth-child(3){width:160px; animation-delay: 0.4s;}
@@ -60,16 +50,13 @@
 .banner__stripe:nth-child(7){width:75px; animation-delay: 1.2s;}
 .banner__stripe:nth-child(8){width:30px; animation-delay: 1.4s;}
 
-/* Pulse animation */
+
 @keyframes stripePulse {
   0%   { transform: scale(1); }
   50%  { transform: scale(1.06); }
   100% { transform: scale(1); }
 }
 
-/* =========================================
-   TEXT & TYPING ANIMATION
-   ========================================= */
 .banner__text {
   max-width: 1000px;
   margin-left: clamp(0px, 14vw, 210px);
@@ -84,7 +71,6 @@
   white-space: normal;
 }
 
-/* Base style for animated text spans */
 .banner__text h2 span {
   display: inline-block;
   width: 0;
@@ -95,19 +81,16 @@
   animation: none;
 }
 
-/* Keyframes for typewriter */
 @keyframes typewriter {
   from { width: 0 }
   to { width: 100% } 
 }
 
-/* Keyframes for blinking cursor */
 @keyframes blink-cursor {
   50% { border-color: transparent }
   0%, 100% { border-color: #ffe9ec }
 }
 
-/* CURSOR VISUAL ELEMENT */
 .cursor-visual {
   animation: none !important;
   width: 0 !important;
@@ -121,14 +104,12 @@
   animation: blink-cursor 0.75s step-end var(--cursor-start) infinite;
 }
 
-/* Line 1 */
 .banner__text h2 .line-1 {
   display: block;
   animation:
     typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards;
 }
 
-/* Line 2 */
 .banner__text h2 .line-2 {
   display: inline-block;
   animation:
@@ -144,9 +125,6 @@
   color: #d6e1f2;
 }
 
-/* =========================================
-   CTA BUTTON
-   ========================================= */
 .banner__button {
   margin-top: clamp(16px, 3.5vw, 32px);
   width: clamp(170px, 22vw, 250px);
@@ -167,9 +145,6 @@
   box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
 }
 
-/* =========================================
-   TICKER
-   ========================================= */
 .banner__ticker {
   position: absolute;
   left: 0; right: 0;
@@ -195,7 +170,6 @@
   padding: 0 32px;
 }
 
-/* DOT */
 .banner__ticker-track span::before {
   content: "•";
   position: absolute;
@@ -214,9 +188,6 @@
   to { transform: translateX(-100%); }
 }
 
-/* =========================================
-   STAR (BOTTOM RIGHT)
-   ========================================= */
 .banner__inner::after {
   content: "";
   position: absolute;
@@ -227,9 +198,6 @@
   background: url("../../assets/Banner/Groupstar.png") no-repeat center/contain;
 }
 
-/* =========================================
-   RESPONSIVE TWEAKS
-   ========================================= */
 @media (max-width: 1024px) {
   .banner__stripes { display: none; }
   .banner__text { margin-left: 0; }

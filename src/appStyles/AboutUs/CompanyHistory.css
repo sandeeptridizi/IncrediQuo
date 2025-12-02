@@ -1,37 +1,28 @@
-
 :root {
   --iq-dark-blue: #002147;
-  --iq-light-pink: #f0e6f2; /* Estimated light pink/white color from video */
-  --animation-duration: 8s; /* NEW: Slower animation time */
-  --stagger-delay: 0.2s; /* Delay between letters */
+  --iq-light-pink: #f0e6f2;
+  --animation-duration: 8s;
+  --stagger-delay: 0.2s;
 }
 
-/* --- HISTORY SECTION CONTAINER --- */
 .history {
-  /* Spacing */
   padding: 120px 0px;
-  /* Appearance */
   background: #ffffff;
 }
 
 .history__inner {
-  /* Layout */
   max-width: 1320px;
-  /* Spacing */
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .history__content {
-  /* Layout */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* --- HEADING (h2) --- */
 .history__content h2 {
-  /* Layout / Size */
   max-width: 694px; 
   width: 100%;
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
@@ -44,42 +35,33 @@
   margin: 0 0 65px; 
 }
 
-/* Base style for all 3 text blocks (rest of history section remains the same) */
 .history__para {
-  /* Typography */
   font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 22px;
   line-height: 41px;
   font-weight: 400;
   color: #4b5563;
-  margin: 0;           
+  margin: 0; 
 }
 
-/* --- PARAGRAPH SPECIFIC STYLES --- */
-
-/* 1) FIRST PARAGRAPH */
 .history__para:nth-of-type(1) {
   max-width: 1213px;
   text-align: justify;
   margin: 0 auto 28px; 
 }
 
-/* 2) SECOND PARAGRAPH (Center + Extra Gap) */
 .history__para:nth-of-type(2) {
   max-width: 1186px;
   text-align: center;
   margin: 32px auto 32px; 
 }
 
-/* 3) THIRD PARAGRAPH (Center + Gap Above Only) */
 .history__para:nth-of-type(3) {
   max-width: 1186px;
   text-align: center;
   margin: 32px auto 0; 
 }
-
-/* --- LOGO ANIMATION STYLES (Per-Letter Cascade) --- */
 
 .history__logo-animation {
   display: flex;
@@ -91,7 +73,7 @@
 }
 
 .logo-word {
-  display: flex; /* Standard row display */
+  display: flex;
 }
 
 .animated-letter {
@@ -99,72 +81,54 @@
   font-size: 200px; 
   font-weight: 700;
   
-  /* Initial state: Light pink/white */
   color: var(--iq-light-pink);
   
-  /* Animation properties: Using the new slower duration */
   animation: color-shift-fade var(--animation-duration) ease-in-out infinite; 
 }
 
-/* --- RIGHT-TO-LEFT STAGGERED DELAY (11 letters total in "IncrediQuo") --- */
-/* We target the 11th letter first, then the 10th, and so on. */
-/* The general formula for a word of length L is L - n + 1 where n is the child number. */
-
-.animated-letter:nth-child(1) { animation-delay: calc(1 * var(--stagger-delay)); } /* I */
-.animated-letter:nth-child(2) { animation-delay: calc(2 * var(--stagger-delay)); } /* n */
-.animated-letter:nth-child(3) { animation-delay: calc(3 * var(--stagger-delay)); } /* c */
-.animated-letter:nth-child(4) { animation-delay: calc(4 * var(--stagger-delay)); } /* r */
-.animated-letter:nth-child(5) { animation-delay: calc(5 * var(--stagger-delay)); } /* e */
-.animated-letter:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); } /* d */
-.animated-letter:nth-child(7) { animation-delay: calc(7 * var(--stagger-delay)); } /* i */
-.animated-letter:nth-child(8) { animation-delay: calc(8 * var(--stagger-delay)); } /* Q */
-.animated-letter:nth-child(9) { animation-delay: calc(9 * var(--stagger-delay)); } /* u */
-.animated-letter:nth-child(10) { animation-delay: calc(10 * var(--stagger-delay)); } /* o */
-.animated-letter:nth-child(11) { animation-delay: calc(11 * var(--stagger-delay)); } /* (End) */ /* I (This is the start, but we reversed the order for a correct cascade) */
+.animated-letter:nth-child(1) { animation-delay: calc(1 * var(--stagger-delay)); }
+.animated-letter:nth-child(2) { animation-delay: calc(2 * var(--stagger-delay)); }
+.animated-letter:nth-child(3) { animation-delay: calc(3 * var(--stagger-delay)); }
+.animated-letter:nth-child(4) { animation-delay: calc(4 * var(--stagger-delay)); }
+.animated-letter:nth-child(5) { animation-delay: calc(5 * var(--stagger-delay)); }
+.animated-letter:nth-child(6) { animation-delay: calc(6 * var(--stagger-delay)); }
+.animated-letter:nth-child(7) { animation-delay: calc(7 * var(--stagger-delay)); }
+.animated-letter:nth-child(8) { animation-delay: calc(8 * var(--stagger-delay)); }
+.animated-letter:nth-child(9) { animation-delay: calc(9 * var(--stagger-delay)); }
+.animated-letter:nth-child(10) { animation-delay: calc(10 * var(--stagger-delay)); }
+.animated-letter:nth-child(11) { animation-delay: calc(11 * var(--stagger-delay)); }
 
 
-/* Keyframes for the color shift and fade effect */
 @keyframes color-shift-fade {
-  /* The total duration is 8s. */
-  
-  /* 0% to 10%: Start completely faded (light color) */
   0%, 10% {
     color: var(--iq-light-pink);
   }
   
-  /* 15%: Transition to dark blue */
   15% {
     color: var(--iq-dark-blue);
     text-shadow: 0 0 8px rgba(0, 33, 71, 0.8), 0 0 16px rgba(0, 33, 71, 0.4);
   }
   
-  /* 60%: Hold the dark blue color */
   60% {
     color: var(--iq-dark-blue);
     text-shadow: 0 0 8px rgba(0, 33, 71, 0.8), 0 0 16px rgba(0, 33, 71, 0.4);
   }
   
-  /* 65% to 100%: Fade back to the light color */
   65%, 100% {
     color: var(--iq-light-pink);
     text-shadow: none;
   }
 }
 
-/* ================== RESPONSIVE MEDIA QUERIES ================== */
-
 @media (max-width: 1024px) {
-  /* --- Section Padding --- */
   .history {
     padding: 96px 0;
   }
 
-  /* --- Inner Padding --- */
   .history__inner {
     padding: 0 20px;
   }
   
-  /* Animation adjustments */
   .history__logo-animation {
     height: 100px;
     margin-bottom: 30px;
@@ -173,36 +137,27 @@
     font-size: 120px;
   }
 
-  /* --- Heading (h2) --- */
   .history__content h2 {
-    /* Layout */
-    max-width: 100%; /* Allows heading to use full width */
-    /* Typography */
+    max-width: 100%;
     font-size: 40px;
     line-height: 48px;
-    /* Spacing */
     margin-bottom: 24px;
   }
 
-  /* --- Paragraphs (Base & Specific) --- */
   .history__para {
-    /* Layout */
-    max-width: 100%; /* Allows paragraphs to use full width */
-    text-align: left; /* Improved readability on smaller screens */
-    /* Typography */
+    max-width: 100%;
+    text-align: left;
     font-size: 22px;
     line-height: 32px;
-    text-align: left;       
+    text-align: left; 
   }
 }
 
 @media (max-width: 768px) {
-  /* --- Inner Padding --- */
   .history__inner {
     padding: 0 16px;
   }
   
-  /* Animation adjustments */
   .history__logo-animation {
     height: 80px;
     margin-bottom: 24px;
@@ -211,13 +166,11 @@
     font-size: 100px;
   }
 
-  /* --- Heading (h2) --- */
   .history__content h2 {
     font-size: 32px;
     line-height: 40px;
   }
 
-  /* --- Paragraphs --- */
   .history__para {
     font-size: 18px;
     line-height: 28px;
@@ -225,12 +178,10 @@
 }
 
 @media (max-width: 480px) {
-  /* --- Section Padding --- */
   .history {
     padding: 72px 0;
   }
   
-  /* Animation adjustments */
   .history__logo-animation {
     height: 60px;
     margin-bottom: 20px;
@@ -239,17 +190,13 @@
     font-size: 60px;
   }
 
-  /* --- Heading (h2) --- */
   .history__content h2 {
     font-size: 26px;
     line-height: 34px;
   }
 
-  /* --- Paragraphs --- */
   .history__para {
     font-size: 16px;
     line-height: 26px;
   }
 }
-
-

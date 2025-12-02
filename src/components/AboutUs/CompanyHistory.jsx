@@ -1,7 +1,5 @@
 import React from "react";
 import "../../appStyles/AboutUs/CompanyHistory.css";
-
-// Helper function to split the word into spans for animation
 const animateText = (word) => {
 
   return word.split('').map((char, index) => (
@@ -18,7 +16,6 @@ const CompanyHistory = () => {
   return (
     <section className="history">
       <div className="history__inner">
-        {/* LOGO ANIMATION CONTAINER */}
         <div className="history__logo-animation">
           <div className="logo-word">
             {animateText("IncrediQuo")}

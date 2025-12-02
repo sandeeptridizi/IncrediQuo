@@ -8,8 +8,6 @@
   margin: 0 auto;
   text-align: center;
 }
-
-/* TITLE */
 .ts-usercentric__title {
   font-size: 40px;
   font-weight: 700;
@@ -17,16 +15,12 @@
   color: #111827;
   margin-bottom: 8px;
 }
-
-/* SUBTITLE */
 .ts-usercentric__subtitle {
   font-size: 18px;
   line-height: 28px;
   color: #6b7280;
   margin-bottom: 48px;
 }
-
-/* GRID WRAPPERS */
 .ts-usercentric__grid {
   display: grid;
   gap: 0;
@@ -42,8 +36,6 @@
   justify-content: center;
   column-gap: 120px;
 }
-
-/* ITEMS */
 .ts-usercentric__item {
   width: 317px;
   height: 230px;
@@ -51,8 +43,6 @@
   margin: 0 auto;
   padding: 1vw;
 }
-
-/* ICON */
 .ts-usercentric__icon {
   width: 39.6px;
   height: 44px;
@@ -66,8 +56,6 @@
   stroke-width: 2px;
   fill: none;
 }
-
-/* TEXT */
 .ts-usercentric__item h3 {
   font-size: 21px;
   font-weight: 600;
@@ -81,12 +69,10 @@
   color: #6b7280;
 }
 
-/* VERTICAL SEPARATORS TOP */
 .ts-usercentric__grid--top .ts-usercentric__item:not(:last-child) {
   border-right: 1px solid #E4E4E7;
 }
 
-/* HORIZONTAL DIVIDER */
 .ts-usercentric__divider {
   width: 1166px;
   height: 1px;
@@ -95,7 +81,6 @@
   margin: 40px auto 0;
 }
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .ts-usercentric__grid--top {
     grid-template-columns: 1fr 1fr;
@@ -130,15 +115,12 @@ width: 80vw;
 /* margin-left: 5.5vw; */
 }
 }
-
-
-/* HOVER ANIMATION EFFECT */
 .ts-usercentric__item {
   transition: transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1)
 }
 
 .ts-usercentric__item:hover {
-transform: translateY(-8px) scale(1.025); /* small zoom + lift */
+transform: translateY(-8px) scale(1.025); 
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
   background-color: #ffecf3;
   padding: 1vw;
