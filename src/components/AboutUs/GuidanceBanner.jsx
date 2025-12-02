@@ -17,8 +17,6 @@ const GuidanceBanner = () => {
           object component slice. Pen select rectangle font selection frame
           draft.
         </p>
-
-        {/* <button className="guidance-banner__button">Get Started</button> */}
           <div>
             <Button name="Get Started" />
           </div>

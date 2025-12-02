@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../../appStyles/AboutUs/AboutHero.css";
-import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg"; // your image
+import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg";
 import { Button } from "../Button/Button";
 
-// Updated Typewriter Component: Cursor removed, text remains
+
 const Typewriter = ({ text, delay }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -17,10 +17,7 @@ const Typewriter = ({ text, delay }) => {
 
       return () => clearTimeout(timeout);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, delay, text]);
-
-  // Only returns the progressively displayed text
   return (
     <span className="about-hero__highlight">
       {displayText}
@@ -30,12 +27,10 @@ const Typewriter = ({ text, delay }) => {
 
 const AboutHero = () => {
   const animatedText = "Transcription and Language Solutions";
-  const typingDelay = 50; // Milliseconds per character
-
+  const typingDelay = 50; 
   return (
     <section className="about-hero">
       <div className="about-hero__inner">
-        {/* LEFT TEXT */}
         <div className="about-hero__text">
           <h1>
             Your Trusted Partner for Professional{" "}
@@ -48,9 +43,8 @@ const AboutHero = () => {
             solutions trusted by global enterprises.
           </p>
 
-          {/* <button className="about-hero__button">Learn More</button> */}
+         
           <div>
-            {/* <Button name="Learn More" /> */}
                         <Button
   name="Learn More"
   paddingXL = "8.6vw"
@@ -66,7 +60,6 @@ const AboutHero = () => {
           </div>
         </div>
 
-        {/* RIGHT IMAGE */}
         <div className="about-hero__image">
           <img src={AboutHeroImg} alt="Team collaborating at a laptop" />
         </div>

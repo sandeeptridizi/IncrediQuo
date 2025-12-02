@@ -1,18 +1,13 @@
-/* ===================== LATEST POST SECTION ===================== */
-
-/* Section wrapper */
 .section.latest-posts {
   padding: 48px 60px 64px;
   background-color: #ffffff;
 }
 
-/* Container */
 .latest-container {
-  max-width: 1160px;            /* ~ 3 × 360 + gaps */
+  max-width: 1160px;
   margin: 0 auto;
 }
 
-/* Title – 215 × 40 */
 .latest-title {
   font-family: "Raleway", sans-serif;
   font-size: 40px;
@@ -21,12 +16,9 @@
   color: #0E1F51;
   text-align: center;
   margin: 0 auto 50px;
-  white-space: nowrap;   /* <-- Forces 1 single line always */
+  white-space: nowrap;
 }
 
-
-
-/* 3 cards in a row */
 .latest-grid {
   display: grid;
   grid-template-columns: repeat(3, 360px);
@@ -35,7 +27,6 @@
   margin-top: 42px;
 }
 
-/* Card – 360 × 380 */
 .latest-card {
   width: 360px;
   height: 380px;
@@ -53,7 +44,6 @@
   box-shadow: 0 14px 34px rgba(15, 23, 42, 0.18);
 }
 
-/* Image – 320 × 200 */
 .latest-card__image-wrap {
   width: 320px;
   height: 200px;
@@ -70,17 +60,14 @@
   transition: transform 0.25s ease;
 }
 
-/* zoom image slightly on hover */
 .latest-card:hover .latest-card__image {
   transform: scale(1.06);
 }
 
-/* Card content wrapper */
 .latest-card__content {
   padding: 16px 20px 18px;
 }
 
-/* Post title – 320 × 60, 20px / 30px, Peach Red */
 .latest-card__title {
   font-family: "Raleway", sans-serif;
   font-size: 20px;
@@ -93,12 +80,10 @@
   transition: color 0.25s ease;
 }
 
-/* Slightly deeper red on hover */
 .latest-card:hover .latest-card__title {
   color: #e62f4e;
 }
 
-/* Meta row – width 320px */
 .latest-card__meta {
   width: 320px;
   margin: 0 auto;
@@ -107,7 +92,6 @@
   align-items: center;
 }
 
-/* Author block – 196 × 40 */
 .latest-card__author {
   display: flex;
   align-items: center;
@@ -135,7 +119,6 @@
   object-fit: cover;
 }
 
-/* Date – 91 × 20, 14px, 70% opacity, right aligned */
 .latest-card__date {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -149,7 +132,6 @@
   transition: color 0.25s ease;
 }
 
-/* Hover text contrast */
 .latest-card:hover .latest-card__author {
   color: #020617;
 }
@@ -158,9 +140,6 @@
   color: rgba(11, 21, 53, 0.85);
 }
 
-/* ===================== RESPONSIVE ===================== */
-
-/* Tablet (≤ 1024px) – 2 cards */
 @media (max-width: 1024px) {
   .latest-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -183,7 +162,6 @@
   }
 }
 
-/* Mobile (≤ 640px) – 1 card */
 @media (max-width: 640px) {
   .section.latest-posts {
     padding: 32px 20px 40px;
@@ -230,6 +208,7 @@
 
   .latest-card__author {
     width: 100%;
+    margin-left: 0; 
   }
 
   .latest-card__date {

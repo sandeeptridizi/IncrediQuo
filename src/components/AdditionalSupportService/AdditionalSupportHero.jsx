@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // <-- Import useState and useEffect
+import React, { useState, useEffect } from "react"; 
 import heroIllustration from "../../assets/services/Additionalsupport.png";
 import "../../appStyles/Services/TranscriptionHero.css";
 
@@ -6,7 +6,6 @@ import BulbIcon from "../../assets/services/ServiceIcon.png";
 import BulbIcon2 from "../../assets/services/Icon1.png";
 import { Button } from "../Button/Button";
 
-// Reusable Typewriter Component
 const Typewriter = ({ text, delay }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -20,10 +19,7 @@ const Typewriter = ({ text, delay }) => {
 
       return () => clearTimeout(timeout);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, delay, text]);
-
-  // Use a span for progressive display to ensure it fits the line correctly
   return (
     <span className="ts-hero__eyebrow-text">
       {displayText}
@@ -38,8 +34,8 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
     }
   };
 
-  const animatedText = "Additional Support"; // <-- The text to be animated
-  const typingDelay = 75; // Milliseconds per character
+  const animatedText = "Additional Support"; 
+  const typingDelay = 75; 
 
   return (
     <section className="ts-hero">
@@ -50,7 +46,6 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
 
         <div className="ts-hero__right">
           
-          {/* Applying Typewriter to the eyebrow text */}
           <p className="ts-hero__eyebrow">
             <Typewriter text={animatedText} delay={typingDelay} />
           </p>
@@ -88,11 +83,7 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
             </div>
           </div>
 
-          {/* <button className="ts-hero__cta" onClick={handleGetStarted}>
-            Get Started
-          </button> */}
           <div onClick={handleGetStarted}>
-            {/* <Button name="Get Started" /> */}
             <Button
   name="Get Started"
   paddingXL = "8.6vw"

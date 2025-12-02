@@ -1,17 +1,11 @@
-/* ===========================
-   CTA WRAPPER (SECTION SPACE)
-   =========================== */
+
 .cta-wrapper {
   display: flex;
   justify-content: center;
   padding: 80px 16px;
-  background-color: #ffffff; /* page background */
+  background-color: #ffffff; 
 }
 
-/* ===========================
-   PINK CARD
-   Figma: 1260 × 433px, 30px radius
-   =========================== */
 .cta-card {
   width: 100%;
   max-width: 1260px;
@@ -23,7 +17,6 @@
   align-items: center;
 }
 
-/* Group inside card – Figma: 734 × 187 */
 .cta-inner {
   max-width: 734px;
   width: 100%;
@@ -33,10 +26,6 @@
   text-align: center;
 }
 
-/* ===========================
-   HEADING
-   Outfit / 52 / 700 / 62
-   =========================== */
 .cta-title {
   font-family: "Outfit", sans-serif;
   font-size: 52px;
@@ -44,14 +33,9 @@
   line-height: 62px;
   color: #0b1535;
   margin: 0 0 18px;
-  max-width: 719px;   /* Figma text box width */
+  max-width: 719px;  
 }
 
-/* ===========================
-   PARAGRAPH
-   DM Sans / 18 / 500 / 26
-   Width: 718px centered
-   =========================== */
 .cta-text {
   font-family: "DM Sans", sans-serif;
   font-size: 18px;
@@ -62,10 +46,7 @@
   margin: 0 0 32px;
 }
 
-/* ===========================
-   BUTTON
-   176 × 46, 30 radius
-   =========================== */
+
 .cta-button {
   padding: 10px 36px;
   border-radius: 30px;
@@ -89,9 +70,6 @@
   transform: translateY(0);
 }
 
-/* ===========================
-   RESPONSIVE
-   =========================== */
 @media (max-width: 900px) {
   .cta-card {
     padding: 64px 32px;

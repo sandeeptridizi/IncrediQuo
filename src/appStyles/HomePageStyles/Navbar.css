@@ -1,4 +1,3 @@
-
 .navbar {
   position: fixed; 
   top: 0;
@@ -16,71 +15,75 @@
   padding-top: 15px; 
   transition: background-color 0.3s ease;
 }
+
 .navbar::before {
-    content: none;
+  content: none;
 }
+
 .navbar__top-row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding-bottom: 10px; 
-    position: relative; 
-    z-index: 10; 
-    background-color: transparent; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding-bottom: 10px; 
+  position: relative; 
+  z-index: 10; 
+  background-color: transparent; 
 }
+
 .navbar__top-row::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    
-    background-color: #ffe9ec; 
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
-    
-    background-size: 20px 20px; 
-    backdrop-filter: blur(8px); 
-    -webkit-backdrop-filter: blur(8px); 
-    opacity: 0.98; 
-    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  
+  background-color: #ffe9ec; 
+  background-image: 
+      radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
+  
+  background-size: 20px 20px; 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px); 
+  opacity: 0.98; 
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
 }
+
 .navbar__links-row {
-    width: 100%; 
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    gap: 40px;
-    padding: 10px 0; 
-    background-color: transparent; 
-    border-top: 1px solid rgba(0, 0, 0, 0.15); /* Darker line for contrast */
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  gap: 40px;
+  padding: 10px 0; 
+  background-color: transparent; 
+  border-top: 1px solid rgba(0, 0, 0, 0.15); 
 }
 
 .navbar.scrolled {
-    background-color: #ffe9ec; /* Ensures consistency */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
+  background-color: #ffe9ec;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
 }
 
 .navbar.scrolled .navbar__top-row::before {
-    opacity: 1; 
-    backdrop-filter: blur(0px); 
-    -webkit-backdrop-filter: blur(0px); 
+  opacity: 1; 
+  backdrop-filter: blur(0px); 
+  -webkit-backdrop-filter: blur(0px); 
 }
 
 .navbar.scrolled .navbar__logo span,
 .navbar.scrolled .navbar__links-row a,
 .navbar.scrolled .dropdown__title,
 .navbar.scrolled .ringing-phone-icon {
-    color: #022447; 
-    transition: color 0.3s ease;
+  color: #022447; 
+  transition: color 0.3s ease;
 }
 
 .navbar.scrolled .navbar__links-row a::after,
 .navbar.scrolled .dropdown__title::after {
-    background: #022447; 
+  background: #022447; 
 }
 
 .navbar__logo {
@@ -100,13 +103,12 @@
 }
 
 .navbar__logo img {
-  max-height: 80px;   /* controls logo size without increasing navbar */
+  max-height: 80px;   
   width: auto;
   object-fit: contain;
   background: transparent;
   transition: transform 0.25s ease;
 }
-
 
 .hero__logo,
 .hero__left,
@@ -117,7 +119,6 @@
   box-shadow: none !important;
   border: none !important;
 }
-
 
 .navbar__logo:hover {
   transform: translateY(-1px);
@@ -135,7 +136,6 @@
   text-decoration: none;
   transition: color 0.25s ease;
 }
-
 
 .navbar__links-row a:hover {
   color: #ff6a7a; 
@@ -170,7 +170,6 @@
   box-shadow: none;
 }
 
-
 .contact-button-wrapper {
   display: flex; 
   align-items: center;
@@ -184,16 +183,13 @@
   width: 40px;
   height: 40px;
   display: flex; 
-
-  width: 40px;
-  height: 40px;
   position: relative; 
 }
+
 /* icon */
 .ringing-phone-icon {
   font-size: 40px;
   color: #022447;
-
   transform-origin: bottom center;
   transition: color 0.25s ease, transform 0.25s ease;
   z-index: 2;
@@ -243,7 +239,6 @@
   }
 }
 
-
 .dropdown {
   position: relative;
 }
@@ -282,7 +277,6 @@
   width: 100%;
 }
 
-
 .dropdown__menu {
   position: absolute;
   top: 100%;
@@ -291,7 +285,7 @@
   margin-top: 6px;
   width: 404px;
   height: 326px;
-  background: #002147; /* Solid dark background */
+  background: #002147; 
   border-radius: 34px;
   padding: 37px 25px;
   display: flex;
@@ -307,7 +301,6 @@
   overflow-y: hidden;
   scrollbar-width: none;
   
-  /* Remove blur/grid effect */
   backdrop-filter: none; 
   -webkit-backdrop-filter: none;
 }
@@ -407,6 +400,7 @@
   margin: 32px auto 0;
 }
 
+
 @media (max-width: 1024px) {
   .history {
     padding: 96px 0 96px;
@@ -430,7 +424,6 @@
     text-align: left;
   }
   
-  /* Responsive margin adjustments for paragraphs */
   .history__para:nth-of-type(1),
   .history__para:nth-of-type(2) {
     margin-top: 28px;
@@ -442,13 +435,12 @@
     margin-bottom: 0;
   }
 
-  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 10px 32px;
   }
 
   .navbar__top-row {
-      padding-bottom: 8px;
+    padding-bottom: 8px;
   }
   
   .navbar__links-row {
@@ -469,14 +461,15 @@
     height: auto;
   }
 
-  .phone-icon-container, .ringing-phone-icon {
+  .phone-icon-container, 
+  .ringing-phone-icon {
     width: 30px; 
     height: 30px;
     font-size: 30px;
   }
 }
 
-/* Small tablets & phones (<= 768px) */
+
 @media (max-width: 768px) {
   .history__inner {
     padding: 0 16px;
@@ -491,17 +484,15 @@
     font-size: 18px;
     line-height: 28px;
   }
-
-  /* --- NAVBAR RESPONSIVE --- */
   .navbar {
     padding: 10px 18px;
     column-gap: 12px;
   }
   
   .navbar__top-row {
-      flex-wrap: wrap; 
-      justify-content: space-between;
-      padding-bottom: 6px;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    padding-bottom: 6px;
   }
 
   .navbar__logo {
@@ -509,8 +500,9 @@
   }
 
   .navbar__logo img {
-    width: 26px;
-    height: 26px;
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
   }
 
   .navbar__links-row {
@@ -544,7 +536,6 @@
     border-radius: 20px;
     gap: 16px;
     
-    /* Ensure no blur on mobile dropdown */
     backdrop-filter: none; 
     -webkit-backdrop-filter: none;
   }
@@ -559,14 +550,16 @@
     line-height: 32px;
   }
 
-  .phone-icon-container, .ringing-phone-icon {
+  .phone-icon-container, 
+  .ringing-phone-icon {
     width: 30px; 
     height: 30px;
     font-size: 30px;
   }
 }
 
-/* Very small phones (<= 520px) */
+/* ===================== 520px ===================== */
+
 @media (max-width: 520px) {
   /* --- HISTORY SECTION RESPONSIVE --- */
   .history {
@@ -592,10 +585,10 @@
   }
   
   .navbar__top-row {
-      width: 100%;
-      flex-direction: column; 
-      gap: 8px;
-      padding-bottom: 8px;
+    width: 100%;
+    flex-direction: column; 
+    gap: 8px;
+    padding-bottom: 8px;
   }
 
   .navbar__logo {
@@ -604,9 +597,11 @@
     font-size: 15px;
   }
 
+  /* 🔥 very small phone logo size fix */
   .navbar__logo img {
-    width: 24px;
-    height: 24px;
+    max-height: 34px;
+    width: auto;
+    object-fit: contain;
   }
 
   .navbar__links-row {
@@ -622,8 +617,8 @@
   }
 
   .contact-button-wrapper {
-      width: 100%; 
-      justify-content: center;
+    width: 100%; 
+    justify-content: center;
   }
 
   .page-section {
@@ -641,7 +636,8 @@
     padding: 12px 14px;
   }
 
-  .phone-icon-container, .ringing-phone-icon {
+  .phone-icon-container, 
+  .ringing-phone-icon {
     width: 22px; 
     height: 22px;
     font-size: 22px;

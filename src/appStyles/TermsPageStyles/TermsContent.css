@@ -1,5 +1,3 @@
-/* ================= TERMS/PRIVACY CONTENT SECTION ================= */
-
 .terms-content {
   width: 100%;
   max-width: 1438px;
@@ -15,11 +13,9 @@
   text-align: left;
 }
 
-/* --- HEADINGS (H2, H3) --- */
-
 .terms-content h2 {
   font-family: "Raleway", sans-serif;
-  font-size: 20px;              /* main section headings */
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 700;
   color: #000000;
@@ -29,7 +25,7 @@
 
 .terms-content h3 {
   font-family: "Raleway", sans-serif;
-  font-size: 20px;              /* sub headings */
+  font-size: 20px;
   line-height: 32px;
   font-weight: 700;
   color: #000000;
@@ -37,19 +33,15 @@
   margin-bottom: 12px;
 }
 
-/* --- PARAGRAPHS (P) --- */
-
 .terms-content p {
   font-family: "Raleway", sans-serif;
-  font-size: 20px;              /* Figma: 24px */
-  line-height: 32px;            /* Figma: 32px */
+  font-size: 20px;
+  line-height: 32px;
   font-weight: 400;
   color: #000000;
   margin-top: 0;
   margin-bottom: 16px;
 }
-
-/* --- UNORDERED LISTS (UL & LI) --- */
 
 .terms-content ul {
   list-style: disc;
@@ -60,27 +52,21 @@
 
 .terms-content li {
   font-family: "Raleway", sans-serif;
-  font-size: 20px;              /* Figma: 24px */
-  line-height: 32px;            /* Figma: 32px */
+  font-size: 20px;
+  line-height: 32px;
   font-weight: 400;
   color: #000000;
   margin-bottom: 6px;
 }
 
-/* --- STRONG TEXT (SPAN in Figma) --- */
-
 .terms-content strong {
   font-family: "Raleway", sans-serif;
-  font-weight: 700;             /* bold span */
+  font-weight: 700;
 }
-
-/* --- CONTACT BLOCK (BOTTOM) : ONLY SPACING --- */
 
 .terms-contact {
-  margin-top: 24px;             /* just gap above block */
+  margin-top: 24px;
 }
-
-/* ========= TABLET (≤ 1024px) ========= */
 
 @media (max-width: 1024px) {
   .terms-content {
@@ -107,8 +93,6 @@
     margin-bottom: 12px;
   }
 }
-
-/* ========= MOBILE (≤ 600px) ========= */
 
 @media (max-width: 600px) {
   .terms-content {

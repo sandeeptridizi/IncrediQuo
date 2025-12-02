@@ -8,11 +8,10 @@ import { PiPhoneCall } from "react-icons/pi";
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false); 
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
 
-  // Handle scroll detection
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -27,7 +26,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -39,22 +37,17 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // close dropdown after clicking a link
   const handleServiceClick = () => {
     setIsServicesOpen(false);
   };
 
-  const navbarClass = `navbar ${scrolled ? 'scrolled' : ''}`; // Add 'scrolled' class here
+  const navbarClass = `navbar ${scrolled ? 'scrolled' : ''}`;
 
   return (
-    // Use the dynamic class name
     <header className={navbarClass}>
-      {/* 1. TOP ROW: Logo and Contact Button */}
       <div className="navbar__top-row">
-        {/* LOGO NAME REMOVED */}
         <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
-          {/* <span>IncrediQuo-Solutions</span> <-- REMOVED */}
         </NavLink>
 
         <div
@@ -68,14 +61,12 @@ const Navbar = () => {
           <Button name="Contact Us" />
         </div>
       </div>
-      {/* 2. BOTTOM ROW: Navigation Links */}
       <nav className="navbar__links-row">
         <NavLink to="/" end>
           Home
         </NavLink>
         <NavLink to="/about">About</NavLink>
 
-        {/* OUR SERVICES DROPDOWN */}
         <div
           className={`dropdown ${isServicesOpen ? "open" : ""}`}
           ref={dropdownRef}

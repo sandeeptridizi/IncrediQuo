@@ -1,4 +1,4 @@
-// src/components/HomePage/LatestPosts.jsx
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../../appStyles/HomePageStyles/LatestPosts.css";
@@ -8,8 +8,6 @@ import { database, ref, get } from "../../Firebase/firebase";
 const LatestPosts = () => {
   const [posts, setPosts] = useState([]);
   const navigate = useNavigate();
-
-  // ---- FETCH LATEST 3 BLOGS FROM FIREBASE ----
   useEffect(() => {
     const fetchLatestBlogs = async () => {
       try {

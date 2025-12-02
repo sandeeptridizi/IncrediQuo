@@ -1,18 +1,16 @@
-/* SECTION WRAPPER */
+
 .ts-flex {
   padding: 70px 0 60px;
   background: #ffffff;
 }
 
-/* MAIN CONTAINER */
+
 .ts-flex__inner {
   max-width: 768px;             
   margin: 0 auto;
   transform: translateX(-35px);  
   text-align: center;
 }
-
-/* EYEBROW */
 .ts-flex__eyebrow {
   font-size: 16px;
   font-weight: 600;
@@ -21,7 +19,6 @@
   font-weight: 500;
 }
 
-/* MAIN TITLE */
 .ts-flex__title {
   font-size: 40px;              
   line-height: 62px;
@@ -31,8 +28,6 @@
   font-style: SemiBold;
   font-family: Poppins;
 }
-
-/* GRID OF CARDS */
 .ts-flex__grid {
   display: grid;
   grid-template-columns: repeat(2, 373px); 
@@ -40,7 +35,6 @@
   justify-content: center;
 }
 
-/* SINGLE CARD */
 .ts-flex__card {
   display: flex;
   align-items: flex-start;
@@ -53,7 +47,6 @@
   text-align: left;
 }
 
-/* CIRCLE CHECK ICON */
 .ts-flex__icon {
   width: 21px;
   height: 21px;
@@ -67,7 +60,6 @@
   position: relative;
 }
 
-/* CHECK MARK BASED ON FIGMA SIZE */
 .ts-flex__icon::before {
   content: "";
   width: 8px;
@@ -78,8 +70,6 @@
   margin-top: -1px;
 }
 
-
-/* CARD TEXT */
 .ts-flex__card h3 {
   font-size: 16px;
   font-weight: 700;
@@ -108,7 +98,6 @@
     padding: 40px 16px;
   }
 }
-/* HOVER ANIMATION */
 .ts-flex__card {
   transition: transform 0.38s ease, box-shadow 0.38s ease;
 }

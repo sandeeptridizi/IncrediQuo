@@ -168,8 +168,8 @@ const ContactSection = ({ onClose }) => {
                 colorArrow="#ffffff"
                 colorText="#022447"
                 colorTextHover="#ffffff"
-                type="submit" // ← This makes it work as form submit
-                disabled={isSubmitting} // ← Disable during submission
+                type="submit" 
+                disabled={isSubmitting} 
               />
             </div>
           </form>
@@ -196,7 +196,7 @@ const ContactSection = ({ onClose }) => {
         </div>
       )}
 
-      {/* ERROR MODAL */}
+     
       {showErrorModal && (
         <div className="error-modal-backdrop">
           <div className="error-modal">

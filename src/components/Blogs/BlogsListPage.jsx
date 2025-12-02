@@ -161,7 +161,7 @@ const BlogsListPage = () => {
         </div>
       </section>
 
-      {/* BOTTOM PINK ABOUT-US STRIP */}
+     
       <section className="blogs-approach">
         <div className="blogs-approach__inner">
           <p className="blogs-approach__text">

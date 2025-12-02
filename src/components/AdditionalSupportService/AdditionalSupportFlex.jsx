@@ -5,16 +5,12 @@ const AdditionalSupportFlex = () => {
   return (
     <section className="ts-flex">
       <div className="ts-flex__inner">
-        {/* Updated eyebrow text */}
         <p className="ts-flex__eyebrow">Our Working Process</p>
-
-        {/* Updated title */}
         <h2 className="ts-flex__title">
           Our Streamlined 4-Step Workflow
         </h2>
 
         <div className="ts-flex__grid">
-          {/* STEP 1 */}
           <article className="ts-flex__card">
             <div className="ts-flex__icon" />
             <div>
@@ -25,7 +21,6 @@ const AdditionalSupportFlex = () => {
             </div>
           </article>
 
-          {/* STEP 2 */}
           <article className="ts-flex__card">
             <div className="ts-flex__icon" />
             <div>
@@ -35,8 +30,6 @@ const AdditionalSupportFlex = () => {
               </p>
             </div>
           </article>
-
-          {/* STEP 3 */}
           <article className="ts-flex__card">
             <div className="ts-flex__icon" />
             <div>
@@ -47,7 +40,6 @@ const AdditionalSupportFlex = () => {
             </div>
           </article>
 
-          {/* STEP 4 */}
           <article className="ts-flex__card">
             <div className="ts-flex__icon" />
             <div>

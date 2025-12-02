@@ -1,26 +1,10 @@
-/* ===== MAIN FOOTER WRAPPER ===== */
-/* .footer {
-  position: relative;
-  color: #f9fafb;
-  width: 100%;
-  margin-top: -2px;
-  overflow: hidden;
-
-  padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
-
-  background-image: url("../../assets/footer/Rectangle 13.png");
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-} */
-
 .footer {
   position: relative;
   color: #f9fafb;
   width: 100%;
   overflow: hidden;
   padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
-  background-color: #022447; /* you can keep your image here also */
+  background-color: #022447;
 }
 
 .footer::before {
@@ -42,7 +26,6 @@
   z-index: 5;
 }
 
-/* inner container */
 .footer-inner {
   max-width: 1160px;
   margin: 0 auto;
@@ -66,7 +49,6 @@
   }
 }
 
-/* === TOP ROW (brand + columns) === */
 .footer-top {
   display: flex;
   justify-content: space-between;
@@ -74,13 +56,11 @@
   gap: 96px;
 }
 
-/* left brand block */
 .footer-brand {
   max-width: 340px;
   flex-shrink: 0;
 }
 
-/* === LOGO AREA === */
 .footer-logo {
   display: inline-flex;
   align-items: center;
@@ -91,35 +71,19 @@
   text-decoration: none;
 }
 
-/* --- FIX FOOTER LOGO SIZE --- */
-.footer-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-  cursor: pointer;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-  text-decoration: none;
-
-  /* ❌ REMOVE THESE IF YOU HAVE THEM:
-  width: 10px;
-  height: 20px;
-  */
-}
-
-/* size the image actually used in JSX */
 .footer-logo-icon {
-  width: 40px;      /* adjust 32–48px as you like */
-  height: 40px;
+  width: 80px;
+  height: 60px;
   object-fit: contain;
+  margin-left: -25px;
 }
 
-/* optional: fine-tune text vertical alignment */
 .footer-logo-text {
   font-size: 25px;
   font-weight: 700;
   color: #ffffff;
-  transform: translateY(2px);  /* or 0px if not needed */
+  transform: translateY(2px);
+  margin-left: -15px;
 }
 
 .footer-logo:hover {
@@ -143,7 +107,7 @@
 
 .footer-logo {
   display: inline-flex;
-  align-items: center; /* centers icon + text vertically */
+  align-items: center;
   gap: 10px;
 }
 
@@ -157,10 +121,9 @@
   font-size: 25px;
   font-weight: 700;
   color: #ffffff;
-  transform: translateY(3px);  /* 🔥 slightly pulls text down for perfect alignment */
+  transform: translateY(3px);
 }
 
-/* description text */
 .footer-description {
   max-width: 340px;
   font-size: 16px;
@@ -169,7 +132,6 @@
   margin: 0 0 18px;
 }
 
-/* LinkedIn square */
 .footer-social {
   width: 50px;
   height: 50px;
@@ -182,7 +144,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  /* ⬇️ was 22px before – group will handle spacing */
   margin-bottom: 0;
   cursor: pointer;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
@@ -194,45 +155,40 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
 
-/* Copyright */
 .footer-copy-left {
   font-size: 16px;
   line-height: 30px;
   color: #d1e0ff;
-  margin-top: 40px;   /* ⬅️ moves text down slightly */
+  margin-top: 40px;
 }
 
-/* right side columns */
 .footer-links {
   display: flex;
   gap: 80px;
-  white-space: normal;      /* ✅ allow wrapping so text doesn’t overlap */
+  white-space: normal;
   align-items: flex-start;
 }
 
-/* General column style */
 .footer-column {
   flex-shrink: 1;
   min-width: 150px;
 }
 
-/* Services column */
 .footer-column--services {
   flex-basis: 230px;
   max-width: 230px;
 }
 
-/* Quikers column */
 .footer-column--quikers {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   min-height: 221px;
-  flex-basis: 230px;        /* ✅ narrower so columns don’t collide */
+  flex-basis: 230px;
   max-width: 230px;
   justify-content: space-between;
   font-size: 16px;
-  margin-left: -55px;           /* ✅ remove negative shift that caused overlap */
+  margin-left: -55px;
 }
 
 .footer-bottom-links {
@@ -248,11 +204,10 @@
 }
 
 .footer-column--quikers .footer-bottom-links {
-  margin-top: 66px;   /* 🔥 pushes both links down */
-  margin-bottom: 0;   /* remove upward pull */
+  margin-top: 66px;
+  margin-bottom: 0;
 }
 
-/* headings */
 .footer-column h4 {
   font-size: 18px;
   font-weight: 500;
@@ -272,7 +227,6 @@
   background-color: #ff6a7a;
 }
 
-/* column lists */
 .footer-column ul {
   display: flex;
   flex-direction: column;
@@ -294,7 +248,6 @@
   margin-top: 4px;
 }
 
-/* main footer text links (Home, About, Careers, Blogs) */
 .footer-link {
   color: #ffffff;
   text-decoration: none;
@@ -304,7 +257,6 @@
   text-decoration: underline;
 }
 
-/* bottom row (Privacy + Terms) */
 .footer-bottom-links {
   margin-top: auto;
   margin-bottom: -20px;
@@ -331,16 +283,14 @@
   text-decoration: underline;
 }
 
-/* social icons side by side */
 .footer-social-group {
   display: flex;
   align-items: center;
   gap: 25px;
   margin-bottom: 22px;
-  margin-top: 40px;   /* 🔥 moves both icons slightly down */
+  margin-top: 40px;
 }
 
-/* Twitter icon same style + size as LinkedIn button */
 .footer-social-icon {
   width: 50px;
   height: 50px;
@@ -348,21 +298,18 @@
   background-color: #ffffff;
   padding: 10px;
   cursor: pointer;
-  display: flex;              /* center the png */
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-  margin-left: 0;             /* ⬅️ remove shift */
+  margin-left: 0;
 }
 
-/* same hover effect as LinkedIn */
 .footer-social-icon:hover {
   background-color: #ffe8f0;
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
-
-/* ===== RESPONSIVE ===== */
 
 @media (max-width: 1024px) {
   .footer-inner {
@@ -385,10 +332,9 @@
 
   .footer-column--quikers {
     min-height: auto;
-    margin-left: 0; /* ✅ stop shifting on tablet */
+    margin-left: 0;
   }
 
-  /* wave slightly shorter on tablet */
   .footer::before {
     height: 100px;
   }
@@ -439,7 +385,6 @@
     margin-right: 0;
   }
 
-  /* keep wave proportional */
   .footer::before {
     height: 85px;
   }
@@ -521,7 +466,6 @@
     gap: 18px;
   }
 
-  /* wave height for small phones */
   .footer::before {
     height: 70px;
   }

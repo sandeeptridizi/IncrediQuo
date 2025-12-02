@@ -6,17 +6,12 @@
   justify-content: center;
 }
 
-/* dotted triangle top-left */
 .contact-newsletter__dots {
   position: absolute;
   top: 40px;
   left: 120px;
   width: 183.86px;
   height: 176.35px;
-  /* background-image: radial-gradient(#111827 1.3px, transparent 1.3px);
-  background-size: 10px 10px;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-  opacity: 0.9; */
 }
 
 .contact-newsletter__inner {
@@ -32,8 +27,6 @@
   align-items: center;
   justify-content: center;
 }
-
-/* OVERLINE */
 .contact-newsletter__overline {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -47,7 +40,6 @@
   max-width: 556px;
 }
 
-/* description text */
 .contact-newsletter__title {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
@@ -59,7 +51,7 @@
   max-width: 1001px;
 }
 
-/* FORM */
+
 .contact-newsletter__form {
   display: flex;
   justify-content: center;
@@ -67,17 +59,14 @@
   max-width: 496px;
   width: 100%;
   margin: 0 auto;
-  /* let children control height */
 }
 
-/* shared input/button base */
 .contact-newsletter__input,
 .contact-newsletter__button {
   height: 55px;
   box-sizing: border-box;
 }
 
-/* input */
 .contact-newsletter__input {
   flex: 1;
   padding: 0 22px;
@@ -96,7 +85,6 @@
   font-size: 15px;
 }
 
-/* button */
 .contact-newsletter__button {
   min-width: 149px;
   padding: 0 26px;
@@ -117,7 +105,6 @@
   transform: translateY(-1px);
 }
 
-/* ========== TABLET (≤ 1024px) ========== */
 @media (max-width: 1024px) {
   .contact-newsletter {
     padding: 90px 0 105px;
@@ -150,7 +137,6 @@
   }
 }
 
-/* ========== MOBILE (≤ 600px) ========== */
 @media (max-width: 600px) {
   .contact-newsletter {
     padding: 76px 0 82px;
@@ -209,10 +195,10 @@
     margin-top: -15px;
   }
   .contact-newsletter__button {
-    height: 65px;          /* increased height */
-    font-size: 17px;       /* larger text inside */
-    padding: 0 22px;       /* comfortable spacing */
-    border-radius: 999px;  /* smooth pill shape */
+    height: 65px;          
+    font-size: 17px;       
+    padding: 0 22px;      
+    border-radius: 999px;  
   }
 
   .contact-newsletter__input::placeholder {

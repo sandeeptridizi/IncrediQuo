@@ -1,13 +1,12 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/Group 1304.png";
-import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png"; // ⬅️ use your exact file name
+import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png"; 
 
 const FeatureSection = () => {
   return (
     <section className="feature-section">
       <div className="feature-inner">
-        {/* SVG illustration */}
         <div className="feature-illustration">
           <img
             src={featureIllustration}
@@ -15,8 +14,6 @@ const FeatureSection = () => {
             className="feature-svg"
           />
         </div>
-
-        {/* Right content */}
         <div className="feature-content">
           <h2 className="feature-title">
             Our Workflow Engineered <br />
@@ -45,10 +42,7 @@ const FeatureSection = () => {
           </ul>
         </div>
       </div>
-
-      {/* ================== WHY CHOOSE SECTION ================== */}
       <div className="why-choose-container">
-        {/* LEFT: content */}
         <div className="why-left">
           <h2 className="why-title">Why Choose IncrediQuo:</h2>
 
@@ -77,8 +71,6 @@ const FeatureSection = () => {
             audit.
           </p>
         </div>
-
-        {/* RIGHT: image */}
         <div className="why-right">
           <img
             src={whyChooseImg}

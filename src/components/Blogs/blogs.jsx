@@ -114,18 +114,16 @@ const BlogPage = () => {
                 <textarea placeholder="Your Message" rows={4} />
               </label>
 
-              {/* <button type="button" className="blog-contact__submit">
-                Submit
-              </button> */}
+              
 
                 <div className="blog-contact__submit">
             {/* <Button name="Submit form" /> */}
               <Button
               name="Submit form"
               paddingXL="8.6vw"
-              paddingXM="24.5vw" // ← mobile padding
-              widthL="11.15vw" // ← THIS IS KEY: let content decide width
-              widthM="30.3vw" // ← auto width on mobile too
+              paddingXM="24.5vw"
+              widthL="11.15vw" 
+              widthM="30.3vw" 
               bacgrounClr="#022447"
               bacgrounArrow="#ffffff"
               colorArrow="#022447"
@@ -153,17 +151,12 @@ const BlogPage = () => {
             Our Approach Is Rooted In A Deep Understanding Of Your Needs. We
             Support You With Tools, Expert Guidance, And Tailored Resources.
           </p>
-
-          {/* <Link to="/about" className="blog-approach__button">
-            ABOUT US
-          </Link> */}
                          <div
                             className="blogs-approach__button"
                             onClick={() => navigate("/about")}
                             style={{ cursor: "pointer" }}
                           >
-                            {/* <Button name="ABOUT US" /> */}
-                                                                                 <Button
+                                           <Button
                                                             name="ABOUT US"
                                                             paddingXL="8.6vw"
                                                             paddingXM="24.5vw" // ← mobile padding

@@ -8,20 +8,17 @@ body {
   padding: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background-color: #f1f5f9;
-  scroll-behavior: smooth; /* smooth scroll for nav + CTAs */
+  scroll-behavior: smooth; 
 }
 
 .app {
   min-height: 100vh;
 }
-
-/* Reusable transitions */
 :root {
   --transition-fast: 0.2s ease;
   --transition-med: 0.35s ease;
 }
 
-/* Keyframe animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;

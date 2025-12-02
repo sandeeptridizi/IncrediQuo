@@ -11,29 +11,27 @@
 
 .blog-hero__image {
   display: block;
-  max-width: 1138px;     /* Figma width */
+  max-width: 1138px;     
   width: 100%;
-  height: 397px;         /* Figma height */
-  border-radius: 70px;   /* Figma radius */
+  height: 397px;         
+  border-radius: 70px;   
   object-fit: cover;
   margin: 0 auto;
 }
 
-/* ========= ARTICLE ========= */
-
 .blog-article {
-  max-width: 1018px;     /* Figma width */
+  max-width: 1018px;     
   margin: 0 auto 80px;
 }
 
 .blog-article__title {
   font-family: "DM Serif Display", "Times New Roman", serif;
   font-size: 40px;
-  line-height: 1;         /* Figma line height 100% */
+  line-height: 1;        
   font-weight: 400;
   color: #002147;
   margin: 0 0 16px;
-  max-width: 983px;       /* Figma title frame width */
+  max-width: 983px;       
 }
 
 .blog-article__meta {
@@ -43,7 +41,7 @@
   line-height: 1.6;
   color: #000000;
   margin-bottom: 32px;
-  max-width: 274px;       /* Figma meta group width */
+  max-width: 274px;       
 }
 
 .blog-article__meta span {
@@ -59,47 +57,42 @@
   font-family: "Lexend Deca", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
   font-size: 20px;        
-  line-height: 100%;         /* Figma line height 100% */
+  line-height: 100%;        
   color: #000000;
   margin-bottom: 80px;
-  max-width: 1018px;      /* match content frame width */
+  max-width: 1018px;      
 }
 
 .blog-article__content p {
   margin: 0 0 24px;
 }
 
-/* ======= CONTACT BLOCK (GET IN TOUCH) ======= */
-
 .blog-contact {
-  background: #ffe9ec;         /* panel color */
-  padding: 40px 0;             /* panel height ~530 with card inside */
+  background: #ffe9ec;        
+  padding: 40px 0;            
   margin: 0 0 80px;
 }
 
 .blog-contact__inner {
-  max-width: 1278px;           /* Figma: 1278 */
+  max-width: 1278px;          
   width: 100%;
   margin: 0 auto;
-  padding: 0;                  /* no extra side padding so width matches */
+  padding: 0;                  
   display: flex;
   align-items: center;
-  gap: 34px;                   /* Figma gap between card & text */
+  gap: 34px;                  
 }
 
-/* form card (pink with shadow) */
 .blog-contact__card {
-  background: #ffe9ec;         /* Figma rectangle color */
-  border-radius: 5px;          /* Figma radius */
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);  /* Figma drop shadow */
+  background: #ffe9ec;       
+  border-radius: 5px;         
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);  
   border: none;
-  width: 642px;                /* Figma: 642 */
-  height: 457px;               /* Figma: 457 */
-  padding: 40px 29px 32px;     /* from screenshot */
+  width: 642px;              
+  height: 457px;               
+  padding: 40px 29px 32px;    
   box-sizing: border-box;
 }
-
-/* form fields */
 
 .blog-contact__form {
   display: flex;
@@ -123,7 +116,7 @@
   width: 80vw !important;                /* Figma: 584 */
   height: 64px;                /* Figma: 64 */
   border: none;
-  border-radius: 10px;         /* Figma: 10px */
+  border-radius: 10px;        
   background: #001f5b;
   color: #ffe9ec;
   padding: 14px 18px;
@@ -133,9 +126,8 @@
 }
 
 .blog-contact__field textarea {
-  height: 141px;               /* Figma: 141 */
+  height: 141px;              
   min-height: 141px;
-  /* resize: vertical; */
   resize: none;
 }
 
@@ -144,23 +136,21 @@
   color: #d1d5db;
 }
 
-/* submit button */
-
 .blog-contact__submit {
   margin-left: 0vw;
   margin-top: -0.9 vw;
 }
 
 .blog-contact__text {
-  width: 506px;                /* Figma group width */
+  width: 506px;               
 }
 
 .blog-contact__text h2 {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-weight: 900;            /* very bold */
-  font-size: 84px;             /* Figma: 84 */
-  line-height: 71px;           /* Figma: 71 */
+  font-weight: 900;           
+  font-size: 84px;            
+  line-height: 71px;         
   letter-spacing: -0.04em;
   color: #002147;
   margin: 0 0 12px;
@@ -169,15 +159,13 @@
 .blog-contact__text p {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  font-size: 16px;             /* Figma: 16 */
-  font-weight: 600;            /* Semi Bold */
-  line-height: 1;              /* 100% */
+  font-size: 16px;            
+  font-weight: 600;           
+  line-height: 1;            
   color: #111827;
-  max-width: 493px;            /* Figma text frame width */
+  max-width: 493px;           
   margin: 0;
 }
-
-/* ======= RESPONSIVE TWEAKS JUST FOR THIS BLOCK ======= */
 
 @media (max-width: 1024px) {
   .blog-contact__inner {
@@ -189,7 +177,8 @@
   .blog-contact__card {
     width: 100%;
     max-width: 642px;
-    height: auto;              /* allow card to grow with content */
+    height: auto;             
+    
   }
 
   .blog-contact__field input,

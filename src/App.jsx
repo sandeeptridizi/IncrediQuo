@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import React, { useState, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -34,14 +34,11 @@ import { UpdateBlog } from "./components/BlogUpdation/BlogUpdation";
 import CareerCreation from "./components/careerCreation/careerCreation";
 import SmallCard from "./components/managingCareers/managingCareers";
 import CareerUpdate from "./components/careerCreation/updationCareerpage";
-
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LogInPage/LogIn";
+import BlogsListPage from "./components/Blogs/BlogsListPage";   
+import BlogPage from "./components/Blogs/blogs";               
 
-import BlogsListPage from "./components/Blogs/BlogsListPage";   // list page
-import BlogPage from "./components/Blogs/blogs";               // DETAIL PAGE
-
-// 🔹 Scroll to top on every route change
 import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
@@ -63,10 +60,7 @@ function App() {
   return (
     <>
       {!shouldHideLayout && <Navbar />}
-
-      {/* 🔥 whenever the route (pathname) changes, scroll to top */}
       <ScrollToTop />
-
       <div className="app">
         <Routes>
           <Route
@@ -109,12 +103,8 @@ function App() {
             path="/services/additional-support"
             element={<AdditionalSupportServicePage onOpenContact={openContact} />}
           />
-
-          {/* Legal Pages */}
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/terms-of-service" element={<TermsPage />} />
-
-          {/* Dashboard / CMS */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/createBlog" element={<CreateBlog />} />
