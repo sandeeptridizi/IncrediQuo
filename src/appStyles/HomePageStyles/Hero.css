@@ -1,3 +1,5 @@
+/* ============ HERO WRAPPER ============ */
+
 .hero {
   display: flex;
   justify-content: center;
@@ -16,7 +18,7 @@
   gap: 60px;
 }
 
-/* ================= LEFT SIDE ================= */
+/* ============ LEFT SIDE ============ */
 
 .hero__content {
   flex: 0 0 555px;
@@ -46,17 +48,36 @@
   vertical-align: top;
 }
 
+.hero__subtitle {
+  font-size: 16px;
+  line-height: 28px;
+  color: #4f5665;
+  margin: 0 0 28px;
+}
+
+/* ============ TYPEWRITER ANIMATION ============ */
+
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-cursor {
-  50% { border-color: transparent; }
-  0%, 100% { border-color: #0b132a; }
+  50% {
+    border-color: transparent;
+  }
+  0%,
+  100% {
+    border-color: #0b132a;
+  }
 }
 
 /* --- CURSOR VISUAL ELEMENT --- */
+
 .cursor-visual {
   animation: none !important;
   width: 0 !important;
@@ -71,139 +92,32 @@
   vertical-align: top;
   margin-left: 5px;
 
-  animation:
-    blink-cursor 0.75s step-end var(--cursor-start) infinite;
+  animation: blink-cursor 0.75s step-end var(--cursor-start) infinite;
 }
 
 /* --- LINE 1 --- */
 .hero__title .line-1 {
   display: block;
-  animation:
-    typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards;
+  animation: typewriter var(--line-time)
+    steps(var(--line-char-count)) var(--line-delay) forwards;
 }
 
 /* --- LINE 2 --- */
 .hero__title .line-2 {
   display: inline-block;
-  animation:
-    typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards;
+  animation: typewriter var(--line-time)
+    steps(var(--line-char-count)) var(--line-delay) forwards;
 }
 
+/* ============ RIGHT SIDE — SCROLLABLE IMAGES ============ */
 
-/* ============== RESPONSIVE ============== */
-
-/* tablets */
-@media (max-width: 1024px) {
-  .hero {
-    padding: 100px 0 80px;
-  }
-
-  .hero__inner {
-    padding: 0 40px;
-    gap: 40px;
-  }
-
-  .hero__title {
-    font-size: 40px;
-    line-height: 56px;
-  }
-}
-
-/* small tablets / big phones */
-@media (max-width: 900px) {
-  .hero {
-    padding: 120px 0 70px;
-    margin-bottom: -18px;
-  }
-
-  .hero__inner {
-    padding: 0 24px;
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 36px;
-  }
-
-  .hero__content,
-  .hero__title,
-  .hero__subtitle {
-    max-width: 100%;
-  }
-
-  .hero__image {
-    justify-content: center;
-    flex-basis: auto;
-    max-width: 440px;
-  }
-
-  .hero__image-main {
-    max-width: 440px;
-  }
-
-  .hero__title {
-    font-size: 34px;
-    line-height: 46px;
-    animation: none !important;
-  }
-
-  .hero__title span {
-    width: auto !important;
-    overflow: visible !important;
-    border-right: none !important;
-    white-space: normal !important;
-    animation: none !important;
-    display: inline !important;
-  }
-
-  .cursor-visual {
-    display: none !important;
-  }
-
-  .hero__subtitle {
-    font-size: 15px;
-  }
-}
-
-/* phones */
-@media (max-width: 600px) {
-  .hero {
-    padding: 160px 0 6px;
-  }
-
-  .hero__inner {
-    padding: 0 18px;
-  }
-
-  .hero__title {
-    font-size: 28px;
-    line-height: 38px;
-  }
-
-  .hero__subtitle {
-    font-size: 14px;
-    line-height: 26px;
-  }
-
-  .hero__button {
-    width: 100%;
-    max-width: 260px;
-  }
-}
-
-/* ===== FORCE DISABLE ANY ENTRY ANIMATION ON HERO BLOCK ===== */
-.hero,
-.hero__inner {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
-}
-
-/* ============== RIGHT SIDE — SCROLLABLE IMAGES ============== */
 .hero__image {
-  position: relative;
+  position: relative; /* needed for absolute dots */
   flex: 0 0 520px;
   max-width: 520px;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-right: 20px;
 }
 
@@ -217,23 +131,11 @@
   scroll-behavior: smooth;
   padding-bottom: 6px;
   align-items: center;
- -ms-overflow-style: none;  /* IE / Edge */
+  -ms-overflow-style: none; /* IE / Edge */
   scrollbar-width: none; /* Firefox */
 }
 
-/* each hero image */
-.hero__image-main {
-  display: block;
-  flex: 0 0 100%;
-  height: 400px;         /* reduced height */
-  width: auto;
-  object-fit: cover;
-  scroll-snap-align: center;
-  border-radius: 12px;
-  margin-top: 40px;
-}
-
-/* custom scrollbar */
+/* hide scrollbar style for WebKit */
 .hero__image-track::-webkit-scrollbar {
   height: 6px;
 }
@@ -245,10 +147,188 @@
   background: transparent;
 }
 
-/* MOBILE tweak — show next image little bit & smaller height */
-@media (max-width: 600px) {
+/* each hero image */
+.hero__image-main {
+  display: block;
+  flex: 0 0 100%;
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  scroll-snap-align: center;
+  border-radius: 12px;
+  margin-top: 40px;
+}
+
+/* ===== POINTER DOTS – overlay on image bottom ===== */
+
+.hero__dots {
+  position: absolute;
+  bottom: 18px; /* distance from bottom of image */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.hero__dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #bfbfbf;
+  transition: 0.3s;
+}
+
+.hero__dot.active {
+  background: linear-gradient(135deg, #0444ff, #ff48d1); /* blue → pink-blue */
+  transform: scale(1.25);
+}
+
+/* ===== FORCE DISABLE ANY ENTRY ANIMATION ON HERO BLOCK ===== */
+
+.hero,
+.hero__inner {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* ========================================================= */
+/*                    RESPONSIVE BREAKPOINTS                 */
+/* ========================================================= */
+
+/* ---------- TABLET (max-width: 1024px) ---------- */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 110px 0 70px;
+  }
+
+  .hero__inner {
+    padding: 0 40px;
+    gap: 40px;
+  }
+
+  .hero__title {
+    font-size: 42px;
+    line-height: 60px;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
   .hero__image-main {
-    flex: 0 0 90%;
-    height: 260px;
+    height: 340px;
+  }
+}
+
+/* ---------- TAB + LARGE MOBILE (max-width: 900px) ---------- */
+@media (max-width: 900px) {
+  .hero {
+    padding: 125px 0 65px;
+    margin-bottom: -18px;
+  }
+
+  .hero__inner {
+    padding: 0 26px;
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 32px;
+  }
+
+  .hero__content,
+  .hero__title,
+  .hero__subtitle {
+    max-width: 100%;
+  }
+
+  .hero__title {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .hero__subtitle {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .cursor-visual {
+    display: none !important;
+  }
+
+  /* image full width + dots under image */
+  .hero__image {
+    justify-content: center;
+    flex-basis: auto;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+  }
+
+  .hero__image-main {
+    max-width: 100%;
+    height: 310px;
+  }
+
+  .hero__dots {
+    bottom: 16px;
+  }
+}
+
+/* ---------- MOBILE (max-width: 600px) ---------- */
+@media (max-width: 600px) {
+  .hero {
+    padding: 150px 0 35px;
+  }
+
+  .hero__inner {
+    padding: 0 18px;
+  }
+
+  .hero__title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .hero__subtitle {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .hero__button {
+    width: 100%;
+    max-width: 260px;
+  }
+
+  .hero__image-main {
+    flex: 0 0 94%;
+    height: 240px;
+  }
+
+  .hero__dots {
+    bottom: 12px;
+    gap: 7px;
+  }
+
+  .hero__dot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .hero__buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
   }
 }

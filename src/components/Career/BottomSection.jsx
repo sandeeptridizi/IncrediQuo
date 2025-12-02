@@ -1,13 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../appStyles/Career/BottomSection.css";
 import { Button } from "../Button/Button";
-import { useNavigate } from "react-router-dom";
+
 const BottomSection = () => {
-      const navigate = useNavigate();
+  const navigate = useNavigate();
+
   return (
     <div className="career-bottom">
-      {/* DOT IMAGE instead of CSS pattern */}
+      {/* DOT IMAGE */}
       <img src="/Graphic_Elements.png" alt="" className="dot-pattern" />
 
       <p>
@@ -16,28 +17,24 @@ const BottomSection = () => {
         value to every client we serve.
       </p>
 
-      {/* ABOUT US button → goes to /about */}
-      {/* <Link to="/about" className="bottom-btn">
-        ABOUT US
-      </Link> */}
-               <div
-                  className="blogs-approach__button"
-                  onClick={() => navigate("/about")}
-                  style={{ cursor: "pointer" }}
-                >
-                  {/* <Button name="ABOUT US" /> */}
-                                                     <Button
-                                name="ABOUT US"
-                                paddingXL="8.6vw"
-                                paddingXM="24.5vw" // ← mobile padding
-                                widthL="10.87vw" // ← THIS IS KEY: let content decide width
-                                widthM="30.3vw" // ← auto width on mobile too
-                                bacgrounClr="#022447"
-                                bacgrounArrow="#ffffff"
-                                colorArrow="#022447"
-                                colorText="#ffffff"
-                                colorTextHover="#022447"
-                              />
+      {/* ABOUT US button */}
+      <div
+        className="blogs-approach__button bottom-btn"
+        onClick={() => navigate("/about")}
+        style={{ cursor: "pointer" }}
+      >
+        <Button
+          name="ABOUT US"
+          paddingXL="8.6vw"
+          paddingXM="24.5vw"
+          widthL="10.87vw"
+          widthM="30.3vw"
+          bacgrounClr="#022447"
+          bacgrounArrow="#ffffff"
+          colorArrow="#022447"
+          colorText="#ffffff"
+          colorTextHover="#022447"
+        />
       </div>
     </div>
   );

@@ -76,7 +76,7 @@
 }
 
 /* ============== RIGHT IMAGE CARD – PROPER BIG SIZE ============== */
-/* Desktop: fixed big block that fits nicely with text */
+
 .about-hero__image {
   flex: 0 0 520px;        /* fixed width column for image */
   max-width: 540px;

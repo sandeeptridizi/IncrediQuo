@@ -2,7 +2,7 @@
 
 .career-bottom {
   width: 100%;
-  max-width: 1438px;            /* Figma group width */
+  max-width: 1438px;
   margin: 0 auto;
   position: relative;
   background: #ffffff;
@@ -10,12 +10,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 220px 5% 80px;
+  padding: 220px 5% 190px; /* top 220, bottom 190 */
   box-sizing: border-box;
   overflow: hidden;
 }
 
-/* DOT IMAGE – Figma: 183.86 x 132.6, left ~101px */
+/* DOT IMAGE */
 .dot-pattern {
   position: absolute;
   top: 80px;
@@ -28,7 +28,7 @@
 
 /* TEXT BLOCK */
 .career-bottom p {
-  max-width: 1061px;            /* Figma text width */
+  max-width: 1061px;
   width: 100%;
   font-size: 20px;
   line-height: 32px;
@@ -39,40 +39,31 @@
   padding-left: 0;
   padding-right: 0;
   box-sizing: border-box;
+  margin-bottom: 40px;
 }
 
-/* BUTTON – Figma: 153 x 55, radius 10 */
+/* BUTTON WRAPPER (applied on the div) */
 .bottom-btn {
-  /* margin-top: 32px;
-  width: 153px;
-  height: 55px;
-  padding: 6px 20px;
-  border-radius: 10px;
-  border: none;
-  background: #000000;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 1.4;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  cursor: pointer;
+  margin-top: 56px;            /* 🔥 space between paragraph & button */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  text-decoration: none;
-  box-sizing: border-box; */
+  align-self: center;          /* keep it centered in the section */
 }
 
 /* ========= TABLET (≤ 1024px) ========= */
 @media (max-width: 1024px) {
   .career-bottom {
-    padding: 160px 32px 60px;   /* little less top padding for shorter screens */
+    padding: 160px 32px 120px;
   }
 
   .career-bottom p {
     font-size: 18px;
     line-height: 30px;
+  }
+
+  .bottom-btn {
+    margin-top: 48px;
   }
 
   .dot-pattern {
@@ -86,7 +77,7 @@
 /* ========= MOBILE (≤ 600px) ========= */
 @media (max-width: 600px) {
   .career-bottom {
-    padding: 160px 16px 56px;   /* tighter but still same layout */
+    padding: 160px 16px 80px;
     align-items: center;
   }
 
@@ -98,10 +89,7 @@
   .bottom-btn {
     width: 100%;
     max-width: 260px;
-    height: 48px;
-    font-size: 16px;
-    margin-top: 24px;
-    padding: 0;
+    margin-top: 40px;        /* mobile gap */
   }
 
   .dot-pattern {

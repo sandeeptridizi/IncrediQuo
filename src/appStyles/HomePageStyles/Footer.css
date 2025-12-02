@@ -19,9 +19,7 @@
   color: #f9fafb;
   width: 100%;
   overflow: hidden;
-
   padding: clamp(48px, 7vw, 95px) clamp(16px, 6vw, 60px) 26px;
-
   background-color: #022447; /* you can keep your image here also */
 }
 
@@ -59,8 +57,6 @@
   position: relative;
   z-index: 5;
 }
-
-
 
 /* inner container */
 .footer-inner {
@@ -142,7 +138,6 @@
   transform: translateY(2px);  /* or 0px if not needed */
 }
 
-
 .footer-logo:hover {
   transform: translateY(-1px);
   opacity: 0.95;
@@ -174,7 +169,6 @@
   object-fit: contain;
 }
 
-
 .footer-logo-text {
   font-size: 25px;
   font-weight: 700;
@@ -191,7 +185,6 @@
   margin: 0 0 18px;
 }
 
-/* LinkedIn square */
 /* LinkedIn square */
 .footer-social {
   width: 50px;
@@ -211,7 +204,6 @@
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
-
 .footer-social:hover {
   background-color: #ffe8f0;
   transform: translateY(-2px);
@@ -225,7 +217,6 @@
   color: #d1e0ff;
   margin-top: 40px;   /* ⬅️ moves text down slightly */
 }
-
 
 /* right side columns */
 .footer-links {
@@ -259,12 +250,24 @@
   font-size: 16px;
   margin-left: -55px;           /* ✅ remove negative shift that caused overlap */
 }
-.footer-bottom-links { margin-top: auto; margin-bottom: -20px; display: flex; gap: 40px; padding-top: 10px; white-space: nowrap; font-size: 16px; flex-wrap: nowrap; margin-right: -25px; }
+
+.footer-bottom-links {
+  margin-top: auto;
+  margin-bottom: -20px;
+  display: flex;
+  gap: 40px;
+  padding-top: 10px;
+  white-space: nowrap;
+  font-size: 16px;
+  flex-wrap: nowrap;
+  margin-right: -25px;
+}
 
 .footer-column--quikers .footer-bottom-links {
   margin-top: 66px;   /* 🔥 pushes both links down */
   margin-bottom: 0;   /* remove upward pull */
 }
+
 /* headings */
 .footer-column h4 {
   font-size: 18px;
@@ -353,8 +356,6 @@
   margin-top: 40px;   /* 🔥 moves both icons slightly down */
 }
 
-
-/* Twitter icon same style + size as LinkedIn button */
 /* Twitter icon same style + size as LinkedIn button */
 .footer-social-icon {
   width: 50px;
@@ -366,11 +367,9 @@
   display: flex;              /* center the png */
   align-items: center;
   justify-content: center;
-
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
   margin-left: 0;             /* ⬅️ remove shift */
 }
-
 
 /* same hover effect as LinkedIn */
 .footer-social-icon:hover {
@@ -378,8 +377,6 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
-
-
 
 /* ===== RESPONSIVE ===== */
 
@@ -404,7 +401,12 @@
 
   .footer-column--quikers {
     min-height: auto;
-    margin-left: 0;
+    margin-left: 0; /* ✅ stop shifting on tablet */
+  }
+
+  /* wave slightly shorter on tablet */
+  .footer::before {
+    height: 100px;
   }
 }
 
@@ -451,6 +453,11 @@
     flex-wrap: wrap;
     white-space: normal;
     margin-right: 0;
+  }
+
+  /* keep wave proportional */
+  .footer::before {
+    height: 85px;
   }
 }
 
@@ -508,5 +515,16 @@
     gap: 6px;
     margin-top: 18px;
     font-size: 12px;
+    margin-right: 0;
+  }
+
+  .footer-social-group {
+    margin-top: 24px;
+    gap: 18px;
+  }
+
+  /* wave height for small phones */
+  .footer::before {
+    height: 70px;
   }
 }
