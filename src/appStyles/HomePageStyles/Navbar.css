@@ -8,7 +8,12 @@
   flex-direction: column; 
   align-items: center; 
   padding: 10px 70px;
+<<<<<<< HEAD
+  background: #ffffff; 
+  
+=======
   background: #ffe9ec; 
+>>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   animation: navbarFadeDown 0.6s ease-out;
   box-sizing: border-box;
@@ -40,6 +45,28 @@
   height: 100%;
   z-index: -1; 
   
+<<<<<<< HEAD
+  background-color: #ffffff; 
+  background-image: 
+    /* Denser, slightly transparent pink dots */
+    radial-gradient(circle at 1px 1px, rgba(255, 106, 122, 0.7) 0.5px, transparent 0); 
+  
+  background-size: 8px 8px; /* Closer dot spacing (more dots visible) */
+  backdrop-filter: blur(2px); /* Blurred lines effect */
+  -webkit-backdrop-filter: blur(2px); 
+  
+  opacity: 0.98; 
+  
+  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+/* --- NEW CONTACT ICON/POPUP STYLES --- */
+
+.contact-icon-popup-wrapper {
+  position: relative;
+  display: flex; 
+  align-items: center;
+  cursor: pointer;
+=======
   background-color: #ffe9ec; 
   background-image: 
       radial-gradient(circle at 1px 1px, rgba(0, 33, 71, 0.4) 1px, transparent 0); 
@@ -49,8 +76,79 @@
   -webkit-backdrop-filter: blur(8px); 
   opacity: 0.98; 
   transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+>>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
 }
 
+/* Container for the icon (kept from original code but ensures Z-index) */
+.phone-icon-container {
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  display: flex; 
+  position: relative; 
+  z-index: 10; 
+}
+
+/* Phone Number Popup Box (Navy Blue) */
+.contact-number-popup {
+  position: absolute;
+  top: 100%; 
+  /* CHANGE 1: Shift the popup left significantly from the wrapper's center.
+     This calculation moves the popup's right edge closer to the center of the icon. */
+  left: 0; /* Align left edge with the start of the 'contact-button-wrapper' */
+  transform: translateX(calc(-50% + 20px)) translateY(10px); 
+  
+  /* The rest of the styles are kept as they were for visual appearance */
+  padding: 12px 20px;
+  background-color: #002147; /* Navy Blue background */
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  z-index: 1000;
+  pointer-events: none;
+}
+/* Popup Visibility State: Shows on hover/click */
+.contact-number-popup.show {
+  opacity: 1;
+  visibility: visible;
+  /* CHANGE 2: Apply the same horizontal shift for the final position */
+  transform: translateX(calc(-50% + 20px)) translateY(20px); 
+  pointer-events: auto; 
+}
+/* Caret/Arrow Style */
+.popup-caret {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  /* CHANGE 3: The caret must be centered relative to the popup box itself */
+  transform: translateX(-50%); 
+  /* The rest of the styles are kept */
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #002147;
+  z-index: 5;
+}
+
+/* If you were using the old contact button wrapper, make sure it's hidden */
+.contact-button-wrapper {
+  /* Ensure this wrapper is positioned relative to anchor the popup */
+  position: relative; 
+  /* Also ensure z-index is high enough */
+  z-index: 100;
+}
+
+.contact-button-wrapper .phone-icon-container {
+    z-index: auto; /* Reset z-index if needed */
+}
 .navbar__links-row {
   width: 100%; 
   display: flex;
@@ -63,8 +161,13 @@
 }
 
 .navbar.scrolled {
+<<<<<<< HEAD
+    background-color: #ffffff; /* Ensures consistency */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
+=======
   background-color: #ffe9ec;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+>>>>>>> 0a2a98e623e60da06fe41a246603629950d1c772
 }
 
 .navbar.scrolled .navbar__top-row::before {
@@ -337,7 +440,7 @@
 }
 
 .dropdown__menu a:hover {
-  background: #ffe9ec;
+  background: #ffffff;
   color: #002147;
 }
 
