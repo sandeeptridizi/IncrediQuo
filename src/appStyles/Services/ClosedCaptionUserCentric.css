@@ -116,9 +116,10 @@
 
   .cc-usercentric__item {
     width: 340px;
-    height: 243px;
+    height: 283px;
     text-align: center;
-    margin-left: 5vw;
+    margin-left: 12vw;
+    padding-top: 4vw !important;
   }
 
   .cc-usercentric__item::after {

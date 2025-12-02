@@ -119,8 +119,8 @@
 
 .blog-contact__field input,
 .blog-contact__field textarea {
-  width: 584px;                /* Figma: 584 */
-  max-width: 100%;
+    max-width: 100%;
+  width: 80vw !important;                /* Figma: 584 */
   height: 64px;                /* Figma: 64 */
   border: none;
   border-radius: 10px;         /* Figma: 10px */
