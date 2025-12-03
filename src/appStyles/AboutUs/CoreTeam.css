@@ -62,7 +62,36 @@
 .core-team__card:hover .core-team__flipper {
   transform: rotateY(180deg);
 }
+.core-team__linkedin-link {
+    /* KEY CHANGE 2: Ensure the icon is always visible at the bottom of the card back */
+    
+    /* Since we set flex-grow on bio-text, this will be pushed to the bottom naturally. */
+    /* Using margin-top: auto is another way to ensure it sits at the bottom */
+    /* margin-top: auto; */ 
+    
+    /* Styling */
 
+    pointer-events: auto !important;
+   /* Use !important only if absolutely necessary */
+    /* Ensure it's on top */
+    position: relative; 
+    z-index: 10;
+    color: #022447; /* Icon color (Dark blue) */
+    display: block; /* Takes its own row */
+    padding-top: 5px; /* Add a little buffer if needed */
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Ensure it's above any background effects */
+}
+
+.core-team__linkedin-link:hover {
+    color: #0a66c2; /* LinkedIn blue on hover */
+    transform: scale(1.1);
+}
+
+.core-team__linkedin-icon {
+    font-size: 32px; /* Set the size of the icon */
+    vertical-align: middle;
+}
 .core-team__front,
 .core-team__back {
   position: absolute;
@@ -72,6 +101,7 @@
   backface-visibility: hidden; 
   border-radius: 20px;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 
