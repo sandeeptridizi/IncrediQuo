@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
-import Logo from "../../assets/logo1.png";
+import Logo from "../../assets/logo.png";
 import { Button } from "../Button/Button";
 import { PiPhoneCall } from "react-icons/pi";
 
