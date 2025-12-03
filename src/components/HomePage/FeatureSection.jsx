@@ -1,7 +1,9 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/Group 1304.png";
-import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png"; 
+import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
+// New image import
+import worldMap from "../../assets/WorldMap.png"; // Assuming the file name is 'world map in src.png' or similar
 
 const FeatureSection = () => {
   return (
@@ -79,6 +81,16 @@ const FeatureSection = () => {
           />
         </div>
       </div>
+
+      {/* New World Map Section */}
+      <div className="world-map-container">
+        <img
+          src={worldMap}
+          alt="World Map showing global presence"
+          className="world-map-image"
+        />
+      </div>
+      {/* End of New World Map Section */}
     </section>
   );
 };

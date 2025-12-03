@@ -33,25 +33,27 @@
 }
 
 .navbar__top-row::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; 
-  
-  background-color: #ffffff; 
-  background-image: 
-    radial-gradient(circle at 1px 1px, rgba(255, 106, 122, 0.9) 0.5px, transparent 0); 
-  
-  background-size: 4px 4px; 
-  backdrop-filter: blur(2px); 
-  -webkit-backdrop-filter: blur(2px); 
-  
-  opacity: 1; 
-  
-  transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    
+    background-color: #ffffff; 
+    background-image: 
+        radial-gradient(circle at 1px 1px, rgba(255, 106, 122, 0.9) 0.5px, transparent 0); 
+    
+    background-size: 3px 3px; 
+    
+    /* ❌ REMOVE THESE LINES: */
+    /* backdrop-filter: blur(2px);  */
+    /* -webkit-backdrop-filter: blur(2px); */
+    
+    opacity: 1; 
+    
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 
@@ -157,9 +159,10 @@
 }
 
 .navbar.scrolled .navbar__top-row::before {
-  opacity: 1; 
-  backdrop-filter: blur(0px); 
-  -webkit-backdrop-filter: blur(0px); 
+ opacity: 1; 
+  /* Keep the blur effect for the dots */
+  /* backdrop-filter: blur(2px); 
+  -webkit-backdrop-filter: blur(2px); */
 }
 
 .navbar.scrolled .navbar__logo span,
