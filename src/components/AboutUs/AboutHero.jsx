@@ -60,9 +60,15 @@ const AboutHero = () => {
           </div>
         </div>
 
-        <div className="about-hero__image">
-          <img src={AboutHeroImg} alt="Team collaborating at a laptop" />
-        </div>
+       <div className="about-hero__image-wrapper">
+  <div className="about-hero__image-bg"></div>
+
+  <img
+    src={AboutHeroImg}
+    alt="Team collaborating at a laptop"
+    className="about-hero__image-main"
+  />
+</div>
       </div>
     </section>
   );

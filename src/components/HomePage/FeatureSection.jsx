@@ -9,11 +9,13 @@ const FeatureSection = () => {
   return (
     <section className="feature-section">
       <div className="feature-inner">
-        <div className="feature-illustration">
+       <div className="feature__image-wrapper">
+          <div className="feature__image-bg"></div>
+
           <img
             src={featureIllustration}
             alt="Feature illustration"
-            className="feature-svg"
+            className="feature__image-main"
           />
         </div>
         <div className="feature-content">

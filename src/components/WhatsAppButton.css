@@ -1,0 +1,28 @@
+.whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: 60px;
+  height: 60px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Navy Blue Soft Rounded Shadow */
+  box-shadow: 0 0 18px rgba(0, 38, 77, 0.35);
+
+  transition: 0.3s ease;
+}
+
+.whatsapp-float img {
+  width: 45px;
+  height: 40px;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 24px rgba(0, 38, 77, 0.45); /* stronger navy glow on hover */
+}

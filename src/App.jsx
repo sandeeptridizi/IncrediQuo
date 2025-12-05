@@ -26,7 +26,7 @@ import AdditionalSupportServicePage from "./components/AdditionalSupportService/
 import Careers from "./components/Career/Careers";
 import TermsPage from "./components/Terms/TermsPage";
 import PrivacyPage from "./components/Privacy/PrivacyPage";
-
+import WhatsAppButton from "./components/WhatsAppButton";
 import "./appStyles/AppLayout.css";
 import { CreateBlog } from "./components/BlogCreationPage/blogcreation";
 import { Manageblogs } from "./components/ManageBlogs/Manageblogs";
@@ -68,7 +68,7 @@ function App() {
             element={
               <>
                 <Hero onOpenContact={openContact} />
-                <TaglineScroller />
+                {/* <TaglineScroller /> */}
                 <BannerStats onOpenContact={openContact} />
                 <Services />
                 <FeatureSection />
@@ -116,6 +116,7 @@ function App() {
         </Routes>
       </div>
 
+       {!shouldHideLayout && <WhatsAppButton />}
       {!shouldHideLayout && <Footer />}
       {showContact && <ContactSection onClose={closeContact} />}
     </>

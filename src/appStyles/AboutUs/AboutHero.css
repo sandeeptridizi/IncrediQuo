@@ -2,6 +2,38 @@
   background: #ffffff;
   padding: 180px 0 120px;
 }
+
+/* ------------------ HERO STYLE IMAGE FOR ABOUT PAGE ------------------ */
+
+.about-hero__image-wrapper {
+  position: relative;
+  width: 520px;
+  max-width: 100%;
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-hero__image-bg {
+  position: absolute;
+  width: 125%;
+  height: 50%;
+  background: #022447;
+  border-radius: 0 0 50px 50px;
+  top: 280px;
+  z-index: 1;
+}
+
+.about-hero__image-main {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
 .about-hero__inner {
   max-width: 1320px;
   margin: 0 auto;
