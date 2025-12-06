@@ -25,6 +25,9 @@
   top: 200px;
 }
 
+
+
+
 /* ... existing styles ... */
 
 .hero__buttons {
@@ -37,11 +40,12 @@
 
 /* NEW STYLES for the "Free Sample Transcript" text */
 .hero__sample-text {
-  font-size: 16px; /* Similar size to subtitle */
+  font-size: 19px; /* Similar size to subtitle */
   line-height: 24px;
-  color: #4f5665; /* Same color as subtitle */
+  
+  color: #022447; /* Same color as subtitle */
   margin: 0 0 10px 0; /* Adjust spacing */
-  font-weight: 400; /* Ensure it is not bold */
+  font-weight: bold; /* Ensure it is not bold */
 }
 
 @media (max-width: 600px) {

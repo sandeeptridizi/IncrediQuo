@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
-import Logo from "../../assets/logo2.png";
+import Logo from "../../assets/LOGO2.png";
 import { Button } from "../Button/Button";
 // import { PiPhoneCall } from "react-icons/pi"; // Remove if icon is no longer used
 
@@ -61,7 +61,7 @@ const Navbar = () => {
       <div className="navbar__top-row">
         {/* LOGO */}
         <NavLink to="/" className="navbar__logo" title="Go to home">
-          <img src={Logo} alt="IncrediQuo logo" />
+        <img src={Logo} alt="IncrediQuo logo" />
         </NavLink>
 
         {/* NAVIGATION LINKS */}
