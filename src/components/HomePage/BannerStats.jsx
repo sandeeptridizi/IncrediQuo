@@ -3,7 +3,7 @@ import "../../appStyles/HomePageStyles/BannerStats.css";
 import { Button } from "../Button/Button";
 
 const LINE1_TEXT = "Flexible Work Modes Designed for Your"; 
-const LINE2_TEXT = "Every Deadline"; 
+const LINE2_TEXT = " Every Deadline"; 
 const TYPING_TIME_PER_CHAR = 0.08; 
 const TYPING_TIME_LINE1 = LINE1_TEXT.length * TYPING_TIME_PER_CHAR; 
 const TYPING_TIME_LINE2 = LINE2_TEXT.length * TYPING_TIME_PER_CHAR; 

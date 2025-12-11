@@ -1,60 +1,52 @@
 .navbar {
-  position: fixed; 
-  top: 0;
-  left: 0;
+ position: fixed; 
+top: 0;
+ left: 0;
   width: 100%;
-  z-index: 1000;
+ z-index: 1000;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  padding: 10px 10px;
-  background: #ffffff; 
-  
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
-  animation: navbarFadeDown 0.6s ease-out;
-  box-sizing: border-box;
-  padding-top: 15px; 
-  transition: background-color 0.3s ease;
+ flex-direction: row; 
+ justify-content: space-between; 
+ align-items: center; 
+ padding: 10px 20px;
+ background-color: #ffffff; 
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+ animation: navbarFadeDown 0.6s ease-out;
+ box-sizing: border-box;
+ transition: background-color 0.3s ease;
+}
+.navbar::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+
+/* Apply the dotted pattern here */
+background-image: 
+radial-gradient(circle at 1.2px 1.2px, rgba(0, 33, 71, 0.9) 0.5px, transparent 0); 
+background-size: 3px 3px;
+
+/* KEY: Push the dotted layer behind the content */
+z-index: -1; 
+/* Also ensure it has the same background color */
+background-color: #ffffff; 
 }
 
-.navbar::before {
-  content: none;
-}
 
 .navbar__top-row {
   width: 100%;
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  padding-bottom: 10px; 
+  padding-bottom: 0; 
   position: relative; 
   z-index: 10; 
+  /* Ensure this is transparent so the dots on .navbar show through */
   background-color: transparent; 
 }
 
-.navbar__top-row::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; 
-    
-    background-color: #ffffff; 
-    background-image: 
-        radial-gradient(circle at 1px 1px, rgba(255, 106, 122, 0.9) 0.5px, transparent 0); 
-    
-    background-size: 3px 3px; 
-    
-    /* ❌ REMOVE THESE LINES: */
-    /* backdrop-filter: blur(2px);  */
-    /* -webkit-backdrop-filter: blur(2px); */
-    
-    opacity: 1; 
-    
-    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
-}
 
 
 .contact-icon-popup-wrapper {
@@ -78,17 +70,9 @@
   position: absolute;
   top: 100%; 
   left: 0; 
-  /* New transform calculation: 
-     - Moves it left by -50% of its own width (to center it).
-     - Then adjusts its position relative to the icon container (20px).
-     - ADD the negative margin from the wrapper (e.g., -20px) to shift 
-       the popup box left by the same amount the wrapper was shifted.
-  */
+  
   transform: translateX(calc(-50% + 20px - 20px)) translateY(10px); 
-  /* Simplify the expression above: */
-  /* transform: translateX(calc(-50% + 0px)) translateY(10px); */
 
-  /* The rest of the styles remain unchanged */
   padding: 12px 20px;
   background-color: #002147; 
   color: #ffffff;
@@ -103,22 +87,19 @@
   z-index: 1900;
   pointer-events: none;
 }
-/* Popup Visibility State: Shows on hover/click */
+
 .contact-number-popup.show {
   opacity: 1;
   visibility: visible;
-  /* CHANGE 2: Apply the same horizontal shift for the final position */
   transform: translateX(calc(-50% + 20px)) translateY(20px); 
   pointer-events: auto; 
 }
-/* Caret/Arrow Style */
+
 .popup-caret {
   position: absolute;
   top: -10px;
   left: 50%;
-  /* CHANGE 3: The caret must be centered relative to the popup box itself */
   transform: translateX(-50%); 
-  /* The rest of the styles are kept */
   width: 0;
   height: 0;
   border-left: 10px solid transparent;
@@ -127,55 +108,31 @@
   z-index: 5;
 }
 
-.contact-button-wrapper {
+.contact-buttons-container {
   margin-right: 20px; 
   
-  /* Existing properties: */
   display: flex; 
   align-items: center;
-  gap: 30px;
+  gap: 15px;
   cursor: pointer;
   position: relative; 
   z-index: 100;
 }
 
-.contact-button-wrapper .phone-icon-container {
-    z-index: auto; /* Reset z-index if needed */
+.contact-buttons-container .phone-icon-container {
+    z-index: auto;
 }
+
+
 .navbar__links-row {
-  width: 100%; 
   display: flex;
   align-items: center;
   justify-content: center; 
-  gap: 40px;
-  padding: 10px 0; 
+  gap: 30px;
+  padding: 0; 
   background-color: transparent; 
-  border-top: 1px solid rgba(0, 0, 0, 0.15); 
-}
-
-.navbar.scrolled {
-    background-color: #ffffff; /* Ensures consistency */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow when scrolled */
-}
-
-.navbar.scrolled .navbar__top-row::before {
- opacity: 1; 
-  /* Keep the blur effect for the dots */
-  /* backdrop-filter: blur(2px); 
-  -webkit-backdrop-filter: blur(2px); */
-}
-
-.navbar.scrolled .navbar__logo span,
-.navbar.scrolled .navbar__links-row a,
-.navbar.scrolled .dropdown__title,
-.navbar.scrolled .ringing-phone-icon {
-  color: #022447; 
-  transition: color 0.3s ease;
-}
-
-.navbar.scrolled .navbar__links-row a::after,
-.navbar.scrolled .dropdown__title::after {
-  background: #022447; 
+  border-top: none; 
+  z-index: 50; 
 }
 
 .navbar__logo {
@@ -195,8 +152,8 @@
 }
 
 .navbar__logo img {
-  max-height: 80px;   
-  width: auto;
+  max-height: 100px; 
+  width: 100%;
   object-fit: contain;
   background: transparent;
   transition: transform 0.25s ease;
@@ -222,15 +179,18 @@
 
 .navbar__links-row a {
   position: relative;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   color: #022447;
   text-decoration: none;
-  transition: color 0.25s ease;
+  padding: 8px 15px; /* Added padding to create capsule shape */
+  border-radius: 9999px; /* Create capsule shape */
+  transition: all 0.25s ease;
 }
 
 .navbar__links-row a:hover {
   color: #ff6a7a; 
+  background-color: transparent;
 }
 
 .navbar__links-row a:hover::after {
@@ -249,13 +209,18 @@
   transition: width 0.25s ease;
 }
 
-.navbar__links-row a.active {
-  color: #ff6a7a; 
+.navbar__button:active {
+  transform: translateY(0);
+  box-shadow: none;
 }
 
-.navbar__links-row a.active::after {
-  width: 100%;
+.navbar__links-row a.active {
+  color: #ff6a7a; /* Pink Text */
+  background-color: #002147; /* Blue Background */
+  font-weight: 600;
 }
+
+
 
 .navbar__button:active {
   transform: translateY(0);
@@ -263,7 +228,7 @@
 }
 
 .contact-button-wrapper {
-margin-right: 20px; /* Example: Pushes the entire element 20px left */
+margin-right: 20px; 
   
   display: flex; 
   align-items: center;
@@ -286,7 +251,7 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
 .ringing-phone-icon {
   font-size: 40px;
   color: #022447;
- 
+  
   transform-origin: bottom center;
   transition: color 0.25s ease, transform 0.25s ease;
   z-index: 2;
@@ -343,7 +308,7 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
 /* TITLE */
 .dropdown__title {
   position: relative;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 500;
   color: #022447;
   cursor: pointer;
@@ -379,7 +344,8 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 6px;
+  /* 🔥 FIXED: Reduced margin-top to position the dropdown correctly on a thin navbar */
+  margin-top: 2px; 
   width: 404px;
   height: 288px;
   background: #002147; 
@@ -537,12 +503,14 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
   }
 
   .navbar__top-row {
-    padding-bottom: 8px;
+    /* 🔥 FIXED: Removed bottom padding */
+    padding-bottom: 0;
   }
   
   .navbar__links-row {
     gap: 28px;
-    padding: 8px 0;
+    /* 🔥 FIXED: Removed vertical padding */
+    padding: 0;
   }
 
   .navbar__links-row a {
@@ -565,31 +533,39 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
     font-size: 30px;
   }
 }
-
-
+/* Mobile Navbar Adjustments */
 @media (max-width: 768px) {
-  .history__inner {
-    padding: 0 16px;
-  }
-
-  .history__content h2 {
-    font-size: 32px;
-    line-height: 40px;
-  }
-
-  .history__para {
-    font-size: 18px;
-    line-height: 28px;
-  }
   .navbar {
-    padding: 10px 18px;
-    column-gap: 12px;
+    flex-direction: column; /* Stack top row and links */
+    align-items: stretch;
+    padding: 10px 16px;
+    
+    row-gap: 8px;
   }
   
+
   .navbar__top-row {
-    flex-wrap: wrap; 
+    width: 100%;
+    flex-direction: row; 
     justify-content: space-between;
-    padding-bottom: 6px;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .navbar__links-row {
+    display: flex !important;
+    justify-content: center; /* center the links horizontally */
+    gap: 16px; /* spacing between nav items */
+    flex-wrap: wrap; /* allow wrapping if needed */
+    padding: 10px 0;
+    /* white background under navbar */
+    border-top: 1px solid #e0e0e0; /* optional separator */
+    width: 100%;
+  }
+
+  .navbar__links-row a {
+    font-size: 14px; /* smaller font for mobile */
+    padding: 6px 12px;
   }
 
   .navbar__logo {
@@ -597,146 +573,49 @@ margin-right: 20px; /* Example: Pushes the entire element 20px left */
   }
 
   .navbar__logo img {
-    max-height: 60px;
+    max-height: 50px;
     width: auto;
-    object-fit: contain;
   }
 
-  .navbar__links-row {
-    flex: none;
-    justify-content: center;
-    gap: 16px;
+  .contact-buttons-container {
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+  }
+    .dropdown__title {
+    position: relative;
+    z-index: 9999 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Push the active capsule behind */
+  .navbar__links-row a.active {
+    z-index: 1 !important;
+  }
+}
+
+/* Extra small screens (<520px) */
+@media (max-width: 520px) {
+  .dropdown__title {
+  position: relative;
+  font-size: 12px;
+  font-weight: 500;
+  color: #022447;
+  cursor: pointer;
+  transition: color 0.25s ease;
+}
+  .navbar__links-row {
+    gap: 12px;
     padding: 8px 0;
   }
 
   .navbar__links-row a {
-    font-size: 14px;
-  }
-
-  .page-section {
-    scroll-margin-top: 130px; 
-  }
-
-  /* dropdown mobile */
-  .dropdown__menu {
-    position: fixed;
-    top: auto; 
-    margin-top: 100px; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100vw - 32px);
-    max-width: 480px;
-    height: auto;
-    max-height: calc(100vh - 96px);
-    padding: 22px 18px;
-    border-radius: 20px;
-    gap: 16px;
-    
-    backdrop-filter: none; 
-    -webkit-backdrop-filter: none;
-  }
-
-  .dropdown__menu a,
-  .dropdown__menu a:first-child {
-    width: 100%;
-  }
-
-  .dropdown__menu a {
-    font-size: 18px;
-    line-height: 32px;
-  }
-
-  .phone-icon-container, 
-  .ringing-phone-icon {
-    width: 30px; 
-    height: 30px;
-    font-size: 30px;
-  }
-}
-
-/* ===================== 520px ===================== */
-
-@media (max-width: 520px) {
-  /* --- HISTORY SECTION RESPONSIVE --- */
-  .history {
-    padding: 72px 0 72px;
-  }
-
-  .history__content h2 {
-    font-size: 26px;
-    line-height: 34px;
-  }
-
-  .history__para {
-    font-size: 16px;
-    line-height: 26px;
-  }
-
-  /* --- NAVBAR RESPONSIVE --- */
-  .navbar {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 10px 14px;
-    row-gap: 8px;
-  }
-  
-  .navbar__top-row {
-    width: 100%;
-    flex-direction: column; 
-    gap: 8px;
-    padding-bottom: 8px;
-  }
-
-  .navbar__logo {
-    width: 100%;
-    justify-content: flex-start;
-    font-size: 15px;
-  }
-
-  /* 🔥 very small phone logo size fix */
-  .navbar__logo img {
-    max-height: 34px;
-    width: auto;
-    object-fit: contain;
-  }
-
-  .navbar__links-row {
-    width: 100%;
-    justify-content: space-between;
-    column-gap: 12px;
-    row-gap: 6px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .navbar__links-row a {
     font-size: 13px;
+    padding: 4px 8px;
   }
 
-  .contact-button-wrapper {
-    width: 100%; 
-    justify-content: center;
-  }
-
-  .page-section {
-    scroll-margin-top: 170px; 
-  }
-
-  .dropdown__menu {
-    top: 70px;
-    width: calc(100vw - 28px);
-    padding: 18px 16px;
-  }
-
-  .dropdown__menu a {
-    font-size: 16px;
-    padding: 12px 14px;
-  }
-
-  .phone-icon-container, 
-  .ringing-phone-icon {
-    width: 22px; 
-    height: 22px;
-    font-size: 22px;
+  .navbar__logo img {
+    max-height: 40px;
   }
 }

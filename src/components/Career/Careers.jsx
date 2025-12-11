@@ -36,12 +36,12 @@ const Careers = () => {
               ✕
             </button>
 
-            <h2 className="job-modal__title">{selectedJob.title}</h2>
+            <h2 className="job-modal__title">{selectedJob.JobTitle}</h2>
 
-            <p className="job-modal__desc">{selectedJob.description}</p>
+            <p className="job-modal__desc">{selectedJob.JobDiscription}</p>
 
             <p className="job-modal__meta">
-              📍 Location: {selectedJob.location}
+              📍 Location: {selectedJob.Location}
             </p>
             {/* <p className="job-modal__meta">
               📅 Date Posted: {selectedJob.date}

@@ -60,3 +60,14 @@ body {
     opacity: 1;
   }
 }
+
+
+body {
+    /* Replace 'url(wave-background.svg)' with the actual path 
+       to your wave pattern image/SVG. 
+    */
+    background-image: url(wave-background.svg); 
+    background-repeat: repeat-x; /* Or 'repeat' depending on the image */
+    background-position: top center; 
+    background-color: #ffffff; /* Fallback */
+}

@@ -7,6 +7,16 @@
   background-color: #022447;
 }
 
+
+.footer-address {
+  font-size: 16px;
+  line-height: 28px;
+  color: #d1e0ff;
+  margin: 0 0 18px;
+  max-width: 340px;
+}
+
+
 .footer::before {
   content: "";
   position: absolute;
@@ -394,6 +404,10 @@
   .footer {
   padding: clamp(48px, 107vw, 115px) clamp(16px, 6vw, 60px) 26px;
     background-position: top left;
+  }
+   .footer-address {
+    font-size: 13px;
+    line-height: 22px;
   }
 
 

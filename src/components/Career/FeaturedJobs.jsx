@@ -45,14 +45,14 @@ const FeaturedJobs = ({ openPopup }) => {
         <div className="jobcard" key={job.id}>
 
           <div className="jobcard__left">
-            <h4 className="jobcard__title">{job.title}</h4>
+            <h4 className="jobcard__title">{job.JobTitle}</h4>
 
             <div className="jobcard__meta-inline">
               <svg className="jobcard__loc-icon" viewBox="0 0 24 24">
                 <circle cx="12" cy="10" r="3" />
                 <path d="M12 4a6 6 0 0 0-6 6c0 4.2 6 10 6 10s6-5.8 6-10a6 6 0 0 0-6-6z" />
               </svg>
-              <span className="jobcard__location-text">{job.location}</span>
+              <span className="jobcard__location-text">{job.Location}</span>
             </div>
           </div>
 

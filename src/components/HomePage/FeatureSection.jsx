@@ -1,6 +1,6 @@
 import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
-import featureIllustration from "../../assets/features/Group 1304.png";
+import featureIllustration from "../../assets/features/featuresection.png";
 import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
 // New image import
 import worldMap from "../../assets/WorldMap.png"; // Assuming the file name is 'world map in src.png' or similar
@@ -9,11 +9,13 @@ const FeatureSection = () => {
   return (
     <section className="feature-section">
       <div className="feature-inner">
-        <div className="feature-illustration">
+       <div className="feature__image-wrapper">
+          <div className="feature__image-bg"></div>
+
           <img
             src={featureIllustration}
             alt="Feature illustration"
-            className="feature-svg"
+            className="feature__image-main"
           />
         </div>
         <div className="feature-content">
