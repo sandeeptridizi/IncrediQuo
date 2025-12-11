@@ -24,26 +24,93 @@ const Hero = ({ onOpenContact }) => {
   const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-    const slides = Array.from(track.children);
-    if (!slides.length) return;
+useEffect(() => {
+  const track = trackRef.current;
+  if (!track) return;
 
-    let index = 0;
-    const total = slides.length;
+  // collect original slides (before cloning)
+  const originalSlides = Array.from(track.children);
+  if (originalSlides.length === 0) return;
 
-    const interval = setInterval(() => {
-      index = (index + 1) % total;
-      setActiveIndex(index);
-      track.scrollTo({
-        left: slides[index].offsetLeft,
-        behavior: "smooth",
+  const originalCount = originalSlides.length;
+
+  // clone slides to create seamless loop
+  originalSlides.forEach((node) => {
+    const clone = node.cloneNode(true);
+    track.appendChild(clone);
+  });
+
+  // compute slide width (including gap)
+  const computed = getComputedStyle(track);
+  const gap = parseFloat(computed.gap || computed.columnGap) || 18;
+  const slideWidth = originalSlides[0].offsetWidth + gap;
+
+  // make sure start at beginning
+  track.scrollLeft = 0;
+  track.style.scrollBehavior = "smooth";
+
+  let isResetting = false;
+  let autoInterval = null;
+
+  // helper to update active index (0..originalCount-1)
+  const updateActiveFromScroll = () => {
+    const rawIndex = Math.round(track.scrollLeft / slideWidth);
+    // keep within original range
+    const idx = rawIndex % originalCount;
+    setActiveIndex(idx < 0 ? 0 : idx);
+  };
+
+  // auto-scroll one slide forward every 3s
+  autoInterval = setInterval(() => {
+    // don't try to scroll while we're mid-reset
+    if (isResetting) return;
+    track.scrollBy({ left: slideWidth, behavior: "smooth" });
+  }, 3000);
+
+  // listener to detect when we've passed the original set
+  const onScroll = () => {
+    updateActiveFromScroll();
+
+    // if we've scrolled past half (original set length), reset seamlessly
+    if (!isResetting && track.scrollLeft >= track.scrollWidth / 2) {
+      isResetting = true;
+
+      // compute new position: subtract half of scrollWidth (the original set)
+      const newLeft = track.scrollLeft - track.scrollWidth / 2;
+
+      // turn off smooth, jump instantly, then turn smooth back on
+      track.style.scrollBehavior = "auto";
+      track.scrollLeft = newLeft;
+
+      // next frame re-enable smooth and clear resetting flag
+      requestAnimationFrame(() => {
+        // small timeout to ensure the instant jump is painted
+        requestAnimationFrame(() => {
+          track.style.scrollBehavior = "smooth";
+          isResetting = false;
+        });
       });
-    }, 3000);
+    }
+  };
 
-    return () => clearInterval(interval);
-  }, []);
+  track.addEventListener("scroll", onScroll, { passive: true });
+
+  // initial active index set
+  updateActiveFromScroll();
+
+  return () => {
+    clearInterval(autoInterval);
+    track.removeEventListener("scroll", onScroll);
+    // optional: remove clones if component unmounts (keeps DOM clean)
+    // remove last originalCount children (the clones)
+    for (let i = 0; i < originalCount; i++) {
+      const last = track.lastElementChild;
+      if (last) track.removeChild(last);
+    }
+  };
+}, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+
 
   return (
     <section id="home" className="hero">

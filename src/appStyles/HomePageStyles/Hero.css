@@ -1,59 +1,11 @@
-
+/* ===============================
+   HERO MAIN WRAPPER
+================================*/
 .hero {
   display: flex;
   justify-content: center;
   background-color: #ffffff;
   padding: 150px 0 100px;
-}
-
-.hero__image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 520px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero__image-bg {
-  position: absolute;
-  
-  width: 115%;
-  height: 60%;
-  background: #022447;        /* SAME COLOR LIKE YOUR DESIGN */
-  border-radius: 0px 0px 50px 50px; /* CURVED POT EFFECT */
-  z-index: 1;
-  top: 200px;
-}
-
-
-
-
-/* ... existing styles ... */
-
-.hero__buttons {
- display: flex;
- /* CHANGED: from row to column to stack the text above the button */
- flex-direction: column; 
- gap: 8px; /* Reduced gap between the new text and the button */
- margin-top: 32px;
-}
-
-/* NEW STYLES for the "Free Sample Transcript" text */
-.hero__sample-text {
-  font-size: 19px; /* Similar size to subtitle */
-  line-height: 24px;
-  
-  color: #022447; /* Same color as subtitle */
-  margin: 0 0 10px 0; /* Adjust spacing */
-  font-weight: bold; /* Ensure it is not bold */
-}
-
-@media (max-width: 600px) {
- .hero__buttons {
- flex-direction: column;
- align-items: center;
- gap: 10px; /* Adjusted gap for mobile */
- }
 }
 
 .hero__inner {
@@ -67,93 +19,11 @@
   gap: 60px;
 }
 
-.hero__content {
-  flex: 0 0 555px;
-  max-width: 555px;
-  min-width: 300px;
-  font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-}
-
-.hero__title {
-  width: 100%;
-  max-width: 555px;
-  font-size: 50px;
-  line-height: 70px;
-  font-weight: 700;
-  color: #0b132a;
-  margin: 0 0 24px;
-  display: block;
-}
-
-.hero__title span {
-  width: 0;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0;
-  animation: none;
-  display: inline-block;
-  vertical-align: top;
-}
-
-.hero__subtitle {
-  font-size: 16px;
-  line-height: 28px;
-  color: #4f5665;
-  margin: 0 0 28px;
-}
-
-@keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-cursor {
-  50% {
-    border-color: transparent;
-  }
-  0%,
-  100% {
-    border-color: #0b132a;
-  }
-}
-
-
-.cursor-visual {
-  animation: none !important;
-  width: 0 !important;
-  overflow: visible !important;
-
-  height: 1.4em;
-  width: 0.15em;
-  background-color: transparent;
-  border-right: 0.15em solid transparent;
-
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 5px;
-
-  animation: blink-cursor 0.75s step-end var(--cursor-start) infinite;
-}
-
-.hero__title .line-1 {
-  display: block;
-  animation: typewriter var(--line-time)
-    steps(var(--line-char-count)) var(--line-delay) forwards;
-}
-
-.hero__title .line-2 {
-  display: inline-block;
-  animation: typewriter var(--line-time)
-    steps(var(--line-char-count)) var(--line-delay) forwards;
-}
-
+/* ===============================
+   IMAGE SECTION
+================================*/
 .hero__image {
-  position: relative; 
+  position: relative;
   flex: 0 0 520px;
   max-width: 520px;
   display: flex;
@@ -162,15 +32,32 @@
   margin-right: 20px;
 }
 
+.hero__image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__image-bg {
+  position: absolute;
+  width: 115%;
+  height: 60%;
+  background: #022447;
+  border-radius: 0px 0px 50px 50px;
+  z-index: 1;
+  top: 200px;
+}
 
 .hero__image-track {
   overflow-x: scroll;
   position: relative;
-  z-index: 3; /* Bring images on top of blue background */
+  z-index: 3;
   display: flex;
   gap: 18px;
   width: 100%;
-  overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   padding-bottom: 6px;
@@ -178,29 +65,20 @@
 }
 
 .hero__image-track::-webkit-scrollbar {
-   display: none;   
-  height: 6px;
-}
-.hero__image-track::-webkit-scrollbar-thumb {
-  background: #b9b9b9;
-  border-radius: 4px;
-}
-.hero__image-track::-webkit-scrollbar-track {
-  background: transparent;
+  display: none;
 }
 
 .hero__image-main {
- flex: 0 0 100%;
+  flex: 0 0 100%;
   height: 400px;
-  width: auto;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0px;
   scroll-snap-align: center;
 }
 
 .hero__dots {
   position: absolute;
-  bottom: 18px; 
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -211,148 +89,172 @@
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  cursor: pointer;
   background: #bfbfbf;
+  cursor: pointer;
   transition: 0.3s;
 }
 
 .hero__dot.active {
-  background: linear-gradient(135deg, #0444ff, #ff48d1); 
+  background: linear-gradient(135deg, #0444ff, #ff48d1);
   transform: scale(1.25);
 }
 
-.hero,
-.hero__inner {
-  opacity: 1 !important;
-  transform: none !important;
-  animation: none !important;
+/* ===============================
+   CONTENT SECTION
+================================*/
+.hero__content {
+  flex: 0 0 555px;
+  max-width: 555px;
+  min-width: 300px;
+  font-family: "Rubik", sans-serif;
 }
 
+/* ===============================
+   TITLE + TYPEWRITER FIX
+================================*/
+.hero__title {
+  width: 100%;
+  max-width: 555px;
+  font-size: 50px;
+  line-height: 70px;
+  font-weight: 700;
+  color: #0b132a;
+  margin-bottom: 24px;
+}
+
+.hero__title span {
+  display: inline-block !important;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: none;
+  vertical-align: top;
+}
+
+/* LINE ANIMATIONS */
+.hero__title .line-1 {
+  animation: typewriter var(--line-time)
+    steps(var(--line-char-count)) var(--line-delay) forwards !important;
+}
+
+.hero__title .line-2 {
+  animation: typewriter var(--line-time)
+    steps(var(--line-char-count)) var(--line-delay) forwards !important;
+}
+
+/* CURSOR FIXED - NOW ALWAYS VISIBLE */
+.cursor-visual {
+  width: 0.15em;
+  height: 1.4em;
+  border-right: 0.15em solid #0b132a;
+  margin-left: 5px;
+  display: inline-block !important;
+  animation: blink-cursor 0.75s step-end infinite;
+}
+
+/* SUBTITLE */
+.hero__subtitle {
+  font-size: 16px;
+  line-height: 28px;
+  color: #4f5665;
+  margin-bottom: 28px;
+}
+
+/* ===============================
+   BUTTON + SAMPLE TEXT SECTION
+================================*/
+.hero__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.hero__sample-text {
+  font-size: 19px;
+  line-height: 24px;
+  color: #022447;
+  margin: 0 0 10px;
+  font-weight: 600;
+}
+
+/* ===============================
+   ANIMATIONS
+================================*/
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  50% { border-color: transparent; }
+}
+
+/* ===============================
+   MEDIA QUERIES
+================================*/
+
+/* TABLET */
 @media (max-width: 1024px) {
   .hero {
     padding: 110px 0 70px;
   }
-
   .hero__inner {
     padding: 0 40px;
     gap: 40px;
   }
-
   .hero__title {
     font-size: 42px;
     line-height: 60px;
   }
-
-  .hero__subtitle {
-    font-size: 15px;
-    line-height: 26px;
-  }
-
   .hero__image-main {
     height: 340px;
   }
 }
 
+/* TABLET PORTRAIT + SMALL LAPTOP */
 @media (max-width: 900px) {
   .hero {
     padding: 125px 0 65px;
-    margin-bottom: -18px;
   }
-
   .hero__inner {
     padding: 0 26px;
     flex-direction: column-reverse;
     text-align: center;
     gap: 32px;
   }
-
-  .hero__content,
-  .hero__title,
-  .hero__subtitle {
-    max-width: 100%;
-  }
-
   .hero__title {
     font-size: 36px;
     line-height: 48px;
   }
-
-  .hero__subtitle {
-    font-size: 15px;
-    margin-bottom: 18px;
-  }
-
+  /* Cursor must still show on mobile */
   .cursor-visual {
-    display: none !important;
+    display: inline-block !important;
   }
-
-  .hero__image {
-    justify-content: center;
-    flex-basis: auto;
-    max-width: 100%;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 0;
-  }
-
   .hero__image-main {
-    max-width: 100%;
     height: 310px;
-  }
-
-  .hero__dots {
-    bottom: 16px;
   }
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   .hero {
     padding: 150px 0 35px;
   }
-
   .hero__inner {
     padding: 0 18px;
   }
-
   .hero__title {
     font-size: 28px;
     line-height: 38px;
   }
-
   .hero__subtitle {
     font-size: 14px;
-    line-height: 24px;
     margin-bottom: 20px;
   }
-
-  .hero__button {
-    width: 100%;
-    max-width: 260px;
-  }
-
   .hero__image-main {
-    flex: 0 0 94%;
     height: 240px;
   }
-
-  .hero__dots {
-    bottom: 12px;
-    gap: 7px;
-  }
-
-  .hero__dot {
-    width: 12px;
-    height: 12px;
-  }
-}
-
-.hero__buttons {
-  display: flex;
-  gap: 40px;
-  margin-top: 32px;
-}
-
-@media (max-width: 600px) {
   .hero__buttons {
     flex-direction: column;
     align-items: center;

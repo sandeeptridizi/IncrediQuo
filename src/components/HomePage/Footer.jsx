@@ -29,6 +29,10 @@ const Footer = () => {
               <br />
               transcription and media support services.
             </p>
+            <p className="footer-address">
+  B-1003, Level-10, B-Block, The Platina Building,<br />
+  Gachibowli, Hyderabad - 500032, India
+</p>
 
             <div className="footer-social-group">
               <a

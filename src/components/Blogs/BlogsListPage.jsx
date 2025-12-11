@@ -92,7 +92,7 @@ const BlogsListPage = () => {
       {/* TOP HERO CARD */}
       <section className="blogs-hero">
         <div className="blogs-hero__card">
-          <h1 className="blogs-hero__title">Blogs</h1>
+          <h1 className="blogs-hero__title">News and Insights</h1>
         </div>
       </section>
 

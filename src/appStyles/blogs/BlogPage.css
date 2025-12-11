@@ -195,34 +195,77 @@
   }
 }
 
+/* FINAL MOBILE FIXES (FULL RESPONSIVE) */
 @media (max-width: 600px) {
-  .blog-contact {
-    padding: 32px 0 40px;
+
+  /* Reduce page padding */
+  .blog-page {
+    padding: 140px 16px 60px !important;
   }
 
-  .blog-contact__card {
-    width: 100%;
-    height: auto;
-    padding: 26px 20px;
-    box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+  /* Make hero image look full */
+  .blog-hero__image {
+    height: auto !important;
+    min-height: 200px;
+    border-radius: 20px !important;
+    object-fit: cover;
   }
 
-  .blog-contact__submit {
-    width: 100%;
-    height: 40px;
-    font-size: 13px;
+  /* Title fix */
+  .blog-article__title {
+    font-size: 22px !important;
+    line-height: 30px !important;
   }
 
+  /* Body text fix */
+  .blog-article__content {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+  /* Input/textarea full width */
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100% !important;
+  }
+
+  /* Contact text center */
+  .blog-contact__text {
+    text-align: center !important;
+  }
+
+  /* Big 84px heading fix */
   .blog-contact__text h2 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 28px !important;
+    line-height: 34px !important;
   }
 
+  /* Paragraph spacing */
   .blog-contact__text p {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  /* Approach section padding */
+  .blog-approach {
+    padding: 40px 16px 50px !important;
+  }
+
+  /* Approach paragraph */
+  .blog-approach__text {
+    font-size: 15px !important;
+    line-height: 25px !important;
+  }
+
+  /* About button full width */
+  .blog-approach__button {
+    width: 100% !important;
+    max-width: 260px;
+    height: 48px !important;
+    font-size: 15px !important;
   }
 }
+
 
 
 
@@ -275,116 +318,132 @@
 }
 
 @media (max-width: 1024px) {
-
   .blog-page {
-    padding-top: 150px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 150px 40px 100px;
   }
 
   .blog-hero__image {
     border-radius: 40px;
     margin-top: 10px;
+    height: auto;
   }
 
   .blog-article {
     max-width: 100%;
-    margin: 0 auto 60px;
-    padding: 0;
+    margin-bottom: 60px;
   }
 
   .blog-article__title {
     font-size: 32px;
     line-height: 1.2;
-    margin: 0 0 12px;
   }
 
   .blog-article__meta {
-    margin-bottom: 24px;
+    font-size: 14px;
+    margin-bottom: 22px;
   }
 
   .blog-article__content {
-    font-size: 15px;
-    line-height: 1.7;
-    margin-bottom: 60px;
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 50px;
   }
 
+  /* Contact Section */
   .blog-contact__inner {
-    display: flex;
     flex-direction: column;
     gap: 40px;
   }
 
-  .blog-contact__text {
-    text-align: center;
+  .blog-contact__card {
+    width: 100%;
+    padding: 32px 26px;
+    height: auto;
+  }
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
     width: 100%;
   }
 
+  .blog-contact__text {
+    text-align: center;
+  }
+
+  /* Approach Section */
   .blog-approach {
     padding: 60px 24px 50px;
-    border-radius: 30px;
-    margin-top: 60px;
   }
 
   .blog-approach__text {
     font-size: 18px;
-    max-width: 100%;
     line-height: 30px;
   }
 }
 
 @media (max-width: 600px) {
 
+  /* Page padding */
   .blog-page {
-    padding-top: 170px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding: 300px 16px 60px;
   }
 
+  /* Full Hero image */
   .blog-hero__image {
     width: 100%;
-    max-width: 100%;
-    border-radius: 26px;
+    height: auto;
+    min-height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
   }
 
+  /* Title text */
   .blog-article__title {
     font-size: 24px;
     line-height: 32px;
-    margin: 0 0 8px;
   }
 
+  /* Meta */
   .blog-article__meta {
-    font-size: 13px;
-    margin-bottom: 20px;
+    font-size: 12px;
+    margin-bottom: 16px;
   }
 
+  /* Body content */
   .blog-article__content {
     font-size: 15px;
     line-height: 26px;
-    margin-bottom: 40px;
-  }
-  
-  .blog-article__content p {
-    margin: 0 0 18px;
+    margin-bottom: 32px;
   }
 
+  .blog-article__content p {
+    margin-bottom: 18px;
+  }
+
+  /* Contact card */
   .blog-contact__card {
     width: 100%;
+    padding: 24px 16px;
+    box-shadow: none;
     height: auto;
-    padding: 26px 20px;
-      box-shadow: 0 0px 0px rgba(0, 0, 0, 0); 
-
   }
-  
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
   .blog-contact__submit {
     width: 100%;
     height: 40px;
     font-size: 13px;
   }
 
+  /* Contact heading */
   .blog-contact__text h2 {
-    font-size: 26px;
-    line-height: 32px;
+    font-size: 28px;
+    line-height: 34px;
   }
 
   .blog-contact__text p {
@@ -392,22 +451,28 @@
     line-height: 22px;
   }
 
+  /* Approach section */
   .blog-approach {
     padding: 40px 18px 48px;
     border-radius: 22px;
-    margin-top: 48px;
   }
 
   .blog-approach__text {
     font-size: 16px;
     line-height: 26px;
-    margin-bottom: 24px;
   }
 
   .blog-approach__button {
     width: 100%;
     max-width: 260px;
-    height: 50px;
-    font-size: 16px;
+    height: 48px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+
+  /* Page padding */
+  .blog-page {
+    padding: 500px 16px 60px;
   }
 }

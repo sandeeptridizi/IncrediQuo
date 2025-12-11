@@ -250,3 +250,111 @@
   background: rgba(0,33,71,0.08);
   z-index: -1;
 }
+
+.banner {
+  width: 100%;
+  background: #002147;
+  color: #fff;
+  overflow: hidden;
+  animation: fadeUp 0.9s ease-out forwards;
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.banner__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(60px, 9vw, 130px) clamp(16px, 4vw, 60px) clamp(80px, 9vw, 130px);
+  position: relative;
+}
+
+/* =====================================================
+   RESPONSIVE FIXES START
+===================================================== */
+
+/* 🌐 TABLETS — CLEAN LAYOUT */
+@media (max-width: 1024px) {
+
+  /* Hide stripes for clean UI */
+  .banner__stripes { 
+    display: none; 
+  }
+
+  /* Center text block */
+  .banner__text {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .banner__text p {
+    margin-inline: auto;
+  }
+}
+
+/* 📱 MOBILE — PERFECT CENTERED BLOCK */
+@media (max-width: 640px) {
+
+  /* Prevent clipping */
+  .banner {
+    overflow: visible !important;
+  }
+
+  .banner__inner {
+    padding-bottom: 120px !important; /* more breathing room */
+  }
+
+  /* Allow text to wrap normally */
+  .banner__text h2 {
+    white-space: normal !important;
+    line-height: 1.25 !important;
+    text-align: center;
+  }
+
+  /* Disable animation styles that hide text */
+  .banner__text h2 span {
+    width: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    animation: none !important;
+    display: inline !important;
+  }
+
+  /* Cursor hidden on mobile */
+  .cursor-visual {
+    display: none !important;
+  }
+
+  /* Prevent ticker overlapping content */
+  .banner__ticker {
+    position: static !important;
+    margin-top: 40px !important;
+  }
+
+  /* Reduce font sizes for safety */
+  .banner__text p {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-inline: auto;
+  }
+}
+
+/* Extra safe for very small phones */
+@media (max-width: 480px) {
+
+  .banner__text h2 {
+    font-size: 18px !important;
+  }
+
+  .banner__text p {
+    font-size: 14px !important;
+  }
+
+  .banner__inner {
+    padding-bottom: 150px !important;
+  }
+}
