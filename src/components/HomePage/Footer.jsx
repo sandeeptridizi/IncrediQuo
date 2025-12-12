@@ -90,17 +90,21 @@ const Footer = () => {
                   <li><Link to="/" className="footer-link" onClick={handleNavClick}>Home Page</Link></li>
                   <li><Link to="/about" className="footer-link" onClick={handleNavClick}>About Us</Link></li>
                   <li><Link to="/careers" className="footer-link" onClick={handleNavClick}>Careers</Link></li>
-                  <li><Link to="/blogs" className="footer-link" onClick={handleNavClick}>Blogs</Link></li>
+                  <li><Link to="/blogs" className="footer-link" onClick={handleNavClick}>News & Insights</Link></li>
                 </ul>
               </div>
 
               <div className="footer-column footer-column--contact">
                 <h4 className="footer-heading">Contact Us</h4>
                 <ul>
-                  <li className="footer-address">B-1003, Level-10, B-Block</li>
-                  <li className="footer-address">The Platina Building</li>
-                  <li className="footer-address">Gachibowli, Hyderabad - 500032</li>
-                  <li className="footer-address">India</li>
+                  <li className="footer-address">
++91 9849668819</li>
+                  <li className="footer-address">info@incrediquosolutions.com</li>
+                  <li className="footer-address2">B-1003, Level-10, B-Block, The Platina Building,
+                    
+                  {/* </li> */}
+                  {/* <li className="footer-address"> */}
+                    Gachibowli, Hyderabad - 500032, India</li>
                 </ul>
               </div>
             </div>

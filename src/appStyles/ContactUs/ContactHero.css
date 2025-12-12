@@ -189,6 +189,7 @@
   .contact-hero__image {
     max-width: 360px;
     height: 220px;
+    margin-top: 10vw;
   }
 
   .contact-hero__inner h1 {
