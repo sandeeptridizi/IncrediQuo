@@ -1,3 +1,8 @@
+/* ===========================
+   Footer - Full CSS file
+   (3 columns right + bottom links right)
+   =========================== */
+
 .footer {
   position: relative;
   color: #f9fafb;
@@ -7,7 +12,6 @@
   background-color: #022447;
 }
 
-
 .footer-address {
   font-size: 16px;
   line-height: 28px;
@@ -15,7 +19,6 @@
   margin: 0 0 18px;
   max-width: 340px;
 }
-
 
 .footer::before {
   content: "";
@@ -59,16 +62,17 @@
   }
 }
 
+/* Keep brand + links layout stable and aligned at top */
 .footer-top {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 96px;
+  align-items: flex-start; /* align headings to top */
+  gap: 40px;
 }
 
+/* Brand (left block) */
 .footer-brand {
-  max-width: 340px;
-  flex-shrink: 0;
+  flex: 0 0 300px;   /* fixed width so right area uses remaining space */
+  max-width: 300px;
 }
 
 .footer-logo {
@@ -115,23 +119,10 @@
   transform: scale(1.05);
 }
 
-.footer-logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .footer-logo-mark img {
   width: 20px;
   height: 25px;
   object-fit: contain;
-}
-
-.footer-logo-text {
-  font-size: 25px;
-  font-weight: 700;
-  color: #ffffff;
-  transform: translateY(3px);
 }
 
 .footer-description {
@@ -169,60 +160,95 @@
   font-size: 16px;
   line-height: 30px;
   color: #d1e0ff;
-  margin-top: 40px;
+  margin-top: 140px;
 }
 
+/* =========================
+   RIGHT SIDE WRAPPER
+   (columns + bottom links)
+   ========================= */
+
+/* Right wrapper groups the 3 columns and the bottom links stacked vertically */
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* align contents to the right edge */
+  gap: 18px;
+  flex: 1 1 auto;
+}
+
+/* links area: keeps the 3 columns in a single row */
 .footer-links {
   display: flex;
-  gap: 80px;
-  white-space: normal;
+  gap: 38px;                 /* spacing between columns (reduced) */
   align-items: flex-start;
+  flex-wrap: nowrap;         /* keep in one row on desktop */
+  justify-content: flex-end; 
+  margin-top: 20px;
+  margin-right: -30px;/* columns align toward the right inside wrapper */
 }
 
+/* column sizing */
 .footer-column {
-  flex-shrink: 1;
-  min-width: 150px;
+  flex: 0 0 200px;
+  max-width: 220px;
+  min-width: 160px;
 }
 
-.footer-column--services {
-  flex-basis: 230px;
-  max-width: 230px;
-}
+/* Services Column */
+.footer-column--services {}
 
+/* Quikers Column */
 .footer-column--quikers {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-height: 221px;
-  flex-basis: 230px;
-  max-width: 230px;
-  justify-content: space-between;
-  font-size: 16px;
-  margin-left: -55px;
+  justify-content: flex-start;
 }
 
+/* Contact Column */
+.footer-column--contact {
+  align-self: flex-start; 
+  
+}
+
+/* Ensure footer-address lines look good inside contact column */
+.footer-column--contact .footer-address {
+  margin: 0 0 8px;
+  color: #d1e0ff;
+}
+
+/* bottom links (Privacy / Terms) — placed under columns and right aligned */
 .footer-bottom-links {
-  margin-top: auto;
-  margin-bottom: -20px;
   display: flex;
-  gap: 40px;
-  padding-top: 10px;
-  white-space: nowrap;
-  font-size: 16px;
-  flex-wrap: nowrap;
-  margin-right: -25px;
+  gap: 30px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  max-width: 700px; 
+  padding-top: 6px;
+  margin-top: 105px;
 }
 
-.footer-column--quikers .footer-bottom-links {
-  margin-top: 86px;
-  margin-bottom: 0;
+/* bottom-links text color */
+.footer-bottom-links a,
+.footer-bottom-links span {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
 }
 
+.footer-bottom-links a:hover,
+.footer-bottom-links span:hover {
+  text-decoration: underline;
+}
+
+/* Headings */
 .footer-column h4 {
   font-size: 18px;
   font-weight: 500;
   color: #ff6a7a;
-  margin: 0 0 6px;
+  margin: 0 0 12px;
   position: relative;
 }
 
@@ -230,17 +256,18 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px;
+  bottom: -6px;
   width: 70.5px;
   height: 3.64px;
   border-radius: 999px;
   background-color: #ff6a7a;
 }
 
+/* List styles */
 .footer-column ul {
   display: flex;
   flex-direction: column;
-  margin: 10px 0 0;
+  margin: 0;
   padding: 0;
 }
 
@@ -267,32 +294,7 @@
   text-decoration: underline;
 }
 
-.footer-bottom-links {
-  margin-top: auto;
-  margin-bottom: -30px;
-  display: flex;
-  gap: 40px;
-  padding-top: 10px;
-  white-space: nowrap;
-  font-size: 16px;
-  flex-wrap: nowrap;
-  margin-right: -25px;
-}
-
-.footer-bottom-link,
-.footer-bottom-links a,
-.footer-bottom-links span {
-  color: #ffffff;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-}
-
-.footer-bottom-links a:hover,
-.footer-bottom-links span:hover {
-  text-decoration: underline;
-}
-
+/* Social icons */
 .footer-social-group {
   display: flex;
   align-items: center;
@@ -312,7 +314,6 @@
   align-items: center;
   justify-content: center;
   transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
-  margin-left: 0;
 }
 
 .footer-social-icon:hover {
@@ -321,19 +322,24 @@
   box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
 }
 
+/* =========================
+   RESPONSIVE
+   ========================= */
+
 @media (max-width: 1024px) {
   .footer-inner {
     padding-top: 56px;
   }
 
   .footer-top {
-    gap: 56px;
+    gap: 40px;
   }
 
   .footer-links {
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
     white-space: normal;
+    justify-content: flex-start;
   }
 
   .footer-column {
@@ -342,7 +348,6 @@
 
   .footer-column--quikers {
     min-height: auto;
-    margin-left: 0;
   }
 
   .footer::before {
@@ -365,11 +370,17 @@
     max-width: 100%;
   }
 
+  /* stack columns vertically on small screens */
+  .footer-right {
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .footer-links {
     width: 100%;
     flex-wrap: wrap;
-    gap: 24px 20px;
-    margin-top: 4px;
+    gap: 18px;
+    justify-content: flex-start;
   }
 
   .footer-column {
@@ -378,21 +389,10 @@
     max-width: 50%;
   }
 
-  .footer-column h4 {
-    font-size: 16px;
-  }
-
-  .footer-column li {
-    font-size: 13px;
-  }
-
   .footer-bottom-links {
-    margin-top: 30px;
-    font-size: 14px;
-    gap: 20px;
-    flex-wrap: wrap;
-    white-space: normal;
-    margin-right: 0;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-top: 8px;
   }
 
   .footer::before {
@@ -402,27 +402,27 @@
 
 @media (max-width: 480px) {
   .footer {
-  padding: clamp(48px, 107vw, 115px) clamp(16px, 6vw, 60px) 26px;
+    padding: clamp(48px, 107vw, 115px) clamp(16px, 6vw, 60px) 26px;
     background-position: top left;
   }
-   .footer-address {
+
+  .footer-address {
     font-size: 13px;
     line-height: 22px;
   }
 
+  .footer::before {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='40 10 1940 100'><path fill='%23FFFFFF' d='M0,170 C00,1200 600,190 1440,80 L2000,0 L0,0 Z'/></svg>");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    z-index: 1;
+  }
 
-.footer::before {
-  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='40 10 1940 100'><path fill='%23FFFFFF' d='M0,170 C00,1200 600,190 1440,80 L2000,0 L0,0 Z'/></svg>");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top;
-  z-index: 1;
-}
-
-.footer > * {
-  position: relative;
-  z-index: 5;
-}
+  .footer > * {
+    position: relative;
+    z-index: 5;
+  }
 
   .footer-inner {
     padding-top: 0px;
@@ -440,7 +440,7 @@
     font-size: 12px;
     line-height: 24px;
   }
-  
+
   .footer-copy-left {
     font-size: 14px;
     line-height: 24px;
@@ -457,7 +457,7 @@
     width: 100%;
     flex-basis: 100%;
   }
-  
+
   .footer-column h4 {
     font-size: 14px;
   }
@@ -472,7 +472,6 @@
     gap: 6px;
     margin-top: 18px;
     font-size: 12px;
-    margin-right: 0;
   }
 
   .footer-social-group {
@@ -483,4 +482,7 @@
   .footer::before {
     height: 70px;
   }
+}
+.footer-column--contact .footer-address {
+  color: #ffffff !important;   /* force white inside Contact Us column */
 }
