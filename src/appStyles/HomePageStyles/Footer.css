@@ -20,6 +20,14 @@
   max-width: 340px;
 }
 
+.footer-address2 {
+  font-size: 16px;
+  line-height: 28px;
+  color: #d1e0ff;
+  margin: 0 0 18px;
+  width: 340px;
+  /* border: 1px solid; */
+}
 .footer::before {
   content: "";
   position: absolute;
@@ -73,6 +81,8 @@
 .footer-brand {
   flex: 0 0 300px;   /* fixed width so right area uses remaining space */
   max-width: 300px;
+  height: 20vw;
+  /* border: 1px solid; */
 }
 
 .footer-logo {
@@ -160,7 +170,7 @@
   font-size: 16px;
   line-height: 30px;
   color: #d1e0ff;
-  margin-top: 140px;
+  margin-top: 90px;
 }
 
 /* =========================
@@ -227,7 +237,7 @@
   width: 100%;
   max-width: 700px; 
   padding-top: 6px;
-  margin-top: 105px;
+  margin-top: 80px;
 }
 
 /* bottom-links text color */
@@ -473,7 +483,11 @@
     margin-top: 18px;
     font-size: 12px;
   }
-
+.footer-bottom-links a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+}
   .footer-social-group {
     margin-top: 24px;
     gap: 18px;

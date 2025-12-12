@@ -76,7 +76,7 @@ const LatestPosts = () => {
   return (
     <section id="blogs" className="section latest-posts">
       <div className="latest-container">
-        <h2 className="section__title latest-title">Latest Post</h2>
+        <h2 className="section__title latest-title">News & Insights</h2>
 
         <div className="latest-grid">
           {posts.map((post) => (
@@ -101,7 +101,7 @@ const LatestPosts = () => {
 
                 <div className="latest-card__meta">
                   <div className="latest-card__author">
-                    <div className="latest-card__avatar"></div>
+                    {/* <div className="latest-card__avatar"></div> */}
                     {/* 🔥 Always show brand instead of author name */}
                     <span>@IncrediQuoSolutions</span>
                   </div>

@@ -62,12 +62,12 @@
 @media screen and (min-width: 320px) and (max-width: 720px) {
 
     .About_bbcontainer {
-        padding: 1.3vw 3.97vw;
+        padding: 1.7vw 4vw;
     }
 
     .About_contact_btn {
-        font-size: 3.5vw;
-        padding: 2vw 6vw 2vw 1vw;
+        font-size: 3.2vw;
+        padding: 1.8vw 6.8vw 2vw 0.7vw;
     }
 
     .About_Arrow_Icon {

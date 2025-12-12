@@ -16,12 +16,13 @@
 
 .about-hero__image-bg {
   position: absolute;
-  width: 130%;
+  width: 125%;
   height: 52%;
-  background: #022447;
-  border-radius: 0 0 50px 50px;
+  background: #36597c;  border-radius: 0 0 50px 50px;
   bottom: -45px;
   z-index: 1;
+    box-shadow: 0 25px 24px rgba(15, 23, 42, 0.15);
+
 }
 
 .about-hero__image-main {
@@ -136,12 +137,13 @@
 /* ------------ MOBILE RESPONSIVE ------------ */
 @media (max-width: 600px) {
   .about-hero {
-    padding: 220px 0 64px;
+    padding:280px 0 64px 0;
   }
 
   .about-hero__inner {
     padding: 0 16px;
     gap: 30px;
+    margin-top: -25vw;
   }
 
   .about-hero__text h1 {
