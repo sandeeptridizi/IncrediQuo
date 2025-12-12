@@ -15,25 +15,24 @@ top: 0;
  box-sizing: border-box;
  transition: background-color 0.3s ease;
 }
+/* darker, more blue-dominated dotted backdrop (≈ +20% blue emphasis) */
 .navbar::before {
-content: "";
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-
-/* Apply the dotted pattern here */
-background-image: 
-radial-gradient(circle at 1.2px 1.2px, rgba(0, 33, 71, 0.9) 0.5px, transparent 0); 
-background-size: 3px 3px;
-
-/* KEY: Push the dotted layer behind the content */
-z-index: -1; 
-/* Also ensure it has the same background color */
-background-color: #ffffff; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    circle at 1.2px 1.2px,
+    rgba(2, 36, 71, 0.95) 0.6px,
+    transparent 0
+  );
+  background-size: 3px 3px;
+  background-color: rgba(2, 36, 71, 0.12);
+  z-index: -1;
+  pointer-events: none;
 }
-
 
 .navbar__top-row {
   width: 100%;
@@ -43,10 +42,8 @@ background-color: #ffffff;
   padding-bottom: 0; 
   position: relative; 
   z-index: 10; 
-  /* Ensure this is transparent so the dots on .navbar show through */
   background-color: transparent; 
 }
-
 
 
 .contact-icon-popup-wrapper {
@@ -70,9 +67,7 @@ background-color: #ffffff;
   position: absolute;
   top: 100%; 
   left: 0; 
-  
   transform: translateX(calc(-50% + 20px - 20px)) translateY(10px); 
-
   padding: 12px 20px;
   background-color: #002147; 
   color: #ffffff;
@@ -152,7 +147,7 @@ background-color: #ffffff;
 }
 
 .navbar__logo img {
-  max-height: 100px; 
+  max-height: 120px; 
   width: 100%;
   object-fit: contain;
   background: transparent;
@@ -619,3 +614,4 @@ margin-right: 20px;
     max-height: 40px;
   }
 }
+

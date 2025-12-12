@@ -145,12 +145,6 @@
   }
 }
 
-
-
-
-
-
-
 .why-choose-container {
   max-width: 1160px;
   margin: 5vw auto 0;
@@ -405,4 +399,22 @@
     height: 18px;
     font-size: 10px;
   }
+}
+
+.world-map-heading {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.atlas-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #022447;
+  margin-bottom: 10px;
+}
+
+.atlas-subtitle {
+  font-size: 18px;
+  color: #4f5665;
 }

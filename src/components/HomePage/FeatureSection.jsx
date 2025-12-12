@@ -2,14 +2,13 @@ import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/featuresection.png";
 import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
-// New image import
-import worldMap from "../../assets/WorldMap.png"; // Assuming the file name is 'world map in src.png' or similar
+import worldMap from "../../assets/WorldMap.png";
 
 const FeatureSection = () => {
   return (
     <section className="feature-section">
       <div className="feature-inner">
-       <div className="feature__image-wrapper">
+        <div className="feature__image-wrapper">
           <div className="feature__image-bg"></div>
 
           <img
@@ -18,6 +17,7 @@ const FeatureSection = () => {
             className="feature__image-main"
           />
         </div>
+
         <div className="feature-content">
           <h2 className="feature-title">
             Our Workflow Engineered <br />
@@ -46,6 +46,7 @@ const FeatureSection = () => {
           </ul>
         </div>
       </div>
+
       <div className="why-choose-container">
         <div className="why-left">
           <h2 className="why-title">Why Choose IncrediQuo:</h2>
@@ -75,6 +76,7 @@ const FeatureSection = () => {
             audit.
           </p>
         </div>
+
         <div className="why-right">
           <img
             src={whyChooseImg}
@@ -84,7 +86,15 @@ const FeatureSection = () => {
         </div>
       </div>
 
-      {/* New World Map Section */}
+      {/* ⭐ NEW — Global Delivery Heading & Subtitle */}
+      <div className="world-map-heading">
+        <h2 className="atlas-title">Global Delivery Capability</h2>
+        <p className="atlas-subtitle">
+          Headquartered in India, delivering transcription services to organisations across the globe.
+        </p>
+      </div>
+
+      {/* Existing World Map Section */}
       <div className="world-map-container">
         <img
           src={worldMap}
@@ -92,7 +102,6 @@ const FeatureSection = () => {
           className="world-map-image"
         />
       </div>
-      {/* End of New World Map Section */}
     </section>
   );
 };
