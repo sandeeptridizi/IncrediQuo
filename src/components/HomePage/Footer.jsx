@@ -55,7 +55,7 @@ const Footer = () => {
               </a>
             </div>
 
-            <p className="footer-copy-left">©2025 IncrediQuo Solutions</p>
+            {/* <p className="footer-copy-left">©2025 IncrediQuo Solutions</p> */}
           </div>
 
           {/* -------- RIGHT: columns + bottom links -------- */}
@@ -160,7 +160,28 @@ const Footer = () => {
             </div>
 
             {/* Bottom links (privacy/terms) placed below columns, right-aligned */}
-            <div className="footer-bottom-links">
+            {/* <div className="footer-bottom-links">
+              <Link
+                to="/privacy-policy"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-service"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Terms of Service
+              </Link>
+            </div> */}
+          </div>
+        </div>
+        <div className="footer-bottom">
+                      <p className="footer-copy-left">©2025 IncrediQuo Solutions</p>
+
+          <div className="footer-bottom-links">
               <Link
                 to="/privacy-policy"
                 className="footer-bottom-link"
@@ -176,7 +197,6 @@ const Footer = () => {
                 Terms of Service
               </Link>
             </div>
-          </div>
         </div>
       </div>
     </footer>

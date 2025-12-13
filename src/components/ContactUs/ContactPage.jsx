@@ -11,7 +11,6 @@ const ContactPage = () => {
 
   const handleSuccess = () => {
     setShowSuccessModal(true);
-    // Auto-close after 3 seconds
     setTimeout(() => {
       setShowSuccessModal(false);
     }, 3000);
@@ -36,7 +35,8 @@ const ContactPage = () => {
     <main className="page-animate">
       <ContactHero />
       <ContactFormSection onSuccess={handleSuccess} onError={handleError} />
-      <NewsletterSection />
+      {/* <NewsletterSection /> */}
+      <NewsletterSection onSuccess={handleSuccess} onError={handleError} />
 
       {/* SUCCESS MODAL - Auto closes after 3s */}
       {showSuccessModal && (
