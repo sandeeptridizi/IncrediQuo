@@ -15,7 +15,7 @@ const ContactFormSection = ({ onSuccess, onError }) => {
       "/": "Home Page - Hero",
       "/about": "About Us",
       "/contact": "Contact Page",
-      "/careers": "Careers",
+      "/careers": "Careers - Apply Job",
       "/services/transcription": "Transcription Services",
       "/services/closed-captioning": "Closed Captioning & Subtitling",
       "/services/summarization": "Summarization Service",

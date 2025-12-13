@@ -226,7 +226,7 @@
   /* Input/textarea full width */
   .blog-contact__field input,
   .blog-contact__field textarea {
-    width: 100% !important;
+    width: 85vw !important;
   }
 
   /* Contact text center */

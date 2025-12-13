@@ -81,7 +81,12 @@ function App() {
 
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/careers" element={<Careers />} />
+          {/* <Route path="/careers" element={<Careers />} /> */}
+          <Route
+  path="/careers"
+  element={<Careers onOpenContact={openContact} />}
+/>
+
           <Route path="/blogs" element={<BlogsListPage />} />
           <Route path="/post/:id" element={<PostDetails />} />
           <Route path="/blogs/:blogId" element={<BlogPage />} />

@@ -16,7 +16,7 @@ const ContactSection = ({ onClose }) => {
       "/": "Home Page - Hero",
       "/about": "About Us",
       "/contact": "Contact Page",
-      "/careers": "Careers",
+      "/careers": "Careers - Apply Job",
       "/services/transcription": "Transcription Services",
       "/services/closed-captioning": "Closed Captioning & Subtitling",
       "/services/summarization": "Summarization Service",
@@ -148,14 +148,6 @@ const ContactSection = ({ onClose }) => {
               required
               disabled={isSubmitting}
             />
-
-            {/* <button
-              type="submit"
-              className="contact-submit-btn"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </button> */}
             <div className="contact-submit-btn">
               <Button
                 name={isSubmitting ? "Submitting..." : "Submit form"}
