@@ -101,8 +101,9 @@
 }
 
 .contact-newsletter__button:hover {
-  background: #ffcfe0;
-  transform: translateY(-1px);
+  background: #ff9ba5;
+  color: #ffffff;
+  /* transform: translateY(-1px); */
 }
 
 @media (max-width: 1024px) {
@@ -169,7 +170,7 @@
     height: 10vw;      
     font-size: 17px;  
     padding: 0 30px;
-    padding: 3.5vw;
+    padding: 4vw;
         border-radius: 999px;
 
   }
@@ -181,8 +182,9 @@
     min-width: 0;
   }
 
-  .contact-newsletter__button {
-    margin-top: 4px;
+  .contact-newsletter__button:hover {
+    background-color: #f9929c;
+    color: #ffffff;
   }
 
   .contact-newsletter__dots {

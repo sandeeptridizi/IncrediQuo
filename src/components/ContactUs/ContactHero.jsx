@@ -37,9 +37,7 @@ const ContactHero = () => {
       <div className="contact-hero__bottom">
         <div className="contact-info__inner">
           <div className="contact-info__title">
-            Get In
-            <br />
-            Touch
+            Get In Touch
           </div>
 
           <div className="contact-info__cards">
@@ -58,11 +56,11 @@ const ContactHero = () => {
                 />
               </div>
               <div className="contact-info__text">
-                <h3>
+                <p>
                   B-1003, Level-10, B-Block, The Platina Building,
-                  <br />
+                  {/* <br /> */}
                   Gachibowli, Hyderabad - 500032, India
-                </h3>
+                </p>
               </div>
             </a>
 
@@ -75,8 +73,8 @@ const ContactHero = () => {
                   className="contact-info__icon-img"
                 />
               </div>
-              <div className="contact-info__text">
-                <h3>+91 9849668819</h3>
+              <div className="contact-info__text2">
+                <p>+91 9849668819</p>
               </div>
             </div>
 
@@ -89,8 +87,8 @@ const ContactHero = () => {
                   className="contact-info__icon-img"
                 />
               </div>
-              <div className="contact-info__text">
-                <h3>info@incrediquosolutions.com</h3>
+              <div className="contact-info__text3">
+                <p>info@incrediquosolutions.com</p>
               </div>
             </div>
           </div>
