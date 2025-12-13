@@ -169,6 +169,8 @@ body {
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
+  align-items: center;
+  justify-content: center;
 }
 
 .job-btn {
@@ -185,7 +187,7 @@ body {
 }
 
 .job-btn--primary {
-  margin-top: -1vw;
+  margin-top: 0vw;
 }
 
 .job-btn--outline {
@@ -194,6 +196,16 @@ body {
   background: transparent;
   color: #3c3c3c;
   border: 1px solid #d3c0c4;
+}
+.job-btn--outline:hover {
+cursor: pointer;
+background-color: #ffff;
+}
+
+
+.job-modal__meta {
+  color: #444;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 1024px) {
@@ -263,6 +275,47 @@ margin-top: 10vw;
   .featured {
     margin-top: 50px;
   }
+    .job-modal__overlay {
+    align-items: flex-end; /* bottom sheet style */
+    padding: 16px;
+  }
+
+    .job-modal {
+    width: 100%;
+    height: 90vw !important;
+    /* max-height: 85vh; */
+    padding: 10px;
+    border-radius: 16px 16px 0 0;
+    animation: slideUp 0.3s ease;
+  }
+
+    .job-modal__title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+    .job-modal__desc {
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+    .job-modal__meta {
+    font-size: 4.5vw;
+    height: 10vw;
+    /* border: 1px solid; */
+    color: #03244d;
+    /* width: 70vw; */
+    /* margin-left: -4vw; */
+  }
+
+  .job-modal__close {
+    top: 12px;
+    right: 14px;
+    font-size: 14px !important;
+  }
 
   .featured__title {
     font-size: 26px;
@@ -287,7 +340,6 @@ margin-top: 10vw;
     gap: 10px;
     width: 100%;
   }
-
   .jobcard__title {
     font-size: 18px;
   }
@@ -339,6 +391,7 @@ margin-top: 10vw;
   border-radius: 12px;
   position: relative;
   animation: fadeIn 0.25s ease;
+  height: 40vw;
 }
 
 .job-modal__close {
@@ -361,12 +414,25 @@ margin-top: 10vw;
 .job-modal__desc {
   color: #1a2d45;
   margin-bottom: 16px;
+  height: 31vw;
+  overflow-y: scroll;
+    scrollbar-width: thin;
+  scrollbar-color: #b5c0d0 transparent;
 }
 
-.job-modal__meta {
-  color: #444;
-  margin-bottom: 8px;
+.job-modal__desc::-webkit-scrollbar {
+  width: 4px;   /* ⬅️ decrease width (try 3px–5px) */
 }
+
+.job-modal__desc::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.job-modal__desc::-webkit-scrollbar-thumb {
+  background-color: #b5c0d0;
+  border-radius: 10px;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.96); }

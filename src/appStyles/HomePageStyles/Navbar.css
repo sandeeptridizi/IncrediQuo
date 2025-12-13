@@ -316,14 +316,16 @@ margin-right: 20px;
 .dropdown__title::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: -4px;
   width: 0;
   height: 2px;
   border-radius: 9999px;
-  background: #022447; 
-  transition: width 0.25s ease;
+  background: #022447;
+  transition: width 0.25s ease, left 0.25s ease;
+  transform: translateX(-50%);
 }
+
 
 .dropdown.open .dropdown__title,
 .dropdown__title:hover,
@@ -334,12 +336,13 @@ margin-right: 20px;
 .dropdown.open .dropdown__title::after,
 .dropdown__title:hover::after,
 .dropdown__title.active::after {
-  width: 190%;
+  width: 120%;   /* 🔹 short underline */
+  top: 1.7vw;
 }
 
 .dropdown__menu {
   position: absolute;
-  top: 100%;
+  top: 99%;
   left: 50%;
   transform: translateX(-50%);
   /* 🔥 FIXED: Reduced margin-top to position the dropdown correctly on a thin navbar */
@@ -647,7 +650,7 @@ margin-right: 20px;
   right: 6vw;
   border-radius: 2vw;
   padding: 3vw 0vw;
-  padding-bottom: 6vw;
+  padding-bottom: 6.3vw;
   /* border: 1px solid red; */
 }
 
@@ -720,7 +723,7 @@ margin-right: 20px;
   margin-top: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 /*------------ MEDIA QUERY ------------*/
@@ -774,7 +777,7 @@ margin-right: 20px;
     width: 70vw !important;
   }
   .mobile-contact-buttons button{
-    font-size: 4.2vw;
+    font-size: 5vw;
     background-color: transparent;
     color: #fff;
 /* padding: 3vw; */
@@ -782,8 +785,8 @@ border-radius: 10vw;
 /* width: fit-content; */
     border: none;
     text-align: center;
-    margin-top: 5vw;
-    margin-left: 5vw;
+    margin-top: 4vw;
+    /* margin-left: 5vw; */
   }
   .mobile-contact-buttons button.active{
       color: #ff6a7a; /* Pink Text */

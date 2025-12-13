@@ -7,8 +7,9 @@ import HowItWorks from "./HowItWorks";
 import FeaturedJobs from "./FeaturedJobs";
 import BottomSection from "./BottomSection";
 import { useNavigate } from "react-router-dom";
+import parse from "html-react-parser";
 
-const Careers = () => {
+const Careers = ({ onOpenContact }) => {
   const [selectedJob, setSelectedJob] = useState(null);
 
   const openPopup = (job) => {
@@ -25,8 +26,10 @@ const Careers = () => {
       <HowItWorks />
 
       {/* pass function to child */}
-      <FeaturedJobs openPopup={openPopup} />
-
+      <FeaturedJobs
+        openPopup={openPopup}
+        onOpenContact={onOpenContact} // ✅ PASS HERE
+      />
       <BottomSection />
 
       {selectedJob && (
@@ -37,11 +40,12 @@ const Careers = () => {
             </button>
 
             <h2 className="job-modal__title">{selectedJob.JobTitle}</h2>
-
-            <p className="job-modal__desc">{selectedJob.JobDiscription}</p>
-
             <p className="job-modal__meta">
               📍 Location: {selectedJob.Location}
+            </p>
+            {/* <p className="job-modal__desc">{selectedJob.JobDiscription}</p> */}
+            <p className="job-modal__desc">
+              {selectedJob?.JobDiscription && parse(selectedJob.JobDiscription)}
             </p>
             {/* <p className="job-modal__meta">
               📅 Date Posted: {selectedJob.date}
@@ -49,6 +53,9 @@ const Careers = () => {
           </div>
         </div>
       )}
+      {/* {selectedJob && (
+        <JobDetailsPopup job={selectedJob} onClose={closePopup} />
+      )} */}
     </div>
   );
 };
