@@ -15,7 +15,6 @@ const Footer = () => {
     <footer className="footer" id="footer">
       <div className="footer-inner">
         <div className="footer-top">
-
           {/* -------- BRAND + ADDRESS (LEFT) -------- */}
           <div className="footer-brand">
             <Link to="/" className="footer-logo" onClick={handleNavClick}>
@@ -48,7 +47,11 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={twitter} alt="Twitter" className="footer-social-icon" />
+                <img
+                  src={twitter}
+                  alt="Twitter"
+                  className="footer-social-icon"
+                />
               </a>
             </div>
 
@@ -62,22 +65,38 @@ const Footer = () => {
                 <h4 className="footer-heading">Services</h4>
                 <ul>
                   <li>
-                    <Link to="/services/transcription" className="footer-link" onClick={handleNavClick}>
+                    <Link
+                      to="/services/transcription"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
                       Transcription
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/closed-captioning" className="footer-link" onClick={handleNavClick}>
+                    <Link
+                      to="/services/closed-captioning"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
                       Closed Captioning & Subtitling
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/summarization" className="footer-link" onClick={handleNavClick}>
+                    <Link
+                      to="/services/summarization"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
                       Summarization
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services/additional-support" className="footer-link" onClick={handleNavClick}>
+                    <Link
+                      to="/services/additional-support"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
                       Additional Support
                     </Link>
                   </li>
@@ -87,35 +106,77 @@ const Footer = () => {
               <div className="footer-column footer-column--quikers">
                 <h4 className="footer-heading">Quikers</h4>
                 <ul>
-                  <li><Link to="/" className="footer-link" onClick={handleNavClick}>Home Page</Link></li>
-                  <li><Link to="/about" className="footer-link" onClick={handleNavClick}>About Us</Link></li>
-                  <li><Link to="/careers" className="footer-link" onClick={handleNavClick}>Careers</Link></li>
-                  <li><Link to="/blogs" className="footer-link" onClick={handleNavClick}>News & Insights</Link></li>
+                  <li>
+                    <Link
+                      to="/"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
+                      Home Page
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/about"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
+                      About Us
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/careers"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/blogs"
+                      className="footer-link"
+                      onClick={handleNavClick}
+                    >
+                      News & Insights
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
               <div className="footer-column footer-column--contact">
                 <h4 className="footer-heading">Contact Us</h4>
                 <ul>
+                  <li className="footer-address">+91 9849668819</li>
                   <li className="footer-address">
-+91 9849668819</li>
-                  <li className="footer-address">info@incrediquosolutions.com</li>
-                  <li className="footer-address2">B-1003, Level-10, B-Block, The Platina Building,
-                    
-                  {/* </li> */}
-                  {/* <li className="footer-address"> */}
-                    Gachibowli, Hyderabad - 500032, India</li>
+                    info@incrediquosolutions.com
+                  </li>
+                  <li className="footer-address2">
+                    B-1003, Level-10, B-Block, The Platina Building, Gachibowli, Hyderabad - 500032, India
+                  </li>
                 </ul>
               </div>
             </div>
 
             {/* Bottom links (privacy/terms) placed below columns, right-aligned */}
             <div className="footer-bottom-links">
-              <Link to="/privacy-policy" className="footer-bottom-link" onClick={handleNavClick}>Privacy Policy</Link>
-              <Link to="/terms-of-service" className="footer-bottom-link" onClick={handleNavClick}>Terms of Service</Link>
+              <Link
+                to="/privacy-policy"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-service"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Terms of Service
+              </Link>
             </div>
           </div>
-
         </div>
       </div>
     </footer>

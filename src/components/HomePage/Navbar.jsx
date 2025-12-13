@@ -76,6 +76,10 @@ const Navbar = () => {
           <div onClick={openCalendly}>
             <Button
               name="Schedule Appointment"
+                paddingXL = "12.6vw"
+  paddingXM = "9.5vw"
+  widthL = "15.8vw"
+  // widthM = "30.31vw"
               widthM="44vw"
               bacgrounClr="#022447"
               bacgrounArrow="#fff"

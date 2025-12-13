@@ -21,11 +21,11 @@
 }
 
 .footer-address2 {
-  font-size: 16px;
+  font-size: 15px !important;
   line-height: 28px;
   color: #d1e0ff;
-  margin: 0 0 18px;
-  width: 340px;
+  margin: -0.2vw 0 18px !important;
+  width: 280px;
   /* border: 1px solid; */
 }
 .footer::before {
