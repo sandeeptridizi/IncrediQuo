@@ -72,6 +72,8 @@ const BlogsListPage = () => {
 
     // strip tags & normalize spaces
     raw = raw
+      .replace(/<h3[^>]*>/gi, " ")
+  .replace(/<\/h3>/gi, " ")
       .replace(/<br\s*\/?>/gi, " ")
       .replace(/<\/p>/gi, " ")
       .replace(/<p[^>]*>/gi, " ")

@@ -70,7 +70,7 @@ const BannerStats = ({ onOpenContact }) => {
             language solutions arrive exactly when you need them.
           </p>
 
-          <div onClick={handleClick}>
+          <div onClick={handleClick} className="home_hero_button_flesible">
             <Button
               name="Get Started"
               paddingXL="8.6vw"

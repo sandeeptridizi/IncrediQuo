@@ -1,5 +1,5 @@
 // Careers.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../appStyles/Career/Careers.css";
 
 import CareerHero from "./CareerHero";
@@ -8,9 +8,45 @@ import FeaturedJobs from "./FeaturedJobs";
 import BottomSection from "./BottomSection";
 import { useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
+import { get, ref } from "firebase/database";
+import { database } from "../../Firebase/firebase";
 
 const Careers = ({ onOpenContact }) => {
   const [selectedJob, setSelectedJob] = useState(null);
+  const [filters, setFilters] = useState({ location: "", title: "" });
+  const [careers, setCareers] = useState([]);
+
+  const [locations, setLocations] = useState([]);
+  const [titles, setTitles] = useState([]);
+
+  useEffect(() => {
+    const fetchCareers = async () => {
+      const snapshot = await get(ref(database, "careers"));
+      if (snapshot.exists()) {
+        const data = Object.values(snapshot.val());
+        setCareers(data);
+
+        // 🔹 UNIQUE LOCATIONS
+        const uniqueLocations = [
+          ...new Set(data.map((job) => job.Location).filter(Boolean)),
+        ];
+
+        // 🔹 UNIQUE TITLES
+        const uniqueTitles = [
+          ...new Set(data.map((job) => job.JobTitle).filter(Boolean)),
+        ];
+
+        setLocations(uniqueLocations);
+        setTitles(uniqueTitles);
+      }
+    };
+
+    fetchCareers();
+  }, []);
+
+   const handleSearch = (searchData) => {
+    setFilters(searchData);
+  };
 
   const openPopup = (job) => {
     setSelectedJob(job);
@@ -22,13 +58,19 @@ const Careers = ({ onOpenContact }) => {
 
   return (
     <div className="careers-page page-animate" id="careers">
-      <CareerHero />
+      <CareerHero 
+      onSearch={setFilters}
+        locations={locations}
+        titles={titles}
+        />
       <HowItWorks />
 
       {/* pass function to child */}
       <FeaturedJobs
         openPopup={openPopup}
-        onOpenContact={onOpenContact} // ✅ PASS HERE
+        onOpenContact={onOpenContact}
+        filters={filters}
+         careers={careers}
       />
       <BottomSection />
 

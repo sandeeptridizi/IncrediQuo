@@ -357,4 +357,8 @@
   .banner__inner {
     padding-bottom: 150px !important;
   }
+  .home_hero_button_flesible{
+    margin-left: 28vw;
+    margin-top: 2vw;
+  }
 }

@@ -5,9 +5,9 @@ import { Button } from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { database, ref, get } from "../../Firebase/firebase";
 
-const FeaturedJobs = ({ openPopup, onOpenContact }) => {
+const FeaturedJobs = ({ openPopup, onOpenContact, filters, careers = [] }) => {
   const navigate = useNavigate();
-  const [careers, setCareers] = useState([]);
+  // const [careers, setCareers] = useState([]);
 
   const handleApplyJob = (job) => {
     if (typeof onOpenContact === "function") {
@@ -16,33 +16,46 @@ const FeaturedJobs = ({ openPopup, onOpenContact }) => {
   };
   console.log(careers, "careers");
 
-  useEffect(() => {
-    const fetchCareers = async () => {
-      const careersRef = ref(database, "careers"); // Reference to the "careers" node in the database
-      try {
-        const snapshot = await get(careersRef); // Fetch data from Firebase
-        if (snapshot.exists()) {
-          const data = snapshot.val();
-          const careerList = Object.keys(data).map((key) => ({
-            id: key,
-            ...data[key],
-          }));
-          setCareers(careerList); // Set the state with fetched data
-        }
-      } catch (error) {
-        console.error("Error fetching data: ", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchCareers = async () => {
+  //     const careersRef = ref(database, "careers"); // Reference to the "careers" node in the database
+  //     try {
+  //       const snapshot = await get(careersRef); // Fetch data from Firebase
+  //       if (snapshot.exists()) {
+  //         const data = snapshot.val();
+  //         const careerList = Object.keys(data).map((key) => ({
+  //           id: key,
+  //           ...data[key],
+  //         }));
+  //         setCareers(careerList); // Set the state with fetched data
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching data: ", error);
+  //     }
+  //   };
 
-    fetchCareers();
-  }, []);
+  //   fetchCareers();
+  // }, []);
+
+  const filteredJobs = careers.filter((job) => {
+    const matchLocation = filters.location
+      ? job.Location?.toLowerCase().includes(filters.location.toLowerCase())
+      : true;
+
+    const matchTitle = filters.title
+      ? job.JobTitle === filters.title
+      : true;
+
+    return matchLocation && matchTitle;
+  });
 
   return (
     <section className="featured">
       <h2 className="featured__title">Active Jobs</h2>
 
       {/* Show "No jobs found" if empty */}
-      {careers.length === 0 ? (
+     
+      {filteredJobs.length === 0 ? (
         <p className="no-jobs-text">No jobs found</p>
       ) : (
         <div className="featured__list">
