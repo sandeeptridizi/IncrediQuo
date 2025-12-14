@@ -83,7 +83,7 @@ const AdditionalSupportHero = ({ onOpenContact }) => {
             </div>
           </div>
 
-          <div onClick={handleGetStarted}>
+          <div onClick={handleGetStarted} className="service_button_mobile">
             <Button
   name="Get Started"
   paddingXL = "8.6vw"

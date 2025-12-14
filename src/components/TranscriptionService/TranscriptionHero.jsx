@@ -102,7 +102,7 @@ const TranscriptionHero = ({ onOpenContact }) => {
           {/* <button className="ts-hero__cta" onClick={handleGetStarted}>
             Get Started
           </button> */}
-                <div onClick={handleGetStarted}>
+                <div onClick={handleGetStarted} className="service_button_mobile">
             {/* <Button name="Get Started" /> */}
                                                <Button
               name="Get Started"

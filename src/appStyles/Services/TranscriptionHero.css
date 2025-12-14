@@ -228,6 +228,9 @@
     padding: 4vw 0;
     width: 100%;
   }
+  .service_button_mobile{
+    margin-left: 27vw;
+  }
 
   .vg-card {
     width: 90vw;

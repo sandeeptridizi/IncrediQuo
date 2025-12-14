@@ -44,7 +44,7 @@ const AboutHero = () => {
           </p>
 
          
-          <div>
+          <div className="about_hero_button">
                         <Button
   name="Learn More"
   paddingXL = "8.6vw"

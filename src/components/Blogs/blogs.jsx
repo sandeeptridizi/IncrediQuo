@@ -16,7 +16,7 @@ const [showSuccessModal, setShowSuccessModal] = useState(false);
 const [showErrorModal, setShowErrorModal] = useState(false);
 
   const [blog, setBlog] = useState(null);
-
+console.log(blog, "blog")
     const getSourcePage = () => {
     return "Single Blog";
   };
@@ -88,6 +88,8 @@ const [showErrorModal, setShowErrorModal] = useState(false);
   const rawBody = blog.blog_content || blog.content || "";
 
   const paragraphs = rawBody
+    .replace(/<h3[^>]*>/gi, "\n")
+  .replace(/<\/h3>/gi, "\n")
     // turn <br> into newlines
     .replace(/<br\s*\/?>/gi, "\n")
     // close </p> becomes newline
@@ -104,6 +106,7 @@ const [showErrorModal, setShowErrorModal] = useState(false);
     .map((p) => p.trim())
     .filter((p) => p.length > 0);
 
+    
 
   const handleChange = (e) => {
     const { name, value } = e.target;

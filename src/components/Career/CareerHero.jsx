@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../../appStyles/Career/CareerHero.css";
 import heroImg from "../../assets/carrers/carrerphoto.png";
 import { Button } from "../Button/Button";
@@ -35,7 +35,45 @@ const AnimatedH1 = ({ text, delay }) => {
     );
 };
 
-const CareerHero = () => {
+const CareerHero = ({ onSearch, locations = [], titles = [] }) => {
+
+    const [location, setLocation] = useState("");
+  // const [title, setTitle] = useState("");
+
+    const handleSearch = () => {
+    onSearch({
+      location,
+      titles,
+    });
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const [selected, setSelected] = useState("Choose job role");
+
+  const dropdownRef = useRef(null);
+
+  const filteredOptions = titles.filter(option =>
+    option.toLowerCase().includes(search.toLowerCase())
+  );
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = e => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleSelect = value => {
+    setSelected(value);
+    setIsOpen(false);
+    setSearch("");
+  };
+
   // Use '~' as a separator to represent the desired line breaks (<br />)
   const rawAnimatedText = "Build Your Future~with IncrediQuo~Solutions"; 
   const typingDelay = 75; // Milliseconds per character
@@ -89,36 +127,57 @@ const CareerHero = () => {
         {/* SEARCH BAR */}
         <div className="career-hero__search">
           {/* Location field */}
-          <div className="search-field">
-            <label>Location</label>
-
-            <div className="search-field__value">
-              <span className="search-value">Select Your City</span>
-
-              <span className="search-icon search-icon--pin" aria-hidden="true">
-                <img src="/Group 3.png" alt="" />
-              </span>
-            </div>
-          </div>
+      <div className="search-field">
+        <label>Location</label>
+        <input
+          list="locations"
+          placeholder="Select your city"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          className="search-input"
+        />
+        {/* <datalist id="locations">
+          {locations.map((loc, i) => (
+            <option key={i} value={loc} />
+          ))}
+        </datalist> */}
+      </div>
 
           {/* Title field */}
-          <div className="search-field">
-            <label>Title</label>
+<div className="custom-select-career" ref={dropdownRef}>
+        <p className="Title_Css-career">Title</p>
+      <div className="select-box-career" onClick={() => setIsOpen(!isOpen)}>
+        <span>{selected}</span>
+        <span className="arrow-career">▼</span>
+      </div>
 
-            <div className="search-field__value">
-              <span className="search-value">Choose job role</span>
+      {isOpen && (
+        <div className="dropdown-career">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+          />
 
-              <span
-                className="search-icon search-icon--chevron"
-                aria-hidden="true"
-              >
-                <img src="/Group 4.png" alt="" />
-              </span>
-            </div>
-          </div>
+          <ul>
+            {filteredOptions.length > 0 ? (
+              filteredOptions.map(option => (
+                <li key={option} onClick={() => handleSelect(option)}>
+                  {option}
+                </li>
+              ))
+            ) : (
+              <li className="no-data-career">No results found</li>
+            )}
+          </ul>
+        </div>
+      )}
+    </div>
 
           {/* SEARCH BUTTON */}
-          <Button
+          <div onClick={handleSearch}>
+         <Button
             name="Search....."
             type="button"
             paddingXL="8.6vw"
@@ -131,6 +190,8 @@ const CareerHero = () => {
             colorText="#ffff"
             colorTextHover="#022447"
           />
+          </div>
+ 
         </div>
       </div>
     </section>
