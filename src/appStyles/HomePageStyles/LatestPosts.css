@@ -105,6 +105,9 @@
   transition: color 0.25s ease;
   margin-left: 0px;
 }
+.latest-card__author span{
+  margin-top: 1vw;
+}
 
 .latest-card__avatar {
   width: 28px;
@@ -130,6 +133,7 @@
   width: 91px;
   height: 20px;
   transition: color 0.25s ease;
+  margin-top: 1vw;
 }
 
 .latest-card:hover .latest-card__author {

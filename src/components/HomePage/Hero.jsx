@@ -6,58 +6,99 @@ import imgLegalTrans from "../../assets/hero/Legal transcription.jpg";
 import imgLegal from "../../assets/hero/Legal.jpg";
 import imgFinancial from "../../assets/hero/Financial transcription .png";
 import { Button } from "../Button/Button";
-
+import imgLegal1 from "../../assets/hero/Legal1.png";
+import imgLegal2 from "../../assets/hero/Legal2.png";
+import imgLegal5 from "../../assets/hero/Legal5.png";
 const images = [
   imgMedical,
+  imgLegal5,
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
   imgMedical,
+    imgLegal5,
+
   imgMedia,
+  imgLegal2,
   imgLegalTrans,
   imgLegal,
   imgFinancial,
+  imgLegal1,
 ];
 const LINE1_TEXT = "Transcriptions That ";
 const LINE2_TEXT = "Speak Your Accuracy";
