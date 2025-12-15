@@ -45,7 +45,7 @@
   position: absolute;
   width: 115%;
   height: 60%;
-  background: #36597c;
+  background: #022447;
   border-radius: 0px 0px 50px 50px;
   z-index: 1;
   top: 200px;
@@ -162,7 +162,7 @@
   font-size: 16px;
   line-height: 28px;
   color: #4f5665;
-  margin-bottom: 28px;
+  margin-bottom: 2px;
 }
 
 /* ===============================
@@ -188,14 +188,13 @@
   color: #022447;
   margin: 0 0 10px;
   font-weight: 600;
-  margin-top: -1vw;
+  margin-top: -0.5vw;
 }
 .about-hero__highlight2 {
   color: #ffffff;
   background-color: #ff6a7a;
   padding: 5px 12px;
   border-radius: 5px;
-
 }
 
 /* ===============================

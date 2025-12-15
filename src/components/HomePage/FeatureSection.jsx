@@ -2,7 +2,8 @@ import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/featuresection.png";
 import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
-import worldMap from "../../assets/WorldMap.png";
+// import worldMap from "../../assets/WorldMap.png";
+import worldMap from "../../assets/mapimg.png";
 
 const FeatureSection = () => {
   return (
