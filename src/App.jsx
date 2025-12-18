@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -36,8 +35,8 @@ import SmallCard from "./components/managingCareers/managingCareers";
 import CareerUpdate from "./components/careerCreation/updationCareerpage";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginPage from "./components/LogInPage/LogIn";
-import BlogsListPage from "./components/Blogs/BlogsListPage";   
-import BlogPage from "./components/Blogs/blogs";               
+import BlogsListPage from "./components/Blogs/BlogsListPage";
+import BlogPage from "./components/Blogs/blogs";
 
 import ScrollToTop from "./components/utils/ScrollToTop";
 
@@ -47,9 +46,13 @@ function App() {
 
   const location = useLocation();
   const hiddenLayoutRoutes = [
-    "/login", "/dashboard", "/createBlog",
-    "/manageblogs", "/blog-updation",
-    "/createCareer", "/managecareers",
+    "/login",
+    "/dashboard",
+    "/createBlog",
+    "/manageblogs",
+    "/blog-updation",
+    "/createCareer",
+    "/managecareers",
     "/career-update",
   ];
   const shouldHideLayout = hiddenLayoutRoutes.includes(location.pathname);
@@ -83,9 +86,9 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           {/* <Route path="/careers" element={<Careers />} /> */}
           <Route
-  path="/careers"
-  element={<Careers onOpenContact={openContact} />}
-/>
+            path="/careers"
+            element={<Careers onOpenContact={openContact} />}
+          />
 
           <Route path="/blogs" element={<BlogsListPage />} />
           <Route path="/post/:id" element={<PostDetails />} />
@@ -106,7 +109,9 @@ function App() {
           />
           <Route
             path="/services/additional-support"
-            element={<AdditionalSupportServicePage onOpenContact={openContact} />}
+            element={
+              <AdditionalSupportServicePage onOpenContact={openContact} />
+            }
           />
           <Route path="/privacy-policy" element={<PrivacyPage />} />
           <Route path="/terms-of-service" element={<TermsPage />} />
@@ -121,7 +126,7 @@ function App() {
         </Routes>
       </div>
 
-       {!shouldHideLayout && <WhatsAppButton />}
+      {!shouldHideLayout && <WhatsAppButton />}
       {!shouldHideLayout && <Footer />}
       {showContact && <ContactSection onClose={closeContact} />}
     </>
