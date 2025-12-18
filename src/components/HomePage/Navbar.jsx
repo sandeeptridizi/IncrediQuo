@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
-import Logo from "../../assets/mainlogo.png"
+// import Logo from "../../assets/mainlogo.png"
+import Logo from "../../assets/finalLogo.png";
 import { Button } from "../Button/Button";
 import { HiMenu, HiX } from "react-icons/hi";
 
