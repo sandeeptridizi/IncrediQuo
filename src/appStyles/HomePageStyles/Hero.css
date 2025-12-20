@@ -190,6 +190,10 @@
   font-weight: 600;
   margin-top: -0.5vw;
 }
+.home_hero_getstart_button{
+  width: 11.45vw;
+  /* border: 1px solid; */
+}
 .about-hero__highlight2 {
   color: #ffffff;
   background-color: #ff6a7a;

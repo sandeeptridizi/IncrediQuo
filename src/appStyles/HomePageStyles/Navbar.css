@@ -154,6 +154,7 @@ top: 0;
     margin-left: -0.5vw;
 /* margin-top: -0.5vw; */
 padding-bottom: 1vw;
+/* border: 1px solid; */
 }
 
 .navbar__logo img {
@@ -163,6 +164,7 @@ padding-bottom: 1vw;
   background: transparent;
   /* border: 1px solid red; */
   transition: transform 0.25s ease;
+  margin-top: -0.25vw;
 }
 
 .hero__logo,
