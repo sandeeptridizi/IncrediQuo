@@ -9,8 +9,9 @@ import { Button } from "../Button/Button";
 import imgLegal1 from "../../assets/hero/Legal1.png";
 import imgLegal2 from "../../assets/hero/Legal2.png";
 import imgLegal5 from "../../assets/hero/Legal5.png";
-  const images = [  
-    imgLegal2,
+  
+const images = [  
+  imgLegal2,
   imgLegal,
   imgMedical,
   imgLegal5,

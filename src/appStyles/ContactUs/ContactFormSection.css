@@ -94,13 +94,13 @@
 }
 
 /* Bottom divider line inside the form like Figma */
-.contact-main__form::after {
+/* .contact-main__form::after {
   /* content: "";
   height: 1px;
   width: 100%;
   background: rgba(0, 0, 0, 0.25);
   margin-top: 20px; */
-}
+*/
 
 /* ===================== RIGHT – TEXT BLOCK ===================== */
 
