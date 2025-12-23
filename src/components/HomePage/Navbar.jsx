@@ -33,8 +33,7 @@ const Navbar = () => {
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-    {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
-      <div className="navbar__top-row">
+        <div className="navbar__top-row">
         <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
