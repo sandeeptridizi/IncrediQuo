@@ -32,9 +32,9 @@ const Navbar = () => {
   };
 
   return (
-    <header className={"navbar ${scrolled ? "scrolled" : ""}"}>
+    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="navbar__top-row">
-        <NavLink to="/" className="navbar__logo">
+       <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
               {/* Desktop Nav */}
