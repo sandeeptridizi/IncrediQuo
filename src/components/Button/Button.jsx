@@ -13,7 +13,11 @@ export const Button = ({
   colorArrow = "#022447",
   colorText = "#ffff",
   colorTextHover = "#022447",
+<<<<<<< HEAD
 }) =>{
+=======
+}) => {
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
   return (
     <div className="About_btn_container">
       <div
@@ -43,6 +47,10 @@ export const Button = ({
           }}
         />
       </div>
+<<<<<<< HEAD
      </div>
+=======
+    </div>
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
   );
 };

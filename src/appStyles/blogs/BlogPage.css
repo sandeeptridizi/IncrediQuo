@@ -20,12 +20,15 @@
   padding-top: 10px;
 }
 
+<<<<<<< HEAD
 .blogs-hero__img {
   width: 100%;
   height: 60vh;
   object-fit: cover;
 }
 
+=======
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 .blog-article {
   max-width: 1018px;     
   margin: 0 auto 80px;

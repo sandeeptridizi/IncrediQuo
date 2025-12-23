@@ -23,7 +23,11 @@ const Footer = () => {
                 alt="IncrediQuo-Solutions logo"
                 className="footer-logo-icon"
               />
+<<<<<<< HEAD
               <span className="footer-logo-text">IncrediQuo Solutions</span>
+=======
+              <span className="footer-logo-text">IncrediQuoSolutions</span>
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
             </Link>
 
             <p className="footer-description">
@@ -153,14 +157,38 @@ const Footer = () => {
                     info@incrediquosolutions.com
                   </li>
                   <li className="footer-address2">
+<<<<<<< HEAD
                     B-1003, Level-10, B-Block, <br />
                     The Platina Building, Gachibowli,<br />  
                     Hyderabad - 500032, India
+=======
+                    B-1003, Level-10, B-Block, The Platina Building, Gachibowli, Hyderabad - 500032, India
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
                   </li>
                 </ul>
               </div>
             </div>
 
+<<<<<<< HEAD
+=======
+            {/* Bottom links (privacy/terms) placed below columns, right-aligned */}
+            {/* <div className="footer-bottom-links">
+              <Link
+                to="/privacy-policy"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                to="/terms-of-service"
+                className="footer-bottom-link"
+                onClick={handleNavClick}
+              >
+                Terms of Service
+              </Link>
+            </div> */}
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           </div>
         </div>
         <div className="footer-bottom">

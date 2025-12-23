@@ -64,7 +64,11 @@
 .contact-info__text p {
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
+<<<<<<< HEAD
   font-size: 13.2px;
+=======
+  font-size: 15.8px;
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
   font-weight: 600;
   color: #002147;
   margin: 0;
@@ -83,6 +87,7 @@
   line-height: 1.5;
   text-align: left;
 }
+<<<<<<< HEAD
 .phone-link{
     color: inherit;
     text-decoration: none;
@@ -91,6 +96,8 @@
   text-decoration: none;
   color: inherit;
 }
+=======
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 .contact-info__text3 p{
     font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;

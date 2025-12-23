@@ -5,7 +5,10 @@ import "../../appStyles/blogs/BlogsListPage.css";
 import { database, ref, get } from "../../Firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button/Button";
+<<<<<<< HEAD
 import BlogsHeroImg from "../../assets/blogs/NewsInsights 1.png"
+=======
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 
 const BlogsListPage = () => {
   const [blogs, setBlogs] = useState([]);
@@ -94,9 +97,15 @@ const BlogsListPage = () => {
     <main className="blogs-page">
       {/* TOP HERO CARD */}
       <section className="blogs-hero">
+<<<<<<< HEAD
         <div className="blogs-hero__card"
         style={{ backgroundImage: `url(${BlogsHeroImg})` }}>
                   </div>
+=======
+        <div className="blogs-hero__card">
+          <h1 className="blogs-hero__title">News and Insights</h1>
+        </div>
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
       </section>
 
       {/* LIST SECTION */}

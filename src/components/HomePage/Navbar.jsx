@@ -34,13 +34,23 @@ const Navbar = () => {
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+<<<<<<< HEAD
             {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
+=======
+      {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
       <div className="navbar__top-row">
         <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
+<<<<<<< HEAD
               {/* Desktop Nav */}
                 <div className="navbar__links-row">
+=======
+
+        {/* Desktop Nav */}
+        <div className="navbar__links-row">
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           <NavLink to="/" end>
             Home
           </NavLink>
@@ -65,6 +75,10 @@ const Navbar = () => {
               </NavLink>
             </div>
           </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           <NavLink to="/blogs">News & Insights</NavLink>
           <NavLink to="/careers">Careers</NavLink>
         </div>
@@ -161,7 +175,10 @@ const Navbar = () => {
 
           <button name="Schedule Appointment" onClick={openCalendly} >Schedule Appointment</button>
         </div>
+<<<<<<< HEAD
         
+=======
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
       </div>
     </header>
   );
