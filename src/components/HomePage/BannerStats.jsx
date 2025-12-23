@@ -62,13 +62,12 @@ const BannerStats = ({ onOpenContact }) => {
               />
             </span>
           </h2>
-
-           <p>
+          <p>
             At IncrediQuo Solutions, we adapt to your pace not the other way
             around. Whether you need fast, real-time accuracy or structured
             delivery, our flexible service modes ensure your transcription and
             language solutions arrive exactly when you need them.
-            </p>
+          </p>
 
           <div onClick={handleClick} className="home_hero_button_flesible">
             <Button
