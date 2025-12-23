@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
-// import Logo from "../../assets/mainlogo.png"
 import Logo from "../../assets/finalLogo.png";
 import { Button } from "../Button/Button";
 import { HiMenu, HiX } from "react-icons/hi";
@@ -34,23 +33,13 @@ const Navbar = () => {
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
-<<<<<<< HEAD
-            {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
-=======
-      {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
+    {/* ---------- TOP ROW (Logo + Hamburger For Mobile) ---------- */}
       <div className="navbar__top-row">
         <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
-<<<<<<< HEAD
               {/* Desktop Nav */}
                 <div className="navbar__links-row">
-=======
-
-        {/* Desktop Nav */}
-        <div className="navbar__links-row">
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           <NavLink to="/" end>
             Home
           </NavLink>
@@ -75,10 +64,6 @@ const Navbar = () => {
               </NavLink>
             </div>
           </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           <NavLink to="/blogs">News & Insights</NavLink>
           <NavLink to="/careers">Careers</NavLink>
         </div>
@@ -89,8 +74,8 @@ const Navbar = () => {
             <Button
               name="Schedule Appointment"
                 paddingXL = "12.6vw"
-  paddingXM = "9.5vw"
-  widthL = "15.8vw"
+                paddingXM = "9.5vw"
+                widthL = "15.8vw"
   // widthM = "30.31vw"
               widthM="44vw"
               bacgrounClr="#022447"
@@ -175,10 +160,7 @@ const Navbar = () => {
 
           <button name="Schedule Appointment" onClick={openCalendly} >Schedule Appointment</button>
         </div>
-<<<<<<< HEAD
         
-=======
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
       </div>
     </header>
   );

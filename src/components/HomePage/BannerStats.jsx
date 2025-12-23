@@ -63,30 +63,20 @@ const BannerStats = ({ onOpenContact }) => {
             </span>
           </h2>
 
-          <p>
-<<<<<<< HEAD
-            IncrediQuo Solutions provides legal and arbitration transcription services for law firms, arbitral institutions, courts, and dispute resolution providers worldwide. We deliver accurate transcripts for hearings, court proceedings, depositions, mediations, witness examinations, oral submissions, and procedural conferences, fully compliant with jurisdiction-specific formatting, confidentiality, and turnaround requirements. We also support the financial sector, media and broadcast, education, research, and other industries.
-=======
+           <p>
             At IncrediQuo Solutions, we adapt to your pace not the other way
             around. Whether you need fast, real-time accuracy or structured
             delivery, our flexible service modes ensure your transcription and
             language solutions arrive exactly when you need them.
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
-          </p>
+            </p>
 
           <div onClick={handleClick} className="home_hero_button_flesible">
             <Button
               name="Get Started"
               paddingXL="8.6vw"
-<<<<<<< HEAD
               paddingXM="24.5vw" 
               widthL="10.9vw"    
               widthM="30.3vw"   
-=======
-              paddingXM="24.5vw"  /* mobile padding (JSX comment) */
-              widthL="10.9vw"    /* let content decide width */
-              widthM="30.3vw"    /* mobile width */
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
               bacgrounClr="#ffffff"
               bacgrounArrow="#022447"
               colorArrow="#ffffff"

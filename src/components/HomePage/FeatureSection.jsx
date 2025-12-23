@@ -3,11 +3,7 @@ import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/featuresection.png";
 import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
 // import worldMap from "../../assets/WorldMap.png";
-<<<<<<< HEAD
 import worldMap from "../../assets/hero/group 77.png";
-=======
-import worldMap from "../../assets/mapimg.png";
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 
 const FeatureSection = () => {
   return (

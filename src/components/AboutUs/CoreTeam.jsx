@@ -19,11 +19,7 @@ const CoreTeam = () => {
         {
             id: 2,
             img: Member2,
-<<<<<<< HEAD
-            name: "Ramani Kalanadhabhatta",
-=======
-            name: "Ramani Srikiran",
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
+             name: "Ramani Kalanadhabhatta",
             role: "Co-Founder and Director",
             bio: "IncrediQuo was built on the belief that every word matters. And behind that belief stands its Co-Founder, Ramani Kalanadhabhatta — a professional with over two decades of deep expertise in transcription, quality assurance, and industry operations  ",
             bio2:"Ramani’s journey began at Osmania University, where she completed her Bachelor’s degree in Microbiology, Chemistry, and Zoology, followed by a Master’s degree in Biotechnology. Her early career led her into transcription and later into the pharmaceutical sector, where she contributed to major international projects, including the AstraZeneca COVID vaccine (AZD1222). She supported global teams across databases like Sapphire and Oracle, served as a Subject Matter Expert, and trained multiple teams to achieve high performance and consistency.",

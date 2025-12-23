@@ -34,23 +34,13 @@ top: 0;
   pointer-events: none;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
-.navbar__top-row {
+  .navbar__top-row {
   width: 100%;
   display: flex;
-  /* justify-content: space-between;  */
   flex-direction: row;
   gap: 2px;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
-=======
-  padding-bottom: 0; 
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
   position: relative; 
   z-index: 10; 
   background-color: transparent; 

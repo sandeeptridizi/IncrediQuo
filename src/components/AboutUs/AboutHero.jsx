@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../../appStyles/AboutUs/AboutHero.css";
 import AboutHeroImg from "../../assets/Abouthero/AboutHero.jpg";
 import { Button } from "../Button/Button";
-<<<<<<< HEAD
-import { Navigate, useNavigate } from "react-router-dom";
-=======
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
+import { useNavigate } from "react-router-dom";
 
 
 const Typewriter = ({ text, delay }) => {
@@ -30,10 +27,7 @@ const Typewriter = ({ text, delay }) => {
 };
 
 const AboutHero = () => {
-<<<<<<< HEAD
   const navigate = useNavigate();
-=======
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
   const animatedText = "Transcription and Language Solutions";
   const typingDelay = 50; 
   return (
@@ -53,7 +47,6 @@ const AboutHero = () => {
 
          
           <div className="about_hero_button">
-<<<<<<< HEAD
                         <Button name="Learn More"
                         paddingXL = "8.6vw"
                         paddingXM = "24.5vw"
@@ -64,20 +57,6 @@ const AboutHero = () => {
                         colorArrow="#022447"
                         colorText="#ffffff"
                         colorTextHover="#022447" />
-=======
-                        <Button
-  name="Learn More"
-  paddingXL = "8.6vw"
-  paddingXM = "24.5vw"
-  widthL = "10.9vw"
-  widthM = "30.31vw"
-  bacgrounClr="#022447"
-  bacgrounArrow="#ffffff"
-  colorArrow="#022447"
-  colorText="#ffffff"
-  colorTextHover="#022447"
-/>
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
           </div>
         </div>
 

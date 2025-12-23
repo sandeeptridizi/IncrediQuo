@@ -9,18 +9,7 @@ import { Button } from "../Button/Button";
 import imgLegal1 from "../../assets/hero/Legal1.png";
 import imgLegal2 from "../../assets/hero/Legal2.png";
 import imgLegal5 from "../../assets/hero/Legal5.png";
-const images = [
-<<<<<<< HEAD
-  imgLegal2,
-  imgLegal,
-  imgMedical,
-  imgLegal5,
-  imgMedia,
-  imgLegalTrans,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-
+  const images = [  
     imgLegal2,
   imgLegal,
   imgMedical,
@@ -41,100 +30,18 @@ const images = [
   imgLegal1,
   imgMedical,
 
-];
-
-=======
+    imgLegal2,
+  imgLegal,
   imgMedical,
   imgLegal5,
   imgMedia,
-  imgLegal2,
   imgLegalTrans,
-  imgLegal,
   imgFinancial,
   imgLegal1,
   imgMedical,
-    imgLegal5,
 
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
+ ];
 
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-  imgMedical,
-    imgLegal5,
-
-  imgMedia,
-  imgLegal2,
-  imgLegalTrans,
-  imgLegal,
-  imgFinancial,
-  imgLegal1,
-];
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 const LINE1_TEXT = "Transcriptions That ";
 const LINE2_TEXT = "Speak Your Accuracy";
 
@@ -195,20 +102,14 @@ const Hero = ({ onOpenContact }) => {
 
   return (
     <section id="home" className="hero">
-<<<<<<< HEAD
       
             <div className="hero__inner">
               <div className="navspacer">
-                <span>365-day operations, with full coverage during year-end holiday periods.
+                <span className="navspacernote">365-day operations, with full coverage during year-end holiday periods.
 IncrediQuo maintains continuity through planned resourcing and strict quality controls. </span>
 </div>
               <div className="hero__content">
                             <h1 className="hero__title typewriter-multi-line">
-=======
-      <div className="hero__inner">
-        <div className="hero__content">
-          <h1 className="hero__title typewriter-multi-line">
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
             <span
               className="line-1"
               style={{
@@ -236,7 +137,6 @@ IncrediQuo maintains continuity through planned resourcing and strict quality co
           </h1>
 
           <p className="hero__subtitle">
-<<<<<<< HEAD
             IncrediQuo Solutions provides legal and arbitration transcription services for law firms, 
             arbitral institutions, courts, and dispute resolution providers worldwide. We deliver accurate 
             transcripts for hearings, court proceedings, depositions, mediations, witness examinations, oral submissions,
@@ -254,28 +154,12 @@ IncrediQuo maintains continuity through planned resourcing and strict quality co
 </div>
             {/* <p className="hero__sample-text">
               
-=======
-            IncrediQuo Solutions offers professional transcription services with
-            exceptional accuracy. Whether it's corporate meetings, academic
-            lectures, market research, podcasts, or legal discussions, we
-            deliver high-quality transcripts that are precise, secure, and fast.
-          </p>
-
-          <div className="hero__buttons">
-            <p className="hero__sample-text">
-              {/* <span className="transciptColorchnage">Free Sample Transcript
-              </span> */}
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
               <Typewriter text={animatedText} delay={typingDelay} />
             </p>
             <p className="hero__sample-text2">
               Get a short sample transcript absolutely free. It is the easiest
               way to see our accuracy and attention to detail before you commit
-<<<<<<< HEAD
             </p> */}
-=======
-            </p>
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
 
             <div onClick={handleGetStarted}>
               <Button
