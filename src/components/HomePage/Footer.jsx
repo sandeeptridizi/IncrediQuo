@@ -23,7 +23,7 @@ const Footer = () => {
                 alt="IncrediQuo-Solutions logo"
                 className="footer-logo-icon"
               />
-              <span className="footer-logo-text">IncrediQuo Solutions</span>
+             <span className="footer-logo-text">IncrediQuo Solutions</span>
             </Link>
 
             <p className="footer-description">
