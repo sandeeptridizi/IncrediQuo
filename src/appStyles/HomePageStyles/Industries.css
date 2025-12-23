@@ -1,0 +1,158 @@
+.section.industries {
+  padding: 40px 0 70px;
+}
+
+.industries-container {
+  max-width: 1142px;
+  margin: 0 auto;
+}
+
+.section.industries .section__title {
+  margin: 0;
+  padding: 0;
+}
+
+.industries-title {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #0E1F51;
+  text-align: center;
+  margin: 0 auto 82px;
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 263px);
+  column-gap: 30px;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+.industry-card {
+  width: 243px;
+  height: 334px;
+  background-size: 256px 334px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 34px 24px 26px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.industry-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 42px rgba(14, 31, 81, 0.25);
+  background-size: 300px 353px;
+}
+
+.industry-card__icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.industry-card__icon img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.industry-card:hover .industry-card__icon {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(14, 31, 81, 0.23);
+}
+
+.industry-card__number {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 50px;
+  color: #0E1F51;
+  opacity: 10%;
+  pointer-events: none;
+}
+
+.industry-card__title {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  color: #0E1F51;
+  margin: 0 0 10px;
+  width: fit-content;
+}
+
+.industry-card__underline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.industry-card__underline .line-main,
+.industry-card__underline .line-sub {
+  height: 6px;
+  border-radius: 6px;
+  background-color: #FF3E54;
+  display: inline-block;
+}
+
+.industry-card__underline .line-main {
+  width: 90px;
+}
+
+.industry-card__underline .line-sub {
+  width: 20px;
+}
+
+.industry-card__desc {
+  max-width: 223px;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #000000;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .industries-grid {
+    grid-template-columns: repeat(2, 263px);
+    row-gap: 32px;
+    column-gap: 26px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .section.industries {
+    padding: 32px 0 48px;
+  }
+
+  .industries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .industry-card {
+    width: 100%;
+    max-width: 263px;
+    margin: 0 auto;
+  }
+}
