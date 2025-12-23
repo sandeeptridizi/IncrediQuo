@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <header className={"navbar ${scrolled ? "scrolled" : ""}"}>
       <div className="navbar__top-row">
         <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
@@ -75,7 +75,7 @@ const Navbar = () => {
                 paddingXL = "12.6vw"
                 paddingXM = "9.5vw"
                 widthL = "15.8vw"
-  // widthM = "30.31vw"
+
               widthM="44vw"
               bacgrounClr="#022447"
               bacgrounArrow="#fff"
