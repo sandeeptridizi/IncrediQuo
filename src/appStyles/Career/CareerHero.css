@@ -1,0 +1,494 @@
+.career-hero {
+  padding-top: clamp(300px, 20vw, 260px);
+  padding-bottom: clamp(80px, 15vw, 170px);
+  background: #ffffff;
+}
+
+.career-hero__inner {
+  max-width: 1178px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+.career-hero__panel {
+  background: #002147;
+  border-radius: 15px;
+  min-height: 500px;
+  padding: 60px 72px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+}
+
+.career-hero__text {
+  max-width: 627px;
+}
+
+.career-hero__text h1 {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(36px, 6vw, 59px);
+  line-height: 1.25;
+  letter-spacing: 0;
+  margin: -30px 0 14px;
+}
+
+.career-hero__subtitle {
+  font-family: "Poppins", sans-serif;
+  color: #e5edff;
+  font-size: clamp(18px, 3vw, 24px);
+  line-height: 1.6;
+  letter-spacing: -0.03em;
+  max-width: 554px;
+  margin: -10px 0 22px;
+}
+
+.career-hero__buttons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.ch-btn {
+  min-width: 103px;
+  height: 41px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ch-btn--light {
+  background: #ffffff;
+  color: #002147;
+}
+
+.career-hero__image-wrapper {
+  position: absolute;
+  right: 72px;
+  top: -120px;
+}
+
+.career-hero__image {
+  width: 418px;
+  height: 522px;
+  border-radius: 50px;
+  object-fit: cover;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+}
+
+.career-hero__search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -51px;
+
+  max-width: 719px;
+  width: calc(100% - 40px);
+  height: 102px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(9, 30, 66, 0.18);
+
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  z-index: 10;
+}
+
+.search-field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 3px;
+  min-width: 15vw;
+}
+
+.search-field:first-child {
+  border-right: 2px solid #dcdceb;
+  margin-right: 3px;
+}
+
+.search-field:nth-child(2) {
+  position: relative;
+  margin-right: 24px;
+  padding-right: 3px;
+}
+.search-field:nth-child(2)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 48px;
+  background: #dcdceb;
+}
+
+.search-field label {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #110229;
+  margin: 0 0 2px 0;
+  white-space: nowrap;
+}
+
+.search-field input{
+  /* border: #8F90A6; */
+  width: 13vw;
+  height: 2.5vw;
+  /* border-radius: 0.5vw; */
+  border: 0.5px solid rgb(182, 182, 182);
+  padding: 2px 5px;
+    font-size: 0.9vw;
+}
+
+.search-field__value {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+}
+
+.search-value {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: 400;
+  color: #8F90A6;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.search-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  margin-left: 0;
+}
+
+.search-icon img {
+  display: block;
+}
+
+.search-icon--pin img {
+  width: 12px;
+  height: 14.67px;
+  object-fit: contain;
+  transform: translateY(1px);
+}
+
+.search-icon--chevron img {
+  width: 12px;
+  height: 6px;
+  object-fit: contain;
+  transform: translateY(1px);
+}
+
+.ch-btn--search {
+  min-width: 159px;
+  height: 54px;
+  padding: 0 32px;
+  background: #002147;
+  border: none;
+  border-radius: 10px;
+
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.07em;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.ch-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(1px);
+}
+
+.ch-btn__icon img {
+  width: 17.76px;
+  height: 17.76px;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .career-hero {
+    padding-top: 160px;
+    padding-bottom: 120px;
+  }
+
+  .career-hero__panel {
+    flex-direction: column;
+    text-align: center;
+    padding: 56px 32px 120px;
+  }
+
+  .career-hero__text {
+    max-width: 100%;
+  }
+
+  .career-hero__buttons {
+    justify-content: center;
+  }
+
+  .career-hero__image-wrapper {
+    position: static;
+    margin: 40px auto 0;
+    right: auto;
+    top: auto;
+  }
+
+  .career-hero__image {
+    width: 340px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .career-hero__search {
+    position: static;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin: 48px auto 0;
+    width: auto;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 640px) {
+  .career-hero {
+    padding-top: -10vw;
+    padding-bottom: 80px;
+  }
+
+  .career-hero__panel {
+    padding: 40px 20px 100px;
+  }
+
+  .career-hero__text h1 {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 16px;
+    margin-top: 0;
+  }
+
+  .career-hero__subtitle {
+    font-size: 15px;
+    line-height: 24px;
+    max-width: 100%;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .career-hero__buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .ch-btn {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .career-hero__image-wrapper {
+    margin-top: 28px;
+  }
+
+  .career-hero__image {
+    width: 280px;
+    border-radius: 36px;
+  }
+
+  .career-hero__search {
+    flex-direction: column;
+    gap: 18px;
+    height: auto;
+    padding: 20px;
+    border-radius: 18px;
+    margin-top: 38px;
+    width: 100%;
+  }
+
+  .search-field {
+    width: 100%;
+    padding-right: 0;
+  }
+
+  .search-field:first-child {
+    border: none;
+    margin: 0;
+  }
+
+  .search-field:nth-child(2) {
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  .search-field:nth-child(2)::after {
+    content: none;
+  }
+
+  .search-field input {
+    width: 100%;
+    height: 11vw;
+    padding: 2.5vw 4vw;
+    font-size: 4vw;
+   box-sizing: border-box;
+  }
+
+  .ch-btn--search {
+    width: 100%;
+  }
+}
+
+/* Base styles */
+.custom-select-career {
+  width: 100%;
+  max-width: 260px;
+  position: relative;
+  font-family: Arial, sans-serif;
+}
+
+.select-box-career {
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.arrow-career {
+  font-size: 12px;
+}
+
+/* Dropdown */
+.dropdown-career {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #fff;
+  z-index: 10;
+}
+
+.dropdown-career input {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+}
+
+.dropdown-career ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.dropdown-career ul li {
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.dropdown-career ul li:hover {
+  background: #f0f0f0;
+}
+
+.no-data-career {
+  padding: 8px 10px;
+  color: #888;
+  cursor: default;
+  font-size: 13px;
+}
+
+/* Title */
+.Title_Css-career {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #110229;
+    margin: 0 0 2px 0;
+    white-space: nowrap;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .custom-select-career {
+    max-width: 100%;
+  }
+
+  .select-box-career {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .dropdown-career input {
+    font-size: 15px;
+  }
+
+  .dropdown-career ul li {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+/* Tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .custom-select-career {
+    max-width: 320px;
+  }
+
+  .select-box-career {
+    font-size: 15px;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .custom-select-career {
+    max-width: 280px;
+  }
+
+  .select-box-career {
+    font-size: 14px;
+  }
+}

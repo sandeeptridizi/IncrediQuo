@@ -1,0 +1,111 @@
+
+.terms-hero {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(90deg, #002147 0%, #ffe9ec 100%);
+  padding: 158px 24px 140px; 
+  overflow: hidden;
+}
+
+.terms-hero__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  z-index: 1; 
+}
+
+.terms-hero__title {
+  font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 1.05;
+  color: #ffffff;
+}
+.terms-hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 225px;
+  background: #ffffff;
+  clip-path: polygon(
+    0% 100%,
+    8% 94%,
+    17% 88%,
+    26% 82%,
+    35% 75%,
+    44% 69%,
+    53% 63%,
+    63% 56%,
+    73% 50%,
+    84% 45%,
+    92% 42%,
+    100% 40%,
+    100% 100%,
+    0% 100%
+  );
+}
+
+@media (max-width: 900px) {
+  .terms-hero {
+    padding: 140px 20px 100px;
+  }
+
+  .terms-hero__title {
+    font-size: 46px;
+    line-height: 1.1;
+  }
+
+  .terms-hero::after {
+    height: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-hero {
+    padding: 180px 18px 80px;
+    background: linear-gradient(135deg, #002147 0%, #ffe9ec 100%);
+  }
+
+  .terms-hero__inner {
+    max-width: 100%;
+  }
+
+  .terms-hero__title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .terms-hero::after {
+    height: 150px;
+    clip-path: polygon(
+      0% 100%,
+      10% 94%,
+      22% 88%,
+      34% 83%,
+      47% 78%,
+      60% 72%,
+      74% 66%,
+      87% 58%,
+      100% 52%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+@media (max-width: 400px) {
+  .terms-hero {
+    padding: 100px 14px 70px;
+  }
+
+  .terms-hero__title {
+    font-size: 26px;
+  }
+}

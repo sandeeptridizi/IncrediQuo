@@ -1,0 +1,494 @@
+.blog-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 180px 60px 120px;
+  background: #ffffff;
+}
+
+.blog-hero {
+  margin-bottom: 56px;
+}
+
+.blog-hero__image {
+  display: block;
+  max-width: 1138px;     
+  width: 100%;
+  height: 397px;         
+  border-radius: 70px;   
+  object-fit: cover;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+
+<<<<<<< HEAD
+.blogs-hero__img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
+
+=======
+>>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
+.blog-article {
+  max-width: 1018px;     
+  margin: 0 auto 80px;
+}
+
+.blog-article__title {
+  font-family: "DM Serif Display", "Times New Roman", serif;
+  font-size: 40px;
+  line-height: 1;        
+  font-weight: 400;
+  color: #002147;
+  margin: 0 0 16px;
+  max-width: 983px;       
+}
+
+.blog-article__meta {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #000000;
+  margin-bottom: 32px;
+  max-width: 274px;       
+}
+
+.blog-article__meta span {
+  color: #000000;
+  font-weight: 500;
+}
+
+.blog-article__meta p {
+  margin: 0;
+}
+
+.blog-article__content {
+  font-family: "Lexend Deca", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;        
+  line-height: 100%;        
+  color: #000000;
+  margin-bottom: 80px;
+  max-width: 1018px;      
+}
+
+.blog-article__content p {
+  margin: 0 0 24px;
+}
+
+.blog-article__content h3 {
+  font-weight: 400;
+  font-size: 1.5vw;
+}
+
+
+.blog-contact {
+  background: #ffe9ec;
+  padding: 40px 0;
+  margin: 0 0 80px;
+}
+
+.blog-contact__inner {
+  max-width: 1278px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.blog-contact__card {
+  background: #ffe9ec;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  width: 842px;
+  height: 457px;
+  padding: 40px 29px 42px;
+  box-sizing: border-box;
+  width: 820px;        /* increase card width */
+  max-width: 100%;
+}
+
+.blog-contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.blog-contact__field span {
+  display: block;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.blog-contact__field input,
+.blog-contact__field textarea {
+  width: 668px;         
+  max-width: 100%;
+  height: 64px;
+  border-radius: 10px;
+  background: #001f5b;
+  color: #ffe9ec;
+  padding: 14px 18px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.blog-contact__field textarea {
+  height: 141px;
+  min-height: 141px;
+  resize: none;
+}
+
+.blog-contact__field input::placeholder,
+.blog-contact__field textarea::placeholder {
+  color: #d1d5db;
+}
+
+.blog-contact__submit {
+  margin-left: 0;
+  margin-top: -0.9vw; /* or just 0 if you don’t need negative space */
+}
+
+.blog-contact__text {
+  width: 506px;
+}
+
+.blog-contact__text h2 {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-weight: 900;
+  font-size: 84px;
+  line-height: 71px;
+  letter-spacing: -0.04em;
+  color: #002147;
+  margin: 0 0 12px;
+}
+
+.blog-contact__text p {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  color: #111827;
+  max-width: 493px;
+  margin: 0;
+}
+
+/* ====== RESPONSIVE ====== */
+
+@media (max-width: 1024px) {
+  .blog-contact__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .blog-contact__card {
+    width: 100%;
+    max-width: 642px;
+    height: auto;
+  }
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .blog-contact__text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* FINAL MOBILE FIXES (FULL RESPONSIVE) */
+@media (max-width: 600px) {
+
+  /* Reduce page padding */
+  .blog-page {
+    padding: 140px 16px 60px !important;
+  }
+
+  /* Make hero image look full */
+  .blog-hero__image {
+    height: auto !important;
+    min-height: 200px;
+    border-radius: 20px !important;
+    object-fit: cover;
+  }
+
+  /* Title fix */
+  .blog-article__title {
+    font-size: 22px !important;
+    line-height: 30px !important;
+  }
+
+  /* Body text fix */
+  .blog-article__content {
+    font-size: 15px !important;
+    line-height: 24px !important;
+  }
+
+
+  /* Input/textarea full width */
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 85vw !important;
+  }
+
+  /* Contact text center */
+  .blog-contact__text {
+    text-align: center !important;
+  }
+
+  /* Big 84px heading fix */
+  .blog-contact__text h2 {
+    font-size: 28px !important;
+    line-height: 34px !important;
+  }
+
+  /* Paragraph spacing */
+  .blog-contact__text p {
+    font-size: 14px !important;
+    line-height: 22px !important;
+  }
+
+  /* Approach section padding */
+  .blog-approach {
+    padding: 40px 16px 50px !important;
+  }
+
+  /* Approach paragraph */
+  .blog-approach__text {
+    font-size: 15px !important;
+    line-height: 25px !important;
+  }
+
+  /* About button full width */
+  .blog-approach__button {
+    width: 100% !important;
+    max-width: 260px;
+    height: 48px !important;
+    font-size: 15px !important;
+  }
+}
+
+
+
+
+.blog-approach {
+  background: #ffe9ec;
+  padding: 80px 0px 20px;
+  margin: 0;
+}
+
+.blog-approach__inner {
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.blog-approach__text {
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #111827;
+  max-width: 1061px;
+  margin: 0 auto 32px;
+}
+
+.blog-approach__button {
+  width: 153px;
+  height: 55px;
+  border-radius: 10px;
+  border: none;
+  background: #002147;
+  color: #ffffff;
+  font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 20px;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+@media (max-width: 1024px) {
+  .blog-page {
+    padding: 150px 40px 100px;
+  }
+
+  .blog-hero__image {
+    border-radius: 40px;
+    margin-top: 10px;
+    height: auto;
+  }
+
+  .blog-article {
+    max-width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .blog-article__title {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .blog-article__meta {
+    font-size: 14px;
+    margin-bottom: 22px;
+  }
+
+  .blog-article__content {
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 50px;
+  }
+
+  /* Contact Section */
+  .blog-contact__inner {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .blog-contact__card {
+    width: 100%;
+    padding: 32px 26px;
+    height: auto;
+  }
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100%;
+  }
+
+  .blog-contact__text {
+    text-align: center;
+  }
+
+  /* Approach Section */
+  .blog-approach {
+    padding: 60px 24px 50px;
+  }
+
+  .blog-approach__text {
+    font-size: 18px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  /* Page padding */
+  .blog-page {
+    padding: 300px 16px 60px;
+  }
+
+  /* Full Hero image */
+  .blog-hero__image {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  /* Title text */
+  .blog-article__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  /* Meta */
+  .blog-article__meta {
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Body content */
+  .blog-article__content {
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 32px;
+  }
+
+  .blog-article__content p {
+    margin-bottom: 18px;
+  }
+
+  /* Contact card */
+  .blog-contact__card {
+    width: 100%;
+    padding: 24px 16px;
+    box-shadow: none;
+    height: auto;
+  }
+
+  .blog-contact__field input,
+  .blog-contact__field textarea {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .blog-contact__submit {
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  /* Contact heading */
+  .blog-contact__text h2 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .blog-contact__text p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Approach section */
+  .blog-approach {
+    padding: 40px 18px 48px;
+    border-radius: 22px;
+  }
+
+  .blog-approach__text {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .blog-approach__button {
+    width: 100%;
+    max-width: 260px;
+    height: 48px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+
+  /* Page padding */
+  .blog-page {
+    padding: 500px 16px 60px;
+  }
+}

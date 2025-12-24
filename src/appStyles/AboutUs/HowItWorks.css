@@ -1,0 +1,166 @@
+.how {
+  background: #ffe9ec;
+  padding: 96px 0 110px;
+}
+
+.how__inner {
+  max-width: 1441px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.how__inner h2 {
+  max-width: 100%;
+  white-space: nowrap;
+  margin: 0 auto 78px;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 62px;
+  color: #022447;
+}
+
+.how__grid {
+  width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.how__item {
+  width: 400px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.38s ease, box-shadow 0.38s ease;
+  padding: 0.9vw;
+  border-radius: 1vw;
+}
+
+.how__number {
+  width: 60px;
+  height: 62px;
+  border-radius: 7px;
+  background-color: #022447;
+  color: #ffffff;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+}
+
+.how__item h3 {
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: 600;
+  color: #022447;
+
+  max-width: 300px;
+  margin: 0 auto 8px;
+}
+
+.how__item p {
+  width: 400px;
+  margin: 0 auto;
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #4b5670;
+  font-weight: 400;
+  text-align: center;
+  padding: 1vw;
+}
+
+@media (max-width: 1024px) {
+  .how {
+    padding: 80px 0 90px;
+  }
+
+  .how__inner h2 {
+    width: 100%;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 50px;
+    padding: 0 24px;
+    white-space: normal;
+  }
+
+  .how__grid {
+    width: 100%;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+  }
+
+  .how__item {
+    width: 100%;
+    max-width: 420px;
+height: 65vw;
+padding-top: 3vw !important;
+  }
+
+  .how__item h3 {
+    max-width: 320px;
+  }
+
+  .how__item p {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .how {
+    padding: 64px 0 80px;
+  }
+
+  .how__inner h2 {
+    font-size: 28px;
+    line-height: 36px;
+    padding: 0 16px;
+  }
+
+  .how__grid {
+    gap: 40px;
+  }
+
+  .how__item h3 {
+    font-size: 18px;
+    line-height: 26px;
+    max-width: 280px;
+  }
+
+  .how__item p {
+    font-size: 14px;
+    line-height: 22px;
+    max-width: 360px;
+  }
+}
+
+
+.how__item:hover {
+  transform: translateY(-10px) scale(1.08);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.15);
+  background-color: #ffffff;
+}
+
+.how__item-number {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.38s ease, top 0.38s ease;
+}
+
+.how__item:hover .how__item-number {
+  top: -30px;
+  transform: translateX(-50%) scale(1.18);
+}
