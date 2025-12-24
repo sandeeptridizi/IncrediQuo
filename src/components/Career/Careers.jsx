@@ -63,7 +63,7 @@ const Careers = ({ onOpenContact }) => {
         locations={locations}
         titles={titles}
         />
-      <HowItWorks />
+      
 
       {/* pass function to child */}
       <FeaturedJobs
@@ -72,6 +72,9 @@ const Careers = ({ onOpenContact }) => {
         filters={filters}
          careers={careers}
       />
+      <HowItWorks />
+
+      
       <BottomSection />
 
       {selectedJob && (

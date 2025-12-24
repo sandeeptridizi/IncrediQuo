@@ -164,7 +164,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-bottom">
-                      <p className="footer-copy-left">©2025 IncrediQuo Solutions</p>
+                      <p className="footer-copy-left">© 2025 IncrediQuo Solutions</p>
 
           <div className="footer-bottom-links">
               <Link

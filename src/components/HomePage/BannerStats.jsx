@@ -92,7 +92,26 @@ const BannerStats = ({ onOpenContact }) => {
             <span>24-hours</span>
             <span>Custom / As per Client Requirement</span>
 
-            {/* duplicate items for infinite loop */}
+            <span>Real-time</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
+            <span>Custom / As per Client Requirement</span>
+
+            <span>Real-time</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
+            <span>Custom / As per Client Requirement</span>
+
+            <span>Real-time</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
+            <span>Custom / As per Client Requirement</span>
+
+            <span>Real-time</span>
+            <span>Near Real-time</span>
+            <span>24-hours</span>
+            <span>Custom / As per Client Requirement</span>
+            
             <span>Real-time</span>
             <span>Near Real-time</span>
             <span>24-hours</span>

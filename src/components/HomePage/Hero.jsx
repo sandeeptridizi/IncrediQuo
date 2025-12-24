@@ -43,8 +43,8 @@ const images = [
 
  ];
 
-const LINE1_TEXT = "Transcriptions That ";
-const LINE2_TEXT = "Speak Your Accuracy";
+const LINE1_TEXT = "The Record You";
+const LINE2_TEXT = "Rely On";
 
 const TYPING_TIME_PER_CHAR = 0.08;
 const TYPING_TIME_LINE1 = LINE1_TEXT.length * TYPING_TIME_PER_CHAR;
@@ -153,15 +153,6 @@ IncrediQuo maintains continuity through planned resourcing and strict quality co
               to see our accuracy and attention to detail before you commit
             </h2>
 </div>
-            {/* <p className="hero__sample-text">
-              
-              <Typewriter text={animatedText} delay={typingDelay} />
-            </p>
-            <p className="hero__sample-text2">
-              Get a short sample transcript absolutely free. It is the easiest
-              way to see our accuracy and attention to detail before you commit
-            </p> */}
-
             <div onClick={handleGetStarted}>
               <Button
                 name="Get Started"

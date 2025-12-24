@@ -213,11 +213,6 @@
   max-width: 220px;
   min-width: 160px;
 }
-
-/* Services Column */
-.footer-column--services {}
-
-/* Quikers Column */
 .footer-column--quikers {
   display: flex;
   flex-direction: column;
@@ -456,17 +451,17 @@
   }
 
   .footer-description {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 24px;
   }
 
   .footer-copy-left {
-    font-size: 13px;
+    font-size: 20px;
     line-height: 24px;
   line-height: 0px;
   color: #d1e0ff;
   margin-top: 35px;
-  margin-left: -46vw;
+  margin-left: -30vw;
   }
 
   .footer-links {
@@ -482,11 +477,11 @@
   }
 
   .footer-column h4 {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .footer-column li {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .footer-bottom{

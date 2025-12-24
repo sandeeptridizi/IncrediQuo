@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Navbar.css";
 import Logo from "../../assets/finalLogo.png";
 import { Button } from "../Button/Button";
 import { HiMenu, HiX } from "react-icons/hi";
+
 
 const Navbar = () => {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -11,17 +12,32 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const menuRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const handleOutsideClick = (event) => {
+    if (!isMobileMenu) return;
 
-  // close services dropdown on route change
-  useEffect(() => {
-    setIsServicesOpen(false);
-  }, [location]);
+    const menu = menuRef.current;
+    const button = buttonRef.current;
+
+    if (
+      menu &&
+      !menu.contains(event.target) &&
+      button &&
+      !button.contains(event.target)
+    ) {
+      setIsMobileMenu(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleOutsideClick);
+
+  return () => {
+    document.removeEventListener("mousedown", handleOutsideClick);
+  };
+}, [isMobileMenu]);
 
   const openCalendly = () => {
     window.open(
@@ -37,7 +53,7 @@ const Navbar = () => {
        <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
-              {/* Desktop Nav */}
+              
                 <div className="navbar__links-row">
           <NavLink to="/" end>
             Home
@@ -88,25 +104,14 @@ const Navbar = () => {
             <Button name="Contact Us" />
           </div>
         </div>
-
-        {/* MOBILE HAMBURGER */}
-        {/* <button
+        <button ref={buttonRef}
           className="mobile-menu-btn"
-          onClick={() => setIsMobileMenu(true)}
-        >
-          <HiMenu size={34} />
-        </button> */}
-        {/* MOBILE HAMBURGER / CLOSE BUTTON */}
-        <button
-          className="mobile-menu-btn"
-          onClick={() => setIsMobileMenu(!isMobileMenu)}
+          onClick={() => setIsMobileMenu(prev => !prev)}
         >
           {isMobileMenu ? <HiX size={34} /> : <HiMenu size={34} />}
         </button>
-      </div>
-
-      {/* ---------- MOBILE MENU ---------- */}
-      <div className={`mobile-menu ${isMobileMenu ? "open" : ""}`}>
+        </div>
+      <div ref={menuRef} className={`mobile-menu ${isMobileMenu ? "open" : ""}`}>
 
         <div className="mobile-nav-links">
           <NavLink to="/" onClick={() => setIsMobileMenu(false)}>
@@ -115,8 +120,6 @@ const Navbar = () => {
           <NavLink to="/about" onClick={() => setIsMobileMenu(false)}>
             About
           </NavLink>
-
-          {/* Mobile Services Dropdown */}
           <details className="mobile-dropdown">
             <summary>Services</summary>
             <NavLink
@@ -151,15 +154,12 @@ const Navbar = () => {
           <NavLink to="/careers" onClick={() => setIsMobileMenu(false)}>
             Careers
           </NavLink>
-        </div>
-
-        {/* MOBILE Buttons BELOW logo */}
-        <div className="mobile-contact-buttons">
-                    <button name="Contact Us" onClick={() => navigate("/contact")}>Contact Us</button>
+          <div className="mobile-contact-buttons">
+             <button type="button" onClick={() => { setIsMobileMenu(false) ; navigate("/contact")}}> Contact Us </button>
 
           <button name="Schedule Appointment" onClick={openCalendly} >Schedule Appointment</button>
         </div>
-        
+        </div>        
       </div>
     </header>
   );
