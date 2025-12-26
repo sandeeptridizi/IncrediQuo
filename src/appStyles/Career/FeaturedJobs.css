@@ -131,7 +131,7 @@ body {
 }
 
 .jobcard__title {
-  width: 160px;
+  width: auto;
   font-size: 20px;
   font-weight: 400;
   color: #000000;

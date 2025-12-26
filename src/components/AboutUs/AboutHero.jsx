@@ -44,20 +44,7 @@ const AboutHero = () => {
             workflows to provide precise, secure, and scalable language
             solutions trusted by global enterprises.
           </p>
-
-         
-          <div className="about_hero_button">
-                        <Button name="Learn More"
-                        paddingXL = "8.6vw"
-                        paddingXM = "24.5vw"
-                        widthL = "10.9vw"
-                        widthM = "30.31vw"
-                        bacgrounClr="#022447"
-                        bacgrounArrow="#ffffff"
-                        colorArrow="#022447"
-                        colorText="#ffffff"
-                        colorTextHover="#022447" />
-          </div>
+          
         </div>
 
        <div className="about-hero__image-wrapper">
