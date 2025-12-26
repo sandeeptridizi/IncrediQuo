@@ -10,12 +10,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+<<<<<<< HEAD
     padding: 0.1vw 2vw 0.1vw 1vw;
+=======
+    /* padding: 0.1vw 2vw 0.1vw 1vw; */
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
     padding: 0.3vw 1.78vw 0.3vw 1vw;
     border-radius: 5vw;
     background-color: var(--bacgrounClr);
     position: relative;
+<<<<<<< HEAD
     width: fit-content;
+=======
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
 }
 
 .About_contact_btn {

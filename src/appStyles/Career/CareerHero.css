@@ -1,6 +1,10 @@
 .career-hero {
   padding-top: clamp(300px, 20vw, 260px);
+<<<<<<< HEAD
   padding-bottom: clamp(80px, 15vw, 70px);
+=======
+  padding-bottom: clamp(80px, 15vw, 170px);
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
   background: #ffffff;
 }
 
@@ -108,6 +112,10 @@
 }
 
 .search-field {
+<<<<<<< HEAD
+=======
+  flex: 1;
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -440,7 +448,11 @@
 .Title_Css-career {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
+<<<<<<< HEAD
     line-height: 28px;
+=======
+    line-height: 36px;
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
     font-weight: 600;
     color: #110229;
     margin: 0 0 2px 0;
@@ -491,6 +503,7 @@
     padding: 12px;
     font-size: 14px;
   }
+<<<<<<< HEAD
 }
 @media (min-width: 1500px) and (max-width: 2000px) {
 .career-hero__search {
@@ -505,4 +518,6 @@
 .custom-select-career{
   width: 300px;
 }
+=======
+>>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
 }
