@@ -152,7 +152,7 @@ IncrediQuo maintains continuity through planned resourcing and strict quality co
               Get a short sample transcript absolutely free. It is the easiest way
               to see our accuracy and attention to detail before you commit
             </h2>
-</div>
+            </div>
             <div onClick={handleGetStarted}>
               <Button
                 name="Get Started"

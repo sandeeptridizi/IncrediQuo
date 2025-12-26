@@ -15,13 +15,12 @@ export const Button = ({
   colorTextHover = "#022447",
   }) =>{
   return (
-    <div className="About_btn_container">
-      <div
+    <div
         className="About_bbcontainer"
         style={{
           "--bacgrounClr": bacgrounClr,
         }}
-      >
+        >
         <button
           className="About_contact_btn"
           style={{
@@ -43,6 +42,5 @@ export const Button = ({
           }}
         />
       </div>
-     </div>
-  );
+    );
 };

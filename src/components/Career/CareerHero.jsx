@@ -96,23 +96,7 @@ const CareerHero = ({ onSearch, locations = [], titles = [] }) => {
               language solutions
             </p>
 
-            <div className="career-hero__buttons">
-              <div>
-                <Button
-                  name="Apply Job"
-                  paddingXL="8.6vw"
-                  paddingXM="24.5vw"
-                  widthL="10.21vw"
-                  widthM="3.3vw"
-                  bacgrounClr="#ffff"
-                  bacgrounArrow="#022447"
-                  colorArrow="#ffff"
-                  colorText="#022447"
-                  colorTextHover="#ffff"
-                />
-              </div>
-            </div>
-          </div>
+             </div>
 
           {/* RIGHT IMAGE */}
           <div className="career-hero__image-wrapper">

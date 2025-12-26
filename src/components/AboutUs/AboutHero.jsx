@@ -46,7 +46,7 @@ const AboutHero = () => {
           </p>
 
          
-          <div className="about_hero_button">
+          {/* <div className="about_hero_button">
                         <Button name="Learn More"
                         paddingXL = "8.6vw"
                         paddingXM = "24.5vw"
@@ -57,7 +57,7 @@ const AboutHero = () => {
                         colorArrow="#022447"
                         colorText="#ffffff"
                         colorTextHover="#022447" />
-          </div>
+          </div> */}
         </div>
 
        <div className="about-hero__image-wrapper">

@@ -60,6 +60,7 @@
 .banner__text {
   max-width: 100%;
   margin-left: clamp(0px, 14vw, 210px);
+  align-items: flex-start;
 }
 
 .banner__text h2 {

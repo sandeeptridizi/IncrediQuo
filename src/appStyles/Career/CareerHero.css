@@ -1,6 +1,6 @@
 .career-hero {
   padding-top: clamp(300px, 20vw, 260px);
-  padding-bottom: clamp(80px, 15vw, 170px);
+  padding-bottom: clamp(80px, 15vw, 70px);
   background: #ffffff;
 }
 
@@ -108,7 +108,6 @@
 }
 
 .search-field {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -441,7 +440,7 @@
 .Title_Css-career {
     font-family: "Poppins", sans-serif;
     font-size: 18px;
-    line-height: 36px;
+    line-height: 28px;
     font-weight: 600;
     color: #110229;
     margin: 0 0 2px 0;
@@ -492,4 +491,18 @@
     padding: 12px;
     font-size: 14px;
   }
+}
+@media (min-width: 1500px) and (max-width: 2000px) {
+.career-hero__search {
+  width: 84%;
+  max-width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.search-field{
+  width: auto;
+}
+.custom-select-career{
+  width: 300px;
+}
 }
