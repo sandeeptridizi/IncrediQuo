@@ -2,7 +2,7 @@
    HERO MAIN WRAPPER
 ================================*/
 .hero {
-  /* display: flex; */
+  display: flex;
   justify-content: center;
   background-color: #ffffff;
   padding: 120px 0 100px;
@@ -10,7 +10,7 @@
 
 .navspacer {
   position: fixed;
-  top: 120px; 
+  top: 110px; 
   left: 0%;
   width: 100%;
   height: 35px;
