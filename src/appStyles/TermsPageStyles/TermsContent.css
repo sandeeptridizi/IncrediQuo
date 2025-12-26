@@ -1,0 +1,129 @@
+.terms-content {
+  width: 100%;
+  max-width: 1438px;
+  margin: 0 auto;
+  padding: 120px 5% 120px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+.terms-content__inner {
+  max-width: 1061px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.terms-content h2 {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
+
+.terms-content h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.terms-content p {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.terms-content ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.terms-content li {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.terms-content strong {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.terms-contact {
+  margin-top: 24px;
+}
+
+@media (max-width: 1024px) {
+  .terms-content {
+    padding: 80px 32px;
+  }
+
+  .terms-content h2 {
+    font-size: 32px;
+    margin-top: 48px;
+    margin-bottom: 16px;
+  }
+
+  .terms-content h3 {
+    font-size: 22px;
+    line-height: 30px;
+    margin-top: 28px;
+    margin-bottom: 10px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-content {
+    padding: 60px 16px;
+  }
+
+  .terms-content h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 12px;
+  }
+
+  .terms-content h3 {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  .terms-content p,
+  .terms-content li {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 10px;
+  }
+
+  .terms-content ul {
+    padding-left: 15px;
+  }
+
+  .terms-contact {
+    margin-top: 20px;
+  }
+}

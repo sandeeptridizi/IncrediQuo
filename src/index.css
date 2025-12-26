@@ -1,0 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f1f5f9;
+  scroll-behavior: smooth; 
+}
+
+.app {
+  min-height: 100vh;
+}
+:root {
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.35s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+body {
+    /* Replace 'url(wave-background.svg)' with the actual path 
+       to your wave pattern image/SVG. 
+    */
+    background-image: url(wave-background.svg); 
+    background-repeat: repeat-x; /* Or 'repeat' depending on the image */
+    background-position: top center; 
+    background-color: #ffffff; /* Fallback */
+}

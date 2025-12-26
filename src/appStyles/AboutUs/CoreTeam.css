@@ -1,0 +1,292 @@
+.core-team {
+  padding: 30px 0 80px;
+  background: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.core-team__inner {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.core-team__inner h2 {
+  max-width: 755px;
+  width: 100%;
+  margin: 0 auto 80px;
+  text-align: center;
+  font-family: "Poppins", system-ui, sans-serif;
+  font-size: 52px;
+  line-height: 62px;
+  font-weight: 600;
+  letter-spacing: -2px;
+  color: #111827;
+}
+
+.core-team__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 430px);
+  column-gap: 76px;
+  justify-content: center;
+}
+
+.core-team__card {
+  perspective: 1000px; 
+  position: relative;
+  width: 430px;
+  height: 568px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.core-team__card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+
+.core-team__flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* Duration of the flip animation */
+  transform-style: preserve-3d; /* KEY: Enables the 3D effect */
+}
+
+.core-team__card:hover .core-team__flipper {
+  transform: rotateY(180deg);
+}
+.core-team__linkedin-link {
+    /* KEY CHANGE 2: Ensure the icon is always visible at the bottom of the card back */
+    
+    /* Since we set flex-grow on bio-text, this will be pushed to the bottom naturally. */
+    /* Using margin-top: auto is another way to ensure it sits at the bottom */
+    /* margin-top: auto; */ 
+    
+    /* Styling */
+
+    pointer-events: auto !important;
+   /* Use !important only if absolutely necessary */
+    /* Ensure it's on top */
+    position: relative; 
+    z-index: 10;
+    color: #022447; /* Icon color (Dark blue) */
+    display: block; /* Takes its own row */
+    padding-top: 5px; /* Add a little buffer if needed */
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Ensure it's above any background effects */
+}
+
+.core-team__linkedin-link:hover {
+    color: #0a66c2; /* LinkedIn blue on hover */
+    transform: scale(1.1);
+}
+
+.core-team__linkedin-icon {
+    font-size: 32px; /* Set the size of the icon */
+    vertical-align: middle;
+}
+.core-team__front,
+.core-team__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; 
+  border-radius: 20px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+
+.core-team__front {
+  background: #ffffff;
+}
+
+.core-team__front::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 223px;
+  border-radius: 0 0 20px 20px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.0) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.core-team__image-wrap {
+  width: 100%;
+  height: 100%;
+}
+
+.core-team__image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.core-team__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 24px;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+.core-team__name {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+}
+
+.core-team__role {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #E6E6E6;
+  margin: 0;
+}
+
+.core-team__back {
+    transform: rotateY(180deg);
+
+    background-color: #ffe9ec;
+    color: #022447;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    
+    overflow-y: scroll; 
+    
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.core-team__back-name {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #022447;
+}
+
+.core-team__back-role {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #022447;
+    border-bottom: 2px solid #ff6a7a;
+    padding-bottom: 5px;
+}
+
+.core-team__bio-text {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #022447;
+}
+
+
+@media (max-width: 1024px) {
+  .core-team__inner h2 {
+    font-size: 40px;
+    line-height: 48px;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .core-team__grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+    justify-items: center;
+  }
+
+  .core-team__card {
+    width: 100%;
+    max-width: 430px;
+    height: 480px;
+  }
+
+  .core-team__front::after {
+    height: 190px;
+  }
+  
+  .core-team__overlay {
+    padding: 20px;
+  }
+
+  .core-team__name {
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 2px;
+  }
+
+  .core-team__role {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  
+  .core-team__back {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .core-team {
+    padding: 70px 0 60px;
+  }
+
+  .core-team__inner {
+    padding: 0 16px;
+  }
+
+  .core-team__inner h2 {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 28px;
+  }
+
+  .core-team__card {
+    width: 80vw;
+    max-width: 360px;
+    height: 420px;
+  }
+  
+  .core-team__back-name {
+      font-size: 24px;
+  }
+  
+  .core-team__back-role {
+      font-size: 16px;
+  }
+  
+  .core-team__bio-text {
+      font-size: 14px;
+  }
+}
+

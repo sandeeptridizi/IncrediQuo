@@ -1,0 +1,366 @@
+
+.banner {
+  width: 100%;
+  background: #002147;
+  color: #fff;
+  overflow: hidden;
+  animation: fadeUp 0.9s ease-out forwards;
+  opacity: 0;
+  transform: translateY(26px);
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.banner__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(60px, 9vw, 130px) clamp(16px, 4vw, 60px) clamp(80px, 9vw, 130px);
+  position: relative;
+}
+
+
+.banner__stripes {
+  position: absolute;
+  left: clamp(-36px, -4vw, -24px);
+  top: clamp(40px, 6vw, 110px);
+  transform: rotate(-0.6deg);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 3.8vw, 45px);
+  align-items: center;
+}
+
+.banner__stripe {
+  height: clamp(10px, 1.1vw, 16px);
+  border-radius: 50px;
+  background: rgba(255, 233, 236, 0.14);
+
+  transform-origin: center;
+  animation: stripePulse 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+.banner__stripe:nth-child(1){width:140px; animation-delay: 0s;}
+.banner__stripe:nth-child(2){width:100px; animation-delay: 0.2s;}
+.banner__stripe:nth-child(3){width:160px; animation-delay: 0.4s;}
+.banner__stripe:nth-child(4){width:240px; animation-delay: 0.6s;}
+.banner__stripe:nth-child(5){width:130px; animation-delay: 0.8s;}
+.banner__stripe:nth-child(6){width:170px; animation-delay: 1s;}
+.banner__stripe:nth-child(7){width:75px; animation-delay: 1.2s;}
+.banner__stripe:nth-child(8){width:30px; animation-delay: 1.4s;}
+
+
+@keyframes stripePulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+.banner__text {
+  max-width: 100%;
+  margin-left: clamp(0px, 14vw, 210px);
+}
+
+.banner__text h2 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: clamp(30px, 5.2vw, 60px);
+  line-height: 1.05;
+  margin: 0;
+  
+  white-space: nowrap;
+}
+
+.banner__text h2 span {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: top;
+  border-right: none;
+  animation: none;
+}
+
+@keyframes typewriter {
+  from { width: 0 }
+  to { width: 100% } 
+}
+
+@keyframes blink-cursor {
+  50% { border-color: transparent }
+  0%, 100% { border-color: #ffe9ec }
+}
+
+.cursor-visual {
+  animation: none !important;
+  width: 0 !important;
+  overflow: visible !important;
+  height: 1.05em;
+  border-right: 0.15em solid transparent;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+
+  animation: blink-cursor 0.75s step-end var(--cursor-start) infinite;
+}
+
+
+
+.banner__text h2 .line-1 {
+  white-space: nowrap !important;
+}
+
+
+.banner__text h2 .line-1 {
+  display: block;
+  animation:
+    typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards;
+}
+
+.banner__text h2 .line-2 {
+  display: inline-block;
+  animation:
+    typewriter var(--line-time) steps(var(--line-char-count)) var(--line-delay) forwards;
+}
+
+.banner__text p {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(15px, 2.2vw, 24px);
+  margin-top: clamp(18px, 3vw, 40px);
+  line-height: 1.45;
+  max-width: clamp(280px, 70vw, 760px);
+  color: #d6e1f2;
+}
+
+.banner__button {
+  margin-top: clamp(16px, 3.5vw, 32px);
+  width: clamp(170px, 22vw, 250px);
+  height: clamp(46px, 6.6vw, 60px);
+  border-radius: 10px;
+  background: #ffe9ec;
+  color: #002147;
+  border: none;
+  cursor: pointer;
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 600;
+  transition: 0.25s ease;
+}
+.banner__button:hover {
+  background: #f7cfd9;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+}
+
+.banner__ticker {
+  position: absolute;
+  left: 0; right: 0;
+  bottom: 0;
+  height: clamp(44px, 6.2vw, 66px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.banner__ticker-track {
+  display: inline-flex;
+  animation: ticker 50s linear infinite;
+  white-space: nowrap;
+  padding-left: 100%;
+  gap: 42px;
+}
+.banner__ticker-track span {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(18px, 3.6vw, 48px);
+  font-weight: 600;
+  color: #ffe9ec;
+  position: relative;
+  padding: 0 32px;
+}
+
+.banner__ticker-track span::before {
+  content: "•";
+  position: absolute;
+  left: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  color: #ffe9ec;
+  opacity: 0.9;
+}
+.banner__ticker-track span:first-child::before {
+  content: "";
+}
+
+@keyframes ticker {
+  to { transform: translateX(-100%); }
+}
+
+.banner__inner::after {
+  content: "";
+  position: absolute;
+  right: clamp(20px, 10vw, 190px);
+  bottom: clamp(60px, 10vw, 115px);
+  width: clamp(35px, 7vw, 103px);
+  height: clamp(30px, 6vw, 94px);
+  background: url("../../assets/Banner/Groupstar.png") no-repeat center/contain;
+}
+
+@media (max-width: 1024px) {
+  .banner__stripes { display: none; }
+  .banner__text { margin-left: 0; }
+}
+
+@media (max-width: 640px) {
+  .banner__text { text-align: center; margin-inline: auto; }
+  .banner__text p { margin-inline: auto; }
+  .banner__button { display: block; margin-inline: auto; }
+  .banner__ticker { position: static; margin-top: 40px; }
+  .banner__inner::after { display: none; }
+  .banner__button-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .banner__text h2 { white-space: normal; line-height: 1.15; }
+
+  .banner__text h2 span {
+      width: auto !important;
+      overflow: visible !important;
+      border-right: none !important;
+      white-space: normal !important;
+      animation: none !important;
+      display: inline !important;
+  }
+
+  .cursor-visual {
+      display: none !important;
+  }
+}
+/* correct: dot before class name, then ::before */
+.banner__stripe::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: rgba(0,33,71,0.08);
+  z-index: -1;
+}
+
+.banner {
+  width: 100%;
+  background: #002147;
+  color: #fff;
+  overflow: hidden;
+  animation: fadeUp 0.9s ease-out forwards;
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.banner__inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(60px, 9vw, 130px) clamp(16px, 4vw, 60px) clamp(80px, 9vw, 130px);
+  position: relative;
+}
+
+/* =====================================================
+   RESPONSIVE FIXES START
+===================================================== */
+
+/* 🌐 TABLETS — CLEAN LAYOUT */
+@media (max-width: 1024px) {
+
+  /* Hide stripes for clean UI */
+  .banner__stripes { 
+    display: none; 
+  }
+
+  /* Center text block */
+  .banner__text {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .banner__text p {
+    margin-inline: auto;
+  }
+}
+
+/* 📱 MOBILE — PERFECT CENTERED BLOCK */
+@media (max-width: 640px) {
+
+  /* Prevent clipping */
+  .banner {
+    overflow: visible !important;
+  }
+
+  .banner__inner {
+    padding-bottom: 120px !important; /* more breathing room */
+  }
+
+  /* Allow text to wrap normally */
+  .banner__text h2 {
+    white-space: normal !important;
+    line-height: 1.25 !important;
+    text-align: center;
+  }
+
+  /* Disable animation styles that hide text */
+  .banner__text h2 span {
+    width: auto !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    animation: none !important;
+    display: inline !important;
+  }
+
+  /* Cursor hidden on mobile */
+  .cursor-visual {
+    display: none !important;
+  }
+
+  /* Prevent ticker overlapping content */
+  .banner__ticker {
+    position: static !important;
+    margin-top: 40px !important;
+  }
+
+  /* Reduce font sizes for safety */
+  .banner__text p {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-inline: auto;
+  }
+}
+
+/* Extra safe for very small phones */
+@media (max-width: 480px) {
+
+  .banner__text h2 {
+    font-size: 18px !important;
+  }
+
+  .banner__text p {
+    font-size: 14px !important;
+  }
+
+  .banner__inner {
+    padding-bottom: 365px !important;
+    height: 125px;
+    padding-top: 10px;
+  }
+  .home_hero_button_flesible{
+    margin-left: 28vw;
+    margin-top: 2vw;
+  }
+}
