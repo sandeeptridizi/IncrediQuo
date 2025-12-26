@@ -280,6 +280,7 @@
     border-radius: 34px;
     margin-top: 50px;
     height: auto;
+    position:center;
   }
 
   .blogs-hero__title {
@@ -333,10 +334,6 @@
  .blogs-page {
     padding-top: 210px;
   }
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
 .blogs-hero__card {
                  
  width: 100%;
@@ -347,11 +344,4 @@
   background-repeat: no-repeat;
 
 }
-<<<<<<< HEAD
-=======
-=======
-
->>>>>>> ebb12608037a6ce02a6329981648f83396a885c7
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
-
 }
