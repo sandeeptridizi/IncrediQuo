@@ -46,11 +46,7 @@ const AboutHero = () => {
           </p>
 
          
-<<<<<<< HEAD
-          {/* <div className="about_hero_button">
-=======
           <div className="about_hero_button">
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
                         <Button name="Learn More"
                         paddingXL = "8.6vw"
                         paddingXM = "24.5vw"
@@ -61,11 +57,7 @@ const AboutHero = () => {
                         colorArrow="#022447"
                         colorText="#ffffff"
                         colorTextHover="#022447" />
-<<<<<<< HEAD
-          </div> */}
-=======
           </div>
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
         </div>
 
        <div className="about-hero__image-wrapper">

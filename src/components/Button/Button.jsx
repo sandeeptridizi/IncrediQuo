@@ -14,22 +14,14 @@ export const Button = ({
   colorText = "#ffff",
   colorTextHover = "#022447",
   }) =>{
-  return (
-<<<<<<< HEAD
-    <div
-=======
-    <div className="About_btn_container">
+  return ( 
+       <div className="About_btn_container">
       <div
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
         className="About_bbcontainer"
         style={{
           "--bacgrounClr": bacgrounClr,
         }}
-<<<<<<< HEAD
-        >
-=======
       >
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
         <button
           className="About_contact_btn"
           style={{
@@ -51,10 +43,6 @@ export const Button = ({
           }}
         />
       </div>
-<<<<<<< HEAD
-    );
-=======
      </div>
   );
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
 };
