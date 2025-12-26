@@ -2,7 +2,7 @@
    HERO MAIN WRAPPER
 ================================*/
 .hero {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   background-color: #ffffff;
   padding: 120px 0 100px;
@@ -191,17 +191,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-<<<<<<< HEAD
   margin-top: 32px; 
   align-items: flex-start; 
 }
 .hero_buttons > div:last-child {
   width: fit-content;
   flex: 0 0 auto;
-=======
-  margin-top: 32px;
-  
->>>>>>> 257eebe4b752f0ea3dc665b5d0ed017e3a3770c4
 }
 .wipe-reveal {
   position: relative;
