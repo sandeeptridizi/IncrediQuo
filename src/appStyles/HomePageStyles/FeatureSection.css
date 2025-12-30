@@ -146,22 +146,37 @@
 }
 
 .why-choose-container {
+<<<<<<< HEAD
   max-width: 1160px;
   margin: 5vw auto 0;
   display: flex;
   flex-direction: row;
   padding: 5px 64px 40px;
+=======
+  max-width: auto;
+  margin-top: 10%;
+  display: flex;
+  flex-direction: row;
+  padding: auto;
+>>>>>>> fa3339f (final changes)
   border-radius: 20px;
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px);
   animation: featureFadeUp 0.9s ease-out 0.4s forwards;
+<<<<<<< HEAD
 
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 48px;
+=======
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 130px;
+>>>>>>> fa3339f (final changes)
 }
 
 .why-left {

@@ -48,8 +48,20 @@ const FeatureSection = () => {
       </div>
 
       <div className="why-choose-container">
+<<<<<<< HEAD
         <div className="why-left">
           <h2 className="why-title">Why Choose IncrediQuo:</h2>
+=======
+        <div className="why-right">
+          <img
+            src={whyChooseImg}
+            alt="Why choose IncrediQuo"
+            className="why-image"
+          />
+        </div>
+        <div className="why-left">
+          {/* <h2 className="why-title">Why Choose IncrediQuo:</h2> */}
+>>>>>>> fa3339f (final changes)
 
           <div className="why-list">
             <p className="why-item">High accuracy and attention to detail</p>
@@ -77,6 +89,7 @@ const FeatureSection = () => {
           </p>
         </div>
 
+<<<<<<< HEAD
         <div className="why-right">
           <img
             src={whyChooseImg}
@@ -84,6 +97,9 @@ const FeatureSection = () => {
             className="why-image"
           />
         </div>
+=======
+        
+>>>>>>> fa3339f (final changes)
       </div>
 
       {/* ⭐ NEW — Global Delivery Heading & Subtitle */}

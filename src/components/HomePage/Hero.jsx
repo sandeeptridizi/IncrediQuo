@@ -43,8 +43,8 @@ const images = [
 
  ];
 
-const LINE1_TEXT = "The Record You";
-const LINE2_TEXT = "Rely On";
+const LINE1_TEXT = "Above and Beyond";
+const LINE2_TEXT = "the Status-Quo";
 
 const TYPING_TIME_PER_CHAR = 0.08;
 const TYPING_TIME_LINE1 = LINE1_TEXT.length * TYPING_TIME_PER_CHAR;
@@ -107,7 +107,11 @@ const Hero = ({ onOpenContact }) => {
             <div className="hero__inner">
               <div className="navspacer">
                 <span className="navspacernote">365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. </span>
+IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
+IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
+IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
+IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
+IncrediQuo maintains continuity through planned resourcing and strict quality controls. |</span>
 </div>
               <div className="hero__content">
                             <h1 className="hero__title typewriter-multi-line">
@@ -137,23 +141,22 @@ IncrediQuo maintains continuity through planned resourcing and strict quality co
             </span>
           </h1>
 
-          <p className="hero__subtitle">
+            <div className="hero__buttons">
+              <p className="hero__subtitle">
             IncrediQuo Solutions provides legal and arbitration transcription services for law firms, 
             arbitral institutions, courts, and dispute resolution providers worldwide. We deliver accurate 
             transcripts for hearings, court proceedings, depositions, mediations, witness examinations, oral submissions,
             and procedural conferences, fully compliant with jurisdiction-specific formatting, confidentiality, and turnaround 
             requirements. We also support the financial sector, media and broadcast, education, research, and other industries.
           </p>
-
-          <div className="hero__buttons">
-            <div className="wipe-reveal">
+          <div className="wipe-reveal">
              <span className="badge">Free Sample Transcript</span>
               <h2 className="badget">
               Get a short sample transcript absolutely free. It is the easiest way
               to see our accuracy and attention to detail before you commit
             </h2>
-            </div>
-            <div onClick={handleGetStarted}>
+            </div>  
+             <div onClick={handleGetStarted}>
               <Button
                 name="Get Started"
                 paddingXL="8.6vw"

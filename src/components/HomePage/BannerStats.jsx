@@ -87,35 +87,11 @@ const BannerStats = ({ onOpenContact }) => {
 
         <div className="banner__ticker">
           <div className="banner__ticker-track">
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
-
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
-
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
-
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
-
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
-            
-            <span>Real-time</span>
-            <span>Near Real-time</span>
-            <span>24-hours</span>
-            <span>Custom / As per Client Requirement</span>
+            <span> Real-time • Near Real-time • 24-hours • Custom / As per Client Requirement </span>
+            <span> Real-time • Near Real-time • 24-hours • Custom / As per Client Requirement </span>
+            <span> Real-time • Near Real-time • 24-hours • Custom / As per Client Requirement </span>
+            <span> Real-time • Near Real-time • 24-hours • Custom / As per Client Requirement </span>
+            <span> Real-time • Near Real-time • 24-hours • Custom / As per Client Requirement </span>
           </div>
         </div>
       </div>

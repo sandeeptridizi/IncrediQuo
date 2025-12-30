@@ -83,6 +83,10 @@
   animation: none;
 }
 
+.home_hero_button_flesible{
+  width: fit-content;
+}
+
 @keyframes typewriter {
   from { width: 0 }
   to { width: 100% } 
@@ -180,7 +184,7 @@
 }
 
 .banner__ticker-track span::before {
-  content: "•";
+  content: "|";
   position: absolute;
   left: -14px;
   top: 50%;
@@ -242,7 +246,6 @@
       display: none !important;
   }
 }
-/* correct: dot before class name, then ::before */
 .banner__stripe::before {
   content: "";
   position: absolute;
@@ -273,11 +276,9 @@
   position: relative;
 }
 
-/* =====================================================
-   RESPONSIVE FIXES START
-===================================================== */
 
-/* 🌐 TABLETS — CLEAN LAYOUT */
+
+
 @media (max-width: 1024px) {
 
   /* Hide stripes for clean UI */
