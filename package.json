@@ -1,0 +1,50 @@
+{
+  "name": "logoipsum",
+  "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/tridizidev5/IncrediQuo#readme",
+  "bugs": {
+    "url": "https://github.com/tridizidev5/IncrediQuo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tridizidev5/IncrediQuo.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "eslint.config.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "firebase": "^12.6.0",
+    "html-react-parser": "^5.2.10",
+    "install": "^0.13.0",
+    "npm": "^11.6.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-draft-wysiwyg": "^1.15.0",
+    "react-helmet-async": "^2.0.5",
+    "react-icons": "^5.5.0",
+    "react-router-dom": "^7.9.6",
+    "react-toastify": "^11.0.5"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.2.4"
+  }
+}

@@ -1,0 +1,266 @@
+
+.section.services {
+  background-color: #fdf9fb;
+  padding: 72px 0 80px;
+  opacity: 0;
+  transform: translateY(26px);
+  animation: servicesFadeUp 0.85s ease-out forwards;
+}
+
+@keyframes servicesFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.services-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.services-title {
+  font-family: "Raleway", sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 40px;
+  color: #001247;
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 526px);
+  column-gap: 44px;
+  row-gap: 36px;
+  justify-content: center;
+}
+
+.service-card {
+  width: 536px;
+  height: 334px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 32px 32px 28px;
+  cursor: pointer;
+  
+  transition: 
+    background-color 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+  background-color: #ffe9ec;
+  box-shadow: 0 15px 10px rgba(0, 18, 71, 0.25);
+}
+.service-card__title,
+.service-card__desc,
+.service-card__underline .line-main,
+.service-card__underline .line-sub {
+  transition: color 0.45s ease, background-color 0.45s ease;
+}
+.service-card__icon img {
+  transition: filter 0.45s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 42px rgba(0, 18, 71, 0.28);
+  background-color: #ffe9ec;
+}
+
+.service-card__icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.service-card__icon img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+/* .service-card:hover .service-card__icon {
+  background-color: transparent;
+  transform: translateY(-2px);
+} */
+ .service-card:hover .service-card__icon img {
+  filter: brightness(0) saturate(100%) invert(92%) sepia(6%) saturate(982%)
+    hue-rotate(306deg) brightness(105%) contrast(101%);
+}
+
+/* ===========================
+   TITLE
+   =========================== */
+
+.service-card__title {
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 26px;
+  color: #08153a;
+  margin: 0;
+}
+.service-card:hover .service-card__title, .service-card:hover .service-card__desc{
+  color: #ffe9ec !important;
+}
+/* ===========================
+   UNDERLINES
+   =========================== */
+
+.service-card__underline {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin: 6px 0 18px;
+}
+
+.service-card__underline .line-main,
+.service-card__underline .line-sub {
+  height: 6px;
+  border-radius: 6px;
+  background-color: #ff3e54;
+  display: inline-block;
+}
+
+.service-card__underline .line-main {
+  width: 87.67px;
+}
+
+.service-card__underline .line-sub {
+  width: 29.22px;
+}
+
+.service-card:hover .service-card__underline .line-main {
+  width: 95px;
+}
+.service-card:hover .service-card__underline .line-sub {
+  width: 34px;
+}
+
+/* ===========================
+   DESCRIPTION
+   =========================== */
+
+.service-card__desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #374151;
+  max-width: 438px;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1150px) {
+  .services-container {
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .service-card {
+    width: 100%;
+    height: auto;
+    max-width: 526px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.services {
+    padding: 48px 0 56px;
+  }
+
+  .services-title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+}
+
+/* ==========================================
+   HARD OVERRIDE: NO WHITE ON HOVER
+   ========================================== */
+
+/* card always pink */
+.section.services .service-card
+/* .section.services .service-card:hover  */
+{
+  background-color: #ffe9ec !important;
+}
+.section.services .service-card:hover {
+  background-color: #022447 !important;
+}
+/* icon box always transparent */
+.section.services .service-card__icon,
+.section.services .service-card:hover .service-card__icon {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+
+/* ===========================
+   DESCRIPTION
+   =========================== */
+
+.service-card__desc {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #374151;
+  max-width: 438px;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+
+@media (max-width: 1150px) {
+  .services-container {
+    max-width: 100%;
+  }
+
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+    column-gap: 0;
+  }
+
+  .service-card {
+    width: 100%;
+    height: auto;
+    max-width: 526px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .section.services {
+    padding: 48px 0 56px;
+  }
+
+  .services-title {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 28px;
+  }
+}

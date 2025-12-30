@@ -1,0 +1,159 @@
+
+.post-details {
+  max-width: 1100px;
+  margin: 120px auto 80px;
+  padding: 32px 32px 40px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+@media (min-width: 1440px) {
+  .post-details {
+    max-width: 1200px;
+    padding: 40px 40px 48px;
+  }
+}
+
+.post-details__image {
+  width: 100%;
+  height: 360px;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+}
+
+.post-details__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 24px;
+  color: #0f172a;
+}
+
+.post-details__meta {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.95rem;
+  color: #6b7280;
+  flex-wrap: wrap; 
+}
+
+.post-details__author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.post-details__avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 2px solid #f97373;
+}
+
+.post-details__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-details__author-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+.post-details__date {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.post-details__body {
+  margin-top: 24px;
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #4b5563;
+}
+
+.post-details__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  font-size: 0.9rem;
+  color: #2563eb;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .post-details {
+    margin: 120px 32px 70px;   
+    padding: 24px 24px 32px;
+  }
+
+  .post-details__image {
+    height: 300px;
+  }
+
+  .post-details__title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .post-details {
+    margin: 140px 16px 60px;   
+    padding: 20px 18px 28px;
+  }
+
+  .post-details__image {
+    height: 230px;
+  }
+
+  .post-details__title {
+    font-size: 1.5rem;
+  }
+
+  .post-details__meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .post-details__body {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-details {
+    margin: 150px 12px 50px;  
+    padding: 18px 14px 24px;
+    border-radius: 14px;
+  }
+
+  .post-details__image {
+    height: 200px;
+    border-radius: 12px;
+  }
+
+  .post-details__title {
+    font-size: 1.35rem;
+    margin-top: 18px;
+  }
+
+  .post-details__avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .post-details__back {
+    font-size: 0.85rem;
+  }
+}

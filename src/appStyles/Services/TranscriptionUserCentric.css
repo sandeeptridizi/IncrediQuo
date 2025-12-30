@@ -1,0 +1,128 @@
+.ts-usercentric {
+  padding: 80px 0 60px;
+  background: radial-gradient(circle at 60% 0%, #fff3f7 0, transparent 55%);
+}
+
+.ts-usercentric__inner {
+  max-width: 1166px;
+  margin: 0 auto;
+  text-align: center;
+}
+.ts-usercentric__title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #111827;
+  margin-bottom: 8px;
+}
+.ts-usercentric__subtitle {
+  font-size: 18px;
+  line-height: 28px;
+  color: #6b7280;
+  margin-bottom: 48px;
+}
+.ts-usercentric__grid {
+  display: grid;
+  gap: 0;
+}
+
+.ts-usercentric__grid--top {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ts-usercentric__grid--bottom {
+  margin-top: 40px;
+  grid-template-columns: repeat(2, 317px);
+  justify-content: center;
+  column-gap: 120px;
+}
+.ts-usercentric__item {
+  width: 317px;
+  height: 230px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1vw;
+}
+.ts-usercentric__icon {
+  width: 39.6px;
+  height: 44px;
+  margin: 0 auto 12px;
+}
+
+.ts-usercentric__icon-svg {
+  width: 100%;
+  height: 100%;
+  stroke: #161616;
+  stroke-width: 2px;
+  fill: none;
+}
+.ts-usercentric__item h3 {
+  font-size: 21px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.ts-usercentric__item p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+}
+
+.ts-usercentric__grid--top .ts-usercentric__item:not(:last-child) {
+  border-right: 1px solid #E4E4E7;
+}
+
+.ts-usercentric__divider {
+  width: 1166px;
+  height: 1px;
+  background: #E4E4E7;
+  border: none;
+  margin: 40px auto 0;
+}
+
+@media (max-width: 1024px) {
+  .ts-usercentric__grid--top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .ts-usercentric {
+    padding: 48px 16px;
+  }
+
+  .ts-usercentric__grid--top,
+  .ts-usercentric__grid--bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .ts-usercentric__item {
+    width: 90%;
+    height: auto; 
+    margin-bottom: 8vw;
+  }
+
+  .ts-usercentric__icon {
+margin-top: 2vw;
+}
+
+  .ts-usercentric__divider {
+    width: 100%;
+  }
+  .ts-usercentric__item p {
+width: 80vw;
+/* margin-left: 5.5vw; */
+}
+}
+.ts-usercentric__item {
+  transition: transform 0.75s cubic-bezier(0.22, 0.61, 0.36, 1)
+}
+
+.ts-usercentric__item:hover {
+transform: translateY(-8px) scale(1.025); 
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.10);
+  background-color: #ffecf3;
+  padding: 1vw;
+  border-radius: 4%;
+}
