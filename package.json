@@ -1,6 +1,6 @@
 {
-  "name": "logoipsum",
-  "version": "0.0.0",
+  "name": "incrediquo",
+  "version": "1.0.0",
   "private": true,
   "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
   "homepage": "https://github.com/tridizidev5/IncrediQuo#readme",

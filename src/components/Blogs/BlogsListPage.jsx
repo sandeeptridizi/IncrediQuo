@@ -20,11 +20,17 @@ const BlogsListPage = () => {
         if (snapshot.exists()) {
           const data = snapshot.val();
 
-          const blogList = Object.keys(data).map((key) => ({
-            id: key,
-            ...data[key],
-            imageUrl: data[key].image_url || "",
-          }));
+          const blogList = Object.keys(data)
+            .map((key) => ({
+              id: key,
+              ...data[key],
+              imageUrl: data[key].image_url || "",
+            }))
+            .sort((a, b) => {
+              const dateA = new Date(a.created_at || a.createdAt || 0);
+              const dateB = new Date(b.created_at || b.createdAt || 0);
+              return dateB - dateA; // descending order
+            });
 
           setBlogs(blogList);
         } else {

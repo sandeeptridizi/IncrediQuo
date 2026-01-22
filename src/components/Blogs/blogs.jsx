@@ -184,7 +184,7 @@ setShowErrorModal(true);
 
         <div className="blog-article__content">
           {paragraphs.map((para, index) => (
-            <p key={index}>{para}</p>
+            <p key={index} dangerouslySetInnerHTML={{ __html: para }} />
           ))}
         </div>
       </article>
