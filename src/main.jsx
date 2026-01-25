@@ -5,6 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import "./index.css";
 import App from "./App.jsx";
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
 <React.StrictMode>
@@ -13,5 +14,6 @@ createRoot(document.getElementById("root")).render(
         <App />
       </BrowserRouter>
     </HelmetProvider>
+    <ToastContainer />
 </React.StrictMode>
 );

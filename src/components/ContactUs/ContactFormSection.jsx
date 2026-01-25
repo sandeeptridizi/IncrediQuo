@@ -5,6 +5,7 @@ import "../../appStyles/ContactUs/ContactFormSection.css";
 import { Button } from "../Button/Button";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { isBlockedPersonalEmail } from "../../constants/blockedEmailDomains";
 
 const ContactFormSection = ({ onSuccess, onError }) => {
   const location = useLocation();
@@ -45,6 +46,11 @@ const ContactFormSection = ({ onSuccess, onError }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const isCareersForm = location.pathname === "/careers";
+    if (!isCareersForm && isBlockedPersonalEmail(formData.Email)) {
+      toast.error("Please use a work or business email address.");
+      return;
+    }
     setIsSubmitting(true);
     const toastId = toast.loading("Submitting your message...");
 

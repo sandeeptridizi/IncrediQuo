@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import Navbar from "./components/HomePage/Navbar";
@@ -39,6 +39,7 @@ import BlogsListPage from "./components/Blogs/BlogsListPage";
 import BlogPage from "./components/Blogs/blogs";
 
 import ScrollToTop from "./components/utils/ScrollToTop";
+import { initEmailjs } from "./lib";
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -59,6 +60,10 @@ function App() {
 
   const openContact = () => setShowContact(true);
   const closeContact = () => setShowContact(false);
+
+  useEffect(() => {
+    initEmailjs();
+  }, []);
 
   return (
     <>

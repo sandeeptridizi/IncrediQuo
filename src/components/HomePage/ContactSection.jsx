@@ -6,6 +6,8 @@ import "../../appStyles/HomePageStyles/ContactSection.css";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Button } from "../Button/Button";
+import emailjs from '@emailjs/browser';
+import { isBlockedPersonalEmail } from "../../constants/blockedEmailDomains";
 
 const ContactSection = ({ onClose }) => {
   const location = useLocation();
@@ -49,6 +51,33 @@ const ContactSection = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const isCareersForm = getSourcePage() === "Careers - Apply Job";
+    if (!isCareersForm && isBlockedPersonalEmail(formData.Email)) {
+      toast.error("Please use a work or business email address.");
+      return;
+    }
+    if(isCareersForm) {
+      const templateParams = {
+      name: formData.Name,
+      email: formData.Email,
+      phone: formData.PhoneNumber,
+      jobDescription: formData.Message,
+      time: new Date().toLocaleString(),
+      reference: "Job Application Section - IncrediQuo",
+    };
+    emailjs
+      .send("default_service", "template_jyvqfum", templateParams)
+      .then((result) => {
+        console.log(result.text);
+        toast.success("Job application submitted successfully");
+        onClose();
+      })
+      .catch((error) => {
+        console.log(error.text);
+        toast.error("Job application submission failed");
+        onClose();
+      });
+    }
     setIsSubmitting(true);
     const toastId = toast.loading("Submitting your message...");
 

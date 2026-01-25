@@ -7,6 +7,7 @@ import BlogHeroImg from "../../assets/blogs/Rectangle 3.png";
 import { Button } from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { isBlockedPersonalEmail } from "../../constants/blockedEmailDomains";
 
 const BlogPage = ({ onSuccess, onError }) => {
   const { blogId } = useParams();
@@ -115,6 +116,10 @@ console.log(blog, "blog")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (isBlockedPersonalEmail(formData.Email)) {
+      toast.error("Please use a work or business email address.");
+      return;
+    }
     setIsSubmitting(true);
     const toastId = toast.loading("Submitting your message...");
 

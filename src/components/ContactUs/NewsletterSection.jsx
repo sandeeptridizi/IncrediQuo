@@ -3,6 +3,7 @@ import "../../appStyles/ContactUs/NewsletterSection.css";
 import imagDot from "../../assets/contactUs/contactUsDot.png";
 import { useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import { isBlockedPersonalEmail } from "../../constants/blockedEmailDomains";
 
 const NewsletterSection = ({ onSuccess, onError }) => {
   const location = useLocation();
@@ -37,6 +38,10 @@ const getSourcePage2 = () => {
 
 const handleSubmit = async (e) => {
   e.preventDefault();
+  if (isBlockedPersonalEmail(formData.Email)) {
+    toast.error("Please use a work or business email address.");
+    return;
+  }
   setIsSubmitting(true);
 
   const toastId = toast.loading("Submitting your message...");
