@@ -60,12 +60,12 @@ const ContactSection = ({ onClose }) => {
       name: formData.Name,
       email: formData.Email,
       phone: formData.PhoneNumber,
-      jobDescription: formData.Message,
+      description: formData.Message,
       time: new Date().toLocaleString(),
       reference: "Job Application Section - IncrediQuo",
     };
     emailjs
-      .send("default_service", "template_jyvqfum", templateParams)
+      .send("default_service", "template_axja08h", templateParams)
       .then((result) => {
         console.log(result.text);
         toast.success("Job application submitted successfully");
