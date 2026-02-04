@@ -38,7 +38,7 @@ const ContactSection = ({ onClose }) => {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
 
-  // ✅ update Sourcepage when route changes
+
   useEffect(() => {
     setFormData((prev) => ({ ...prev, Sourcepage: getSourcePage() }));
   }, [location]);
@@ -121,10 +121,10 @@ const ContactSection = ({ onClose }) => {
     }
   };
 
-  // ✅ Render the whole thing into document.body so it ignores About page transforms
+
   return ReactDOM.createPortal(
     <>
-      {/* MAIN CONTACT MODAL */}
+
       <div className="contact-modal-backdrop" onClick={onClose}>
         <div className="contact-modal" onClick={(e) => e.stopPropagation()}>
           <button className="contact-close" onClick={onClose}>
@@ -196,7 +196,7 @@ const ContactSection = ({ onClose }) => {
         </div>
       </div>
 
-      {/* SUCCESS MODAL */}
+
       {showSuccessModal && (
         <div className="success-modal-backdrop">
           <div className="success-modal">
