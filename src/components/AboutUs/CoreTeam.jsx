@@ -1,7 +1,7 @@
 import React from "react";
 import "../../appStyles/AboutUs/CoreTeam.css";
 import Member1 from "../../assets/Abouthero/1.png";
-import Member2 from "../../assets/Abouthero/2.png";
+import Member2 from "../../assets/Abouthero/Ramani.png";
 import { FaLinkedin } from "react-icons/fa"; 
 
 const CoreTeam = () => {

@@ -1,6 +1,5 @@
-// src/components/HomePage/ContactSection.jsx
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom"; // ✅ Portal
+import ReactDOM from "react-dom"; 
 import { useLocation } from "react-router-dom";
 import "../../appStyles/HomePageStyles/ContactSection.css";
 import { toast } from "react-toastify";

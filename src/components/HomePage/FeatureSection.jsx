@@ -2,7 +2,7 @@ import React from "react";
 import "../../appStyles/HomePageStyles/FeatureSection.css";
 import featureIllustration from "../../assets/features/featuresection.png";
 import whyChooseImg from "../../assets/features/Why choose IncrediQuo.png";
-import worldMap from "../../assets/hero/Group 77.png";
+import worldMap from "../../assets/hero/Group 67.png";
 
 const FeatureSection = () => {
   return (
@@ -55,9 +55,7 @@ const FeatureSection = () => {
           />
         </div>
         <div className="why-left">
-          {/* <h2 className="why-title">Why Choose IncrediQuo:</h2> */}
-
-          <div className="why-list">
+            <div className="why-list">
             <p className="why-item">High accuracy and attention to detail</p>
             <p className="why-item">
               Fast turnaround time with expedited options
@@ -86,7 +84,7 @@ const FeatureSection = () => {
         
       </div>
 
-      {/* ⭐ NEW — Global Delivery Heading & Subtitle */}
+      
       <div className="world-map-heading">
         <h2 className="atlas-title">Global Delivery Capability</h2>
         <p className="atlas-subtitle">
@@ -94,7 +92,6 @@ const FeatureSection = () => {
         </p>
       </div>
 
-      {/* Existing World Map Section */}
       <div className="world-map-container">
         <img
           src={worldMap}

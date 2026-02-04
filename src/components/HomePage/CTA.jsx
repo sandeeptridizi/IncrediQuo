@@ -9,8 +9,7 @@ const CTA = () => {
 
   return (
     <>
-      {/* Pink card section */}
-      <section className="cta-wrapper">
+       <section className="cta-wrapper">
         <div className="cta-card">
           <div className="cta-inner">
             <h2 className="cta-title">

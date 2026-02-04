@@ -76,7 +76,7 @@ const Hero = ({ onOpenContact }) => {
   const trackRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);  
 
-  const loopImages = [...images, ...images]; // double images
+  const loopImages = [...images, ...images];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,7 +90,7 @@ const Hero = ({ onOpenContact }) => {
     const track = trackRef.current;
     if (!track) return;
 
-    const slideWidth = track.clientWidth; // important!!!
+    const slideWidth = track.clientWidth;
 
     track.scrollTo({
       left: activeIndex * slideWidth,
@@ -106,12 +106,9 @@ const Hero = ({ onOpenContact }) => {
       
             <div className="hero__inner">
               <div className="navspacer">
-                <span className="navspacernote">365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations, with full coverage during year-end holiday periods.
-IncrediQuo maintains continuity through planned resourcing and strict quality controls. |</span>
+                <span className="navspacernote">365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls. | 365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.
+365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.
+365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.IncrediQuo maintains continuity through planned resourcing and strict quality controls. |</span>
 </div>
               <div className="hero__content">
                             <h1 className="hero__title typewriter-multi-line">
