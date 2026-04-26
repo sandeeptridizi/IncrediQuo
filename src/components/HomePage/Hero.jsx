@@ -106,9 +106,8 @@ const Hero = ({ onOpenContact }) => {
       
             <div className="hero__inner">
               <div className="navspacer">
-                <span className="navspacernote">365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls. | 365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.
-365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.IncrediQuo maintains continuity through planned resourcing and strict quality controls. | 365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.
-365-day operations with seamless service continuity, supported by planned resourcing and rigorous quality controls.IncrediQuo maintains continuity through planned resourcing and strict quality controls. |</span>
+                <span className="navspacernote">Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. 
+                  | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. |</span>
 </div>
               <div className="hero__content">
                             <h1 className="hero__title typewriter-multi-line">
@@ -140,11 +139,14 @@ const Hero = ({ onOpenContact }) => {
 
             <div className="hero__buttons">
               <p className="hero__subtitle">
-            IncrediQuo Solutions provides legal and arbitration transcription services for law firms, 
-            arbitral institutions, courts, and dispute resolution providers worldwide. We deliver accurate 
-            transcripts for hearings, court proceedings, depositions, mediations, witness examinations, oral submissions,
-            and procedural conferences, fully compliant with jurisdiction-specific formatting, confidentiality, and turnaround 
-            requirements. We also support the financial sector, media and broadcast, education, research, and other industries.
+           IncrediQuo Solutions partners with law firms, arbitral institutions, courts, and dispute resolution providers worldwide to deliver precise legal and arbitration transcripts. From hearings and depositions to mediations and oral submissions, we ensure accuracy, confidentiality, and adherence to jurisdiction-specific standards. Built on globally recognized frameworks, our approach delivers:</p>
+            <ul className="hero__points">
+           <li> ISO 27001 (Information Security):</li>
+           <li> ISO 9001 (Quality Management):</li>
+           <li> AAERT-aligned standards: Court-ready transcripts</li>
+           </ul>
+           <p className="hero__subtitle">
+            We extend the same precision and reliability to the financial, media, and research sectors, where accuracy is critical and trust is non-negotiable.
           </p>
           <div className="wipe-reveal">
              <span className="badge">Free Sample Transcript</span>

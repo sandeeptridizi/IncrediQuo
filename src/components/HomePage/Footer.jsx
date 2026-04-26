@@ -2,7 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../../appStyles/HomePageStyles/Footer.css";
-
+import iso9001 from "../../assets/footer/ISO 9001.png";
+import iso27001 from "../../assets/footer/ISO 27001.png";
 import vector from "../../assets/footer/Vector.png";
 import twitter from "../../assets/footer/twitter.png";
 
@@ -54,8 +55,21 @@ const Footer = () => {
                 />
               </a>
             </div>
+            <div className="footer-iso-group">
+              <img
+                src={iso9001}
+                alt="ISO 9001 Certification"
+                className="footer-iso-image"
+              />
 
-            {/* <p className="footer-copy-left">©2025 IncrediQuo Solutions</p> */}
+              <img
+                src={iso27001}
+                alt="ISO 27001 Certification"
+                className="footer-iso-image"
+              />
+            </div>
+
+
           </div>
 
           {/* -------- RIGHT: columns + bottom links -------- */}
