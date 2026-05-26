@@ -33,28 +33,6 @@ const Footer = () => {
               transcription and media support services.
             </p>
 
-            <div className="footer-social-group">
-              <a
-                href="https://www.linkedin.com/company/incrediquo-solutions/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="footer-social"
-              >
-                in
-              </a>
-
-              <a
-                href="https://x.com/IncrediQuo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src={twitter}
-                  alt="Twitter"
-                  className="footer-social-icon"
-                />
-              </a>
-            </div>
             <div className="footer-iso-group">
               <img
                 src={iso9001}
@@ -168,8 +146,29 @@ const Footer = () => {
                   </li>
                   <li className="footer-address2">
                     B-1003, Level-10, B-Block, <br />
-                    The Platina Building, Gachibowli,<br />  
+                    The Platina Building, Gachibowli,<br />
                     Hyderabad - 500032, India
+                  </li>
+                  <li className="footer-social-group">
+                    <a
+                      href="https://www.linkedin.com/company/incrediquo-solutions/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="footer-social"
+                    >
+                      in
+                    </a>
+                    <a
+                      href="https://x.com/IncrediQuo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={twitter}
+                        alt="Twitter"
+                        className="footer-social-icon"
+                      />
+                    </a>
                   </li>
                 </ul>
               </div>

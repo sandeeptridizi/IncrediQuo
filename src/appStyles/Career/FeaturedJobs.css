@@ -145,21 +145,47 @@ body {
 .jobcard__meta-inline {
   display: flex;
   align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.jobcard__location,
+.jobcard__date {
+  display: flex;
+  align-items: center;
   gap: 8px;
 }
 
 .jobcard__loc-icon {
-  width: 20px;
-  height: 20px;
-  stroke: #000000;
+  width: 18px;
+  height: 18px;
+  stroke: #666666;
   fill: none;
   stroke-width: 1.6;
+  flex-shrink: 0;
 }
 
 .jobcard__location-text {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  color: #333333;
+  color: #666666;
+}
+
+.jobcard__date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.jobcard__date-icon {
+  width: 18px;
+  height: 18px;
+  stroke: #666666;
+  fill: none;
+  stroke-width: 1.6;
+  flex-shrink: 0;
 }
 
 .jobcard__right {
@@ -259,6 +285,10 @@ margin-top: 10vw;
     order: 2;
   }
 
+  .jobcard__date {
+    order: 2;
+  }
+
   .jobcard__title {
     order: 1;
   }
@@ -344,7 +374,8 @@ margin-top: 10vw;
     font-size: 18px;
   }
 
-  .jobcard__meta-inline {
+  .jobcard__meta-inline,
+  .jobcard__date {
     width: 100%;
   }
 

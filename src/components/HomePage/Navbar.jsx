@@ -16,6 +16,15 @@ const Navbar = () => {
   const buttonRef = useRef(null);
 
   useEffect(() => {
+  const handleScroll = () => {
+    setScrolled(window.scrollY > 10);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
+useEffect(() => {
   const handleOutsideClick = (event) => {
     if (!isMobileMenu) return;
 
@@ -53,7 +62,7 @@ const Navbar = () => {
        <NavLink to="/" className="navbar__logo">
           <img src={Logo} alt="Logo" />
         </NavLink>
-              
+
                 <div className="navbar__links-row">
           <NavLink to="/" end>
             Home
@@ -111,7 +120,10 @@ const Navbar = () => {
           {isMobileMenu ? <HiX size={34} /> : <HiMenu size={34} />}
         </button>
         </div>
-      <div ref={menuRef} className={`mobile-menu ${isMobileMenu ? "open" : ""}`}>
+        <div className={`navspacer ${location.pathname === "/" ? "" : "hidden"}`}>
+        <span className="navspacernote">Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. |</span>
+      </div>
+      <div className={`mobile-menu ${isMobileMenu ? "open" : ""}`}>
 
         <div className="mobile-nav-links">
           <NavLink to="/" onClick={() => setIsMobileMenu(false)}>

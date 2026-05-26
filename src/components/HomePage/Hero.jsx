@@ -103,12 +103,7 @@ const Hero = ({ onOpenContact }) => {
 
   return (
     <section id="home" className="hero">
-      
-            <div className="hero__inner">
-              <div className="navspacer">
-                <span className="navspacernote">Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. 
-                  | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. | Year-round operations delivering uninterrupted service, supported by structured resourcing, rigorous quality controls, and ISO 27001, ISO 9001, and AAERT compliance. |</span>
-</div>
+      <div className="hero__inner">
               <div className="hero__content">
                             <h1 className="hero__title typewriter-multi-line">
             <span

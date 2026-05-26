@@ -22,12 +22,12 @@
 
 .footer-iso-group {
   display: flex;
-  gap: 10px;
-  margin-top: 5px;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 .footer-iso-image {
-  height: 70px;
+  height: 90px;
   object-fit: contain;
 }
 
@@ -161,6 +161,7 @@
   line-height: 30px;
   color: #d1e0ff;
   margin: 0 0 18px;
+  padding-top: 5px;
 }
 
 .footer-social {
@@ -241,6 +242,12 @@
 .footer-column--contact .footer-address {
   margin: 0 0 8px;
   color: #d1e0ff;
+}
+
+/* Social icons inside contact column */
+.footer-column--contact .footer-social-group {
+  margin-top: 15px;
+  margin-bottom: 0;
 }
 
 /* bottom links (Privacy / Terms) — placed under columns and right aligned */
@@ -325,7 +332,7 @@
   align-items: center;
   gap: 25px;
   margin-bottom: 22px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .footer-social-icon {

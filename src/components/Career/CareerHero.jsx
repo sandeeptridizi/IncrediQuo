@@ -41,9 +41,10 @@ const CareerHero = ({ onSearch, locations = [], titles = [] }) => {
   // const [title, setTitle] = useState("");
 
     const handleSearch = () => {
+    console.log("Search clicked - location:", location, "title:", selected);
     onSearch({
       location,
-      titles,
+      title: selected && selected !== "Choose job role" ? selected : "",
     });
   };
 

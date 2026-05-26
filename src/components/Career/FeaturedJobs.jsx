@@ -7,7 +7,16 @@ import { database, ref, get } from "../../Firebase/firebase";
 
 const FeaturedJobs = ({ openPopup, onOpenContact, filters, careers = [] }) => {
   const navigate = useNavigate();
-  // const [careers, setCareers] = useState([]);
+
+  const formatDate = (dateStr) => {
+    if (!dateStr) return "Recently";
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return dateStr;
+    const day = date.getDate();
+    const month = date.toLocaleString('en-US', { month: 'long' });
+    const year = date.getFullYear();
+    return `${day} ${month} ${year}`;
+  };
 
   const handleApplyJob = (job) => {
     if (typeof onOpenContact === "function") {
@@ -38,12 +47,14 @@ const FeaturedJobs = ({ openPopup, onOpenContact, filters, careers = [] }) => {
   // }, []);
 
   const filteredJobs = careers.filter((job) => {
+    console.log("Filtering job:", job.JobTitle, "with filters:", filters);
+
     const matchLocation = filters.location
       ? job.Location?.toLowerCase().includes(filters.location.toLowerCase())
       : true;
 
     const matchTitle = filters.title
-      ? job.JobTitle === filters.title
+      ? job.JobTitle?.toLowerCase().includes(filters.title.toLowerCase())
       : true;
 
     return matchLocation && matchTitle;
@@ -54,22 +65,33 @@ const FeaturedJobs = ({ openPopup, onOpenContact, filters, careers = [] }) => {
       <h2 className="featured__title">Active Jobs</h2>
 
       {/* Show "No jobs found" if empty */}
-     
+
       {filteredJobs.length === 0 ? (
         <p className="no-jobs-text">No jobs found</p>
       ) : (
         <div className="featured__list">
-          {careers.map((job) => (
+          {filteredJobs.map((job) => (
             <div className="jobcard" key={job.id}>
               <div className="jobcard__left">
                 <h4 className="jobcard__title">{job.JobTitle}</h4>
 
                 <div className="jobcard__meta-inline">
-                  <svg className="jobcard__loc-icon" viewBox="0 0 24 24">
-                    <circle cx="12" cy="10" r="3" />
-                    <path d="M12 4a6 6 0 0 0-6 6c0 4.2 6 10 6 10s6-5.8 6-10a6 6 0 0 0-6-6z" />
-                  </svg>
-                  <span className="jobcard__location-text">{job.Location}</span>
+                  <div className="jobcard__location">
+                    <svg className="jobcard__loc-icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="10" r="3" />
+                      <path d="M12 4a6 6 0 0 0-6 6c0 4.2 6 10 6 10s6-5.8 6-10a6 6 0 0 0-6-6z" />
+                    </svg>
+                    <span className="jobcard__location-text">{job.Location}</span>
+                  </div>
+                  <div className="jobcard__date">
+                    <svg className="jobcard__date-icon" viewBox="0 0 24 24">
+                      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" fill="none" stroke="currentColor" strokeWidth="2"/>
+                      <line x1="16" y1="2" x2="16" y2="6" stroke="currentColor" strokeWidth="2"/>
+                      <line x1="8" y1="2" x2="8" y2="6" stroke="currentColor" strokeWidth="2"/>
+                      <line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                    <span>Posted on {formatDate(job.PostDate)}</span>
+                  </div>
                 </div>
               </div>
 

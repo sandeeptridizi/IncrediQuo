@@ -23,17 +23,22 @@ const Careers = ({ onOpenContact }) => {
     const fetchCareers = async () => {
       const snapshot = await get(ref(database, "careers"));
       if (snapshot.exists()) {
-        const data = Object.values(snapshot.val());
-        setCareers(data);
+        const data = snapshot.val();
+        const keys = Object.keys(data);
+        const careerList = keys.map((key) => ({
+          id: key,
+          ...data[key],
+        }));
+        setCareers(careerList);
 
-        // 🔹 UNIQUE LOCATIONS
+        // UNIQUE LOCATIONS
         const uniqueLocations = [
-          ...new Set(data.map((job) => job.Location).filter(Boolean)),
+          ...new Set(careerList.map((job) => job.Location).filter(Boolean)),
         ];
 
-        // 🔹 UNIQUE TITLES
+        // UNIQUE TITLES
         const uniqueTitles = [
-          ...new Set(data.map((job) => job.JobTitle).filter(Boolean)),
+          ...new Set(careerList.map((job) => job.JobTitle).filter(Boolean)),
         ];
 
         setLocations(uniqueLocations);
