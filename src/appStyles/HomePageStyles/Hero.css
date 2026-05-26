@@ -347,15 +347,16 @@
     gap: 14px;
   }
   .hero__image {
-  flex: 0 0 250px;
-}
-.hero__content {
-  flex: 0 0 555px;
-margin-top: 15vw;
-}
-.hero__image-bg{
-  width: 99vw;
-}
+    flex: 0 0 250px;
+    margin-top: 30px;
+  }
+  .hero__content {
+    flex: 0 0 555px;
+    margin-top: 15vw;
+  }
+  .hero__image-bg {
+    width: 99vw;
+  }
 .hero__image-wrapper{
 margin-left: 5vw;
 }
